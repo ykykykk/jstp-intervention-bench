@@ -1,0 +1,19 @@
+{
+  "id":"JSTP-M2-20261118", "seeds":[1729,2718,31415], "width":128,
+  "arms":{"joint_symbol":["joint","symbol"],"aux_symbol":["aux","symbol"],"direct_symbol":["direct","symbol"],"joint_holistic":["joint","holistic"],"joint_latent":["joint","latent"]},
+  "train":[32000000,1536],"validation":[34000000,96],"test_familiar":[36000000,160],"test_novel":[38000000,160],
+  "lang_train_seed":47000001,"lang_val_seed":48000001,"lang_exam_seed":49000001,
+  "train_max_depth":4,"test_depths":[1,2,4,6,8],"language_pairs_per_depth":384,
+  "steps":2600,"batch":96,"lr":0.0015,"evaluate_every":260,"final_checkpoint":"fixed last step; do not select by exam or best seed",
+  "retina":"2 boards, 8 by 12 per board, mean absolute color change pooled over 8x8 camera pixels, fixed gain 4, clip 0..1; 16 levels during feedback",
+  "motor":"scalar electrical port: <-0.35 drives left, >0.35 drives right, otherwise rest; physical device converts one sign to one 4px vertical stroke, no search",
+  "train_experience":"home-side rehearsal followed by formal operation; independent recorded lapses probability .08, prior-failure reset-and-correction, passive externally actuated matched trajectory; outcome never fed before a choice",
+  "interventions":["natural","matched-repeat","opposite-relevant-panel","opposite-irrelevant-panel","visual-history-twin","flat-history"],
+  "motor_primary":"on active familiar trials: P(natural correct and relevant transplant causes opposite correct-for-donor drive) minus same event for an irrelevant transplant. Minimum 0.10, layout-paired 95% CI lower>0, positive in >=2 seeds; require factual task lower CI>0.60 and fixed provisional drive strict twin-group motion accuracy>0.50. A true physical signal plus dependence in THIS architecture, not proof of brain mechanism.",
+  "motor_additional":"report familiar and held-out middle singleton; unaltered scene under mistaken transplant; goal swap, fixed drive goal sensitivity, no-drive/passive, terminal sensory accuracy, direct and disconnected-aux controls. Direction not just arbitrary flips.",
+  "language_primary":"counterexample to necessity of the specified overt compositional port for this task if learned nonlinguistic 3-bit arm reaches >0.75 action accuracy at both depths 6 and 8 for >=2 seeds. Report paired accuracy and symbol-minus-latent effect even on failure. Same number of bits, cards and recurrent updates. No natural-language or consciousness inference.",
+  "language_secondary":"same frozen net: clear scratch each round; swap one pre-final scratch with physical twin donor; shuffled symbols. Compare paired final nonverbal switch decisions, not explanatory text. Truthful report, arbitrary bijection code and learned hard bits are distinct.",
+  "statistics":"two-sided percentile cluster bootstrap 6000 draws, seed 80119; resample independent base layouts or circuit pairs with trained seeds held fixed; show individual seeds. No pooling choices as iid.",
+  "holdout_policy":"Obtain apparatus/shape checks on train seeds only. Protocol deposited before fitting or reading held-out outcomes. No test-driven retries; implementation corrections with evidence documented.",
+  "boundaries":"World ontology and absence of subjective consciousness are not identifiable in a simulator. No object mask labels, effect comparator or external planner in autonomous execution. Motor and report ports, recurrence clock, fixed grammar, imposed training curriculum and physical actuators are designed. A private repository timestamp is not independent public preregistration."
+}
