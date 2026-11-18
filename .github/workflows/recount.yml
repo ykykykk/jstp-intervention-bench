@@ -36,3 +36,19 @@ jobs:
               assert x.keys()==y.keys()
               assert all(np.isclose(v,y[k],atol=1e-6,rtol=0) if isinstance(v,float) else v==y[k] for k,v in x.items())
           PY
+      - name: 从封存和实物记录核对晚到目标两项主判据
+        run: |
+          python -m lategoal.analysis --release evidence/late-goals --out work/late-recount
+          python - <<'PY'
+          import json
+          from pathlib import Path
+          import numpy as np
+          a,b=[json.loads((Path(p)/'summary.json').read_text()) for p in ('evidence/late-goals/analysis','work/late-recount')]
+          assert a['protocol']==b['protocol'] and a['gates']==b['gates']
+          def check(x,y):
+              if isinstance(x,dict):
+                  assert x.keys()==y.keys()
+                  for k in x: check(x[k],y[k])
+              else: assert np.isclose(x,y,rtol=0,atol=1e-6)
+          for key in ('arms','paired_contrasts','per_seed'): check(a[key],b[key])
+          PY

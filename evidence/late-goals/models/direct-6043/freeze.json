@@ -1,0 +1,13 @@
+{
+  "weights": "9a70df92db5d846989881c1fe8264426f480564a6630d77920b0d0f4eac0782b",
+  "protocol": "3725659331d8161833fcbbaa5507958c9af8fc5223ff359c6cc9d9bcee99410b",
+  "experience": "53682c4338c532078deecc629a98188ffea6094506f91aeceda8124ba5f8ed4e",
+  "seed": 6043,
+  "updates": 4096,
+  "parameters": 46478,
+  "torch": "2.15.0+cu132",
+  "numpy": "2.5.5",
+  "python": "3.13.5",
+  "device": "NVIDIA GeForce RTX 3090",
+  "seconds": 22.89
+}

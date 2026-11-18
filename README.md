@@ -1,57 +1,39 @@
-# 联合状态转移预测 · 岳轲
+# 预期能否驱动行动？ · 岳轲
 
-**一个模型既能预见载荷会怎么动，也能正确驱动自己的把手。如果只改变前一种预期，它的手会不会跟着变？**
+**一个会预测后果的网络，真的会因为预期不同而换一只手吗？**
 
-这个仓库保存两项独立研究。第一项问模型能否从经历中分出哪些局部会一起动；第二项把自身运动移入同一网络，专门区分“能预见”和“靠预见行动”。两次研究的训练、成绩、论文和证据分开存放。
+在这项联合状态转移预测（JSTP）实验里，模型先自己选把手、横向试探并复位，再预测若正式使用这只把手，四件载荷将怎样移动。直到这时我们才揭晓目标。每份模型只有一套权重，没有分割器，也没人替它给候选把手打分。它可以使用预期，也可以从原经历直接发出动作。
 
-**研究二：** [论文 PDF：《预期能否驱动行动？》](paper/mechanism_study/JSTP-运动与符号回输-岳轲.pdf) · [可编辑论文](paper/mechanism_study/manuscript.md) · [协议与逐题复现](docs/MECHANISM-REPRODUCE.md)  
-**理论与前作：** [岳轲的理论原稿](theory/JSTP-详细理论稿.md) · [五项主张及模型审阅](theory/研究一之后的理论审阅.md) · [研究一：《同一画面，不同后果》](README-v1.md)
+[增订论文 PDF · 岳轲](paper/mechanism_study/JSTP-运动与符号回输-岳轲.pdf) · [可编辑正文](paper/mechanism_study/manuscript.md) · [晚到目标实验与复现](docs/LATE-GOALS.md) · [原理论稿](theory/JSTP-详细理论稿.md)
 
-![同一布局换接线：试探、可读感觉预期、另一世界的预期，以及实际执行结果](paper/mechanism_study/figures/twins.png)
+![首个布局中，换目标与改预期会怎样改变动作](paper/mechanism_study/figures/late-case.png)
 
-上、下两行是同一台装置的不同挂接。从左到右：过去试探时的相机、网络对自己预演动作的感觉预期、换挂接后同动作的预期、原世界正式执行后的相机。中间两列是粗网格的运动能量，不是对象掩码。
+图中第三行很重要：**给错内部预期，模型换了把手，在没有改变的真实机构上反而做错。** 第四行施加相同干预，但换了一个不应换手的任务，模型仍用正确把手。这是区分“后果参与行动”和“扰动让模型乱动”的办法。
 
-## 研究二得到了什么？
+## 两个事前问题，分别回答
 
-| 检验 | 冻结后的结果 | 能说明什么 |
+| 冻结后只改什么？ | 新布局上的结果 | 应当怎样理解 |
 |---|---:|---|
-| 熟悉接线、从未见过的布局 | 主动搬运 **99.59%**；严格共动判别 **100%** | 没有实例掩码监督也能从试探预测一个局部会不会随把手移动；不是完整对象分割。 |
-| 固定真实世界，只换动作提交前的预期 | 相对于匹配的无关替换，**定向换手差 0.00 个百分点** | “后果预期参与了这次动作”的事前主判据**未通过**。换真实试探经历却能改变运动。 |
-| 换成训练没见过的中间单件接线 | 主动搬运 **48.98%**；严格共动 **54.28%** | 不能把熟悉接线的通关率解释为普遍的结构迁移；同场直接策略的任务成绩是 **56.48%**。 |
-| 新布局上只移植两维物理相关隐状态 | 主模型的物理读数 **100%** 改指供体；**0%** 定向换手 | 可读后果和动作在被测方向上分离。带后果辅助训练、没有感觉回输入口的对照有 **20.12%** 两者同步改变，三个种子的结果差别很大。这是另行锁定的后续试验。 |
-| 训练最多四步，冻结后处理八步电路 | 显式三谓词、整体码和自学三位均 **100%**；清空回输均 **50%** | 在这套有限任务里，预置的符号通道非必要；自学三位在每个种子里都等价于物理三位的重排或反相。没有测试自然语言论证或主观意识。 |
+| **只换目标。** 同一次试探，给两张相反、训练未见的三轨目标卡。 | 18,400 / 18,432 对均成功，**99.83%** | 能把同一段经历用于新的目标组合。单卡成功 99.87%。 |
+| **只改隐式后果。** 固定真实经历、目标、真实离合和直接路，仅移植隐状态中与未来物理读数对应的四个方向。 | 本应换手的题，11,047 / 18,432 定向换手，**59.93%** | 对照：等长但不改物理读数的扰动 **0.88%**；同一物理移植在不应换手的题上误换 **0.54%**。 |
+| 同题换成只走直接动作的网络。 | 相反目标对 **100%** 均成功 | 联合组的预期有因果作用，**不等于**这条路不可替代，或使任务成绩更高。 |
 
-[每项估计和布局区间](evidence/mechanism/analysis/metrics.csv) · [各初始化的原始表现](evidence/mechanism/analysis/per_seed.csv) · [后续隐状态移植](evidence/mechanism/latent_followup/metrics.csv) · [自学码逐状态计数](evidence/mechanism/codebook.json)
+三种子、192 个独立考试布局。表里的分母还含同布局的接线、离合、目标和模型种子，置信区间按布局聚类，并没有把它们当作 18,432 个独立世界。[主统计与配对差](evidence/late-goals/analysis/summary.json) · [分种子指标](evidence/late-goals/analysis/per_seed.csv) · [事前协议](lategoal/protocol.json) · [冻结权重复演记录](evidence/late-goals/frozen-replay.json)
 
-## 看、核对、重训
+## 看它现场运行
 
-以下命令都在仓库根目录执行。模拟器只驱动自己的虚拟机构；不读取屏幕，不控制桌面鼠标，不用任何私人训练数据。
+本机已建立项目虚拟环境时，双击[打开晚到目标实验台](打开晚到目标实验台.cmd)，或在项目根目录运行：
 
-**只核对发布包**（Python 3.11+ 标准库）：
+    .\.venv\Scripts\python.exe -m lategoal.window
 
-    python scripts/verify_release.py
+点击 **连看三次实做**：原目标选 A；只换目标后选 B；恢复原目标，只改内部后果，模型在原世界改选 B 而失败。也可点“论文实例”复位后，手动换目标或改预期。窗口使用冻结网络重新推理和实际虚拟位移，不是录像；会显示试探、复位、内部光学预期、真实末帧和训练曲线。[三次现场记录](evidence/late-goals/window-case.json)各自带有前缀和末帧指纹。不采集桌面，不控制系统鼠标。
 
-**在 CPU 上重算论文主结果**（不需 PyTorch、显卡或联网下载模型）：
+新机器可用 `py -3.13 -m venv .venv`、`.\.venv\Scripts\python.exe -m pip install -r requirements-windows-cu132.txt` 安装实测环境。核对整包：`python scripts/verify_release.py`。只重新算分、从权重复演或从零重训，分别见[三条复现路线](docs/LATE-GOALS.md)。
 
-    python -m pip install numpy==2.5.5
-    python -m mechanism.analyze --release evidence/mechanism --out work/recount-m2
+## 前作也保留，不用阳性结果替换阴性结果
 
-**打开独立窗口，或者从零重训**（实测 Windows、Python 3.13.5、RTX 3090；以下为 PowerShell）：
+- [研究一：《同一画面，不同后果》](README-v1.md)：比较可操作共动、直接策略、结构消融与 DINO-WM 适配，并披露新接线迁移失败。
+- [研究二：双台搬运与三比特回输](README-v2.md)：能正确预测物理后果，但原主模型换手净效应 **0.00 个百分点**；电路任务中自学三位形成可组合码。[当时原封不动的发行版](https://github.com/ykykykk/jstp-intervention-bench/releases/tag/v2.0.0)。
+- [本次追加研究](docs/LATE-GOALS.md)：另用新装置和九份新权重，沿用一套网络的约束。两次的任务、训练和干预方法都不同，不能把差别单独归功于目标延迟。
 
-    py -3.13 -m venv .venv
-    .\.venv\Scripts\python.exe -m pip install -r requirements-windows-cu132.txt
-    .\.venv\Scripts\python.exe -m mechanism.window
-
-窗口执行冻结网络，可以切换目标、挂接和主动／被动牵引。要做一份新的完整研究二，在同一目录另开终端：
-
-    .\.venv\Scripts\python.exe scripts/reproduce_mechanism.py --out work/fresh-m2
-    .\.venv\Scripts\python.exe scripts/compare_mechanism.py evidence/mechanism work/fresh-m2/release
-
-复现程序从种子生成训练记录，不用随包权重作初始化；拒绝覆盖旧结果。已经在同一台机器、独立 GitHub 克隆和新环境中完成了第二次全量训练：**1,670,400 个离散提交逐项一致**；这不是同等数量的独立场景，也不是第三方复现。[逐文件、逐数组的比较结果](evidence/mechanism/independent-reproduction.json)
-
-## 材料导航
-
-- [主协议](mechanism/protocol.json)、[考试前追加的相机对照](mechanism/secondary-plan.md)、[主结果之后另锁定的隐状态实验](mechanism/latent-plan.json)：保留试验先后顺序，不让后续发现替代事前判据。
-- [单一共享网络](mechanism/net.py)、[数据和装置](mechanism/data.py)、[冻结、封卷、执行](mechanism/exam.py)、[统计](mechanism/analyze.py)、[独立窗口](mechanism/window.py)。
-- [研究二全部证据](evidence/mechanism)：15 份冻结权重、训练曲线、预测封存、相机实测、两项补充干预及重训报告。[研究一对照说明](docs/COMPARISON.md)中的 DINO-WM 适配、直接策略等采用前作自己的任务，不跨实验排技能榜。
-- [引用](CITATION.cff) · [作者与依赖的权利边界](THIRD_PARTY.md) · [私有发布说明](docs/PUBLISHING.md)。论文为研究手稿，无 DOI，未宣称已经投稿或录用。
+仓库按作者选择为**私有**；文章是研究手稿，无 DOI，不代表期刊录用。[引用信息](CITATION.cff) · [授权范围](LICENSE) · [第三方来源](THIRD_PARTY.md)。

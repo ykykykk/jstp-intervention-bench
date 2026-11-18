@@ -1,0 +1,25 @@
+{
+  "protocol": "3725659331d8161833fcbbaa5507958c9af8fc5223ff359c6cc9d9bcee99410b",
+  "files": {
+    "experience.json": "53682c4338c532078deecc629a98188ffea6094506f91aeceda8124ba5f8ed4e",
+    "models/joint-6043/freeze.json": "211c1fbd411dfd516a393a96ccf28699cdc3856f4cef2951a0a85207781652dd",
+    "models/joint-6043/last.pt": "2a78af59a87cebf13570a5a4b11a50c5727962549e57a9d082953058c32a43f9",
+    "models/joint-6221/freeze.json": "fe2d5b3e7cbf641232bbc1a462af8a6303659b354498069c437ca572df3068d6",
+    "models/joint-6221/last.pt": "df873a52af4a77f953153c2971bf06ff76fe586d7404a67e0e292761d3d2450a",
+    "models/joint-6553/freeze.json": "8f9f8ebdb38c4559c945bb5bfca88e2ff7bbcacaa77c56347b2c5149fae0a6f2",
+    "models/joint-6553/last.pt": "742247398bec6a8f30f21e4750fc8fc760d78a30c89e6a30ba879550ed5381ec",
+    "models/aux-6043/freeze.json": "a334eea72bf16f4558e7f7ae85e6de53d11392bfe435219aa5d703d76b38b2ae",
+    "models/aux-6043/last.pt": "3e60da75467840db2e38a1629dbd9e6512ab2b91cc33cc2760b2e243e5e4f64d",
+    "models/aux-6221/freeze.json": "c1c3fbb5255f745051bfa0228b88393d5e3c393886da7cf92ef0df6251d5ff81",
+    "models/aux-6221/last.pt": "4000fe6db297dfa169d0b237e728515a45245a59ad7b31db7b648ad385a53fee",
+    "models/aux-6553/freeze.json": "acf5e45ecfe976aa1f8edb7b689bd14507d96080a3565b77aca147cfb78e994d",
+    "models/aux-6553/last.pt": "bc85f146cf67ace658263dab7bff2219f2c6ec238dc3345c4faa0c1162f4cc10",
+    "models/direct-6043/freeze.json": "9f0f76ddc791bf879ab5829dffd584d7e18dfb9416e666579e630c0dfa4a5c6b",
+    "models/direct-6043/last.pt": "9a70df92db5d846989881c1fe8264426f480564a6630d77920b0d0f4eac0782b",
+    "models/direct-6221/freeze.json": "8f6e8481ae49a3b3d3ca8cb050fa4d59b60b6ec12e3d4ef8516d12467cbf01d0",
+    "models/direct-6221/last.pt": "7bce1609aa6583fb0d224b54ec2e571a98aa53f9c7f3276c377d6ac8fea37499",
+    "models/direct-6553/freeze.json": "4d3cfbdd8e0909ec005d9fcdcd535521bdb1abee5c0f28460b01e04b3e01392d",
+    "models/direct-6553/last.pt": "22891de3c86252220022e5206de7c67cd6c5a3d97beaf78fbd44cf5f6ee5c643"
+  },
+  "utc_ns": 1795002259675870900
+}

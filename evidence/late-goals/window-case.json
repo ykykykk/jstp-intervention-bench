@@ -1,0 +1,51 @@
+{
+  "model": "joint-6043",
+  "kind": "live window, same cached pregoal prefix, real virtual actuator",
+  "trials": [
+    {
+      "layout": 74000000,
+      "probe": 1,
+      "goal": [
+        1,
+        1,
+        0,
+        -1
+      ],
+      "mode": "native",
+      "prefix": "b1770fd7be848a9804420bd0111354053f10badfa6ad964d7401a09638258c99",
+      "command": -1,
+      "success": true,
+      "actual_camera_sha256": "0a6070a04705bfe3119fea0e0f15eb65f2544914eed607957ac027a18389914a"
+    },
+    {
+      "layout": 74000000,
+      "probe": 1,
+      "goal": [
+        -1,
+        -1,
+        0,
+        1
+      ],
+      "mode": "native",
+      "prefix": "b1770fd7be848a9804420bd0111354053f10badfa6ad964d7401a09638258c99",
+      "command": 1,
+      "success": true,
+      "actual_camera_sha256": "3b0231043b959925d809c30515c5139962b283448a8a7abc0ba78cd3dd31de7d"
+    },
+    {
+      "layout": 74000000,
+      "probe": 1,
+      "goal": [
+        1,
+        1,
+        0,
+        -1
+      ],
+      "mode": "physical",
+      "prefix": "b1770fd7be848a9804420bd0111354053f10badfa6ad964d7401a09638258c99",
+      "command": 1,
+      "success": false,
+      "actual_camera_sha256": "3b0231043b959925d809c30515c5139962b283448a8a7abc0ba78cd3dd31de7d"
+    }
+  ]
+}

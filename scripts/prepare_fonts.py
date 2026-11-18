@@ -27,6 +27,7 @@ def prepare(paper=None):
     for name in ("source.md","references.json","build.py"):
         texts += (paper/name).read_text(encoding="utf8")
     if (paper/"layout.py").exists():texts+=(paper/"layout.py").read_text(encoding="utf8")
+    if (paper/"late_section.py").exists():texts+=(paper/"late_section.py").read_text(encoding="utf8")
     chars = set(map(ord,texts))
     for style,weight in (("Regular",450),("Bold",700)):
         font = TTFont(source)

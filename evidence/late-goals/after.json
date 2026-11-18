@@ -1,0 +1,16 @@
+{
+  "protocol": "3725659331d8161833fcbbaa5507958c9af8fc5223ff359c6cc9d9bcee99410b",
+  "files": {
+    "before.json": "c3df6e2e75d362b84db5fb5787fded0e442e807d88a9d033e07b7d2ed7889d95",
+    "observed/joint-6043.npz": "be6814afffdf26d857ecffa920ba8d1dcea1e1b0f850d9c367bc922f74fbf90c",
+    "observed/joint-6221.npz": "e6476d72d8f73fdc6036af2448a1db89238d5eec01cbdc766044d2e5e83ccd55",
+    "observed/joint-6553.npz": "2e6800cb7d28a7cd6b2da1e2775cf5f0ca72ac35d1f19285e631e709ef285c06",
+    "observed/aux-6043.npz": "bc0326eaeac1e13453f8c991a7e2dd26c9050eb10420ede74556fc80e397cedc",
+    "observed/aux-6221.npz": "bc0326eaeac1e13453f8c991a7e2dd26c9050eb10420ede74556fc80e397cedc",
+    "observed/aux-6553.npz": "bc0326eaeac1e13453f8c991a7e2dd26c9050eb10420ede74556fc80e397cedc",
+    "observed/direct-6043.npz": "bc0326eaeac1e13453f8c991a7e2dd26c9050eb10420ede74556fc80e397cedc",
+    "observed/direct-6221.npz": "bc0326eaeac1e13453f8c991a7e2dd26c9050eb10420ede74556fc80e397cedc",
+    "observed/direct-6553.npz": "bc0326eaeac1e13453f8c991a7e2dd26c9050eb10420ede74556fc80e397cedc"
+  },
+  "utc_ns": 1795002313247751400
+}

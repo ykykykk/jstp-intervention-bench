@@ -1,0 +1,7 @@
+{
+  "kind": "same-machine frozen-checkpoint replay, not independent retraining",
+  "decisions": 663552,
+  "npz_files": 25,
+  "changed_array_elements": {},
+  "identical_summary": true
+}

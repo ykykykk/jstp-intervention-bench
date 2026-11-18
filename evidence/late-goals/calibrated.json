@@ -1,0 +1,13 @@
+{
+  "protocol": "3725659331d8161833fcbbaa5507958c9af8fc5223ff359c6cc9d9bcee99410b",
+  "files": {
+    "frozen.json": "f8d93c69ccfd1a74a22a4716a3b512e7f048b52e7d01cc25a18fc52fc8058782",
+    "calibration/joint-6043.npz": "399d9036db0b319d7e69e9bce9927670db00185f66ed4069e92d42da9464b2f6",
+    "calibration/joint-6221.npz": "6231210a47a5ca5dd5b2ccecfc4b39398dc47fbebf98f5edee6d00895b2de04c",
+    "calibration/joint-6553.npz": "a6b68638f2daf657c78832c8bfddfe38219f68099033756714bf004ca301981c",
+    "calibration/aux-6043.npz": "344fd46088554f0aa6370626247c884ad336f0d113bb0c6179d97d5cc2a7cf1e",
+    "calibration/aux-6221.npz": "b04777a552f0939faca42e34a1abafcbeb5468c34fe2a7ef24a5c4e19f60c857",
+    "calibration/aux-6553.npz": "8f2709cba215493f5044731ca9f2a198969c029ecf7b0f320b1cd6dc84637b97"
+  },
+  "utc_ns": 1795002261675135000
+}

@@ -67,6 +67,8 @@ def figures():
     im.save(FIG/"dissociation.png",optimize=True)
 def build():
     figures();fields=tables();refs=json.loads((D/"references.json").read_text(encoding="utf8"))
+    from late_section import material
+    fields.update(material(ROOT/"evidence/late-goals",FIG,font))
     fields["REFS"]="\n\n".join(f'[{i}] {r["short"]}. [{r["title"]}]({r["url"]}). {r["venue"]}，{r["year"]}。' for i,r in enumerate(refs,1))
     re=json.loads((E/"independent-reproduction.json").read_text())
     n=sum(v["decisions"] for v in re["ledgers"].values());diff=sum(v["changed_decisions"] for v in re["ledgers"].values())

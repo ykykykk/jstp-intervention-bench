@@ -1,0 +1,16 @@
+{"step": 256, "loss": 0.2927398979663849, "validation": 0.828125, "optical_rmse": null, "seconds": 1.43}
+{"step": 512, "loss": 0.14545267820358276, "validation": 0.9013671875, "optical_rmse": null, "seconds": 2.82}
+{"step": 768, "loss": 0.0667194053530693, "validation": 0.9755859375, "optical_rmse": null, "seconds": 4.21}
+{"step": 1024, "loss": 0.0029524837154895067, "validation": 1.0, "optical_rmse": null, "seconds": 5.64}
+{"step": 1280, "loss": 0.002084558829665184, "validation": 1.0, "optical_rmse": null, "seconds": 7.05}
+{"step": 1536, "loss": 0.0004375218122731894, "validation": 1.0, "optical_rmse": null, "seconds": 8.47}
+{"step": 1792, "loss": 0.0002525430463720113, "validation": 1.0, "optical_rmse": null, "seconds": 9.88}
+{"step": 2048, "loss": 0.00024146863142959774, "validation": 1.0, "optical_rmse": null, "seconds": 11.25}
+{"step": 2304, "loss": 0.00017165364988613874, "validation": 1.0, "optical_rmse": null, "seconds": 12.66}
+{"step": 2560, "loss": 0.00012827645696233958, "validation": 1.0, "optical_rmse": null, "seconds": 14.02}
+{"step": 2816, "loss": 0.00011635408009169623, "validation": 1.0, "optical_rmse": null, "seconds": 15.43}
+{"step": 3072, "loss": 8.042493573157117e-05, "validation": 1.0, "optical_rmse": null, "seconds": 16.99}
+{"step": 3328, "loss": 5.9229812904959545e-05, "validation": 1.0, "optical_rmse": null, "seconds": 18.72}
+{"step": 3584, "loss": 4.377781442599371e-05, "validation": 1.0, "optical_rmse": null, "seconds": 20.18}
+{"step": 3840, "loss": 3.987529271398671e-05, "validation": 1.0, "optical_rmse": null, "seconds": 21.61}
+{"step": 4096, "loss": 3.1618215871276334e-05, "validation": 1.0, "optical_rmse": null, "seconds": 23.0}

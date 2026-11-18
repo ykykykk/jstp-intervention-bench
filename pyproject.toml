@@ -4,7 +4,7 @@ build-backend = "setuptools.build_meta"
 
 [project]
 name = "jstp-intervention-bench"
-version = "2.0.0"
+version = "3.0.0"
 description = "检验联合状态转移预测：功能性分组、自身运动与符号回输"
 authors = [{name = "岳轲"}]
 requires-python = ">=3.11"
@@ -14,7 +14,8 @@ dependencies = ["numpy>=1.26", "torch>=2.3", "pillow>=10", "einops>=0.8"]
 legacy = ["pygame==2.6.1"]
 
 [tool.setuptools]
-packages = ["jstp","jstp.legacy6","mechanism"]
+packages = ["jstp","jstp.legacy6","mechanism","lategoal"]
 
 [tool.setuptools.package-data]
 mechanism = ["protocol.json", "latent-plan.json", "secondary-plan.md"]
+lategoal = ["protocol.json"]

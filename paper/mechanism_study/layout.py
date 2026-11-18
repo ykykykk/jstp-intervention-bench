@@ -14,7 +14,7 @@ from reportlab.platypus import Frame,Paragraph,Spacer,Table,TableStyle,Image as 
 
 D=Path(__file__).resolve().parent
 INK="#192C31";ACC="#116755";MUT="#536765";W=A4[0]-96
-CHAPTER=["研究问题","理论与比较","实验装置","控制与判据","熟悉与新接线","隐状态移植","符号与回输","解释边界","复现与文献"]
+CHAPTER=["研究问题","理论与比较","实验装置","控制与判据","熟悉与新接线","隐状态移植","符号与回输","首轮解释边界","晚到目标","干预与判据","同经历换目标","机制与成绩","复现与文献"]
 def rich(x):
     x=re.sub(r"\*\*(.+?)\*\*",r"<b>\1</b>",escape(x))
     return re.sub(r"\[([^\]]+)\]\((https?://[^)]+)\)",r'<link href="\2" color="#116755">\1</link>',x)
@@ -69,13 +69,13 @@ def pdf(text,target):
     for n,f in (("Study","Regular"),("StudyBold","Bold")):pdfmetrics.registerFont(TTFont(n,str(D/"fonts"/f"JSTPSerif-{f}.ttf")))
     pdfmetrics.registerFontFamily("Study",normal="Study",bold="StudyBold")
     c=Canvas(str(target),pagesize=A4,pageCompression=1,invariant=1);c.setAuthor("岳轲")
-    c.setTitle("预期能否驱动行动？联合状态转移预测的运动与符号回输实验");c.setSubject("冻结模型、可操作分组和中间状态干预")
+    c.setTitle("预期能否驱动行动？联合状态转移预测的运动、符号回输与晚到目标实验");c.setSubject("冻结模型、晚到目标与对隐式后果的因果干预")
     c.setCreator("JSTP Intervention Bench / Mechanism Study");w,h=A4
     pages=text.split("<!-- page -->");assert len(pages)==len(CHAPTER)
     for i,p in enumerate(pages):
         title=CHAPTER[i];c.bookmarkPage("s"+str(i));c.addOutlineEntry(title,"s"+str(i))
         c.setFont("Helvetica-Bold",8.4);c.setFillColor(colors.HexColor(ACC));c.drawString(48,h-31,"JSTP   /   MECHANISM STUDIES")
-        c.setFillColor(colors.HexColor(MUT));c.setFont("Study",8.3);c.drawRightString(w-48,h-31,"联合状态转移预测　·　研究手稿 02")
+        c.setFillColor(colors.HexColor(MUT));c.setFont("Study",8.3);c.drawRightString(w-48,h-31,"联合状态转移预测　·　晚到目标增订版")
         c.setStrokeColor(colors.HexColor("#A5BEB2"));c.line(48,h-42,w-48,h-42);c.line(48,37,w-48,37)
         c.drawString(48,23,"岳轲　/　"+title);c.setFont("Helvetica",8.2);c.drawRightString(w-48,23,f"{i+1:02}   /   {len(pages):02}")
         height=h-108

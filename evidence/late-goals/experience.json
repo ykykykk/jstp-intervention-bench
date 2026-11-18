@@ -1,0 +1,17 @@
+{
+  "protocol": "3725659331d8161833fcbbaa5507958c9af8fc5223ff359c6cc9d9bcee99410b",
+  "records": {
+    "train": {
+      "layouts": 2048,
+      "executed_sensor_branches": 16384,
+      "distinct_training_cards": 24,
+      "sha256": "cd92e565b6dbfe23cf809a5301bc7600854fc56ade7656bc9290b9e385c21ec1"
+    },
+    "validation": {
+      "layouts": 96,
+      "executed_sensor_branches": 768,
+      "distinct_training_cards": 24,
+      "sha256": "b29398669f10ac1da183700247b65647095b6389e94f1d81f13bfbaf42e7334e"
+    }
+  }
+}

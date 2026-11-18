@@ -1,0 +1,25 @@
+{
+  "protocol": "3725659331d8161833fcbbaa5507958c9af8fc5223ff359c6cc9d9bcee99410b",
+  "files": {
+    "calibrated.json": "f171a1574fe81155647cdae0bb4996df384a3b104cfdce534244dbe563f02ea0",
+    "sealed/goals.npz": "2ad7d087b2acba497f242e27a09e9b3adea6cd6a4025488b53a061fca28733ed",
+    "sealed/joint-6043.npz": "ac07031b0576a79d75c165277b7223c7e717ead862badf1d51c3fcc34789c115",
+    "sealed/joint-6221.npz": "962de58e5385b7ed184cef8fbdbd8f33cd81b382be0726ae0acd3f1d0c0f0346",
+    "sealed/joint-6553.npz": "d2e2f6a3d8bb56cb2056b4d726a59d2ac622dadba371355eb705115d2beeb32d",
+    "sealed/aux-6043.npz": "e21cacd7db3327bd6a291df0a040fbf383c2dcda91b6aa35e79075774a9a730b",
+    "sealed/aux-6221.npz": "11573ecab3267649c55e18e37aa7b49facf75742114dc4f797d3fdcc7a09ac04",
+    "sealed/aux-6553.npz": "04860c28abd4b79a602d1642faba9d3d2e62166028594f59aa32172f7bd81bc1",
+    "sealed/direct-6043.npz": "2918a0cc8d6254ca81c9e2d293af465b64096226dea8001ad4a0f125a2573fed",
+    "sealed/direct-6221.npz": "6d48eb3423a42a676c2e49741ee9d1ffec4c5e14aef2fc0044f0836e5323b4e0",
+    "sealed/direct-6553.npz": "ae52d9c1e34fe42902b5c4cb9ba7f6ade0ed9d24b901557af936d828c3a360fc"
+  },
+  "utc_ns": 1795002301329727300,
+  "modes": [
+    "native",
+    "repeat",
+    "physical",
+    "null",
+    "equivalent",
+    "full"
+  ]
+}

@@ -1,6 +1,6 @@
 # 研究二 · 怎样独立核对一项主张
 
-论文：[预期能否驱动行动？](../paper/mechanism_study/JSTP-运动与符号回输-岳轲.pdf)　作者：岳轲　版本：2.0.0
+论文：[当时的论文与发行附件](https://github.com/ykykykk/jstp-intervention-bench/releases/tag/v2.0.0) · [现行增订稿](../paper/mechanism_study/JSTP-运动与符号回输-岳轲.pdf)　作者：岳轲　本页实验版本：2.0.0
 
 ## 先区分三个时间点
 

@@ -1,11 +1,11 @@
 cff-version: 1.2.0
 message: "引用本工程或论文时，请注明岳轲和使用的 Git 提交；以下标识为研究软件，不代表期刊录用。"
-title: "联合状态转移预测干预实验：功能性分组、自身运动与符号回输"
+title: "联合状态转移预测干预实验：功能性分组、自身运动、符号回输与晚到目标"
 type: software
 authors:
   - family-names: "岳"
     given-names: "轲"
-version: 2.0.0
+version: 3.0.0
 date-released: 2026-11-18
 repository-code: "https://github.com/ykykykk/jstp-intervention-bench"
 keywords:
@@ -15,3 +15,4 @@ keywords:
   - joint state transition prediction
   - causal intervention
   - recurrent representation
+  - delayed goals
