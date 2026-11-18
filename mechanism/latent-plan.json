@@ -1,0 +1,10 @@
+{
+ "status":"follow-up designed after primary results, locked before this follow-up's new evaluation; no weight or main criterion changes",
+ "calibration":[53000000,192],"familiar":[55000000,160],"novel":[57000000,160],"seeds":[1729,2718,31415],
+ "arms":["joint_symbol","aux_symbol","direct_symbol"],"rank":2,"std_floor":0.05,"random_seed":96017,
+ "variable":"concatenate full-observation embedding and shared phase-0 hidden activation. Fit directions by SVD of twin hidden difference cross-covariance with three measured regional motion differences under a fixed left stroke. No desired action, success or correctness labels in fit. Separate directions for independent nuisance board. Active trials only; both goal signs and both wirings balanced.",
+ "patches":["native","relevant rank-2 twin swap","nuisance rank-2 swap scaled to relevant standardized L2","random rank-2 twin swap scaled to same L2","same native copy"],
+ "controls":"Lock proposed own motor and the quantized retinal feedback to their native values in ALL refine calls. Independently re-read the physically predicted outcome of the patched hidden state for that same proposal; no new image enters motor. Equal-norm controls are deliberately synthetic.",
+ "outcomes":"Actual success; directed motor flips on native-correct trials as a proportion of all active trials; ratio of cases whose altered prospective image becomes nearer to physically executed donor than native BOTH when the native image was nearer native and after intervention; conjunction of these events. Compare relevant with BOTH controls with layout-clustered 95% intervals. Report direct-policy motor changes even though its unconstrained retinal output cannot be interpreted.",
+ "interpretation":"Secondary evidence for a physically aligned, functionally used latent representation if both contrasts of conjunction have positive lower bounds in joint_symbol familiar. Cannot by itself distinguish a remembered wiring belief from imagined future, or certify all cognition is prediction."
+}
