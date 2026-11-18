@@ -1,0 +1,17 @@
+{
+  "protocol": "49f94aae63abe765a4287c7e66d593f6b639669f43a38b6020937af402d573ad",
+  "records": {
+    "train": {
+      "layouts": 1536,
+      "episodes": 76635,
+      "corrections": 2907,
+      "file": "bea7a3d84db9cabc0e8591a879e74ce9996673aff78449b40a10b8d4a7ce2d9a"
+    },
+    "validation": {
+      "layouts": 96,
+      "episodes": 4782,
+      "corrections": 174,
+      "file": "6a7651e48ad814a9c1e9bb1c6450a2b659662840e001322ca1c8e5b9b7647f81"
+    }
+  }
+}

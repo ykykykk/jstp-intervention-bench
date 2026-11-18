@@ -1,0 +1,14 @@
+{
+  "arm": "joint_latent",
+  "seed": 1729,
+  "steps": 2600,
+  "trainable": 159443,
+  "weights": "053dd9f1d5ca10d07fc7229087d8f9dc438ac1a89065b4459b651df587440519",
+  "protocol": "49f94aae63abe765a4287c7e66d593f6b639669f43a38b6020937af402d573ad",
+  "data": "32d0d7012ec9abcd53e4fcff88c93b9015e63a7a781811e9df26f9ea3f51beb3",
+  "python": "3.13.5",
+  "torch": "2.15.0+cu132",
+  "numpy": "2.5.5",
+  "device": "NVIDIA GeForce RTX 3090",
+  "seconds": 54.45
+}

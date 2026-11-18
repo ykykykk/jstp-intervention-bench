@@ -1,68 +1,57 @@
-# 同一画面，不同后果
-**联合状态转移预测中功能性分组的形成与迁移边界 · 岳轲**
+# 联合状态转移预测 · 岳轲
 
-两个世界最后看起来完全一样。过去横拉把手时，一个世界的中间载荷跟着走，另一个不跟。现在改成竖拉，要求一件东西移动、另一件留下：模型究竟知道会发生什么，还是只知道选哪个把手？
+**一个模型既能预见载荷会怎么动，也能正确驱动自己的把手。如果只改变前一种预期，它的手会不会跟着变？**
 
-这是论文、可重训的代码、冻结权重与实际执行记录的同一份发布。主实验在独立的三载荷模拟器中进行，无桌面权限、私人截图、遥测、账户或机器人硬件要求。模型只有 RGB、过去的命令、候选动作和公开的目标条件，不接收挂接真值或实例掩码。
+这个仓库保存两项独立研究。第一项问模型能否从经历中分出哪些局部会一起动；第二项把自身运动移入同一网络，专门区分“能预见”和“靠预见行动”。两次研究的训练、成绩、论文和证据分开存放。
 
-**从这里开始：** [完整中文论文（PDF）](paper/JSTP-岳轲.pdf) · [可编辑正文](paper/manuscript.md) · [英文摘要](paper/abstract-en.md) · [同场方法与主流路线的区别](docs/COMPARISON.md) · [复现手册](docs/REPRODUCIBILITY.md)
+**研究二：** [论文 PDF：《预期能否驱动行动？》](paper/mechanism_study/JSTP-运动与符号回输-岳轲.pdf) · [可编辑论文](paper/mechanism_study/manuscript.md) · [协议与逐题复现](docs/MECHANISM-REPRODUCE.md)  
+**理论与前作：** [岳轲的理论原稿](theory/JSTP-详细理论稿.md) · [五项主张及模型审阅](theory/研究一之后的理论审阅.md) · [研究一：《同一画面，不同后果》](README-v1.md)
 
-![两个世界的试探、相同末帧、同一动作的预测和执行](paper/figures/paired-example.png)
+![同一布局换接线：试探、可读感觉预期、另一世界的预期，以及实际执行结果](paper/mechanism_study/figures/twins.png)
 
-上、下两行是同一布局的两种挂接；从左到右是试探峰值、复位、固定拉 A 的事前预测、实际后果。图取预定的第一题，不是最佳案例。下载项目后直接打开 [交互证据页](docs/paired-demo.html) 可切换目标、经历和接线，也可看三个种子的训练曲线；该页不联网，不把归档回放冒充现场推理。
+上、下两行是同一台装置的不同挂接。从左到右：过去试探时的相机、网络对自己预演动作的感觉预期、换挂接后同动作的预期、原世界正式执行后的相机。中间两列是粗网格的运动能量，不是对象掩码。
 
-## 核心结果
+## 研究二得到了什么？
 
-下表是逐像素验证的**实际任务成功率（%）**，不是模拟器替模型评价想象质量。训练只给过单区目标；熟悉连接的布局也是全新的。双区目标按可达性构造，不一定更难。
+| 检验 | 冻结后的结果 | 能说明什么 |
+|---|---:|---|
+| 熟悉接线、从未见过的布局 | 主动搬运 **99.59%**；严格共动判别 **100%** | 没有实例掩码监督也能从试探预测一个局部会不会随把手移动；不是完整对象分割。 |
+| 固定真实世界，只换动作提交前的预期 | 相对于匹配的无关替换，**定向换手差 0.00 个百分点** | “后果预期参与了这次动作”的事前主判据**未通过**。换真实试探经历却能改变运动。 |
+| 换成训练没见过的中间单件接线 | 主动搬运 **48.98%**；严格共动 **54.28%** | 不能把熟悉接线的通关率解释为普遍的结构迁移；同场直接策略的任务成绩是 **56.48%**。 |
+| 新布局上只移植两维物理相关隐状态 | 主模型的物理读数 **100%** 改指供体；**0%** 定向换手 | 可读后果和动作在被测方向上分离。带后果辅助训练、没有感觉回输入口的对照有 **20.12%** 两者同步改变，三个种子的结果差别很大。这是另行锁定的后续试验。 |
+| 训练最多四步，冻结后处理八步电路 | 显式三谓词、整体码和自学三位均 **100%**；清空回输均 **50%** | 在这套有限任务里，预置的符号通道非必要；自学三位在每个种子里都等价于物理三位的重排或反相。没有测试自然语言论证或主观意识。 |
 
-| 同场方法 | 熟悉连接·单区 | 熟悉连接·新双区 | 新连接·单区 | 新连接·新双区 |
-|---|---:|---:|---:|---:|
-| JSTP：平移搬运＋成对后果 | 86.7 | **88.7** | 50.1 | **45.8** |
-| 同一搬运网络，仅分别重建各分支 | 50.5 | 49.7 | 52.2 | 50.8 |
-| 普通残差 RGB，成对目标 | 49.5 | 49.0 | 50.3 | 50.1 |
-| 普通残差 RGB，仅分别重建 | 49.4 | 49.2 | 49.8 | 50.1 |
-| 完整历史直接策略 | 100.0 | **89.1** | 50.4 | **68.3** |
-| DINO-WM 任务适配 | 50.2 | 50.1 | 49.9 | 49.9 |
-| 显式一位规则 | 84.4 | 96.1 | 63.3 | 81.2 |
-| 显式三位规则 | 100 | 100 | 100 | 100 |
+[每项估计和布局区间](evidence/mechanism/analysis/metrics.csv) · [各初始化的原始表现](evidence/mechanism/analysis/per_seed.csv) · [后续隐状态移植](evidence/mechanism/latent_followup/metrics.csv) · [自学码逐状态计数](evidence/mechanism/codebook.json)
 
-每个连接条件 128 个布局，各学习方法 3 个初始化。熟悉连接配新目标，JSTP 比同结构单分支目标高 **38.9 个百分点**（按布局配对 95% 区间 36.8 至 41.0），与直接策略差 −0.4 点；连接和目标都换新，JSTP 比直接策略低 22.5 点。一位规则双新精确值为 81.25%。[逐布局汇总和区间](evidence/paper/analysis/metrics.csv) · [配对方法差](evidence/paper/analysis/paired_differences.csv) · [每个种子的成功数](evidence/paper/analysis/per_seed.csv)。
+## 看、核对、重训
 
-任务做对不等于分割正确。对于同把手、同区域，要求两种挂接下的“跟动/不动”均判断正确，JSTP 的比例为 **51.7% → 16.0%**（熟悉 → 新连接）；对应绝对位移误差 **1.53 → 3.02 像素**，真位移为 0 或 6 像素。这是有关可操作共动的局部证据，不是完整对象分割、稳定身份或人类水平。也没有在本实验上直接部署 OpenVLA、π0.7 或 DreamZero。
+以下命令都在仓库根目录执行。模拟器只驱动自己的虚拟机构；不读取屏幕，不控制桌面鼠标，不用任何私人训练数据。
 
-## 三条运行路线
-
-以下命令在**项目根目录**执行。完整训练路径实测于 Windows、CPython 3.13.5、RTX 3090、PyTorch 2.15.0+cu132。
-
-**① 核对文件，无需安装第三方软件包：**
+**只核对发布包**（Python 3.11+ 标准库）：
 
     python scripts/verify_release.py
 
-**② 在 CPU 上，从真实执行记录重算全部表格：**
+**在 CPU 上重算论文主结果**（不需 PyTorch、显卡或联网下载模型）：
 
     python -m pip install numpy==2.5.5
-    python -m jstp.analysis --release evidence/paper --out work/recount
-    python -m unittest discover -s tests
+    python -m mechanism.analyze --release evidence/mechanism --out work/recount-m2
 
-**③ 从零生成数据、训练六种方法 × 三个种子、再封存和执行（Windows PowerShell，须已安装 Python、Git 及支持 cu132 的 NVIDIA 驱动）：**
+**打开独立窗口，或者从零重训**（实测 Windows、Python 3.13.5、RTX 3090；以下为 PowerShell）：
 
     py -3.13 -m venv .venv
     .\.venv\Scripts\python.exe -m pip install -r requirements-windows-cu132.txt
-    .\.venv\Scripts\python.exe scripts/reproduce.py
-    .\.venv\Scripts\python.exe scripts/compare_runs.py evidence/paper work/reproduction-results
+    .\.venv\Scripts\python.exe -m mechanism.window
 
-首次重训会向官方源获取 DINOv2 和 DINO-WM，不需 API 密钥。程序拒绝覆盖已封存的结果。独立目录从种子二次全量重训，**122,880 个选择及其成败逐项一致**，预测位移读数最大差 0；这是同机同栈复现，不是 122,880 个独立场景，也不保证跨平台逐位相同。[独立复现差异记录](evidence/paper/independent-reproduction.json)。
+窗口执行冻结网络，可以切换目标、挂接和主动／被动牵引。要做一份新的完整研究二，在同一目录另开终端：
 
-## 仓库地图
+    .\.venv\Scripts\python.exe scripts/reproduce_mechanism.py --out work/fresh-m2
+    .\.venv\Scripts\python.exe scripts/compare_mechanism.py evidence/mechanism work/fresh-m2/release
 
-| 路径 | 用途 |
-|---|---|
-| [configs/paper.json](configs/paper.json) | 数据划分、种子、先验、训练及盲测协议 |
-| [jstp/arena.py](jstp/arena.py)、[jstp/v7_model.py](jstp/v7_model.py) | 三件模拟器与共同未来 RGB 预测器 |
-| [jstp/learn.py](jstp/learn.py)、[jstp/foundation.py](jstp/foundation.py)、[jstp/rules.py](jstp/rules.py) | 直接策略、两因素消融、公开模型适配、可见规则 |
-| [jstp/exam.py](jstp/exam.py)、[jstp/analysis.py](jstp/analysis.py) | 先封存再执行；任务、物理配对和区间计算 |
-| [evidence/paper](evidence/paper) | 18 份训练检查点、学习曲线、承诺、实际结果与盲测统计 |
-| [evidence/legacy6](evidence/legacy6)、[evidence/legacy7](evidence/legacy7) | 前期 V6/V7 原记录及冻结推理重放；不混入主试验 |
-| [paper](paper)、[scripts](scripts) | 论文、排版与证据页构建、训练和复现入口 |
+复现程序从种子生成训练记录，不用随包权重作初始化；拒绝覆盖旧结果。已经在同一台机器、独立 GitHub 克隆和新环境中完成了第二次全量训练：**1,670,400 个离散提交逐项一致**；这不是同等数量的独立场景，也不是第三方复现。[逐文件、逐数组的比较结果](evidence/mechanism/independent-reproduction.json)
 
-软件与实验数据的许可见 [LICENSE](LICENSE)；字体、第三方模型及论文版权的边界见 [THIRD_PARTY.md](THIRD_PARTY.md)。引用信息见 [CITATION.cff](CITATION.cff)，公开发布步骤见 [GitHub 发布说明](docs/PUBLISHING.md)。
+## 材料导航
+
+- [主协议](mechanism/protocol.json)、[考试前追加的相机对照](mechanism/secondary-plan.md)、[主结果之后另锁定的隐状态实验](mechanism/latent-plan.json)：保留试验先后顺序，不让后续发现替代事前判据。
+- [单一共享网络](mechanism/net.py)、[数据和装置](mechanism/data.py)、[冻结、封卷、执行](mechanism/exam.py)、[统计](mechanism/analyze.py)、[独立窗口](mechanism/window.py)。
+- [研究二全部证据](evidence/mechanism)：15 份冻结权重、训练曲线、预测封存、相机实测、两项补充干预及重训报告。[研究一对照说明](docs/COMPARISON.md)中的 DINO-WM 适配、直接策略等采用前作自己的任务，不跨实验排技能榜。
+- [引用](CITATION.cff) · [作者与依赖的权利边界](THIRD_PARTY.md) · [私有发布说明](docs/PUBLISHING.md)。论文为研究手稿，无 DOI，未宣称已经投稿或录用。

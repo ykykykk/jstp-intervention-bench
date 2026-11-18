@@ -1,5 +1,6 @@
 """从锁定的 OFL 字体生成论文排版子集；正常重建论文无需下载或运行本脚本。"""
 import hashlib
+import argparse
 from pathlib import Path
 import shutil
 import urllib.request
@@ -11,8 +12,9 @@ ROOT = Path(__file__).resolve().parents[1]
 BASE = "https://raw.githubusercontent.com/google/fonts/8b0a1d0f5983c89bc2b93f1b5fb55f9e252744b5/ofl/notoserifsc/"
 DIGEST = "050080d9255a86808f2945bffac582b31ef32bc36411ce29563b4961670c66f9"
 
-def prepare():
-    cache, out = ROOT/"work/fonts", ROOT/"paper/fonts"
+def prepare(paper=None):
+    paper=Path(paper) if paper is not None else ROOT/"paper"
+    cache, out = ROOT/"work/fonts", paper/"fonts"
     cache.mkdir(parents=True, exist_ok=True)
     out.mkdir(parents=True, exist_ok=True)
     source = cache/"NotoSerifSC.ttf"
@@ -23,7 +25,8 @@ def prepare():
         raise ValueError("字体来源校验失败")
     texts = "".join(chr(i) for i in range(32,127))+"　℃±−–—→×π²·≤≥Δ％（）"
     for name in ("source.md","references.json","build.py"):
-        texts += (ROOT/"paper"/name).read_text(encoding="utf8")
+        texts += (paper/name).read_text(encoding="utf8")
+    if (paper/"layout.py").exists():texts+=(paper/"layout.py").read_text(encoding="utf8")
     chars = set(map(ord,texts))
     for style,weight in (("Regular",450),("Bold",700)):
         font = TTFont(source)
@@ -45,4 +48,4 @@ def prepare():
     shutil.copyfile(cache/"OFL.txt",out/"OFL.txt")
 
 if __name__ == "__main__":
-    prepare()
+    ap=argparse.ArgumentParser();ap.add_argument("--paper-dir",type=Path);prepare(ap.parse_args().paper_dir)

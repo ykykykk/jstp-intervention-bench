@@ -1,0 +1,10 @@
+{"step": 260, "loss": 5.102456753987532, "validation_recorded_drive": 0.5516666769981384, "seconds": 5.333}
+{"step": 520, "loss": 2.693570557924417, "validation_recorded_drive": 0.84333336353302, "seconds": 10.178}
+{"step": 780, "loss": 1.460115496470378, "validation_recorded_drive": 0.9350000023841858, "seconds": 15.464}
+{"step": 1040, "loss": 0.8142727340643222, "validation_recorded_drive": 0.9550000429153442, "seconds": 20.401}
+{"step": 1300, "loss": 0.6477665338378686, "validation_recorded_drive": 0.9500000476837158, "seconds": 25.352}
+{"step": 1560, "loss": 0.5541481120082048, "validation_recorded_drive": 0.9566667079925537, "seconds": 30.159}
+{"step": 1820, "loss": 0.4901243364581695, "validation_recorded_drive": 0.9666666984558105, "seconds": 35.186}
+{"step": 2080, "loss": 0.45488455983308645, "validation_recorded_drive": 0.9633333683013916, "seconds": 40.804}
+{"step": 2340, "loss": 0.43417042860618005, "validation_recorded_drive": 0.9700000286102295, "seconds": 45.806}
+{"step": 2600, "loss": 0.40501929842508755, "validation_recorded_drive": 0.9700000286102295, "seconds": 50.664}

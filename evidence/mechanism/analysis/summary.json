@@ -1,0 +1,3573 @@
+{
+  "protocol": "49f94aae63abe765a4287c7e66d593f6b639669f43a38b6020937af402d573ad",
+  "gates": {
+    "motor_gates": {
+      "specific_at_least_point_10": false,
+      "lower_positive": false,
+      "positive_seeds": false,
+      "task_lower_over_point_60": true,
+      "strict_over_half": true
+    },
+    "motor_primary": false,
+    "nonlexical_passing_seeds": [
+      1729,
+      2718,
+      31415
+    ],
+    "explicit_symbol_port_not_necessary": true
+  },
+  "metrics": [
+    {
+      "split": "test_familiar",
+      "arm": "joint_symbol",
+      "metric": "task",
+      "value": 0.9959201388888888,
+      "lo": 0.99453125,
+      "hi": 0.9973090277777776
+    },
+    {
+      "split": "test_familiar",
+      "arm": "joint_symbol",
+      "metric": "relevant_direction",
+      "value": 0.0,
+      "lo": 0.0,
+      "hi": 0.0
+    },
+    {
+      "split": "test_familiar",
+      "arm": "joint_symbol",
+      "metric": "irrelevant_direction",
+      "value": 0.0,
+      "lo": 0.0,
+      "hi": 0.0
+    },
+    {
+      "split": "test_familiar",
+      "arm": "joint_symbol",
+      "metric": "specific",
+      "value": 0.0,
+      "lo": 0.0,
+      "hi": 0.0
+    },
+    {
+      "split": "test_familiar",
+      "arm": "joint_symbol",
+      "metric": "switched_relevant",
+      "value": 0.0026041666666666665,
+      "lo": 0.0015624999999999999,
+      "hi": 0.0037326388888888895
+    },
+    {
+      "split": "test_familiar",
+      "arm": "joint_symbol",
+      "metric": "switched_irrelevant",
+      "value": 0.004774305555555555,
+      "lo": 0.003038194444444445,
+      "hi": 0.006770833333333334
+    },
+    {
+      "split": "test_familiar",
+      "arm": "joint_symbol",
+      "metric": "repeat_changed",
+      "value": 0.0,
+      "lo": 0.0,
+      "hi": 0.0
+    },
+    {
+      "split": "test_familiar",
+      "arm": "joint_symbol",
+      "metric": "real_history_swapped",
+      "value": 0.00026041666666666666,
+      "lo": 0.0,
+      "hi": 0.0006076388888888888
+    },
+    {
+      "split": "test_familiar",
+      "arm": "joint_symbol",
+      "metric": "flat_history",
+      "value": 0.4520833333333334,
+      "lo": 0.44704861111111116,
+      "hi": 0.4567708333333334
+    },
+    {
+      "split": "test_familiar",
+      "arm": "joint_symbol",
+      "metric": "passive_task",
+      "value": 1.0,
+      "lo": 1.0,
+      "hi": 1.0
+    },
+    {
+      "split": "test_familiar",
+      "arm": "joint_symbol",
+      "metric": "passive_rest",
+      "value": 1.0,
+      "lo": 1.0,
+      "hi": 1.0
+    },
+    {
+      "split": "test_familiar",
+      "arm": "joint_symbol",
+      "metric": "home_match",
+      "value": 1.0,
+      "lo": 1.0,
+      "hi": 1.0
+    },
+    {
+      "split": "test_familiar",
+      "arm": "joint_symbol",
+      "metric": "provisional_task",
+      "value": 0.5,
+      "lo": 0.5,
+      "hi": 0.5
+    },
+    {
+      "split": "test_familiar",
+      "arm": "joint_symbol",
+      "metric": "goal_pair",
+      "value": 0.9918402777777778,
+      "lo": 0.9890625,
+      "hi": 0.9946180555555554
+    },
+    {
+      "split": "test_familiar",
+      "arm": "joint_symbol",
+      "metric": "goal_switch",
+      "value": 0.9994791666666666,
+      "lo": 0.9987847222222221,
+      "hi": 1.0
+    },
+    {
+      "split": "test_familiar",
+      "arm": "joint_symbol",
+      "metric": "strict",
+      "value": 1.0,
+      "lo": 1.0,
+      "hi": 1.0
+    },
+    {
+      "split": "test_familiar",
+      "arm": "joint_symbol",
+      "metric": "terminal_mae",
+      "value": 0.01240184725875224,
+      "lo": 0.012122082709843955,
+      "hi": 0.012680900623095874
+    },
+    {
+      "split": "test_familiar",
+      "arm": "joint_symbol",
+      "metric": "body_mae",
+      "value": 0.03533802611960305,
+      "lo": 0.03429914897514714,
+      "hi": 0.036380166398982214
+    },
+    {
+      "split": "test_familiar",
+      "arm": "joint_symbol",
+      "metric": "clamp_goal_raw_mae",
+      "value": 0.0028098106003300117,
+      "lo": 0.0027630929299380116,
+      "hi": 0.0028578695326518756
+    },
+    {
+      "split": "test_familiar",
+      "arm": "joint_symbol",
+      "metric": "relevant_amplitude",
+      "value": 0.09315790600246854,
+      "lo": 0.09207873317930433,
+      "hi": 0.09427139520645142
+    },
+    {
+      "split": "test_familiar",
+      "arm": "joint_symbol",
+      "metric": "irrelevant_amplitude",
+      "value": 0.09269348780314127,
+      "lo": 0.09160322162840101,
+      "hi": 0.09381753656599257
+    },
+    {
+      "split": "test_familiar",
+      "arm": "joint_symbol",
+      "metric": "active_passive_pair",
+      "value": 0.9959201388888888,
+      "lo": 0.99453125,
+      "hi": 0.9973090277777776
+    },
+    {
+      "split": "test_familiar",
+      "arm": "aux_symbol",
+      "metric": "task",
+      "value": 0.9893229166666666,
+      "lo": 0.9861979166666668,
+      "hi": 0.9921874999999998
+    },
+    {
+      "split": "test_familiar",
+      "arm": "aux_symbol",
+      "metric": "relevant_direction",
+      "value": 0.0,
+      "lo": 0.0,
+      "hi": 0.0
+    },
+    {
+      "split": "test_familiar",
+      "arm": "aux_symbol",
+      "metric": "irrelevant_direction",
+      "value": 0.0,
+      "lo": 0.0,
+      "hi": 0.0
+    },
+    {
+      "split": "test_familiar",
+      "arm": "aux_symbol",
+      "metric": "specific",
+      "value": 0.0,
+      "lo": 0.0,
+      "hi": 0.0
+    },
+    {
+      "split": "test_familiar",
+      "arm": "aux_symbol",
+      "metric": "switched_relevant",
+      "value": 0.0,
+      "lo": 0.0,
+      "hi": 0.0
+    },
+    {
+      "split": "test_familiar",
+      "arm": "aux_symbol",
+      "metric": "switched_irrelevant",
+      "value": 0.0,
+      "lo": 0.0,
+      "hi": 0.0
+    },
+    {
+      "split": "test_familiar",
+      "arm": "aux_symbol",
+      "metric": "repeat_changed",
+      "value": 0.0,
+      "lo": 0.0,
+      "hi": 0.0
+    },
+    {
+      "split": "test_familiar",
+      "arm": "aux_symbol",
+      "metric": "real_history_swapped",
+      "value": 8.680555555555555e-05,
+      "lo": 0.0,
+      "hi": 0.00026041666666666666
+    },
+    {
+      "split": "test_familiar",
+      "arm": "aux_symbol",
+      "metric": "flat_history",
+      "value": 0.4029513888888888,
+      "lo": 0.3953125,
+      "hi": 0.4107638888888888
+    },
+    {
+      "split": "test_familiar",
+      "arm": "aux_symbol",
+      "metric": "passive_task",
+      "value": 0.9987847222222224,
+      "lo": 0.9973090277777779,
+      "hi": 0.9997395833333333
+    },
+    {
+      "split": "test_familiar",
+      "arm": "aux_symbol",
+      "metric": "passive_rest",
+      "value": 0.9987847222222224,
+      "lo": 0.9973090277777779,
+      "hi": 0.9997395833333333
+    },
+    {
+      "split": "test_familiar",
+      "arm": "aux_symbol",
+      "metric": "home_match",
+      "value": 1.0,
+      "lo": 1.0,
+      "hi": 1.0
+    },
+    {
+      "split": "test_familiar",
+      "arm": "aux_symbol",
+      "metric": "provisional_task",
+      "value": 0.5,
+      "lo": 0.5,
+      "hi": 0.5
+    },
+    {
+      "split": "test_familiar",
+      "arm": "aux_symbol",
+      "metric": "goal_pair",
+      "value": 0.9786458333333334,
+      "lo": 0.9723958333333333,
+      "hi": 0.984375
+    },
+    {
+      "split": "test_familiar",
+      "arm": "aux_symbol",
+      "metric": "goal_switch",
+      "value": 0.999826388888889,
+      "lo": 0.9994791666666666,
+      "hi": 1.0
+    },
+    {
+      "split": "test_familiar",
+      "arm": "aux_symbol",
+      "metric": "strict",
+      "value": 1.0,
+      "lo": 1.0,
+      "hi": 1.0
+    },
+    {
+      "split": "test_familiar",
+      "arm": "aux_symbol",
+      "metric": "terminal_mae",
+      "value": 0.01279605647968209,
+      "lo": 0.012510823894684915,
+      "hi": 0.01308080537293487
+    },
+    {
+      "split": "test_familiar",
+      "arm": "aux_symbol",
+      "metric": "body_mae",
+      "value": 0.03814973839455181,
+      "lo": 0.03698813087617357,
+      "hi": 0.03937478415668011
+    },
+    {
+      "split": "test_familiar",
+      "arm": "aux_symbol",
+      "metric": "clamp_goal_raw_mae",
+      "value": 0.003412119761479618,
+      "lo": 0.003351556648453122,
+      "hi": 0.003473529970798507
+    },
+    {
+      "split": "test_familiar",
+      "arm": "aux_symbol",
+      "metric": "relevant_amplitude",
+      "value": 0.09181942409939237,
+      "lo": 0.09071135838826498,
+      "hi": 0.0929645053545634
+    },
+    {
+      "split": "test_familiar",
+      "arm": "aux_symbol",
+      "metric": "irrelevant_amplitude",
+      "value": 0.0916127363840739,
+      "lo": 0.09053917355007596,
+      "hi": 0.09272171325153775
+    },
+    {
+      "split": "test_familiar",
+      "arm": "aux_symbol",
+      "metric": "active_passive_pair",
+      "value": 0.98828125,
+      "lo": 0.9847222222222222,
+      "hi": 0.99140625
+    },
+    {
+      "split": "test_familiar",
+      "arm": "direct_symbol",
+      "metric": "task",
+      "value": 0.9875868055555553,
+      "lo": 0.9855034722222221,
+      "hi": 0.9896701388888889
+    },
+    {
+      "split": "test_familiar",
+      "arm": "direct_symbol",
+      "metric": "relevant_direction",
+      "value": 0.0,
+      "lo": 0.0,
+      "hi": 0.0
+    },
+    {
+      "split": "test_familiar",
+      "arm": "direct_symbol",
+      "metric": "irrelevant_direction",
+      "value": 0.0,
+      "lo": 0.0,
+      "hi": 0.0
+    },
+    {
+      "split": "test_familiar",
+      "arm": "direct_symbol",
+      "metric": "specific",
+      "value": 0.0,
+      "lo": 0.0,
+      "hi": 0.0
+    },
+    {
+      "split": "test_familiar",
+      "arm": "direct_symbol",
+      "metric": "switched_relevant",
+      "value": 0.0,
+      "lo": 0.0,
+      "hi": 0.0
+    },
+    {
+      "split": "test_familiar",
+      "arm": "direct_symbol",
+      "metric": "switched_irrelevant",
+      "value": 0.0,
+      "lo": 0.0,
+      "hi": 0.0
+    },
+    {
+      "split": "test_familiar",
+      "arm": "direct_symbol",
+      "metric": "repeat_changed",
+      "value": 0.0,
+      "lo": 0.0,
+      "hi": 0.0
+    },
+    {
+      "split": "test_familiar",
+      "arm": "direct_symbol",
+      "metric": "real_history_swapped",
+      "value": 0.004079861111111111,
+      "lo": 0.0027777777777777775,
+      "hi": 0.005381944444444444
+    },
+    {
+      "split": "test_familiar",
+      "arm": "direct_symbol",
+      "metric": "flat_history",
+      "value": 0.4071180555555555,
+      "lo": 0.4015625,
+      "hi": 0.4126779513888889
+    },
+    {
+      "split": "test_familiar",
+      "arm": "direct_symbol",
+      "metric": "passive_task",
+      "value": 1.0,
+      "lo": 1.0,
+      "hi": 1.0
+    },
+    {
+      "split": "test_familiar",
+      "arm": "direct_symbol",
+      "metric": "passive_rest",
+      "value": 1.0,
+      "lo": 1.0,
+      "hi": 1.0
+    },
+    {
+      "split": "test_familiar",
+      "arm": "direct_symbol",
+      "metric": "home_match",
+      "value": 1.0,
+      "lo": 1.0,
+      "hi": 1.0
+    },
+    {
+      "split": "test_familiar",
+      "arm": "direct_symbol",
+      "metric": "provisional_task",
+      "value": 0.5,
+      "lo": 0.5,
+      "hi": 0.5
+    },
+    {
+      "split": "test_familiar",
+      "arm": "direct_symbol",
+      "metric": "goal_pair",
+      "value": 0.9758680555555557,
+      "lo": 0.9717013888888889,
+      "hi": 0.9798611111111111
+    },
+    {
+      "split": "test_familiar",
+      "arm": "direct_symbol",
+      "metric": "goal_switch",
+      "value": 0.992361111111111,
+      "lo": 0.9897569444444445,
+      "hi": 0.9947916666666667
+    },
+    {
+      "split": "test_familiar",
+      "arm": "joint_holistic",
+      "metric": "task",
+      "value": 0.9954861111111111,
+      "lo": 0.9940104166666668,
+      "hi": 0.996875
+    },
+    {
+      "split": "test_familiar",
+      "arm": "joint_holistic",
+      "metric": "relevant_direction",
+      "value": 0.0,
+      "lo": 0.0,
+      "hi": 0.0
+    },
+    {
+      "split": "test_familiar",
+      "arm": "joint_holistic",
+      "metric": "irrelevant_direction",
+      "value": 0.0,
+      "lo": 0.0,
+      "hi": 0.0
+    },
+    {
+      "split": "test_familiar",
+      "arm": "joint_holistic",
+      "metric": "specific",
+      "value": 0.0,
+      "lo": 0.0,
+      "hi": 0.0
+    },
+    {
+      "split": "test_familiar",
+      "arm": "joint_holistic",
+      "metric": "switched_relevant",
+      "value": 0.004774305555555555,
+      "lo": 0.0032986111111111107,
+      "hi": 0.006423611111111111
+    },
+    {
+      "split": "test_familiar",
+      "arm": "joint_holistic",
+      "metric": "switched_irrelevant",
+      "value": 0.006857638888888888,
+      "lo": 0.004774305555555555,
+      "hi": 0.009201388888888887
+    },
+    {
+      "split": "test_familiar",
+      "arm": "joint_holistic",
+      "metric": "repeat_changed",
+      "value": 0.0,
+      "lo": 0.0,
+      "hi": 0.0
+    },
+    {
+      "split": "test_familiar",
+      "arm": "joint_holistic",
+      "metric": "real_history_swapped",
+      "value": 8.680555555555555e-05,
+      "lo": 0.0,
+      "hi": 0.00026041666666666666
+    },
+    {
+      "split": "test_familiar",
+      "arm": "joint_holistic",
+      "metric": "flat_history",
+      "value": 0.4180555555555555,
+      "lo": 0.4138888888888889,
+      "hi": 0.42204861111111114
+    },
+    {
+      "split": "test_familiar",
+      "arm": "joint_holistic",
+      "metric": "passive_task",
+      "value": 1.0,
+      "lo": 1.0,
+      "hi": 1.0
+    },
+    {
+      "split": "test_familiar",
+      "arm": "joint_holistic",
+      "metric": "passive_rest",
+      "value": 1.0,
+      "lo": 1.0,
+      "hi": 1.0
+    },
+    {
+      "split": "test_familiar",
+      "arm": "joint_holistic",
+      "metric": "home_match",
+      "value": 1.0,
+      "lo": 1.0,
+      "hi": 1.0
+    },
+    {
+      "split": "test_familiar",
+      "arm": "joint_holistic",
+      "metric": "provisional_task",
+      "value": 0.5,
+      "lo": 0.5,
+      "hi": 0.5
+    },
+    {
+      "split": "test_familiar",
+      "arm": "joint_holistic",
+      "metric": "goal_pair",
+      "value": 0.9909722222222224,
+      "lo": 0.9880208333333333,
+      "hi": 0.99375
+    },
+    {
+      "split": "test_familiar",
+      "arm": "joint_holistic",
+      "metric": "goal_switch",
+      "value": 0.999826388888889,
+      "lo": 0.9994791666666666,
+      "hi": 1.0
+    },
+    {
+      "split": "test_familiar",
+      "arm": "joint_holistic",
+      "metric": "strict",
+      "value": 1.0,
+      "lo": 1.0,
+      "hi": 1.0
+    },
+    {
+      "split": "test_familiar",
+      "arm": "joint_holistic",
+      "metric": "terminal_mae",
+      "value": 0.012812580569233331,
+      "lo": 0.012520001773048331,
+      "hi": 0.013114604330304853
+    },
+    {
+      "split": "test_familiar",
+      "arm": "joint_holistic",
+      "metric": "body_mae",
+      "value": 0.043731302354070876,
+      "lo": 0.042343351981706086,
+      "hi": 0.04512318487796519
+    },
+    {
+      "split": "test_familiar",
+      "arm": "joint_holistic",
+      "metric": "clamp_goal_raw_mae",
+      "value": 0.0032317045582607937,
+      "lo": 0.003179560968335914,
+      "hi": 0.003285229855864094
+    },
+    {
+      "split": "test_familiar",
+      "arm": "joint_holistic",
+      "metric": "relevant_amplitude",
+      "value": 0.09153325822618272,
+      "lo": 0.09046194924248588,
+      "hi": 0.09262099239561293
+    },
+    {
+      "split": "test_familiar",
+      "arm": "joint_holistic",
+      "metric": "irrelevant_amplitude",
+      "value": 0.09188013076782227,
+      "lo": 0.09078126668930055,
+      "hi": 0.09300812085469563
+    },
+    {
+      "split": "test_familiar",
+      "arm": "joint_holistic",
+      "metric": "active_passive_pair",
+      "value": 0.9954861111111111,
+      "lo": 0.9940104166666668,
+      "hi": 0.996875
+    },
+    {
+      "split": "test_familiar",
+      "arm": "joint_latent",
+      "metric": "task",
+      "value": 0.9916666666666666,
+      "lo": 0.9896701388888889,
+      "hi": 0.9935763888888889
+    },
+    {
+      "split": "test_familiar",
+      "arm": "joint_latent",
+      "metric": "relevant_direction",
+      "value": 0.0,
+      "lo": 0.0,
+      "hi": 0.0
+    },
+    {
+      "split": "test_familiar",
+      "arm": "joint_latent",
+      "metric": "irrelevant_direction",
+      "value": 0.0,
+      "lo": 0.0,
+      "hi": 0.0
+    },
+    {
+      "split": "test_familiar",
+      "arm": "joint_latent",
+      "metric": "specific",
+      "value": 0.0,
+      "lo": 0.0,
+      "hi": 0.0
+    },
+    {
+      "split": "test_familiar",
+      "arm": "joint_latent",
+      "metric": "switched_relevant",
+      "value": 0.008072916666666667,
+      "lo": 0.00625,
+      "hi": 0.010069444444444445
+    },
+    {
+      "split": "test_familiar",
+      "arm": "joint_latent",
+      "metric": "switched_irrelevant",
+      "value": 0.00842013888888889,
+      "lo": 0.006423611111111111,
+      "hi": 0.010590277777777778
+    },
+    {
+      "split": "test_familiar",
+      "arm": "joint_latent",
+      "metric": "repeat_changed",
+      "value": 0.0,
+      "lo": 0.0,
+      "hi": 0.0
+    },
+    {
+      "split": "test_familiar",
+      "arm": "joint_latent",
+      "metric": "real_history_swapped",
+      "value": 0.0003472222222222222,
+      "lo": 8.680555555555555e-05,
+      "hi": 0.0006944444444444444
+    },
+    {
+      "split": "test_familiar",
+      "arm": "joint_latent",
+      "metric": "flat_history",
+      "value": 0.43767361111111114,
+      "lo": 0.4321180555555556,
+      "hi": 0.44288194444444445
+    },
+    {
+      "split": "test_familiar",
+      "arm": "joint_latent",
+      "metric": "passive_task",
+      "value": 1.0,
+      "lo": 1.0,
+      "hi": 1.0
+    },
+    {
+      "split": "test_familiar",
+      "arm": "joint_latent",
+      "metric": "passive_rest",
+      "value": 1.0,
+      "lo": 1.0,
+      "hi": 1.0
+    },
+    {
+      "split": "test_familiar",
+      "arm": "joint_latent",
+      "metric": "home_match",
+      "value": 1.0,
+      "lo": 1.0,
+      "hi": 1.0
+    },
+    {
+      "split": "test_familiar",
+      "arm": "joint_latent",
+      "metric": "provisional_task",
+      "value": 0.5,
+      "lo": 0.5,
+      "hi": 0.5
+    },
+    {
+      "split": "test_familiar",
+      "arm": "joint_latent",
+      "metric": "goal_pair",
+      "value": 0.9833333333333334,
+      "lo": 0.9793402777777779,
+      "hi": 0.9871527777777779
+    },
+    {
+      "split": "test_familiar",
+      "arm": "joint_latent",
+      "metric": "goal_switch",
+      "value": 0.9993055555555556,
+      "lo": 0.9986111111111111,
+      "hi": 0.999826388888889
+    },
+    {
+      "split": "test_familiar",
+      "arm": "joint_latent",
+      "metric": "strict",
+      "value": 1.0,
+      "lo": 1.0,
+      "hi": 1.0
+    },
+    {
+      "split": "test_familiar",
+      "arm": "joint_latent",
+      "metric": "terminal_mae",
+      "value": 0.012560100326037275,
+      "lo": 0.012273589469000399,
+      "hi": 0.012850759814334398
+    },
+    {
+      "split": "test_familiar",
+      "arm": "joint_latent",
+      "metric": "body_mae",
+      "value": 0.04479668935139973,
+      "lo": 0.04322551756269402,
+      "hi": 0.046447879850036566
+    },
+    {
+      "split": "test_familiar",
+      "arm": "joint_latent",
+      "metric": "clamp_goal_raw_mae",
+      "value": 0.0028805681523408565,
+      "lo": 0.0028340165480828243,
+      "hi": 0.0029279176324313186
+    },
+    {
+      "split": "test_familiar",
+      "arm": "joint_latent",
+      "metric": "relevant_amplitude",
+      "value": 0.09132261276245117,
+      "lo": 0.09020009411705865,
+      "hi": 0.09245846801333957
+    },
+    {
+      "split": "test_familiar",
+      "arm": "joint_latent",
+      "metric": "irrelevant_amplitude",
+      "value": 0.09192175335354275,
+      "lo": 0.09080704821480645,
+      "hi": 0.0930492764049106
+    },
+    {
+      "split": "test_familiar",
+      "arm": "joint_latent",
+      "metric": "active_passive_pair",
+      "value": 0.9916666666666666,
+      "lo": 0.9896701388888889,
+      "hi": 0.9935763888888889
+    },
+    {
+      "split": "test_familiar",
+      "arm": "joint_symbol - aux_symbol",
+      "metric": "task",
+      "value": 0.006597222222222213,
+      "lo": 0.004079861111111102,
+      "hi": 0.009288194444444436
+    },
+    {
+      "split": "test_familiar",
+      "arm": "joint_symbol - aux_symbol",
+      "metric": "specific",
+      "value": 0.0,
+      "lo": 0.0,
+      "hi": 0.0
+    },
+    {
+      "split": "test_familiar",
+      "arm": "joint_symbol - direct_symbol",
+      "metric": "task",
+      "value": 0.008333333333333333,
+      "lo": 0.00590277777777778,
+      "hi": 0.010679253472222193
+    },
+    {
+      "split": "test_familiar",
+      "arm": "joint_symbol - direct_symbol",
+      "metric": "specific",
+      "value": 0.0,
+      "lo": 0.0,
+      "hi": 0.0
+    },
+    {
+      "split": "test_novel",
+      "arm": "joint_symbol",
+      "metric": "task",
+      "value": 0.48984375,
+      "lo": 0.4842881944444445,
+      "hi": 0.4953125
+    },
+    {
+      "split": "test_novel",
+      "arm": "joint_symbol",
+      "metric": "relevant_direction",
+      "value": 0.0,
+      "lo": 0.0,
+      "hi": 0.0
+    },
+    {
+      "split": "test_novel",
+      "arm": "joint_symbol",
+      "metric": "irrelevant_direction",
+      "value": 0.0,
+      "lo": 0.0,
+      "hi": 0.0
+    },
+    {
+      "split": "test_novel",
+      "arm": "joint_symbol",
+      "metric": "specific",
+      "value": 0.0,
+      "lo": 0.0,
+      "hi": 0.0
+    },
+    {
+      "split": "test_novel",
+      "arm": "joint_symbol",
+      "metric": "switched_relevant",
+      "value": 0.05,
+      "lo": 0.0453125,
+      "hi": 0.054774305555555555
+    },
+    {
+      "split": "test_novel",
+      "arm": "joint_symbol",
+      "metric": "switched_irrelevant",
+      "value": 0.06666666666666667,
+      "lo": 0.061803385416666655,
+      "hi": 0.07152777777777777
+    },
+    {
+      "split": "test_novel",
+      "arm": "joint_symbol",
+      "metric": "repeat_changed",
+      "value": 0.0,
+      "lo": 0.0,
+      "hi": 0.0
+    },
+    {
+      "split": "test_novel",
+      "arm": "joint_symbol",
+      "metric": "real_history_swapped",
+      "value": 0.3681423611111111,
+      "lo": 0.3631944444444445,
+      "hi": 0.3731770833333333
+    },
+    {
+      "split": "test_novel",
+      "arm": "joint_symbol",
+      "metric": "flat_history",
+      "value": 0.45121527777777787,
+      "lo": 0.4461805555555555,
+      "hi": 0.45625
+    },
+    {
+      "split": "test_novel",
+      "arm": "joint_symbol",
+      "metric": "passive_task",
+      "value": 0.9657986111111111,
+      "lo": 0.9619791666666668,
+      "hi": 0.9694444444444443
+    },
+    {
+      "split": "test_novel",
+      "arm": "joint_symbol",
+      "metric": "passive_rest",
+      "value": 0.9657986111111111,
+      "lo": 0.9619791666666668,
+      "hi": 0.9694444444444443
+    },
+    {
+      "split": "test_novel",
+      "arm": "joint_symbol",
+      "metric": "home_match",
+      "value": 0.9957465277777778,
+      "lo": 0.9944444444444442,
+      "hi": 0.9969618055555554
+    },
+    {
+      "split": "test_novel",
+      "arm": "joint_symbol",
+      "metric": "provisional_task",
+      "value": 0.5000868055555555,
+      "lo": 0.5,
+      "hi": 0.5002604166666667
+    },
+    {
+      "split": "test_novel",
+      "arm": "joint_symbol",
+      "metric": "goal_pair",
+      "value": 0.2796874999999999,
+      "lo": 0.27777777777777773,
+      "hi": 0.2819444444444444
+    },
+    {
+      "split": "test_novel",
+      "arm": "joint_symbol",
+      "metric": "goal_switch",
+      "value": 0.6184027777777777,
+      "lo": 0.6048611111111111,
+      "hi": 0.6324652777777777
+    },
+    {
+      "split": "test_novel",
+      "arm": "joint_symbol",
+      "metric": "strict",
+      "value": 0.5427662037037038,
+      "lo": 0.5346346932870369,
+      "hi": 0.5510995370370371
+    },
+    {
+      "split": "test_novel",
+      "arm": "joint_symbol",
+      "metric": "terminal_mae",
+      "value": 0.03426126550073908,
+      "lo": 0.03363331433303555,
+      "hi": 0.03487506805330049
+    },
+    {
+      "split": "test_novel",
+      "arm": "joint_symbol",
+      "metric": "body_mae",
+      "value": 0.0636799073881573,
+      "lo": 0.06200897983585795,
+      "hi": 0.06537490324013762
+    },
+    {
+      "split": "test_novel",
+      "arm": "joint_symbol",
+      "metric": "clamp_goal_raw_mae",
+      "value": 0.003684791261245361,
+      "lo": 0.0036261011413598176,
+      "hi": 0.0037434004056563536
+    },
+    {
+      "split": "test_novel",
+      "arm": "joint_symbol",
+      "metric": "relevant_amplitude",
+      "value": 0.058365807930628455,
+      "lo": 0.05739490494132042,
+      "hi": 0.059321919514073264
+    },
+    {
+      "split": "test_novel",
+      "arm": "joint_symbol",
+      "metric": "irrelevant_amplitude",
+      "value": 0.06249736415015326,
+      "lo": 0.06156580297483338,
+      "hi": 0.06344028795758884
+    },
+    {
+      "split": "test_novel",
+      "arm": "joint_symbol",
+      "metric": "active_passive_pair",
+      "value": 0.4846354166666667,
+      "lo": 0.47855902777777776,
+      "hi": 0.49054036458333333
+    },
+    {
+      "split": "test_novel",
+      "arm": "aux_symbol",
+      "metric": "task",
+      "value": 0.4630208333333334,
+      "lo": 0.45815972222222223,
+      "hi": 0.4677083333333334
+    },
+    {
+      "split": "test_novel",
+      "arm": "aux_symbol",
+      "metric": "relevant_direction",
+      "value": 0.0,
+      "lo": 0.0,
+      "hi": 0.0
+    },
+    {
+      "split": "test_novel",
+      "arm": "aux_symbol",
+      "metric": "irrelevant_direction",
+      "value": 0.0,
+      "lo": 0.0,
+      "hi": 0.0
+    },
+    {
+      "split": "test_novel",
+      "arm": "aux_symbol",
+      "metric": "specific",
+      "value": 0.0,
+      "lo": 0.0,
+      "hi": 0.0
+    },
+    {
+      "split": "test_novel",
+      "arm": "aux_symbol",
+      "metric": "switched_relevant",
+      "value": 0.0,
+      "lo": 0.0,
+      "hi": 0.0
+    },
+    {
+      "split": "test_novel",
+      "arm": "aux_symbol",
+      "metric": "switched_irrelevant",
+      "value": 0.0,
+      "lo": 0.0,
+      "hi": 0.0
+    },
+    {
+      "split": "test_novel",
+      "arm": "aux_symbol",
+      "metric": "repeat_changed",
+      "value": 0.0,
+      "lo": 0.0,
+      "hi": 0.0
+    },
+    {
+      "split": "test_novel",
+      "arm": "aux_symbol",
+      "metric": "real_history_swapped",
+      "value": 0.30711805555555555,
+      "lo": 0.30243055555555554,
+      "hi": 0.31180555555555556
+    },
+    {
+      "split": "test_novel",
+      "arm": "aux_symbol",
+      "metric": "flat_history",
+      "value": 0.40451388888888895,
+      "lo": 0.39618055555555554,
+      "hi": 0.4130208333333334
+    },
+    {
+      "split": "test_novel",
+      "arm": "aux_symbol",
+      "metric": "passive_task",
+      "value": 0.97421875,
+      "lo": 0.9710069444444445,
+      "hi": 0.9775173611111111
+    },
+    {
+      "split": "test_novel",
+      "arm": "aux_symbol",
+      "metric": "passive_rest",
+      "value": 0.97421875,
+      "lo": 0.9710069444444445,
+      "hi": 0.9775173611111111
+    },
+    {
+      "split": "test_novel",
+      "arm": "aux_symbol",
+      "metric": "home_match",
+      "value": 0.9996527777777778,
+      "lo": 0.9990451388888889,
+      "hi": 1.0
+    },
+    {
+      "split": "test_novel",
+      "arm": "aux_symbol",
+      "metric": "provisional_task",
+      "value": 0.4998263888888889,
+      "lo": 0.49956597222222215,
+      "hi": 0.5
+    },
+    {
+      "split": "test_novel",
+      "arm": "aux_symbol",
+      "metric": "goal_pair",
+      "value": 0.3008680555555555,
+      "lo": 0.2958333333333333,
+      "hi": 0.30607638888888883
+    },
+    {
+      "split": "test_novel",
+      "arm": "aux_symbol",
+      "metric": "goal_switch",
+      "value": 0.7147569444444445,
+      "lo": 0.7043402777777777,
+      "hi": 0.7253472222222223
+    },
+    {
+      "split": "test_novel",
+      "arm": "aux_symbol",
+      "metric": "strict",
+      "value": 0.4874421296296296,
+      "lo": 0.47795138888888883,
+      "hi": 0.49699074074074073
+    },
+    {
+      "split": "test_novel",
+      "arm": "aux_symbol",
+      "metric": "terminal_mae",
+      "value": 0.0320642725766801,
+      "lo": 0.031473580142650365,
+      "hi": 0.03266842313515402
+    },
+    {
+      "split": "test_novel",
+      "arm": "aux_symbol",
+      "metric": "body_mae",
+      "value": 0.05951419103269775,
+      "lo": 0.05770811446890648,
+      "hi": 0.061327039784648346
+    },
+    {
+      "split": "test_novel",
+      "arm": "aux_symbol",
+      "metric": "clamp_goal_raw_mae",
+      "value": 0.004212434452337118,
+      "lo": 0.004146603211455613,
+      "hi": 0.004276482916359201
+    },
+    {
+      "split": "test_novel",
+      "arm": "aux_symbol",
+      "metric": "relevant_amplitude",
+      "value": 0.05276663899421692,
+      "lo": 0.051751484076182054,
+      "hi": 0.05379264341460333
+    },
+    {
+      "split": "test_novel",
+      "arm": "aux_symbol",
+      "metric": "irrelevant_amplitude",
+      "value": 0.058079002963172054,
+      "lo": 0.057020823988649584,
+      "hi": 0.05911060664388869
+    },
+    {
+      "split": "test_novel",
+      "arm": "aux_symbol",
+      "metric": "active_passive_pair",
+      "value": 0.46232638888888894,
+      "lo": 0.4573784722222222,
+      "hi": 0.46710069444444446
+    },
+    {
+      "split": "test_novel",
+      "arm": "direct_symbol",
+      "metric": "task",
+      "value": 0.56484375,
+      "lo": 0.5606749131944443,
+      "hi": 0.5688368055555555
+    },
+    {
+      "split": "test_novel",
+      "arm": "direct_symbol",
+      "metric": "relevant_direction",
+      "value": 0.0,
+      "lo": 0.0,
+      "hi": 0.0
+    },
+    {
+      "split": "test_novel",
+      "arm": "direct_symbol",
+      "metric": "irrelevant_direction",
+      "value": 0.0,
+      "lo": 0.0,
+      "hi": 0.0
+    },
+    {
+      "split": "test_novel",
+      "arm": "direct_symbol",
+      "metric": "specific",
+      "value": 0.0,
+      "lo": 0.0,
+      "hi": 0.0
+    },
+    {
+      "split": "test_novel",
+      "arm": "direct_symbol",
+      "metric": "switched_relevant",
+      "value": 0.0,
+      "lo": 0.0,
+      "hi": 0.0
+    },
+    {
+      "split": "test_novel",
+      "arm": "direct_symbol",
+      "metric": "switched_irrelevant",
+      "value": 0.0,
+      "lo": 0.0,
+      "hi": 0.0
+    },
+    {
+      "split": "test_novel",
+      "arm": "direct_symbol",
+      "metric": "repeat_changed",
+      "value": 0.0,
+      "lo": 0.0,
+      "hi": 0.0
+    },
+    {
+      "split": "test_novel",
+      "arm": "direct_symbol",
+      "metric": "real_history_swapped",
+      "value": 0.30182291666666666,
+      "lo": 0.2965277777777778,
+      "hi": 0.30711805555555555
+    },
+    {
+      "split": "test_novel",
+      "arm": "direct_symbol",
+      "metric": "flat_history",
+      "value": 0.41128472222222223,
+      "lo": 0.40625,
+      "hi": 0.41597222222222224
+    },
+    {
+      "split": "test_novel",
+      "arm": "direct_symbol",
+      "metric": "passive_task",
+      "value": 1.0,
+      "lo": 1.0,
+      "hi": 1.0
+    },
+    {
+      "split": "test_novel",
+      "arm": "direct_symbol",
+      "metric": "passive_rest",
+      "value": 1.0,
+      "lo": 1.0,
+      "hi": 1.0
+    },
+    {
+      "split": "test_novel",
+      "arm": "direct_symbol",
+      "metric": "home_match",
+      "value": 1.0,
+      "lo": 1.0,
+      "hi": 1.0
+    },
+    {
+      "split": "test_novel",
+      "arm": "direct_symbol",
+      "metric": "provisional_task",
+      "value": 0.5,
+      "lo": 0.5,
+      "hi": 0.5
+    },
+    {
+      "split": "test_novel",
+      "arm": "direct_symbol",
+      "metric": "goal_pair",
+      "value": 0.45850694444444445,
+      "lo": 0.45190972222222214,
+      "hi": 0.4647569444444445
+    },
+    {
+      "split": "test_novel",
+      "arm": "direct_symbol",
+      "metric": "goal_switch",
+      "value": 0.8487847222222221,
+      "lo": 0.8394097222222221,
+      "hi": 0.8579861111111111
+    },
+    {
+      "split": "test_novel",
+      "arm": "joint_holistic",
+      "metric": "task",
+      "value": 0.5228298611111111,
+      "lo": 0.5182291666666666,
+      "hi": 0.5274305555555555
+    },
+    {
+      "split": "test_novel",
+      "arm": "joint_holistic",
+      "metric": "relevant_direction",
+      "value": 0.00026041666666666666,
+      "lo": 0.0,
+      "hi": 0.0006076388888888888
+    },
+    {
+      "split": "test_novel",
+      "arm": "joint_holistic",
+      "metric": "irrelevant_direction",
+      "value": 0.0,
+      "lo": 0.0,
+      "hi": 0.0
+    },
+    {
+      "split": "test_novel",
+      "arm": "joint_holistic",
+      "metric": "specific",
+      "value": 0.00026041666666666666,
+      "lo": 0.0,
+      "hi": 0.0006076388888888888
+    },
+    {
+      "split": "test_novel",
+      "arm": "joint_holistic",
+      "metric": "switched_relevant",
+      "value": 0.06675347222222222,
+      "lo": 0.06145833333333332,
+      "hi": 0.07204861111111112
+    },
+    {
+      "split": "test_novel",
+      "arm": "joint_holistic",
+      "metric": "switched_irrelevant",
+      "value": 0.06258680555555556,
+      "lo": 0.058333333333333334,
+      "hi": 0.06727430555555555
+    },
+    {
+      "split": "test_novel",
+      "arm": "joint_holistic",
+      "metric": "repeat_changed",
+      "value": 0.0,
+      "lo": 0.0,
+      "hi": 0.0
+    },
+    {
+      "split": "test_novel",
+      "arm": "joint_holistic",
+      "metric": "real_history_swapped",
+      "value": 0.34965277777777776,
+      "lo": 0.3441840277777778,
+      "hi": 0.3548611111111112
+    },
+    {
+      "split": "test_novel",
+      "arm": "joint_holistic",
+      "metric": "flat_history",
+      "value": 0.41909722222222234,
+      "lo": 0.4138888888888889,
+      "hi": 0.42413194444444446
+    },
+    {
+      "split": "test_novel",
+      "arm": "joint_holistic",
+      "metric": "passive_task",
+      "value": 0.986111111111111,
+      "lo": 0.9837673611111111,
+      "hi": 0.9883680555555555
+    },
+    {
+      "split": "test_novel",
+      "arm": "joint_holistic",
+      "metric": "passive_rest",
+      "value": 0.986111111111111,
+      "lo": 0.9837673611111111,
+      "hi": 0.9883680555555555
+    },
+    {
+      "split": "test_novel",
+      "arm": "joint_holistic",
+      "metric": "home_match",
+      "value": 0.9975694444444445,
+      "lo": 0.9965277777777777,
+      "hi": 0.9985243055555555
+    },
+    {
+      "split": "test_novel",
+      "arm": "joint_holistic",
+      "metric": "provisional_task",
+      "value": 0.4999131944444445,
+      "lo": 0.4995659722222222,
+      "hi": 0.500173611111111
+    },
+    {
+      "split": "test_novel",
+      "arm": "joint_holistic",
+      "metric": "goal_pair",
+      "value": 0.2822916666666666,
+      "lo": 0.2782986111111111,
+      "hi": 0.2862847222222222
+    },
+    {
+      "split": "test_novel",
+      "arm": "joint_holistic",
+      "metric": "goal_switch",
+      "value": 0.5315972222222223,
+      "lo": 0.5204861111111111,
+      "hi": 0.5428862847222222
+    },
+    {
+      "split": "test_novel",
+      "arm": "joint_holistic",
+      "metric": "strict",
+      "value": 0.5001446759259259,
+      "lo": 0.48807870370370365,
+      "hi": 0.5122692418981482
+    },
+    {
+      "split": "test_novel",
+      "arm": "joint_holistic",
+      "metric": "terminal_mae",
+      "value": 0.035039330832023555,
+      "lo": 0.03441237339810059,
+      "hi": 0.03568585394162356
+    },
+    {
+      "split": "test_novel",
+      "arm": "joint_holistic",
+      "metric": "body_mae",
+      "value": 0.07209726844707297,
+      "lo": 0.07026218006232132,
+      "hi": 0.07391262815786628
+    },
+    {
+      "split": "test_novel",
+      "arm": "joint_holistic",
+      "metric": "clamp_goal_raw_mae",
+      "value": 0.004115643527767235,
+      "lo": 0.004054588013857988,
+      "hi": 0.004176894250945856
+    },
+    {
+      "split": "test_novel",
+      "arm": "joint_holistic",
+      "metric": "relevant_amplitude",
+      "value": 0.0539194815688663,
+      "lo": 0.0528136911491553,
+      "hi": 0.055012234184477066
+    },
+    {
+      "split": "test_novel",
+      "arm": "joint_holistic",
+      "metric": "irrelevant_amplitude",
+      "value": 0.061370829078886246,
+      "lo": 0.06020848974585533,
+      "hi": 0.06254330997665723
+    },
+    {
+      "split": "test_novel",
+      "arm": "joint_holistic",
+      "metric": "active_passive_pair",
+      "value": 0.5223958333333334,
+      "lo": 0.517795138888889,
+      "hi": 0.5269965277777777
+    },
+    {
+      "split": "test_novel",
+      "arm": "joint_latent",
+      "metric": "task",
+      "value": 0.5026909722222223,
+      "lo": 0.49835069444444446,
+      "hi": 0.5069444444444444
+    },
+    {
+      "split": "test_novel",
+      "arm": "joint_latent",
+      "metric": "relevant_direction",
+      "value": 0.0,
+      "lo": 0.0,
+      "hi": 0.0
+    },
+    {
+      "split": "test_novel",
+      "arm": "joint_latent",
+      "metric": "irrelevant_direction",
+      "value": 0.0,
+      "lo": 0.0,
+      "hi": 0.0
+    },
+    {
+      "split": "test_novel",
+      "arm": "joint_latent",
+      "metric": "specific",
+      "value": 0.0,
+      "lo": 0.0,
+      "hi": 0.0
+    },
+    {
+      "split": "test_novel",
+      "arm": "joint_latent",
+      "metric": "switched_relevant",
+      "value": 0.046875,
+      "lo": 0.042708333333333334,
+      "hi": 0.05121744791666663
+    },
+    {
+      "split": "test_novel",
+      "arm": "joint_latent",
+      "metric": "switched_irrelevant",
+      "value": 0.0724826388888889,
+      "lo": 0.06727430555555555,
+      "hi": 0.07786458333333332
+    },
+    {
+      "split": "test_novel",
+      "arm": "joint_latent",
+      "metric": "repeat_changed",
+      "value": 0.0,
+      "lo": 0.0,
+      "hi": 0.0
+    },
+    {
+      "split": "test_novel",
+      "arm": "joint_latent",
+      "metric": "real_history_swapped",
+      "value": 0.38125,
+      "lo": 0.3765625,
+      "hi": 0.3858506944444444
+    },
+    {
+      "split": "test_novel",
+      "arm": "joint_latent",
+      "metric": "flat_history",
+      "value": 0.4447916666666668,
+      "lo": 0.43923611111111116,
+      "hi": 0.45052083333333337
+    },
+    {
+      "split": "test_novel",
+      "arm": "joint_latent",
+      "metric": "passive_task",
+      "value": 0.980642361111111,
+      "lo": 0.9779513888888888,
+      "hi": 0.9832486979166667
+    },
+    {
+      "split": "test_novel",
+      "arm": "joint_latent",
+      "metric": "passive_rest",
+      "value": 0.980642361111111,
+      "lo": 0.9779513888888888,
+      "hi": 0.9832486979166667
+    },
+    {
+      "split": "test_novel",
+      "arm": "joint_latent",
+      "metric": "home_match",
+      "value": 0.9881944444444443,
+      "lo": 0.9863715277777777,
+      "hi": 0.990017361111111
+    },
+    {
+      "split": "test_novel",
+      "arm": "joint_latent",
+      "metric": "provisional_task",
+      "value": 0.4991319444444445,
+      "lo": 0.4979166666666666,
+      "hi": 0.5003472222222223
+    },
+    {
+      "split": "test_novel",
+      "arm": "joint_latent",
+      "metric": "goal_pair",
+      "value": 0.27465277777777775,
+      "lo": 0.27256944444444436,
+      "hi": 0.27673611111111107
+    },
+    {
+      "split": "test_novel",
+      "arm": "joint_latent",
+      "metric": "goal_switch",
+      "value": 0.5769097222222223,
+      "lo": 0.5661458333333333,
+      "hi": 0.587673611111111
+    },
+    {
+      "split": "test_novel",
+      "arm": "joint_latent",
+      "metric": "strict",
+      "value": 0.4810474537037037,
+      "lo": 0.4710062210648148,
+      "hi": 0.4913483796296296
+    },
+    {
+      "split": "test_novel",
+      "arm": "joint_latent",
+      "metric": "terminal_mae",
+      "value": 0.03542470238200824,
+      "lo": 0.03483266418836543,
+      "hi": 0.03602702239927491
+    },
+    {
+      "split": "test_novel",
+      "arm": "joint_latent",
+      "metric": "body_mae",
+      "value": 0.07147996921299232,
+      "lo": 0.06977822603929477,
+      "hi": 0.07318896892997954
+    },
+    {
+      "split": "test_novel",
+      "arm": "joint_latent",
+      "metric": "clamp_goal_raw_mae",
+      "value": 0.0034624925152052636,
+      "lo": 0.0034072927210157407,
+      "hi": 0.003520902293323742
+    },
+    {
+      "split": "test_novel",
+      "arm": "joint_latent",
+      "metric": "relevant_amplitude",
+      "value": 0.052318482928805886,
+      "lo": 0.05133355321155654,
+      "hi": 0.053309517254432046
+    },
+    {
+      "split": "test_novel",
+      "arm": "joint_latent",
+      "metric": "irrelevant_amplitude",
+      "value": 0.05829444726308186,
+      "lo": 0.05712016304334005,
+      "hi": 0.05945669756995306
+    },
+    {
+      "split": "test_novel",
+      "arm": "joint_latent",
+      "metric": "active_passive_pair",
+      "value": 0.49835069444444446,
+      "lo": 0.49409722222222224,
+      "hi": 0.5026041666666666
+    },
+    {
+      "split": "test_novel",
+      "arm": "joint_symbol - aux_symbol",
+      "metric": "task",
+      "value": 0.02682291666666665,
+      "lo": 0.021093749999999994,
+      "hi": 0.03281249999999998
+    },
+    {
+      "split": "test_novel",
+      "arm": "joint_symbol - aux_symbol",
+      "metric": "specific",
+      "value": 0.0,
+      "lo": 0.0,
+      "hi": 0.0
+    },
+    {
+      "split": "test_novel",
+      "arm": "joint_symbol - direct_symbol",
+      "metric": "task",
+      "value": -0.075,
+      "lo": -0.08133680555555557,
+      "hi": -0.06805555555555556
+    },
+    {
+      "split": "test_novel",
+      "arm": "joint_symbol - direct_symbol",
+      "metric": "specific",
+      "value": 0.0,
+      "lo": 0.0,
+      "hi": 0.0
+    },
+    {
+      "split": "depth1",
+      "arm": "joint_symbol",
+      "metric": "accuracy",
+      "value": 1.0,
+      "lo": 1.0,
+      "hi": 1.0
+    },
+    {
+      "split": "depth1",
+      "arm": "joint_symbol",
+      "metric": "both",
+      "value": 1.0,
+      "lo": 1.0,
+      "hi": 1.0
+    },
+    {
+      "split": "depth1",
+      "arm": "joint_symbol",
+      "metric": "cleared",
+      "value": 1.0,
+      "lo": 1.0,
+      "hi": 1.0
+    },
+    {
+      "split": "depth1",
+      "arm": "joint_symbol",
+      "metric": "repeat_changed",
+      "value": 0.0,
+      "lo": 0.0,
+      "hi": 0.0
+    },
+    {
+      "split": "depth1",
+      "arm": "joint_symbol",
+      "metric": "shuffled",
+      "value": 1.0,
+      "lo": 1.0,
+      "hi": 1.0
+    },
+    {
+      "split": "depth1",
+      "arm": "joint_symbol",
+      "metric": "invalid",
+      "value": 0.0,
+      "lo": 0.0,
+      "hi": 0.0
+    },
+    {
+      "split": "depth1",
+      "arm": "joint_symbol",
+      "metric": "report_correct",
+      "value": 1.0,
+      "lo": 1.0,
+      "hi": 1.0
+    },
+    {
+      "split": "depth1",
+      "arm": "aux_symbol",
+      "metric": "accuracy",
+      "value": 1.0,
+      "lo": 1.0,
+      "hi": 1.0
+    },
+    {
+      "split": "depth1",
+      "arm": "aux_symbol",
+      "metric": "both",
+      "value": 1.0,
+      "lo": 1.0,
+      "hi": 1.0
+    },
+    {
+      "split": "depth1",
+      "arm": "aux_symbol",
+      "metric": "cleared",
+      "value": 1.0,
+      "lo": 1.0,
+      "hi": 1.0
+    },
+    {
+      "split": "depth1",
+      "arm": "aux_symbol",
+      "metric": "repeat_changed",
+      "value": 0.0,
+      "lo": 0.0,
+      "hi": 0.0
+    },
+    {
+      "split": "depth1",
+      "arm": "aux_symbol",
+      "metric": "shuffled",
+      "value": 1.0,
+      "lo": 1.0,
+      "hi": 1.0
+    },
+    {
+      "split": "depth1",
+      "arm": "aux_symbol",
+      "metric": "invalid",
+      "value": 0.0,
+      "lo": 0.0,
+      "hi": 0.0
+    },
+    {
+      "split": "depth1",
+      "arm": "aux_symbol",
+      "metric": "report_correct",
+      "value": 1.0,
+      "lo": 1.0,
+      "hi": 1.0
+    },
+    {
+      "split": "depth1",
+      "arm": "direct_symbol",
+      "metric": "accuracy",
+      "value": 1.0,
+      "lo": 1.0,
+      "hi": 1.0
+    },
+    {
+      "split": "depth1",
+      "arm": "direct_symbol",
+      "metric": "both",
+      "value": 1.0,
+      "lo": 1.0,
+      "hi": 1.0
+    },
+    {
+      "split": "depth1",
+      "arm": "direct_symbol",
+      "metric": "cleared",
+      "value": 1.0,
+      "lo": 1.0,
+      "hi": 1.0
+    },
+    {
+      "split": "depth1",
+      "arm": "direct_symbol",
+      "metric": "repeat_changed",
+      "value": 0.0,
+      "lo": 0.0,
+      "hi": 0.0
+    },
+    {
+      "split": "depth1",
+      "arm": "direct_symbol",
+      "metric": "shuffled",
+      "value": 1.0,
+      "lo": 1.0,
+      "hi": 1.0
+    },
+    {
+      "split": "depth1",
+      "arm": "direct_symbol",
+      "metric": "invalid",
+      "value": 0.0,
+      "lo": 0.0,
+      "hi": 0.0
+    },
+    {
+      "split": "depth1",
+      "arm": "direct_symbol",
+      "metric": "report_correct",
+      "value": 1.0,
+      "lo": 1.0,
+      "hi": 1.0
+    },
+    {
+      "split": "depth1",
+      "arm": "joint_holistic",
+      "metric": "accuracy",
+      "value": 0.9995659722222222,
+      "lo": 0.9986979166666666,
+      "hi": 1.0
+    },
+    {
+      "split": "depth1",
+      "arm": "joint_holistic",
+      "metric": "both",
+      "value": 0.9991319444444445,
+      "lo": 0.9973958333333334,
+      "hi": 1.0
+    },
+    {
+      "split": "depth1",
+      "arm": "joint_holistic",
+      "metric": "cleared",
+      "value": 0.9995659722222222,
+      "lo": 0.9986979166666666,
+      "hi": 1.0
+    },
+    {
+      "split": "depth1",
+      "arm": "joint_holistic",
+      "metric": "repeat_changed",
+      "value": 0.0,
+      "lo": 0.0,
+      "hi": 0.0
+    },
+    {
+      "split": "depth1",
+      "arm": "joint_holistic",
+      "metric": "shuffled",
+      "value": 0.9995659722222222,
+      "lo": 0.9986979166666666,
+      "hi": 1.0
+    },
+    {
+      "split": "depth1",
+      "arm": "joint_holistic",
+      "metric": "invalid",
+      "value": 0.0,
+      "lo": 0.0,
+      "hi": 0.0
+    },
+    {
+      "split": "depth1",
+      "arm": "joint_holistic",
+      "metric": "report_correct",
+      "value": 1.0,
+      "lo": 1.0,
+      "hi": 1.0
+    },
+    {
+      "split": "depth1",
+      "arm": "joint_latent",
+      "metric": "accuracy",
+      "value": 1.0,
+      "lo": 1.0,
+      "hi": 1.0
+    },
+    {
+      "split": "depth1",
+      "arm": "joint_latent",
+      "metric": "both",
+      "value": 1.0,
+      "lo": 1.0,
+      "hi": 1.0
+    },
+    {
+      "split": "depth1",
+      "arm": "joint_latent",
+      "metric": "cleared",
+      "value": 1.0,
+      "lo": 1.0,
+      "hi": 1.0
+    },
+    {
+      "split": "depth1",
+      "arm": "joint_latent",
+      "metric": "repeat_changed",
+      "value": 0.0,
+      "lo": 0.0,
+      "hi": 0.0
+    },
+    {
+      "split": "depth1",
+      "arm": "joint_latent",
+      "metric": "shuffled",
+      "value": 1.0,
+      "lo": 1.0,
+      "hi": 1.0
+    },
+    {
+      "split": "depth1",
+      "arm": "joint_latent",
+      "metric": "invalid",
+      "value": 0.0,
+      "lo": 0.0,
+      "hi": 0.0
+    },
+    {
+      "split": "depth1",
+      "arm": "joint_symbol - joint_holistic",
+      "metric": "accuracy",
+      "value": 0.0004340277777777777,
+      "lo": 0.0,
+      "hi": 0.001302083333333333
+    },
+    {
+      "split": "depth1",
+      "arm": "joint_symbol - joint_holistic",
+      "metric": "both",
+      "value": 0.0008680555555555556,
+      "lo": 0.0,
+      "hi": 0.0026041666666666665
+    },
+    {
+      "split": "depth1",
+      "arm": "joint_symbol - joint_latent",
+      "metric": "accuracy",
+      "value": 0.0,
+      "lo": 0.0,
+      "hi": 0.0
+    },
+    {
+      "split": "depth1",
+      "arm": "joint_symbol - joint_latent",
+      "metric": "both",
+      "value": 0.0,
+      "lo": 0.0,
+      "hi": 0.0
+    },
+    {
+      "split": "depth2",
+      "arm": "joint_symbol",
+      "metric": "accuracy",
+      "value": 1.0,
+      "lo": 1.0,
+      "hi": 1.0
+    },
+    {
+      "split": "depth2",
+      "arm": "joint_symbol",
+      "metric": "both",
+      "value": 1.0,
+      "lo": 1.0,
+      "hi": 1.0
+    },
+    {
+      "split": "depth2",
+      "arm": "joint_symbol",
+      "metric": "cleared",
+      "value": 0.5,
+      "lo": 0.5,
+      "hi": 0.5
+    },
+    {
+      "split": "depth2",
+      "arm": "joint_symbol",
+      "metric": "repeat_changed",
+      "value": 0.0,
+      "lo": 0.0,
+      "hi": 0.0
+    },
+    {
+      "split": "depth2",
+      "arm": "joint_symbol",
+      "metric": "shuffled",
+      "value": 0.51171875,
+      "lo": 0.4895833333333333,
+      "hi": 0.5338541666666666
+    },
+    {
+      "split": "depth2",
+      "arm": "joint_symbol",
+      "metric": "invalid",
+      "value": 0.0,
+      "lo": 0.0,
+      "hi": 0.0
+    },
+    {
+      "split": "depth2",
+      "arm": "joint_symbol",
+      "metric": "donor_target",
+      "value": 1.0,
+      "lo": 1.0,
+      "hi": 1.0
+    },
+    {
+      "split": "depth2",
+      "arm": "joint_symbol",
+      "metric": "directional",
+      "value": 1.0,
+      "lo": 1.0,
+      "hi": 1.0
+    },
+    {
+      "split": "depth2",
+      "arm": "joint_symbol",
+      "metric": "report_correct",
+      "value": 1.0,
+      "lo": 1.0,
+      "hi": 1.0
+    },
+    {
+      "split": "depth2",
+      "arm": "aux_symbol",
+      "metric": "accuracy",
+      "value": 1.0,
+      "lo": 1.0,
+      "hi": 1.0
+    },
+    {
+      "split": "depth2",
+      "arm": "aux_symbol",
+      "metric": "both",
+      "value": 1.0,
+      "lo": 1.0,
+      "hi": 1.0
+    },
+    {
+      "split": "depth2",
+      "arm": "aux_symbol",
+      "metric": "cleared",
+      "value": 0.5,
+      "lo": 0.5,
+      "hi": 0.5
+    },
+    {
+      "split": "depth2",
+      "arm": "aux_symbol",
+      "metric": "repeat_changed",
+      "value": 0.0,
+      "lo": 0.0,
+      "hi": 0.0
+    },
+    {
+      "split": "depth2",
+      "arm": "aux_symbol",
+      "metric": "shuffled",
+      "value": 0.51171875,
+      "lo": 0.4895833333333333,
+      "hi": 0.5338541666666666
+    },
+    {
+      "split": "depth2",
+      "arm": "aux_symbol",
+      "metric": "invalid",
+      "value": 0.0,
+      "lo": 0.0,
+      "hi": 0.0
+    },
+    {
+      "split": "depth2",
+      "arm": "aux_symbol",
+      "metric": "donor_target",
+      "value": 1.0,
+      "lo": 1.0,
+      "hi": 1.0
+    },
+    {
+      "split": "depth2",
+      "arm": "aux_symbol",
+      "metric": "directional",
+      "value": 1.0,
+      "lo": 1.0,
+      "hi": 1.0
+    },
+    {
+      "split": "depth2",
+      "arm": "aux_symbol",
+      "metric": "report_correct",
+      "value": 1.0,
+      "lo": 1.0,
+      "hi": 1.0
+    },
+    {
+      "split": "depth2",
+      "arm": "direct_symbol",
+      "metric": "accuracy",
+      "value": 1.0,
+      "lo": 1.0,
+      "hi": 1.0
+    },
+    {
+      "split": "depth2",
+      "arm": "direct_symbol",
+      "metric": "both",
+      "value": 1.0,
+      "lo": 1.0,
+      "hi": 1.0
+    },
+    {
+      "split": "depth2",
+      "arm": "direct_symbol",
+      "metric": "cleared",
+      "value": 0.5,
+      "lo": 0.5,
+      "hi": 0.5
+    },
+    {
+      "split": "depth2",
+      "arm": "direct_symbol",
+      "metric": "repeat_changed",
+      "value": 0.0,
+      "lo": 0.0,
+      "hi": 0.0
+    },
+    {
+      "split": "depth2",
+      "arm": "direct_symbol",
+      "metric": "shuffled",
+      "value": 0.51171875,
+      "lo": 0.4895833333333333,
+      "hi": 0.5338541666666666
+    },
+    {
+      "split": "depth2",
+      "arm": "direct_symbol",
+      "metric": "invalid",
+      "value": 0.0,
+      "lo": 0.0,
+      "hi": 0.0
+    },
+    {
+      "split": "depth2",
+      "arm": "direct_symbol",
+      "metric": "donor_target",
+      "value": 1.0,
+      "lo": 1.0,
+      "hi": 1.0
+    },
+    {
+      "split": "depth2",
+      "arm": "direct_symbol",
+      "metric": "directional",
+      "value": 1.0,
+      "lo": 1.0,
+      "hi": 1.0
+    },
+    {
+      "split": "depth2",
+      "arm": "direct_symbol",
+      "metric": "report_correct",
+      "value": 1.0,
+      "lo": 1.0,
+      "hi": 1.0
+    },
+    {
+      "split": "depth2",
+      "arm": "joint_holistic",
+      "metric": "accuracy",
+      "value": 1.0,
+      "lo": 1.0,
+      "hi": 1.0
+    },
+    {
+      "split": "depth2",
+      "arm": "joint_holistic",
+      "metric": "both",
+      "value": 1.0,
+      "lo": 1.0,
+      "hi": 1.0
+    },
+    {
+      "split": "depth2",
+      "arm": "joint_holistic",
+      "metric": "cleared",
+      "value": 0.5,
+      "lo": 0.5,
+      "hi": 0.5
+    },
+    {
+      "split": "depth2",
+      "arm": "joint_holistic",
+      "metric": "repeat_changed",
+      "value": 0.0,
+      "lo": 0.0,
+      "hi": 0.0
+    },
+    {
+      "split": "depth2",
+      "arm": "joint_holistic",
+      "metric": "shuffled",
+      "value": 0.4934895833333333,
+      "lo": 0.4596354166666667,
+      "hi": 0.5247395833333334
+    },
+    {
+      "split": "depth2",
+      "arm": "joint_holistic",
+      "metric": "invalid",
+      "value": 0.0,
+      "lo": 0.0,
+      "hi": 0.0
+    },
+    {
+      "split": "depth2",
+      "arm": "joint_holistic",
+      "metric": "donor_target",
+      "value": 1.0,
+      "lo": 1.0,
+      "hi": 1.0
+    },
+    {
+      "split": "depth2",
+      "arm": "joint_holistic",
+      "metric": "directional",
+      "value": 1.0,
+      "lo": 1.0,
+      "hi": 1.0
+    },
+    {
+      "split": "depth2",
+      "arm": "joint_holistic",
+      "metric": "report_correct",
+      "value": 1.0,
+      "lo": 1.0,
+      "hi": 1.0
+    },
+    {
+      "split": "depth2",
+      "arm": "joint_latent",
+      "metric": "accuracy",
+      "value": 1.0,
+      "lo": 1.0,
+      "hi": 1.0
+    },
+    {
+      "split": "depth2",
+      "arm": "joint_latent",
+      "metric": "both",
+      "value": 1.0,
+      "lo": 1.0,
+      "hi": 1.0
+    },
+    {
+      "split": "depth2",
+      "arm": "joint_latent",
+      "metric": "cleared",
+      "value": 0.5,
+      "lo": 0.5,
+      "hi": 0.5
+    },
+    {
+      "split": "depth2",
+      "arm": "joint_latent",
+      "metric": "repeat_changed",
+      "value": 0.0,
+      "lo": 0.0,
+      "hi": 0.0
+    },
+    {
+      "split": "depth2",
+      "arm": "joint_latent",
+      "metric": "shuffled",
+      "value": 0.4986979166666667,
+      "lo": 0.4856770833333333,
+      "hi": 0.51171875
+    },
+    {
+      "split": "depth2",
+      "arm": "joint_latent",
+      "metric": "invalid",
+      "value": 0.0,
+      "lo": 0.0,
+      "hi": 0.0
+    },
+    {
+      "split": "depth2",
+      "arm": "joint_latent",
+      "metric": "donor_target",
+      "value": 1.0,
+      "lo": 1.0,
+      "hi": 1.0
+    },
+    {
+      "split": "depth2",
+      "arm": "joint_latent",
+      "metric": "directional",
+      "value": 1.0,
+      "lo": 1.0,
+      "hi": 1.0
+    },
+    {
+      "split": "depth2",
+      "arm": "joint_symbol - joint_holistic",
+      "metric": "accuracy",
+      "value": 0.0,
+      "lo": 0.0,
+      "hi": 0.0
+    },
+    {
+      "split": "depth2",
+      "arm": "joint_symbol - joint_holistic",
+      "metric": "both",
+      "value": 0.0,
+      "lo": 0.0,
+      "hi": 0.0
+    },
+    {
+      "split": "depth2",
+      "arm": "joint_symbol - joint_latent",
+      "metric": "accuracy",
+      "value": 0.0,
+      "lo": 0.0,
+      "hi": 0.0
+    },
+    {
+      "split": "depth2",
+      "arm": "joint_symbol - joint_latent",
+      "metric": "both",
+      "value": 0.0,
+      "lo": 0.0,
+      "hi": 0.0
+    },
+    {
+      "split": "depth4",
+      "arm": "joint_symbol",
+      "metric": "accuracy",
+      "value": 1.0,
+      "lo": 1.0,
+      "hi": 1.0
+    },
+    {
+      "split": "depth4",
+      "arm": "joint_symbol",
+      "metric": "both",
+      "value": 1.0,
+      "lo": 1.0,
+      "hi": 1.0
+    },
+    {
+      "split": "depth4",
+      "arm": "joint_symbol",
+      "metric": "cleared",
+      "value": 0.5,
+      "lo": 0.5,
+      "hi": 0.5
+    },
+    {
+      "split": "depth4",
+      "arm": "joint_symbol",
+      "metric": "repeat_changed",
+      "value": 0.0,
+      "lo": 0.0,
+      "hi": 0.0
+    },
+    {
+      "split": "depth4",
+      "arm": "joint_symbol",
+      "metric": "shuffled",
+      "value": 0.4244791666666667,
+      "lo": 0.3932291666666667,
+      "hi": 0.45703125
+    },
+    {
+      "split": "depth4",
+      "arm": "joint_symbol",
+      "metric": "invalid",
+      "value": 0.0,
+      "lo": 0.0,
+      "hi": 0.0
+    },
+    {
+      "split": "depth4",
+      "arm": "joint_symbol",
+      "metric": "donor_target",
+      "value": 1.0,
+      "lo": 1.0,
+      "hi": 1.0
+    },
+    {
+      "split": "depth4",
+      "arm": "joint_symbol",
+      "metric": "directional",
+      "value": 1.0,
+      "lo": 1.0,
+      "hi": 1.0
+    },
+    {
+      "split": "depth4",
+      "arm": "joint_symbol",
+      "metric": "report_correct",
+      "value": 1.0,
+      "lo": 1.0,
+      "hi": 1.0
+    },
+    {
+      "split": "depth4",
+      "arm": "aux_symbol",
+      "metric": "accuracy",
+      "value": 1.0,
+      "lo": 1.0,
+      "hi": 1.0
+    },
+    {
+      "split": "depth4",
+      "arm": "aux_symbol",
+      "metric": "both",
+      "value": 1.0,
+      "lo": 1.0,
+      "hi": 1.0
+    },
+    {
+      "split": "depth4",
+      "arm": "aux_symbol",
+      "metric": "cleared",
+      "value": 0.5,
+      "lo": 0.5,
+      "hi": 0.5
+    },
+    {
+      "split": "depth4",
+      "arm": "aux_symbol",
+      "metric": "repeat_changed",
+      "value": 0.0,
+      "lo": 0.0,
+      "hi": 0.0
+    },
+    {
+      "split": "depth4",
+      "arm": "aux_symbol",
+      "metric": "shuffled",
+      "value": 0.4244791666666667,
+      "lo": 0.3932291666666667,
+      "hi": 0.45703125
+    },
+    {
+      "split": "depth4",
+      "arm": "aux_symbol",
+      "metric": "invalid",
+      "value": 0.0,
+      "lo": 0.0,
+      "hi": 0.0
+    },
+    {
+      "split": "depth4",
+      "arm": "aux_symbol",
+      "metric": "donor_target",
+      "value": 1.0,
+      "lo": 1.0,
+      "hi": 1.0
+    },
+    {
+      "split": "depth4",
+      "arm": "aux_symbol",
+      "metric": "directional",
+      "value": 1.0,
+      "lo": 1.0,
+      "hi": 1.0
+    },
+    {
+      "split": "depth4",
+      "arm": "aux_symbol",
+      "metric": "report_correct",
+      "value": 1.0,
+      "lo": 1.0,
+      "hi": 1.0
+    },
+    {
+      "split": "depth4",
+      "arm": "direct_symbol",
+      "metric": "accuracy",
+      "value": 1.0,
+      "lo": 1.0,
+      "hi": 1.0
+    },
+    {
+      "split": "depth4",
+      "arm": "direct_symbol",
+      "metric": "both",
+      "value": 1.0,
+      "lo": 1.0,
+      "hi": 1.0
+    },
+    {
+      "split": "depth4",
+      "arm": "direct_symbol",
+      "metric": "cleared",
+      "value": 0.5,
+      "lo": 0.5,
+      "hi": 0.5
+    },
+    {
+      "split": "depth4",
+      "arm": "direct_symbol",
+      "metric": "repeat_changed",
+      "value": 0.0,
+      "lo": 0.0,
+      "hi": 0.0
+    },
+    {
+      "split": "depth4",
+      "arm": "direct_symbol",
+      "metric": "shuffled",
+      "value": 0.4244791666666667,
+      "lo": 0.3932291666666667,
+      "hi": 0.45703125
+    },
+    {
+      "split": "depth4",
+      "arm": "direct_symbol",
+      "metric": "invalid",
+      "value": 0.0,
+      "lo": 0.0,
+      "hi": 0.0
+    },
+    {
+      "split": "depth4",
+      "arm": "direct_symbol",
+      "metric": "donor_target",
+      "value": 1.0,
+      "lo": 1.0,
+      "hi": 1.0
+    },
+    {
+      "split": "depth4",
+      "arm": "direct_symbol",
+      "metric": "directional",
+      "value": 1.0,
+      "lo": 1.0,
+      "hi": 1.0
+    },
+    {
+      "split": "depth4",
+      "arm": "direct_symbol",
+      "metric": "report_correct",
+      "value": 1.0,
+      "lo": 1.0,
+      "hi": 1.0
+    },
+    {
+      "split": "depth4",
+      "arm": "joint_holistic",
+      "metric": "accuracy",
+      "value": 1.0,
+      "lo": 1.0,
+      "hi": 1.0
+    },
+    {
+      "split": "depth4",
+      "arm": "joint_holistic",
+      "metric": "both",
+      "value": 1.0,
+      "lo": 1.0,
+      "hi": 1.0
+    },
+    {
+      "split": "depth4",
+      "arm": "joint_holistic",
+      "metric": "cleared",
+      "value": 0.5,
+      "lo": 0.5,
+      "hi": 0.5
+    },
+    {
+      "split": "depth4",
+      "arm": "joint_holistic",
+      "metric": "repeat_changed",
+      "value": 0.0,
+      "lo": 0.0,
+      "hi": 0.0
+    },
+    {
+      "split": "depth4",
+      "arm": "joint_holistic",
+      "metric": "shuffled",
+      "value": 0.4427083333333333,
+      "lo": 0.40625,
+      "hi": 0.4791666666666667
+    },
+    {
+      "split": "depth4",
+      "arm": "joint_holistic",
+      "metric": "invalid",
+      "value": 0.0,
+      "lo": 0.0,
+      "hi": 0.0
+    },
+    {
+      "split": "depth4",
+      "arm": "joint_holistic",
+      "metric": "donor_target",
+      "value": 1.0,
+      "lo": 1.0,
+      "hi": 1.0
+    },
+    {
+      "split": "depth4",
+      "arm": "joint_holistic",
+      "metric": "directional",
+      "value": 1.0,
+      "lo": 1.0,
+      "hi": 1.0
+    },
+    {
+      "split": "depth4",
+      "arm": "joint_holistic",
+      "metric": "report_correct",
+      "value": 1.0,
+      "lo": 1.0,
+      "hi": 1.0
+    },
+    {
+      "split": "depth4",
+      "arm": "joint_latent",
+      "metric": "accuracy",
+      "value": 1.0,
+      "lo": 1.0,
+      "hi": 1.0
+    },
+    {
+      "split": "depth4",
+      "arm": "joint_latent",
+      "metric": "both",
+      "value": 1.0,
+      "lo": 1.0,
+      "hi": 1.0
+    },
+    {
+      "split": "depth4",
+      "arm": "joint_latent",
+      "metric": "cleared",
+      "value": 0.5,
+      "lo": 0.5,
+      "hi": 0.5
+    },
+    {
+      "split": "depth4",
+      "arm": "joint_latent",
+      "metric": "repeat_changed",
+      "value": 0.0,
+      "lo": 0.0,
+      "hi": 0.0
+    },
+    {
+      "split": "depth4",
+      "arm": "joint_latent",
+      "metric": "shuffled",
+      "value": 0.42534722222222215,
+      "lo": 0.40277777777777773,
+      "hi": 0.4479166666666667
+    },
+    {
+      "split": "depth4",
+      "arm": "joint_latent",
+      "metric": "invalid",
+      "value": 0.0,
+      "lo": 0.0,
+      "hi": 0.0
+    },
+    {
+      "split": "depth4",
+      "arm": "joint_latent",
+      "metric": "donor_target",
+      "value": 1.0,
+      "lo": 1.0,
+      "hi": 1.0
+    },
+    {
+      "split": "depth4",
+      "arm": "joint_latent",
+      "metric": "directional",
+      "value": 1.0,
+      "lo": 1.0,
+      "hi": 1.0
+    },
+    {
+      "split": "depth4",
+      "arm": "joint_symbol - joint_holistic",
+      "metric": "accuracy",
+      "value": 0.0,
+      "lo": 0.0,
+      "hi": 0.0
+    },
+    {
+      "split": "depth4",
+      "arm": "joint_symbol - joint_holistic",
+      "metric": "both",
+      "value": 0.0,
+      "lo": 0.0,
+      "hi": 0.0
+    },
+    {
+      "split": "depth4",
+      "arm": "joint_symbol - joint_latent",
+      "metric": "accuracy",
+      "value": 0.0,
+      "lo": 0.0,
+      "hi": 0.0
+    },
+    {
+      "split": "depth4",
+      "arm": "joint_symbol - joint_latent",
+      "metric": "both",
+      "value": 0.0,
+      "lo": 0.0,
+      "hi": 0.0
+    },
+    {
+      "split": "depth6",
+      "arm": "joint_symbol",
+      "metric": "accuracy",
+      "value": 1.0,
+      "lo": 1.0,
+      "hi": 1.0
+    },
+    {
+      "split": "depth6",
+      "arm": "joint_symbol",
+      "metric": "both",
+      "value": 1.0,
+      "lo": 1.0,
+      "hi": 1.0
+    },
+    {
+      "split": "depth6",
+      "arm": "joint_symbol",
+      "metric": "cleared",
+      "value": 0.5,
+      "lo": 0.5,
+      "hi": 0.5
+    },
+    {
+      "split": "depth6",
+      "arm": "joint_symbol",
+      "metric": "repeat_changed",
+      "value": 0.0,
+      "lo": 0.0,
+      "hi": 0.0
+    },
+    {
+      "split": "depth6",
+      "arm": "joint_symbol",
+      "metric": "shuffled",
+      "value": 0.4296875,
+      "lo": 0.39449869791666664,
+      "hi": 0.4635416666666667
+    },
+    {
+      "split": "depth6",
+      "arm": "joint_symbol",
+      "metric": "invalid",
+      "value": 0.0,
+      "lo": 0.0,
+      "hi": 0.0
+    },
+    {
+      "split": "depth6",
+      "arm": "joint_symbol",
+      "metric": "donor_target",
+      "value": 1.0,
+      "lo": 1.0,
+      "hi": 1.0
+    },
+    {
+      "split": "depth6",
+      "arm": "joint_symbol",
+      "metric": "directional",
+      "value": 1.0,
+      "lo": 1.0,
+      "hi": 1.0
+    },
+    {
+      "split": "depth6",
+      "arm": "joint_symbol",
+      "metric": "report_correct",
+      "value": 1.0,
+      "lo": 1.0,
+      "hi": 1.0
+    },
+    {
+      "split": "depth6",
+      "arm": "aux_symbol",
+      "metric": "accuracy",
+      "value": 1.0,
+      "lo": 1.0,
+      "hi": 1.0
+    },
+    {
+      "split": "depth6",
+      "arm": "aux_symbol",
+      "metric": "both",
+      "value": 1.0,
+      "lo": 1.0,
+      "hi": 1.0
+    },
+    {
+      "split": "depth6",
+      "arm": "aux_symbol",
+      "metric": "cleared",
+      "value": 0.5,
+      "lo": 0.5,
+      "hi": 0.5
+    },
+    {
+      "split": "depth6",
+      "arm": "aux_symbol",
+      "metric": "repeat_changed",
+      "value": 0.0,
+      "lo": 0.0,
+      "hi": 0.0
+    },
+    {
+      "split": "depth6",
+      "arm": "aux_symbol",
+      "metric": "shuffled",
+      "value": 0.4296875,
+      "lo": 0.39449869791666664,
+      "hi": 0.4635416666666667
+    },
+    {
+      "split": "depth6",
+      "arm": "aux_symbol",
+      "metric": "invalid",
+      "value": 0.0,
+      "lo": 0.0,
+      "hi": 0.0
+    },
+    {
+      "split": "depth6",
+      "arm": "aux_symbol",
+      "metric": "donor_target",
+      "value": 1.0,
+      "lo": 1.0,
+      "hi": 1.0
+    },
+    {
+      "split": "depth6",
+      "arm": "aux_symbol",
+      "metric": "directional",
+      "value": 1.0,
+      "lo": 1.0,
+      "hi": 1.0
+    },
+    {
+      "split": "depth6",
+      "arm": "aux_symbol",
+      "metric": "report_correct",
+      "value": 1.0,
+      "lo": 1.0,
+      "hi": 1.0
+    },
+    {
+      "split": "depth6",
+      "arm": "direct_symbol",
+      "metric": "accuracy",
+      "value": 1.0,
+      "lo": 1.0,
+      "hi": 1.0
+    },
+    {
+      "split": "depth6",
+      "arm": "direct_symbol",
+      "metric": "both",
+      "value": 1.0,
+      "lo": 1.0,
+      "hi": 1.0
+    },
+    {
+      "split": "depth6",
+      "arm": "direct_symbol",
+      "metric": "cleared",
+      "value": 0.5,
+      "lo": 0.5,
+      "hi": 0.5
+    },
+    {
+      "split": "depth6",
+      "arm": "direct_symbol",
+      "metric": "repeat_changed",
+      "value": 0.0,
+      "lo": 0.0,
+      "hi": 0.0
+    },
+    {
+      "split": "depth6",
+      "arm": "direct_symbol",
+      "metric": "shuffled",
+      "value": 0.4296875,
+      "lo": 0.39449869791666664,
+      "hi": 0.4635416666666667
+    },
+    {
+      "split": "depth6",
+      "arm": "direct_symbol",
+      "metric": "invalid",
+      "value": 0.0,
+      "lo": 0.0,
+      "hi": 0.0
+    },
+    {
+      "split": "depth6",
+      "arm": "direct_symbol",
+      "metric": "donor_target",
+      "value": 1.0,
+      "lo": 1.0,
+      "hi": 1.0
+    },
+    {
+      "split": "depth6",
+      "arm": "direct_symbol",
+      "metric": "directional",
+      "value": 1.0,
+      "lo": 1.0,
+      "hi": 1.0
+    },
+    {
+      "split": "depth6",
+      "arm": "direct_symbol",
+      "metric": "report_correct",
+      "value": 1.0,
+      "lo": 1.0,
+      "hi": 1.0
+    },
+    {
+      "split": "depth6",
+      "arm": "joint_holistic",
+      "metric": "accuracy",
+      "value": 1.0,
+      "lo": 1.0,
+      "hi": 1.0
+    },
+    {
+      "split": "depth6",
+      "arm": "joint_holistic",
+      "metric": "both",
+      "value": 1.0,
+      "lo": 1.0,
+      "hi": 1.0
+    },
+    {
+      "split": "depth6",
+      "arm": "joint_holistic",
+      "metric": "cleared",
+      "value": 0.5,
+      "lo": 0.5,
+      "hi": 0.5
+    },
+    {
+      "split": "depth6",
+      "arm": "joint_holistic",
+      "metric": "repeat_changed",
+      "value": 0.0,
+      "lo": 0.0,
+      "hi": 0.0
+    },
+    {
+      "split": "depth6",
+      "arm": "joint_holistic",
+      "metric": "shuffled",
+      "value": 0.4622395833333333,
+      "lo": 0.4270833333333333,
+      "hi": 0.4973958333333333
+    },
+    {
+      "split": "depth6",
+      "arm": "joint_holistic",
+      "metric": "invalid",
+      "value": 0.0,
+      "lo": 0.0,
+      "hi": 0.0
+    },
+    {
+      "split": "depth6",
+      "arm": "joint_holistic",
+      "metric": "donor_target",
+      "value": 1.0,
+      "lo": 1.0,
+      "hi": 1.0
+    },
+    {
+      "split": "depth6",
+      "arm": "joint_holistic",
+      "metric": "directional",
+      "value": 1.0,
+      "lo": 1.0,
+      "hi": 1.0
+    },
+    {
+      "split": "depth6",
+      "arm": "joint_holistic",
+      "metric": "report_correct",
+      "value": 1.0,
+      "lo": 1.0,
+      "hi": 1.0
+    },
+    {
+      "split": "depth6",
+      "arm": "joint_latent",
+      "metric": "accuracy",
+      "value": 1.0,
+      "lo": 1.0,
+      "hi": 1.0
+    },
+    {
+      "split": "depth6",
+      "arm": "joint_latent",
+      "metric": "both",
+      "value": 1.0,
+      "lo": 1.0,
+      "hi": 1.0
+    },
+    {
+      "split": "depth6",
+      "arm": "joint_latent",
+      "metric": "cleared",
+      "value": 0.5,
+      "lo": 0.5,
+      "hi": 0.5
+    },
+    {
+      "split": "depth6",
+      "arm": "joint_latent",
+      "metric": "repeat_changed",
+      "value": 0.0,
+      "lo": 0.0,
+      "hi": 0.0
+    },
+    {
+      "split": "depth6",
+      "arm": "joint_latent",
+      "metric": "shuffled",
+      "value": 0.44704861111111116,
+      "lo": 0.4249131944444444,
+      "hi": 0.4696180555555556
+    },
+    {
+      "split": "depth6",
+      "arm": "joint_latent",
+      "metric": "invalid",
+      "value": 0.0,
+      "lo": 0.0,
+      "hi": 0.0
+    },
+    {
+      "split": "depth6",
+      "arm": "joint_latent",
+      "metric": "donor_target",
+      "value": 1.0,
+      "lo": 1.0,
+      "hi": 1.0
+    },
+    {
+      "split": "depth6",
+      "arm": "joint_latent",
+      "metric": "directional",
+      "value": 1.0,
+      "lo": 1.0,
+      "hi": 1.0
+    },
+    {
+      "split": "depth6",
+      "arm": "joint_symbol - joint_holistic",
+      "metric": "accuracy",
+      "value": 0.0,
+      "lo": 0.0,
+      "hi": 0.0
+    },
+    {
+      "split": "depth6",
+      "arm": "joint_symbol - joint_holistic",
+      "metric": "both",
+      "value": 0.0,
+      "lo": 0.0,
+      "hi": 0.0
+    },
+    {
+      "split": "depth6",
+      "arm": "joint_symbol - joint_latent",
+      "metric": "accuracy",
+      "value": 0.0,
+      "lo": 0.0,
+      "hi": 0.0
+    },
+    {
+      "split": "depth6",
+      "arm": "joint_symbol - joint_latent",
+      "metric": "both",
+      "value": 0.0,
+      "lo": 0.0,
+      "hi": 0.0
+    },
+    {
+      "split": "depth8",
+      "arm": "joint_symbol",
+      "metric": "accuracy",
+      "value": 1.0,
+      "lo": 1.0,
+      "hi": 1.0
+    },
+    {
+      "split": "depth8",
+      "arm": "joint_symbol",
+      "metric": "both",
+      "value": 1.0,
+      "lo": 1.0,
+      "hi": 1.0
+    },
+    {
+      "split": "depth8",
+      "arm": "joint_symbol",
+      "metric": "cleared",
+      "value": 0.5,
+      "lo": 0.5,
+      "hi": 0.5
+    },
+    {
+      "split": "depth8",
+      "arm": "joint_symbol",
+      "metric": "repeat_changed",
+      "value": 0.0,
+      "lo": 0.0,
+      "hi": 0.0
+    },
+    {
+      "split": "depth8",
+      "arm": "joint_symbol",
+      "metric": "shuffled",
+      "value": 0.4309895833333333,
+      "lo": 0.3971354166666667,
+      "hi": 0.4661458333333333
+    },
+    {
+      "split": "depth8",
+      "arm": "joint_symbol",
+      "metric": "invalid",
+      "value": 0.0,
+      "lo": 0.0,
+      "hi": 0.0
+    },
+    {
+      "split": "depth8",
+      "arm": "joint_symbol",
+      "metric": "donor_target",
+      "value": 1.0,
+      "lo": 1.0,
+      "hi": 1.0
+    },
+    {
+      "split": "depth8",
+      "arm": "joint_symbol",
+      "metric": "directional",
+      "value": 1.0,
+      "lo": 1.0,
+      "hi": 1.0
+    },
+    {
+      "split": "depth8",
+      "arm": "joint_symbol",
+      "metric": "report_correct",
+      "value": 1.0,
+      "lo": 1.0,
+      "hi": 1.0
+    },
+    {
+      "split": "depth8",
+      "arm": "aux_symbol",
+      "metric": "accuracy",
+      "value": 1.0,
+      "lo": 1.0,
+      "hi": 1.0
+    },
+    {
+      "split": "depth8",
+      "arm": "aux_symbol",
+      "metric": "both",
+      "value": 1.0,
+      "lo": 1.0,
+      "hi": 1.0
+    },
+    {
+      "split": "depth8",
+      "arm": "aux_symbol",
+      "metric": "cleared",
+      "value": 0.5,
+      "lo": 0.5,
+      "hi": 0.5
+    },
+    {
+      "split": "depth8",
+      "arm": "aux_symbol",
+      "metric": "repeat_changed",
+      "value": 0.0,
+      "lo": 0.0,
+      "hi": 0.0
+    },
+    {
+      "split": "depth8",
+      "arm": "aux_symbol",
+      "metric": "shuffled",
+      "value": 0.4309895833333333,
+      "lo": 0.3971354166666667,
+      "hi": 0.4661458333333333
+    },
+    {
+      "split": "depth8",
+      "arm": "aux_symbol",
+      "metric": "invalid",
+      "value": 0.0,
+      "lo": 0.0,
+      "hi": 0.0
+    },
+    {
+      "split": "depth8",
+      "arm": "aux_symbol",
+      "metric": "donor_target",
+      "value": 1.0,
+      "lo": 1.0,
+      "hi": 1.0
+    },
+    {
+      "split": "depth8",
+      "arm": "aux_symbol",
+      "metric": "directional",
+      "value": 1.0,
+      "lo": 1.0,
+      "hi": 1.0
+    },
+    {
+      "split": "depth8",
+      "arm": "aux_symbol",
+      "metric": "report_correct",
+      "value": 1.0,
+      "lo": 1.0,
+      "hi": 1.0
+    },
+    {
+      "split": "depth8",
+      "arm": "direct_symbol",
+      "metric": "accuracy",
+      "value": 1.0,
+      "lo": 1.0,
+      "hi": 1.0
+    },
+    {
+      "split": "depth8",
+      "arm": "direct_symbol",
+      "metric": "both",
+      "value": 1.0,
+      "lo": 1.0,
+      "hi": 1.0
+    },
+    {
+      "split": "depth8",
+      "arm": "direct_symbol",
+      "metric": "cleared",
+      "value": 0.5,
+      "lo": 0.5,
+      "hi": 0.5
+    },
+    {
+      "split": "depth8",
+      "arm": "direct_symbol",
+      "metric": "repeat_changed",
+      "value": 0.0,
+      "lo": 0.0,
+      "hi": 0.0
+    },
+    {
+      "split": "depth8",
+      "arm": "direct_symbol",
+      "metric": "shuffled",
+      "value": 0.4309895833333333,
+      "lo": 0.3971354166666667,
+      "hi": 0.4661458333333333
+    },
+    {
+      "split": "depth8",
+      "arm": "direct_symbol",
+      "metric": "invalid",
+      "value": 0.0,
+      "lo": 0.0,
+      "hi": 0.0
+    },
+    {
+      "split": "depth8",
+      "arm": "direct_symbol",
+      "metric": "donor_target",
+      "value": 1.0,
+      "lo": 1.0,
+      "hi": 1.0
+    },
+    {
+      "split": "depth8",
+      "arm": "direct_symbol",
+      "metric": "directional",
+      "value": 1.0,
+      "lo": 1.0,
+      "hi": 1.0
+    },
+    {
+      "split": "depth8",
+      "arm": "direct_symbol",
+      "metric": "report_correct",
+      "value": 1.0,
+      "lo": 1.0,
+      "hi": 1.0
+    },
+    {
+      "split": "depth8",
+      "arm": "joint_holistic",
+      "metric": "accuracy",
+      "value": 1.0,
+      "lo": 1.0,
+      "hi": 1.0
+    },
+    {
+      "split": "depth8",
+      "arm": "joint_holistic",
+      "metric": "both",
+      "value": 1.0,
+      "lo": 1.0,
+      "hi": 1.0
+    },
+    {
+      "split": "depth8",
+      "arm": "joint_holistic",
+      "metric": "cleared",
+      "value": 0.5,
+      "lo": 0.5,
+      "hi": 0.5
+    },
+    {
+      "split": "depth8",
+      "arm": "joint_holistic",
+      "metric": "repeat_changed",
+      "value": 0.0,
+      "lo": 0.0,
+      "hi": 0.0
+    },
+    {
+      "split": "depth8",
+      "arm": "joint_holistic",
+      "metric": "shuffled",
+      "value": 0.4440104166666667,
+      "lo": 0.4088541666666667,
+      "hi": 0.4791666666666667
+    },
+    {
+      "split": "depth8",
+      "arm": "joint_holistic",
+      "metric": "invalid",
+      "value": 0.0,
+      "lo": 0.0,
+      "hi": 0.0
+    },
+    {
+      "split": "depth8",
+      "arm": "joint_holistic",
+      "metric": "donor_target",
+      "value": 1.0,
+      "lo": 1.0,
+      "hi": 1.0
+    },
+    {
+      "split": "depth8",
+      "arm": "joint_holistic",
+      "metric": "directional",
+      "value": 1.0,
+      "lo": 1.0,
+      "hi": 1.0
+    },
+    {
+      "split": "depth8",
+      "arm": "joint_holistic",
+      "metric": "report_correct",
+      "value": 1.0,
+      "lo": 1.0,
+      "hi": 1.0
+    },
+    {
+      "split": "depth8",
+      "arm": "joint_latent",
+      "metric": "accuracy",
+      "value": 1.0,
+      "lo": 1.0,
+      "hi": 1.0
+    },
+    {
+      "split": "depth8",
+      "arm": "joint_latent",
+      "metric": "both",
+      "value": 1.0,
+      "lo": 1.0,
+      "hi": 1.0
+    },
+    {
+      "split": "depth8",
+      "arm": "joint_latent",
+      "metric": "cleared",
+      "value": 0.5,
+      "lo": 0.5,
+      "hi": 0.5
+    },
+    {
+      "split": "depth8",
+      "arm": "joint_latent",
+      "metric": "repeat_changed",
+      "value": 0.0,
+      "lo": 0.0,
+      "hi": 0.0
+    },
+    {
+      "split": "depth8",
+      "arm": "joint_latent",
+      "metric": "shuffled",
+      "value": 0.4361979166666667,
+      "lo": 0.4140625,
+      "hi": 0.45877821180555545
+    },
+    {
+      "split": "depth8",
+      "arm": "joint_latent",
+      "metric": "invalid",
+      "value": 0.0,
+      "lo": 0.0,
+      "hi": 0.0
+    },
+    {
+      "split": "depth8",
+      "arm": "joint_latent",
+      "metric": "donor_target",
+      "value": 1.0,
+      "lo": 1.0,
+      "hi": 1.0
+    },
+    {
+      "split": "depth8",
+      "arm": "joint_latent",
+      "metric": "directional",
+      "value": 1.0,
+      "lo": 1.0,
+      "hi": 1.0
+    },
+    {
+      "split": "depth8",
+      "arm": "joint_symbol - joint_holistic",
+      "metric": "accuracy",
+      "value": 0.0,
+      "lo": 0.0,
+      "hi": 0.0
+    },
+    {
+      "split": "depth8",
+      "arm": "joint_symbol - joint_holistic",
+      "metric": "both",
+      "value": 0.0,
+      "lo": 0.0,
+      "hi": 0.0
+    },
+    {
+      "split": "depth8",
+      "arm": "joint_symbol - joint_latent",
+      "metric": "accuracy",
+      "value": 0.0,
+      "lo": 0.0,
+      "hi": 0.0
+    },
+    {
+      "split": "depth8",
+      "arm": "joint_symbol - joint_latent",
+      "metric": "both",
+      "value": 0.0,
+      "lo": 0.0,
+      "hi": 0.0
+    }
+  ]
+}

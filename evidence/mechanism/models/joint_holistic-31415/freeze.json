@@ -1,0 +1,14 @@
+{
+  "arm": "joint_holistic",
+  "seed": 31415,
+  "steps": 2600,
+  "trainable": 159443,
+  "weights": "5ee0723175a2a2f39aa7a5736f032b30924da787e4ed3f322fee749a7a5d5aed",
+  "protocol": "49f94aae63abe765a4287c7e66d593f6b639669f43a38b6020937af402d573ad",
+  "data": "32d0d7012ec9abcd53e4fcff88c93b9015e63a7a781811e9df26f9ea3f51beb3",
+  "python": "3.13.5",
+  "torch": "2.15.0+cu132",
+  "numpy": "2.5.5",
+  "device": "NVIDIA GeForce RTX 3090",
+  "seconds": 49.97
+}

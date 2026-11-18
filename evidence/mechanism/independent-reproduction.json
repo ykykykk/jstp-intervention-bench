@@ -1,0 +1,42 @@
+{
+  "same_observed_training_records": true,
+  "ledgers": {
+    "test_familiar": {
+      "decisions": 691200,
+      "changed_decisions": 0,
+      "changed_quantized_camera_elements": 0,
+      "changed_discrete_messages": 0,
+      "largest_other_float_change": 0.0
+    },
+    "test_novel": {
+      "decisions": 691200,
+      "changed_decisions": 0,
+      "changed_quantized_camera_elements": 0,
+      "changed_discrete_messages": 0,
+      "largest_other_float_change": 0.0
+    },
+    "language": {
+      "decisions": 288000,
+      "changed_decisions": 0,
+      "changed_quantized_camera_elements": 0,
+      "changed_discrete_messages": 0,
+      "largest_other_float_change": 0.0
+    }
+  },
+  "changed_observation_elements": {},
+  "identical_gates": true,
+  "identical_all_layout_intervals": true,
+  "followups": {
+    "secondary": {
+      "files": 6,
+      "changed_array_elements": 0,
+      "identical_table": true
+    },
+    "latent_followup": {
+      "files": 31,
+      "changed_array_elements": 0,
+      "identical_table": true
+    }
+  },
+  "identical_codebook": true
+}

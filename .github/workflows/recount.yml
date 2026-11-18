@@ -1,5 +1,9 @@
 name: Release integrity and CPU recount
-on: [push, pull_request, workflow_dispatch]
+on:
+  push:
+    branches: [main]
+  pull_request:
+  workflow_dispatch:
 permissions:
   contents: read
 jobs:
@@ -18,3 +22,17 @@ jobs:
           python -m jstp.analysis --release evidence/paper --out work/recount
           diff -u evidence/paper/analysis/per_seed.csv work/recount/per_seed.csv
           python -c "import json,numpy as np; from pathlib import Path; a,b=(json.loads((Path(p)/'results.json').read_text()) for p in ('evidence/paper/analysis','work/recount')); pairs=[(r,s) for k in ('metrics','contrasts') for r,s in zip(a[k],b[k],strict=True)]; assert all(np.isclose(v,s[k],atol=1e-6,rtol=0) if isinstance(v,float) else v==s[k] for r,s in pairs for k,v in r.items())"
+      - name: 核对两个装置和研究二的盲测门槛、全部区间
+        run: |
+          python -m unittest discover -s tests
+          python -m mechanism.analyze --release evidence/mechanism --out work/recount-m2
+          python - <<'PY'
+          import json
+          import numpy as np
+          from pathlib import Path
+          a,b=(json.loads((Path(p)/'summary.json').read_text()) for p in ('evidence/mechanism/analysis','work/recount-m2'))
+          assert a['protocol']==b['protocol'] and a['gates']==b['gates']
+          for x,y in zip(a['metrics'],b['metrics'],strict=True):
+              assert x.keys()==y.keys()
+              assert all(np.isclose(v,y[k],atol=1e-6,rtol=0) if isinstance(v,float) else v==y[k] for k,v in x.items())
+          PY

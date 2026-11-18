@@ -1,0 +1,14 @@
+{
+  "arm": "direct_symbol",
+  "seed": 2718,
+  "steps": 2600,
+  "trainable": 159443,
+  "weights": "ae2aa5502dbd903fa4168affd1aac59447c43319420ba300c829236152cfaa0b",
+  "protocol": "49f94aae63abe765a4287c7e66d593f6b639669f43a38b6020937af402d573ad",
+  "data": "32d0d7012ec9abcd53e4fcff88c93b9015e63a7a781811e9df26f9ea3f51beb3",
+  "python": "3.13.5",
+  "torch": "2.15.0+cu132",
+  "numpy": "2.5.5",
+  "device": "NVIDIA GeForce RTX 3090",
+  "seconds": 26.73
+}
