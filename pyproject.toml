@@ -14,4 +14,7 @@ dependencies = ["numpy>=1.26", "torch>=2.3", "pillow>=10", "einops>=0.8"]
 legacy = ["pygame==2.6.1"]
 
 [tool.setuptools]
-packages = ["jstp","jstp.legacy6"]
+packages = ["jstp","jstp.legacy6","mechanism"]
+
+[tool.setuptools.package-data]
+mechanism = ["protocol.json"]

@@ -11,6 +11,9 @@ def run(out,device):
     call("mechanism.train","fit","--data",bank,"--release",rel,"--device",device)
     for stage in ("seal","score"):call("mechanism.exam",stage,"--release",rel,"--device",device)
     call("mechanism.analyze","--release",rel)
+    call("mechanism.secondary","--release",rel,"--device",device)
+    call("mechanism.latent","--release",rel,"--device",device)
+    call("mechanism.codebook","--release",rel)
 if __name__=="__main__":
     p=argparse.ArgumentParser();p.add_argument("--out",type=Path,default=Path("work/rebuilt-mechanism"));p.add_argument("--device",default="cuda")
     a=p.parse_args();run(a.out.resolve(),a.device)
