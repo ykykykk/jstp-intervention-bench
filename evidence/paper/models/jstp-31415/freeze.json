@@ -1,0 +1,15 @@
+{
+  "method": "jstp",
+  "seed": 31415,
+  "step": 1500,
+  "val": 0.9921875,
+  "trainable": 36939,
+  "protocol": "8486cfefe589b03c00a9dfbbcd6482060effc6ae716bffabc5218169c1d51082",
+  "sha256": "bd59879ba40848a4f09920719ef726b05d019b8f7a94809b7c07bf2e2232ed35",
+  "seconds": 14.95,
+  "torch": "2.15.0+cu132",
+  "numpy": "2.5.5",
+  "python": "3.13.5",
+  "device": "NVIDIA GeForce RTX 3090",
+  "train_manifest": "9c5b7232fcd64bc5dbf363c836d34b3fc413d5ae44d22b7123fa568767851297"
+}

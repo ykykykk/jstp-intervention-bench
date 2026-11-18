@@ -1,0 +1,9 @@
+* text=auto eol=lf
+*.pt binary
+*.npz binary
+*.pdf binary
+*.png binary
+*.zip binary
+*.gif binary
+*.ttf binary
+evidence/** -text

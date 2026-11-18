@@ -1,0 +1,12 @@
+{
+  "layouts": 128,
+  "factual_flat_exchange": [
+    512,
+    256,
+    0
+  ],
+  "physics_pairs": 253,
+  "switches": 256,
+  "goal_delta": 0.0,
+  "choice_mismatches": 0
+}

@@ -1,0 +1,2402 @@
+[
+  {
+    "index": 0,
+    "seed": 101746454070457842,
+    "level": "basic",
+    "role": "future",
+    "success": true,
+    "steps": 31
+  },
+  {
+    "index": 0,
+    "seed": 101746454070457842,
+    "level": "basic",
+    "role": "direct",
+    "success": true,
+    "steps": 33
+  },
+  {
+    "index": 0,
+    "seed": 101746454070457842,
+    "level": "basic",
+    "role": "wrong_future",
+    "success": true,
+    "steps": 37
+  },
+  {
+    "index": 1,
+    "seed": 7963272071398693324,
+    "level": "basic",
+    "role": "future",
+    "success": true,
+    "steps": 30
+  },
+  {
+    "index": 1,
+    "seed": 7963272071398693324,
+    "level": "basic",
+    "role": "direct",
+    "success": true,
+    "steps": 30
+  },
+  {
+    "index": 1,
+    "seed": 7963272071398693324,
+    "level": "basic",
+    "role": "wrong_future",
+    "success": false,
+    "steps": 80
+  },
+  {
+    "index": 2,
+    "seed": 1656439479786724998,
+    "level": "basic",
+    "role": "future",
+    "success": true,
+    "steps": 16
+  },
+  {
+    "index": 2,
+    "seed": 1656439479786724998,
+    "level": "basic",
+    "role": "direct",
+    "success": false,
+    "steps": 80
+  },
+  {
+    "index": 2,
+    "seed": 1656439479786724998,
+    "level": "basic",
+    "role": "wrong_future",
+    "success": false,
+    "steps": 80
+  },
+  {
+    "index": 3,
+    "seed": 5284712762972928798,
+    "level": "basic",
+    "role": "future",
+    "success": true,
+    "steps": 29
+  },
+  {
+    "index": 3,
+    "seed": 5284712762972928798,
+    "level": "basic",
+    "role": "direct",
+    "success": true,
+    "steps": 16
+  },
+  {
+    "index": 3,
+    "seed": 5284712762972928798,
+    "level": "basic",
+    "role": "wrong_future",
+    "success": true,
+    "steps": 28
+  },
+  {
+    "index": 4,
+    "seed": 2554624592716956736,
+    "level": "basic",
+    "role": "future",
+    "success": true,
+    "steps": 35
+  },
+  {
+    "index": 4,
+    "seed": 2554624592716956736,
+    "level": "basic",
+    "role": "direct",
+    "success": true,
+    "steps": 43
+  },
+  {
+    "index": 4,
+    "seed": 2554624592716956736,
+    "level": "basic",
+    "role": "wrong_future",
+    "success": false,
+    "steps": 80
+  },
+  {
+    "index": 5,
+    "seed": 8564362651963879678,
+    "level": "basic",
+    "role": "future",
+    "success": true,
+    "steps": 75
+  },
+  {
+    "index": 5,
+    "seed": 8564362651963879678,
+    "level": "basic",
+    "role": "direct",
+    "success": true,
+    "steps": 62
+  },
+  {
+    "index": 5,
+    "seed": 8564362651963879678,
+    "level": "basic",
+    "role": "wrong_future",
+    "success": true,
+    "steps": 26
+  },
+  {
+    "index": 6,
+    "seed": 1646529334405017781,
+    "level": "basic",
+    "role": "future",
+    "success": true,
+    "steps": 23
+  },
+  {
+    "index": 6,
+    "seed": 1646529334405017781,
+    "level": "basic",
+    "role": "direct",
+    "success": false,
+    "steps": 80
+  },
+  {
+    "index": 6,
+    "seed": 1646529334405017781,
+    "level": "basic",
+    "role": "wrong_future",
+    "success": false,
+    "steps": 80
+  },
+  {
+    "index": 7,
+    "seed": 9057786260261082690,
+    "level": "basic",
+    "role": "future",
+    "success": true,
+    "steps": 30
+  },
+  {
+    "index": 7,
+    "seed": 9057786260261082690,
+    "level": "basic",
+    "role": "direct",
+    "success": false,
+    "steps": 80
+  },
+  {
+    "index": 7,
+    "seed": 9057786260261082690,
+    "level": "basic",
+    "role": "wrong_future",
+    "success": true,
+    "steps": 23
+  },
+  {
+    "index": 8,
+    "seed": 8902008924511224856,
+    "level": "basic",
+    "role": "future",
+    "success": true,
+    "steps": 16
+  },
+  {
+    "index": 8,
+    "seed": 8902008924511224856,
+    "level": "basic",
+    "role": "direct",
+    "success": true,
+    "steps": 13
+  },
+  {
+    "index": 8,
+    "seed": 8902008924511224856,
+    "level": "basic",
+    "role": "wrong_future",
+    "success": true,
+    "steps": 15
+  },
+  {
+    "index": 9,
+    "seed": 5046982016687358232,
+    "level": "basic",
+    "role": "future",
+    "success": true,
+    "steps": 24
+  },
+  {
+    "index": 9,
+    "seed": 5046982016687358232,
+    "level": "basic",
+    "role": "direct",
+    "success": true,
+    "steps": 19
+  },
+  {
+    "index": 9,
+    "seed": 5046982016687358232,
+    "level": "basic",
+    "role": "wrong_future",
+    "success": true,
+    "steps": 62
+  },
+  {
+    "index": 10,
+    "seed": 7553782009125062762,
+    "level": "basic",
+    "role": "future",
+    "success": true,
+    "steps": 19
+  },
+  {
+    "index": 10,
+    "seed": 7553782009125062762,
+    "level": "basic",
+    "role": "direct",
+    "success": true,
+    "steps": 23
+  },
+  {
+    "index": 10,
+    "seed": 7553782009125062762,
+    "level": "basic",
+    "role": "wrong_future",
+    "success": true,
+    "steps": 24
+  },
+  {
+    "index": 11,
+    "seed": 663736909127200671,
+    "level": "basic",
+    "role": "future",
+    "success": false,
+    "steps": 80
+  },
+  {
+    "index": 11,
+    "seed": 663736909127200671,
+    "level": "basic",
+    "role": "direct",
+    "success": false,
+    "steps": 80
+  },
+  {
+    "index": 11,
+    "seed": 663736909127200671,
+    "level": "basic",
+    "role": "wrong_future",
+    "success": false,
+    "steps": 80
+  },
+  {
+    "index": 12,
+    "seed": 729509983636936052,
+    "level": "basic",
+    "role": "future",
+    "success": false,
+    "steps": 80
+  },
+  {
+    "index": 12,
+    "seed": 729509983636936052,
+    "level": "basic",
+    "role": "direct",
+    "success": false,
+    "steps": 80
+  },
+  {
+    "index": 12,
+    "seed": 729509983636936052,
+    "level": "basic",
+    "role": "wrong_future",
+    "success": true,
+    "steps": 23
+  },
+  {
+    "index": 13,
+    "seed": 3693747494660031875,
+    "level": "basic",
+    "role": "future",
+    "success": true,
+    "steps": 29
+  },
+  {
+    "index": 13,
+    "seed": 3693747494660031875,
+    "level": "basic",
+    "role": "direct",
+    "success": true,
+    "steps": 31
+  },
+  {
+    "index": 13,
+    "seed": 3693747494660031875,
+    "level": "basic",
+    "role": "wrong_future",
+    "success": true,
+    "steps": 22
+  },
+  {
+    "index": 14,
+    "seed": 1004463389035725955,
+    "level": "basic",
+    "role": "future",
+    "success": true,
+    "steps": 17
+  },
+  {
+    "index": 14,
+    "seed": 1004463389035725955,
+    "level": "basic",
+    "role": "direct",
+    "success": true,
+    "steps": 17
+  },
+  {
+    "index": 14,
+    "seed": 1004463389035725955,
+    "level": "basic",
+    "role": "wrong_future",
+    "success": true,
+    "steps": 18
+  },
+  {
+    "index": 15,
+    "seed": 5112230454456213416,
+    "level": "basic",
+    "role": "future",
+    "success": true,
+    "steps": 14
+  },
+  {
+    "index": 15,
+    "seed": 5112230454456213416,
+    "level": "basic",
+    "role": "direct",
+    "success": false,
+    "steps": 80
+  },
+  {
+    "index": 15,
+    "seed": 5112230454456213416,
+    "level": "basic",
+    "role": "wrong_future",
+    "success": false,
+    "steps": 80
+  },
+  {
+    "index": 16,
+    "seed": 2627868388194631378,
+    "level": "basic",
+    "role": "future",
+    "success": true,
+    "steps": 32
+  },
+  {
+    "index": 16,
+    "seed": 2627868388194631378,
+    "level": "basic",
+    "role": "direct",
+    "success": false,
+    "steps": 80
+  },
+  {
+    "index": 16,
+    "seed": 2627868388194631378,
+    "level": "basic",
+    "role": "wrong_future",
+    "success": true,
+    "steps": 21
+  },
+  {
+    "index": 17,
+    "seed": 2742917490229247778,
+    "level": "basic",
+    "role": "future",
+    "success": true,
+    "steps": 30
+  },
+  {
+    "index": 17,
+    "seed": 2742917490229247778,
+    "level": "basic",
+    "role": "direct",
+    "success": true,
+    "steps": 30
+  },
+  {
+    "index": 17,
+    "seed": 2742917490229247778,
+    "level": "basic",
+    "role": "wrong_future",
+    "success": true,
+    "steps": 29
+  },
+  {
+    "index": 18,
+    "seed": 3489269842474106662,
+    "level": "basic",
+    "role": "future",
+    "success": true,
+    "steps": 18
+  },
+  {
+    "index": 18,
+    "seed": 3489269842474106662,
+    "level": "basic",
+    "role": "direct",
+    "success": true,
+    "steps": 23
+  },
+  {
+    "index": 18,
+    "seed": 3489269842474106662,
+    "level": "basic",
+    "role": "wrong_future",
+    "success": false,
+    "steps": 80
+  },
+  {
+    "index": 19,
+    "seed": 3021711105549022052,
+    "level": "basic",
+    "role": "future",
+    "success": true,
+    "steps": 16
+  },
+  {
+    "index": 19,
+    "seed": 3021711105549022052,
+    "level": "basic",
+    "role": "direct",
+    "success": true,
+    "steps": 16
+  },
+  {
+    "index": 19,
+    "seed": 3021711105549022052,
+    "level": "basic",
+    "role": "wrong_future",
+    "success": true,
+    "steps": 21
+  },
+  {
+    "index": 20,
+    "seed": 3608138358969560743,
+    "level": "ordinary",
+    "role": "future",
+    "success": true,
+    "steps": 25
+  },
+  {
+    "index": 20,
+    "seed": 3608138358969560743,
+    "level": "ordinary",
+    "role": "direct",
+    "success": true,
+    "steps": 25
+  },
+  {
+    "index": 20,
+    "seed": 3608138358969560743,
+    "level": "ordinary",
+    "role": "wrong_future",
+    "success": true,
+    "steps": 26
+  },
+  {
+    "index": 21,
+    "seed": 5815556898104066467,
+    "level": "ordinary",
+    "role": "future",
+    "success": true,
+    "steps": 33
+  },
+  {
+    "index": 21,
+    "seed": 5815556898104066467,
+    "level": "ordinary",
+    "role": "direct",
+    "success": true,
+    "steps": 25
+  },
+  {
+    "index": 21,
+    "seed": 5815556898104066467,
+    "level": "ordinary",
+    "role": "wrong_future",
+    "success": false,
+    "steps": 80
+  },
+  {
+    "index": 22,
+    "seed": 2891706520294652213,
+    "level": "ordinary",
+    "role": "future",
+    "success": true,
+    "steps": 24
+  },
+  {
+    "index": 22,
+    "seed": 2891706520294652213,
+    "level": "ordinary",
+    "role": "direct",
+    "success": true,
+    "steps": 24
+  },
+  {
+    "index": 22,
+    "seed": 2891706520294652213,
+    "level": "ordinary",
+    "role": "wrong_future",
+    "success": true,
+    "steps": 29
+  },
+  {
+    "index": 23,
+    "seed": 37226082954729007,
+    "level": "ordinary",
+    "role": "future",
+    "success": true,
+    "steps": 35
+  },
+  {
+    "index": 23,
+    "seed": 37226082954729007,
+    "level": "ordinary",
+    "role": "direct",
+    "success": true,
+    "steps": 28
+  },
+  {
+    "index": 23,
+    "seed": 37226082954729007,
+    "level": "ordinary",
+    "role": "wrong_future",
+    "success": true,
+    "steps": 33
+  },
+  {
+    "index": 24,
+    "seed": 7744429107479125717,
+    "level": "ordinary",
+    "role": "future",
+    "success": true,
+    "steps": 25
+  },
+  {
+    "index": 24,
+    "seed": 7744429107479125717,
+    "level": "ordinary",
+    "role": "direct",
+    "success": true,
+    "steps": 25
+  },
+  {
+    "index": 24,
+    "seed": 7744429107479125717,
+    "level": "ordinary",
+    "role": "wrong_future",
+    "success": true,
+    "steps": 35
+  },
+  {
+    "index": 25,
+    "seed": 2838374714733208503,
+    "level": "ordinary",
+    "role": "future",
+    "success": true,
+    "steps": 35
+  },
+  {
+    "index": 25,
+    "seed": 2838374714733208503,
+    "level": "ordinary",
+    "role": "direct",
+    "success": false,
+    "steps": 80
+  },
+  {
+    "index": 25,
+    "seed": 2838374714733208503,
+    "level": "ordinary",
+    "role": "wrong_future",
+    "success": false,
+    "steps": 80
+  },
+  {
+    "index": 26,
+    "seed": 2094668790035034989,
+    "level": "ordinary",
+    "role": "future",
+    "success": true,
+    "steps": 39
+  },
+  {
+    "index": 26,
+    "seed": 2094668790035034989,
+    "level": "ordinary",
+    "role": "direct",
+    "success": true,
+    "steps": 30
+  },
+  {
+    "index": 26,
+    "seed": 2094668790035034989,
+    "level": "ordinary",
+    "role": "wrong_future",
+    "success": false,
+    "steps": 80
+  },
+  {
+    "index": 27,
+    "seed": 5572684430340368862,
+    "level": "ordinary",
+    "role": "future",
+    "success": true,
+    "steps": 19
+  },
+  {
+    "index": 27,
+    "seed": 5572684430340368862,
+    "level": "ordinary",
+    "role": "direct",
+    "success": true,
+    "steps": 19
+  },
+  {
+    "index": 27,
+    "seed": 5572684430340368862,
+    "level": "ordinary",
+    "role": "wrong_future",
+    "success": true,
+    "steps": 41
+  },
+  {
+    "index": 28,
+    "seed": 8918200100128350019,
+    "level": "ordinary",
+    "role": "future",
+    "success": true,
+    "steps": 24
+  },
+  {
+    "index": 28,
+    "seed": 8918200100128350019,
+    "level": "ordinary",
+    "role": "direct",
+    "success": false,
+    "steps": 80
+  },
+  {
+    "index": 28,
+    "seed": 8918200100128350019,
+    "level": "ordinary",
+    "role": "wrong_future",
+    "success": true,
+    "steps": 35
+  },
+  {
+    "index": 29,
+    "seed": 159716719308441315,
+    "level": "ordinary",
+    "role": "future",
+    "success": false,
+    "steps": 80
+  },
+  {
+    "index": 29,
+    "seed": 159716719308441315,
+    "level": "ordinary",
+    "role": "direct",
+    "success": true,
+    "steps": 23
+  },
+  {
+    "index": 29,
+    "seed": 159716719308441315,
+    "level": "ordinary",
+    "role": "wrong_future",
+    "success": false,
+    "steps": 80
+  },
+  {
+    "index": 30,
+    "seed": 6742765157568917253,
+    "level": "ordinary",
+    "role": "future",
+    "success": true,
+    "steps": 25
+  },
+  {
+    "index": 30,
+    "seed": 6742765157568917253,
+    "level": "ordinary",
+    "role": "direct",
+    "success": true,
+    "steps": 25
+  },
+  {
+    "index": 30,
+    "seed": 6742765157568917253,
+    "level": "ordinary",
+    "role": "wrong_future",
+    "success": false,
+    "steps": 80
+  },
+  {
+    "index": 31,
+    "seed": 7208723602624419360,
+    "level": "ordinary",
+    "role": "future",
+    "success": true,
+    "steps": 23
+  },
+  {
+    "index": 31,
+    "seed": 7208723602624419360,
+    "level": "ordinary",
+    "role": "direct",
+    "success": true,
+    "steps": 24
+  },
+  {
+    "index": 31,
+    "seed": 7208723602624419360,
+    "level": "ordinary",
+    "role": "wrong_future",
+    "success": false,
+    "steps": 80
+  },
+  {
+    "index": 32,
+    "seed": 7497942460330747970,
+    "level": "ordinary",
+    "role": "future",
+    "success": false,
+    "steps": 80
+  },
+  {
+    "index": 32,
+    "seed": 7497942460330747970,
+    "level": "ordinary",
+    "role": "direct",
+    "success": false,
+    "steps": 80
+  },
+  {
+    "index": 32,
+    "seed": 7497942460330747970,
+    "level": "ordinary",
+    "role": "wrong_future",
+    "success": false,
+    "steps": 80
+  },
+  {
+    "index": 33,
+    "seed": 5516449949184395747,
+    "level": "ordinary",
+    "role": "future",
+    "success": true,
+    "steps": 36
+  },
+  {
+    "index": 33,
+    "seed": 5516449949184395747,
+    "level": "ordinary",
+    "role": "direct",
+    "success": true,
+    "steps": 36
+  },
+  {
+    "index": 33,
+    "seed": 5516449949184395747,
+    "level": "ordinary",
+    "role": "wrong_future",
+    "success": true,
+    "steps": 27
+  },
+  {
+    "index": 34,
+    "seed": 1066505216269824840,
+    "level": "ordinary",
+    "role": "future",
+    "success": false,
+    "steps": 80
+  },
+  {
+    "index": 34,
+    "seed": 1066505216269824840,
+    "level": "ordinary",
+    "role": "direct",
+    "success": false,
+    "steps": 80
+  },
+  {
+    "index": 34,
+    "seed": 1066505216269824840,
+    "level": "ordinary",
+    "role": "wrong_future",
+    "success": true,
+    "steps": 33
+  },
+  {
+    "index": 35,
+    "seed": 3779429650265943354,
+    "level": "ordinary",
+    "role": "future",
+    "success": true,
+    "steps": 24
+  },
+  {
+    "index": 35,
+    "seed": 3779429650265943354,
+    "level": "ordinary",
+    "role": "direct",
+    "success": true,
+    "steps": 30
+  },
+  {
+    "index": 35,
+    "seed": 3779429650265943354,
+    "level": "ordinary",
+    "role": "wrong_future",
+    "success": true,
+    "steps": 19
+  },
+  {
+    "index": 36,
+    "seed": 1178348468735604758,
+    "level": "ordinary",
+    "role": "future",
+    "success": true,
+    "steps": 12
+  },
+  {
+    "index": 36,
+    "seed": 1178348468735604758,
+    "level": "ordinary",
+    "role": "direct",
+    "success": true,
+    "steps": 12
+  },
+  {
+    "index": 36,
+    "seed": 1178348468735604758,
+    "level": "ordinary",
+    "role": "wrong_future",
+    "success": true,
+    "steps": 12
+  },
+  {
+    "index": 37,
+    "seed": 5016564016017933500,
+    "level": "ordinary",
+    "role": "future",
+    "success": true,
+    "steps": 22
+  },
+  {
+    "index": 37,
+    "seed": 5016564016017933500,
+    "level": "ordinary",
+    "role": "direct",
+    "success": true,
+    "steps": 19
+  },
+  {
+    "index": 37,
+    "seed": 5016564016017933500,
+    "level": "ordinary",
+    "role": "wrong_future",
+    "success": true,
+    "steps": 41
+  },
+  {
+    "index": 38,
+    "seed": 2797649562097488685,
+    "level": "ordinary",
+    "role": "future",
+    "success": true,
+    "steps": 24
+  },
+  {
+    "index": 38,
+    "seed": 2797649562097488685,
+    "level": "ordinary",
+    "role": "direct",
+    "success": true,
+    "steps": 30
+  },
+  {
+    "index": 38,
+    "seed": 2797649562097488685,
+    "level": "ordinary",
+    "role": "wrong_future",
+    "success": false,
+    "steps": 80
+  },
+  {
+    "index": 39,
+    "seed": 5577660561458151189,
+    "level": "ordinary",
+    "role": "future",
+    "success": true,
+    "steps": 24
+  },
+  {
+    "index": 39,
+    "seed": 5577660561458151189,
+    "level": "ordinary",
+    "role": "direct",
+    "success": true,
+    "steps": 24
+  },
+  {
+    "index": 39,
+    "seed": 5577660561458151189,
+    "level": "ordinary",
+    "role": "wrong_future",
+    "success": true,
+    "steps": 40
+  },
+  {
+    "index": 40,
+    "seed": 9196142699691996669,
+    "level": "motion",
+    "role": "future",
+    "success": true,
+    "steps": 30
+  },
+  {
+    "index": 40,
+    "seed": 9196142699691996669,
+    "level": "motion",
+    "role": "direct",
+    "success": true,
+    "steps": 29
+  },
+  {
+    "index": 40,
+    "seed": 9196142699691996669,
+    "level": "motion",
+    "role": "wrong_future",
+    "success": true,
+    "steps": 41
+  },
+  {
+    "index": 41,
+    "seed": 2064972758516746679,
+    "level": "motion",
+    "role": "future",
+    "success": true,
+    "steps": 19
+  },
+  {
+    "index": 41,
+    "seed": 2064972758516746679,
+    "level": "motion",
+    "role": "direct",
+    "success": true,
+    "steps": 19
+  },
+  {
+    "index": 41,
+    "seed": 2064972758516746679,
+    "level": "motion",
+    "role": "wrong_future",
+    "success": true,
+    "steps": 27
+  },
+  {
+    "index": 42,
+    "seed": 4804691968357561895,
+    "level": "motion",
+    "role": "future",
+    "success": true,
+    "steps": 21
+  },
+  {
+    "index": 42,
+    "seed": 4804691968357561895,
+    "level": "motion",
+    "role": "direct",
+    "success": true,
+    "steps": 21
+  },
+  {
+    "index": 42,
+    "seed": 4804691968357561895,
+    "level": "motion",
+    "role": "wrong_future",
+    "success": true,
+    "steps": 30
+  },
+  {
+    "index": 43,
+    "seed": 3220181092848321466,
+    "level": "motion",
+    "role": "future",
+    "success": false,
+    "steps": 80
+  },
+  {
+    "index": 43,
+    "seed": 3220181092848321466,
+    "level": "motion",
+    "role": "direct",
+    "success": false,
+    "steps": 80
+  },
+  {
+    "index": 43,
+    "seed": 3220181092848321466,
+    "level": "motion",
+    "role": "wrong_future",
+    "success": false,
+    "steps": 80
+  },
+  {
+    "index": 44,
+    "seed": 1114559478932077242,
+    "level": "motion",
+    "role": "future",
+    "success": true,
+    "steps": 11
+  },
+  {
+    "index": 44,
+    "seed": 1114559478932077242,
+    "level": "motion",
+    "role": "direct",
+    "success": true,
+    "steps": 11
+  },
+  {
+    "index": 44,
+    "seed": 1114559478932077242,
+    "level": "motion",
+    "role": "wrong_future",
+    "success": true,
+    "steps": 40
+  },
+  {
+    "index": 45,
+    "seed": 5092333477842987969,
+    "level": "motion",
+    "role": "future",
+    "success": true,
+    "steps": 19
+  },
+  {
+    "index": 45,
+    "seed": 5092333477842987969,
+    "level": "motion",
+    "role": "direct",
+    "success": true,
+    "steps": 37
+  },
+  {
+    "index": 45,
+    "seed": 5092333477842987969,
+    "level": "motion",
+    "role": "wrong_future",
+    "success": true,
+    "steps": 26
+  },
+  {
+    "index": 46,
+    "seed": 6798607179302709014,
+    "level": "motion",
+    "role": "future",
+    "success": true,
+    "steps": 30
+  },
+  {
+    "index": 46,
+    "seed": 6798607179302709014,
+    "level": "motion",
+    "role": "direct",
+    "success": true,
+    "steps": 40
+  },
+  {
+    "index": 46,
+    "seed": 6798607179302709014,
+    "level": "motion",
+    "role": "wrong_future",
+    "success": true,
+    "steps": 41
+  },
+  {
+    "index": 47,
+    "seed": 7437063821118663966,
+    "level": "motion",
+    "role": "future",
+    "success": false,
+    "steps": 80
+  },
+  {
+    "index": 47,
+    "seed": 7437063821118663966,
+    "level": "motion",
+    "role": "direct",
+    "success": true,
+    "steps": 54
+  },
+  {
+    "index": 47,
+    "seed": 7437063821118663966,
+    "level": "motion",
+    "role": "wrong_future",
+    "success": false,
+    "steps": 80
+  },
+  {
+    "index": 48,
+    "seed": 3325301180552651968,
+    "level": "motion",
+    "role": "future",
+    "success": true,
+    "steps": 19
+  },
+  {
+    "index": 48,
+    "seed": 3325301180552651968,
+    "level": "motion",
+    "role": "direct",
+    "success": false,
+    "steps": 80
+  },
+  {
+    "index": 48,
+    "seed": 3325301180552651968,
+    "level": "motion",
+    "role": "wrong_future",
+    "success": true,
+    "steps": 22
+  },
+  {
+    "index": 49,
+    "seed": 425749931625758923,
+    "level": "motion",
+    "role": "future",
+    "success": false,
+    "steps": 80
+  },
+  {
+    "index": 49,
+    "seed": 425749931625758923,
+    "level": "motion",
+    "role": "direct",
+    "success": true,
+    "steps": 45
+  },
+  {
+    "index": 49,
+    "seed": 425749931625758923,
+    "level": "motion",
+    "role": "wrong_future",
+    "success": true,
+    "steps": 21
+  },
+  {
+    "index": 50,
+    "seed": 591067745349647007,
+    "level": "motion",
+    "role": "future",
+    "success": true,
+    "steps": 20
+  },
+  {
+    "index": 50,
+    "seed": 591067745349647007,
+    "level": "motion",
+    "role": "direct",
+    "success": true,
+    "steps": 20
+  },
+  {
+    "index": 50,
+    "seed": 591067745349647007,
+    "level": "motion",
+    "role": "wrong_future",
+    "success": true,
+    "steps": 21
+  },
+  {
+    "index": 51,
+    "seed": 8182662713835209174,
+    "level": "motion",
+    "role": "future",
+    "success": false,
+    "steps": 80
+  },
+  {
+    "index": 51,
+    "seed": 8182662713835209174,
+    "level": "motion",
+    "role": "direct",
+    "success": false,
+    "steps": 80
+  },
+  {
+    "index": 51,
+    "seed": 8182662713835209174,
+    "level": "motion",
+    "role": "wrong_future",
+    "success": false,
+    "steps": 80
+  },
+  {
+    "index": 52,
+    "seed": 335331618396250988,
+    "level": "motion",
+    "role": "future",
+    "success": true,
+    "steps": 15
+  },
+  {
+    "index": 52,
+    "seed": 335331618396250988,
+    "level": "motion",
+    "role": "direct",
+    "success": true,
+    "steps": 14
+  },
+  {
+    "index": 52,
+    "seed": 335331618396250988,
+    "level": "motion",
+    "role": "wrong_future",
+    "success": true,
+    "steps": 17
+  },
+  {
+    "index": 53,
+    "seed": 7697201480005805090,
+    "level": "motion",
+    "role": "future",
+    "success": true,
+    "steps": 17
+  },
+  {
+    "index": 53,
+    "seed": 7697201480005805090,
+    "level": "motion",
+    "role": "direct",
+    "success": true,
+    "steps": 28
+  },
+  {
+    "index": 53,
+    "seed": 7697201480005805090,
+    "level": "motion",
+    "role": "wrong_future",
+    "success": false,
+    "steps": 80
+  },
+  {
+    "index": 54,
+    "seed": 8367488831913109460,
+    "level": "motion",
+    "role": "future",
+    "success": true,
+    "steps": 24
+  },
+  {
+    "index": 54,
+    "seed": 8367488831913109460,
+    "level": "motion",
+    "role": "direct",
+    "success": true,
+    "steps": 28
+  },
+  {
+    "index": 54,
+    "seed": 8367488831913109460,
+    "level": "motion",
+    "role": "wrong_future",
+    "success": true,
+    "steps": 31
+  },
+  {
+    "index": 55,
+    "seed": 1348843888209691342,
+    "level": "motion",
+    "role": "future",
+    "success": true,
+    "steps": 25
+  },
+  {
+    "index": 55,
+    "seed": 1348843888209691342,
+    "level": "motion",
+    "role": "direct",
+    "success": true,
+    "steps": 21
+  },
+  {
+    "index": 55,
+    "seed": 1348843888209691342,
+    "level": "motion",
+    "role": "wrong_future",
+    "success": true,
+    "steps": 21
+  },
+  {
+    "index": 56,
+    "seed": 1510129741599329732,
+    "level": "motion",
+    "role": "future",
+    "success": true,
+    "steps": 29
+  },
+  {
+    "index": 56,
+    "seed": 1510129741599329732,
+    "level": "motion",
+    "role": "direct",
+    "success": false,
+    "steps": 80
+  },
+  {
+    "index": 56,
+    "seed": 1510129741599329732,
+    "level": "motion",
+    "role": "wrong_future",
+    "success": false,
+    "steps": 80
+  },
+  {
+    "index": 57,
+    "seed": 3021939912431117735,
+    "level": "motion",
+    "role": "future",
+    "success": true,
+    "steps": 21
+  },
+  {
+    "index": 57,
+    "seed": 3021939912431117735,
+    "level": "motion",
+    "role": "direct",
+    "success": true,
+    "steps": 19
+  },
+  {
+    "index": 57,
+    "seed": 3021939912431117735,
+    "level": "motion",
+    "role": "wrong_future",
+    "success": true,
+    "steps": 13
+  },
+  {
+    "index": 58,
+    "seed": 2524438225541126744,
+    "level": "motion",
+    "role": "future",
+    "success": true,
+    "steps": 28
+  },
+  {
+    "index": 58,
+    "seed": 2524438225541126744,
+    "level": "motion",
+    "role": "direct",
+    "success": true,
+    "steps": 30
+  },
+  {
+    "index": 58,
+    "seed": 2524438225541126744,
+    "level": "motion",
+    "role": "wrong_future",
+    "success": true,
+    "steps": 28
+  },
+  {
+    "index": 59,
+    "seed": 6345545246167561318,
+    "level": "motion",
+    "role": "future",
+    "success": true,
+    "steps": 11
+  },
+  {
+    "index": 59,
+    "seed": 6345545246167561318,
+    "level": "motion",
+    "role": "direct",
+    "success": false,
+    "steps": 80
+  },
+  {
+    "index": 59,
+    "seed": 6345545246167561318,
+    "level": "motion",
+    "role": "wrong_future",
+    "success": false,
+    "steps": 80
+  },
+  {
+    "index": 60,
+    "seed": 5838539534108116266,
+    "level": "occlusion",
+    "role": "future",
+    "success": true,
+    "steps": 32
+  },
+  {
+    "index": 60,
+    "seed": 5838539534108116266,
+    "level": "occlusion",
+    "role": "direct",
+    "success": true,
+    "steps": 41
+  },
+  {
+    "index": 60,
+    "seed": 5838539534108116266,
+    "level": "occlusion",
+    "role": "wrong_future",
+    "success": true,
+    "steps": 49
+  },
+  {
+    "index": 61,
+    "seed": 6916131544077656959,
+    "level": "occlusion",
+    "role": "future",
+    "success": true,
+    "steps": 20
+  },
+  {
+    "index": 61,
+    "seed": 6916131544077656959,
+    "level": "occlusion",
+    "role": "direct",
+    "success": true,
+    "steps": 18
+  },
+  {
+    "index": 61,
+    "seed": 6916131544077656959,
+    "level": "occlusion",
+    "role": "wrong_future",
+    "success": true,
+    "steps": 23
+  },
+  {
+    "index": 62,
+    "seed": 1447425937413186168,
+    "level": "occlusion",
+    "role": "future",
+    "success": true,
+    "steps": 54
+  },
+  {
+    "index": 62,
+    "seed": 1447425937413186168,
+    "level": "occlusion",
+    "role": "direct",
+    "success": true,
+    "steps": 40
+  },
+  {
+    "index": 62,
+    "seed": 1447425937413186168,
+    "level": "occlusion",
+    "role": "wrong_future",
+    "success": true,
+    "steps": 25
+  },
+  {
+    "index": 63,
+    "seed": 1249483881432776944,
+    "level": "occlusion",
+    "role": "future",
+    "success": true,
+    "steps": 21
+  },
+  {
+    "index": 63,
+    "seed": 1249483881432776944,
+    "level": "occlusion",
+    "role": "direct",
+    "success": true,
+    "steps": 21
+  },
+  {
+    "index": 63,
+    "seed": 1249483881432776944,
+    "level": "occlusion",
+    "role": "wrong_future",
+    "success": true,
+    "steps": 27
+  },
+  {
+    "index": 64,
+    "seed": 5617240239507207684,
+    "level": "occlusion",
+    "role": "future",
+    "success": false,
+    "steps": 80
+  },
+  {
+    "index": 64,
+    "seed": 5617240239507207684,
+    "level": "occlusion",
+    "role": "direct",
+    "success": false,
+    "steps": 80
+  },
+  {
+    "index": 64,
+    "seed": 5617240239507207684,
+    "level": "occlusion",
+    "role": "wrong_future",
+    "success": false,
+    "steps": 80
+  },
+  {
+    "index": 65,
+    "seed": 4709629219388068912,
+    "level": "occlusion",
+    "role": "future",
+    "success": true,
+    "steps": 69
+  },
+  {
+    "index": 65,
+    "seed": 4709629219388068912,
+    "level": "occlusion",
+    "role": "direct",
+    "success": true,
+    "steps": 72
+  },
+  {
+    "index": 65,
+    "seed": 4709629219388068912,
+    "level": "occlusion",
+    "role": "wrong_future",
+    "success": true,
+    "steps": 68
+  },
+  {
+    "index": 66,
+    "seed": 9192843625486351876,
+    "level": "occlusion",
+    "role": "future",
+    "success": true,
+    "steps": 11
+  },
+  {
+    "index": 66,
+    "seed": 9192843625486351876,
+    "level": "occlusion",
+    "role": "direct",
+    "success": true,
+    "steps": 16
+  },
+  {
+    "index": 66,
+    "seed": 9192843625486351876,
+    "level": "occlusion",
+    "role": "wrong_future",
+    "success": true,
+    "steps": 11
+  },
+  {
+    "index": 67,
+    "seed": 5807443125480665859,
+    "level": "occlusion",
+    "role": "future",
+    "success": true,
+    "steps": 34
+  },
+  {
+    "index": 67,
+    "seed": 5807443125480665859,
+    "level": "occlusion",
+    "role": "direct",
+    "success": true,
+    "steps": 31
+  },
+  {
+    "index": 67,
+    "seed": 5807443125480665859,
+    "level": "occlusion",
+    "role": "wrong_future",
+    "success": true,
+    "steps": 34
+  },
+  {
+    "index": 68,
+    "seed": 6946694726218577030,
+    "level": "occlusion",
+    "role": "future",
+    "success": true,
+    "steps": 14
+  },
+  {
+    "index": 68,
+    "seed": 6946694726218577030,
+    "level": "occlusion",
+    "role": "direct",
+    "success": true,
+    "steps": 35
+  },
+  {
+    "index": 68,
+    "seed": 6946694726218577030,
+    "level": "occlusion",
+    "role": "wrong_future",
+    "success": true,
+    "steps": 15
+  },
+  {
+    "index": 69,
+    "seed": 5296682368009745574,
+    "level": "occlusion",
+    "role": "future",
+    "success": true,
+    "steps": 21
+  },
+  {
+    "index": 69,
+    "seed": 5296682368009745574,
+    "level": "occlusion",
+    "role": "direct",
+    "success": true,
+    "steps": 28
+  },
+  {
+    "index": 69,
+    "seed": 5296682368009745574,
+    "level": "occlusion",
+    "role": "wrong_future",
+    "success": true,
+    "steps": 24
+  },
+  {
+    "index": 70,
+    "seed": 5907482148570627260,
+    "level": "occlusion",
+    "role": "future",
+    "success": true,
+    "steps": 24
+  },
+  {
+    "index": 70,
+    "seed": 5907482148570627260,
+    "level": "occlusion",
+    "role": "direct",
+    "success": false,
+    "steps": 80
+  },
+  {
+    "index": 70,
+    "seed": 5907482148570627260,
+    "level": "occlusion",
+    "role": "wrong_future",
+    "success": true,
+    "steps": 53
+  },
+  {
+    "index": 71,
+    "seed": 540406557180842233,
+    "level": "occlusion",
+    "role": "future",
+    "success": false,
+    "steps": 80
+  },
+  {
+    "index": 71,
+    "seed": 540406557180842233,
+    "level": "occlusion",
+    "role": "direct",
+    "success": false,
+    "steps": 80
+  },
+  {
+    "index": 71,
+    "seed": 540406557180842233,
+    "level": "occlusion",
+    "role": "wrong_future",
+    "success": true,
+    "steps": 26
+  },
+  {
+    "index": 72,
+    "seed": 1377638373472668434,
+    "level": "occlusion",
+    "role": "future",
+    "success": false,
+    "steps": 80
+  },
+  {
+    "index": 72,
+    "seed": 1377638373472668434,
+    "level": "occlusion",
+    "role": "direct",
+    "success": false,
+    "steps": 80
+  },
+  {
+    "index": 72,
+    "seed": 1377638373472668434,
+    "level": "occlusion",
+    "role": "wrong_future",
+    "success": false,
+    "steps": 80
+  },
+  {
+    "index": 73,
+    "seed": 8195403073442050103,
+    "level": "occlusion",
+    "role": "future",
+    "success": true,
+    "steps": 42
+  },
+  {
+    "index": 73,
+    "seed": 8195403073442050103,
+    "level": "occlusion",
+    "role": "direct",
+    "success": true,
+    "steps": 32
+  },
+  {
+    "index": 73,
+    "seed": 8195403073442050103,
+    "level": "occlusion",
+    "role": "wrong_future",
+    "success": true,
+    "steps": 36
+  },
+  {
+    "index": 74,
+    "seed": 4934258766889215606,
+    "level": "occlusion",
+    "role": "future",
+    "success": true,
+    "steps": 35
+  },
+  {
+    "index": 74,
+    "seed": 4934258766889215606,
+    "level": "occlusion",
+    "role": "direct",
+    "success": true,
+    "steps": 38
+  },
+  {
+    "index": 74,
+    "seed": 4934258766889215606,
+    "level": "occlusion",
+    "role": "wrong_future",
+    "success": false,
+    "steps": 80
+  },
+  {
+    "index": 75,
+    "seed": 7231971326328760899,
+    "level": "occlusion",
+    "role": "future",
+    "success": true,
+    "steps": 21
+  },
+  {
+    "index": 75,
+    "seed": 7231971326328760899,
+    "level": "occlusion",
+    "role": "direct",
+    "success": true,
+    "steps": 72
+  },
+  {
+    "index": 75,
+    "seed": 7231971326328760899,
+    "level": "occlusion",
+    "role": "wrong_future",
+    "success": true,
+    "steps": 65
+  },
+  {
+    "index": 76,
+    "seed": 6911271131011860436,
+    "level": "occlusion",
+    "role": "future",
+    "success": true,
+    "steps": 37
+  },
+  {
+    "index": 76,
+    "seed": 6911271131011860436,
+    "level": "occlusion",
+    "role": "direct",
+    "success": false,
+    "steps": 80
+  },
+  {
+    "index": 76,
+    "seed": 6911271131011860436,
+    "level": "occlusion",
+    "role": "wrong_future",
+    "success": true,
+    "steps": 37
+  },
+  {
+    "index": 77,
+    "seed": 8975533534061252319,
+    "level": "occlusion",
+    "role": "future",
+    "success": true,
+    "steps": 40
+  },
+  {
+    "index": 77,
+    "seed": 8975533534061252319,
+    "level": "occlusion",
+    "role": "direct",
+    "success": false,
+    "steps": 80
+  },
+  {
+    "index": 77,
+    "seed": 8975533534061252319,
+    "level": "occlusion",
+    "role": "wrong_future",
+    "success": true,
+    "steps": 43
+  },
+  {
+    "index": 78,
+    "seed": 6248058282406253993,
+    "level": "occlusion",
+    "role": "future",
+    "success": true,
+    "steps": 26
+  },
+  {
+    "index": 78,
+    "seed": 6248058282406253993,
+    "level": "occlusion",
+    "role": "direct",
+    "success": false,
+    "steps": 80
+  },
+  {
+    "index": 78,
+    "seed": 6248058282406253993,
+    "level": "occlusion",
+    "role": "wrong_future",
+    "success": true,
+    "steps": 79
+  },
+  {
+    "index": 79,
+    "seed": 4640078893198198622,
+    "level": "occlusion",
+    "role": "future",
+    "success": true,
+    "steps": 38
+  },
+  {
+    "index": 79,
+    "seed": 4640078893198198622,
+    "level": "occlusion",
+    "role": "direct",
+    "success": true,
+    "steps": 40
+  },
+  {
+    "index": 79,
+    "seed": 4640078893198198622,
+    "level": "occlusion",
+    "role": "wrong_future",
+    "success": false,
+    "steps": 80
+  },
+  {
+    "index": 80,
+    "seed": 6497381569715398155,
+    "level": "transfer",
+    "role": "future",
+    "success": true,
+    "steps": 55
+  },
+  {
+    "index": 80,
+    "seed": 6497381569715398155,
+    "level": "transfer",
+    "role": "direct",
+    "success": false,
+    "steps": 80
+  },
+  {
+    "index": 80,
+    "seed": 6497381569715398155,
+    "level": "transfer",
+    "role": "wrong_future",
+    "success": true,
+    "steps": 18
+  },
+  {
+    "index": 81,
+    "seed": 7685855449727055080,
+    "level": "transfer",
+    "role": "future",
+    "success": true,
+    "steps": 28
+  },
+  {
+    "index": 81,
+    "seed": 7685855449727055080,
+    "level": "transfer",
+    "role": "direct",
+    "success": true,
+    "steps": 27
+  },
+  {
+    "index": 81,
+    "seed": 7685855449727055080,
+    "level": "transfer",
+    "role": "wrong_future",
+    "success": false,
+    "steps": 80
+  },
+  {
+    "index": 82,
+    "seed": 6157504099583862967,
+    "level": "transfer",
+    "role": "future",
+    "success": true,
+    "steps": 27
+  },
+  {
+    "index": 82,
+    "seed": 6157504099583862967,
+    "level": "transfer",
+    "role": "direct",
+    "success": true,
+    "steps": 26
+  },
+  {
+    "index": 82,
+    "seed": 6157504099583862967,
+    "level": "transfer",
+    "role": "wrong_future",
+    "success": true,
+    "steps": 23
+  },
+  {
+    "index": 83,
+    "seed": 5522389966957924879,
+    "level": "transfer",
+    "role": "future",
+    "success": false,
+    "steps": 80
+  },
+  {
+    "index": 83,
+    "seed": 5522389966957924879,
+    "level": "transfer",
+    "role": "direct",
+    "success": false,
+    "steps": 80
+  },
+  {
+    "index": 83,
+    "seed": 5522389966957924879,
+    "level": "transfer",
+    "role": "wrong_future",
+    "success": true,
+    "steps": 30
+  },
+  {
+    "index": 84,
+    "seed": 7556435357200115716,
+    "level": "transfer",
+    "role": "future",
+    "success": true,
+    "steps": 31
+  },
+  {
+    "index": 84,
+    "seed": 7556435357200115716,
+    "level": "transfer",
+    "role": "direct",
+    "success": true,
+    "steps": 28
+  },
+  {
+    "index": 84,
+    "seed": 7556435357200115716,
+    "level": "transfer",
+    "role": "wrong_future",
+    "success": true,
+    "steps": 25
+  },
+  {
+    "index": 85,
+    "seed": 4212510046045463158,
+    "level": "transfer",
+    "role": "future",
+    "success": true,
+    "steps": 22
+  },
+  {
+    "index": 85,
+    "seed": 4212510046045463158,
+    "level": "transfer",
+    "role": "direct",
+    "success": true,
+    "steps": 22
+  },
+  {
+    "index": 85,
+    "seed": 4212510046045463158,
+    "level": "transfer",
+    "role": "wrong_future",
+    "success": true,
+    "steps": 18
+  },
+  {
+    "index": 86,
+    "seed": 8270807930771758166,
+    "level": "transfer",
+    "role": "future",
+    "success": true,
+    "steps": 20
+  },
+  {
+    "index": 86,
+    "seed": 8270807930771758166,
+    "level": "transfer",
+    "role": "direct",
+    "success": false,
+    "steps": 80
+  },
+  {
+    "index": 86,
+    "seed": 8270807930771758166,
+    "level": "transfer",
+    "role": "wrong_future",
+    "success": false,
+    "steps": 80
+  },
+  {
+    "index": 87,
+    "seed": 3278401906259607199,
+    "level": "transfer",
+    "role": "future",
+    "success": true,
+    "steps": 12
+  },
+  {
+    "index": 87,
+    "seed": 3278401906259607199,
+    "level": "transfer",
+    "role": "direct",
+    "success": true,
+    "steps": 13
+  },
+  {
+    "index": 87,
+    "seed": 3278401906259607199,
+    "level": "transfer",
+    "role": "wrong_future",
+    "success": true,
+    "steps": 13
+  },
+  {
+    "index": 88,
+    "seed": 6356741265880931819,
+    "level": "transfer",
+    "role": "future",
+    "success": true,
+    "steps": 27
+  },
+  {
+    "index": 88,
+    "seed": 6356741265880931819,
+    "level": "transfer",
+    "role": "direct",
+    "success": true,
+    "steps": 24
+  },
+  {
+    "index": 88,
+    "seed": 6356741265880931819,
+    "level": "transfer",
+    "role": "wrong_future",
+    "success": true,
+    "steps": 44
+  },
+  {
+    "index": 89,
+    "seed": 1638618800755189122,
+    "level": "transfer",
+    "role": "future",
+    "success": true,
+    "steps": 19
+  },
+  {
+    "index": 89,
+    "seed": 1638618800755189122,
+    "level": "transfer",
+    "role": "direct",
+    "success": true,
+    "steps": 19
+  },
+  {
+    "index": 89,
+    "seed": 1638618800755189122,
+    "level": "transfer",
+    "role": "wrong_future",
+    "success": true,
+    "steps": 22
+  },
+  {
+    "index": 90,
+    "seed": 425722737562318780,
+    "level": "transfer",
+    "role": "future",
+    "success": true,
+    "steps": 31
+  },
+  {
+    "index": 90,
+    "seed": 425722737562318780,
+    "level": "transfer",
+    "role": "direct",
+    "success": false,
+    "steps": 80
+  },
+  {
+    "index": 90,
+    "seed": 425722737562318780,
+    "level": "transfer",
+    "role": "wrong_future",
+    "success": true,
+    "steps": 45
+  },
+  {
+    "index": 91,
+    "seed": 5389165686079318181,
+    "level": "transfer",
+    "role": "future",
+    "success": true,
+    "steps": 27
+  },
+  {
+    "index": 91,
+    "seed": 5389165686079318181,
+    "level": "transfer",
+    "role": "direct",
+    "success": false,
+    "steps": 80
+  },
+  {
+    "index": 91,
+    "seed": 5389165686079318181,
+    "level": "transfer",
+    "role": "wrong_future",
+    "success": true,
+    "steps": 40
+  },
+  {
+    "index": 92,
+    "seed": 6865543010157575643,
+    "level": "transfer",
+    "role": "future",
+    "success": true,
+    "steps": 26
+  },
+  {
+    "index": 92,
+    "seed": 6865543010157575643,
+    "level": "transfer",
+    "role": "direct",
+    "success": true,
+    "steps": 27
+  },
+  {
+    "index": 92,
+    "seed": 6865543010157575643,
+    "level": "transfer",
+    "role": "wrong_future",
+    "success": false,
+    "steps": 80
+  },
+  {
+    "index": 93,
+    "seed": 8494237688642542986,
+    "level": "transfer",
+    "role": "future",
+    "success": true,
+    "steps": 38
+  },
+  {
+    "index": 93,
+    "seed": 8494237688642542986,
+    "level": "transfer",
+    "role": "direct",
+    "success": true,
+    "steps": 37
+  },
+  {
+    "index": 93,
+    "seed": 8494237688642542986,
+    "level": "transfer",
+    "role": "wrong_future",
+    "success": false,
+    "steps": 80
+  },
+  {
+    "index": 94,
+    "seed": 6975953054295227962,
+    "level": "transfer",
+    "role": "future",
+    "success": true,
+    "steps": 18
+  },
+  {
+    "index": 94,
+    "seed": 6975953054295227962,
+    "level": "transfer",
+    "role": "direct",
+    "success": true,
+    "steps": 20
+  },
+  {
+    "index": 94,
+    "seed": 6975953054295227962,
+    "level": "transfer",
+    "role": "wrong_future",
+    "success": true,
+    "steps": 18
+  },
+  {
+    "index": 95,
+    "seed": 1927169723497490551,
+    "level": "transfer",
+    "role": "future",
+    "success": true,
+    "steps": 16
+  },
+  {
+    "index": 95,
+    "seed": 1927169723497490551,
+    "level": "transfer",
+    "role": "direct",
+    "success": false,
+    "steps": 80
+  },
+  {
+    "index": 95,
+    "seed": 1927169723497490551,
+    "level": "transfer",
+    "role": "wrong_future",
+    "success": true,
+    "steps": 26
+  },
+  {
+    "index": 96,
+    "seed": 5766888747949727687,
+    "level": "transfer",
+    "role": "future",
+    "success": true,
+    "steps": 22
+  },
+  {
+    "index": 96,
+    "seed": 5766888747949727687,
+    "level": "transfer",
+    "role": "direct",
+    "success": true,
+    "steps": 26
+  },
+  {
+    "index": 96,
+    "seed": 5766888747949727687,
+    "level": "transfer",
+    "role": "wrong_future",
+    "success": true,
+    "steps": 32
+  },
+  {
+    "index": 97,
+    "seed": 1419360341069387773,
+    "level": "transfer",
+    "role": "future",
+    "success": true,
+    "steps": 30
+  },
+  {
+    "index": 97,
+    "seed": 1419360341069387773,
+    "level": "transfer",
+    "role": "direct",
+    "success": false,
+    "steps": 80
+  },
+  {
+    "index": 97,
+    "seed": 1419360341069387773,
+    "level": "transfer",
+    "role": "wrong_future",
+    "success": false,
+    "steps": 80
+  },
+  {
+    "index": 98,
+    "seed": 7172161044451594499,
+    "level": "transfer",
+    "role": "future",
+    "success": true,
+    "steps": 14
+  },
+  {
+    "index": 98,
+    "seed": 7172161044451594499,
+    "level": "transfer",
+    "role": "direct",
+    "success": true,
+    "steps": 20
+  },
+  {
+    "index": 98,
+    "seed": 7172161044451594499,
+    "level": "transfer",
+    "role": "wrong_future",
+    "success": true,
+    "steps": 14
+  },
+  {
+    "index": 99,
+    "seed": 5278477390158875514,
+    "level": "transfer",
+    "role": "future",
+    "success": true,
+    "steps": 29
+  },
+  {
+    "index": 99,
+    "seed": 5278477390158875514,
+    "level": "transfer",
+    "role": "direct",
+    "success": true,
+    "steps": 31
+  },
+  {
+    "index": 99,
+    "seed": 5278477390158875514,
+    "level": "transfer",
+    "role": "wrong_future",
+    "success": false,
+    "steps": 80
+  }
+]

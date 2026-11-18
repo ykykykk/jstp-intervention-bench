@@ -1,0 +1,6 @@
+{
+  "original_checkpoint": "47c426ad2c01e736679ca2bd29724f500033df777aa19c5b1102330ca2dcb634",
+  "stripped_checkpoint": "ac452a52920d330a7b4bb525c46dcb61225ea3fceb766225280172b43d0307b4",
+  "protocol": "H=1, prior weight=0.5; hold weights constant",
+  "role": "historical auxiliary frozen evaluation; optimizer and private paths intentionally excluded"
+}

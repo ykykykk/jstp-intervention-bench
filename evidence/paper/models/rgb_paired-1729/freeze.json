@@ -1,0 +1,15 @@
+{
+  "method": "rgb_paired",
+  "seed": 1729,
+  "step": 1200,
+  "val": 0.515625,
+  "trainable": 41263,
+  "protocol": "8486cfefe589b03c00a9dfbbcd6482060effc6ae716bffabc5218169c1d51082",
+  "sha256": "5b97d8917750409d468bd6ba4fe0130891c5d9a79c3b90b8ef2243d1049dcb11",
+  "seconds": 14.75,
+  "torch": "2.15.0+cu132",
+  "numpy": "2.5.5",
+  "python": "3.13.5",
+  "device": "NVIDIA GeForce RTX 3090",
+  "train_manifest": "9c5b7232fcd64bc5dbf363c836d34b3fc413d5ae44d22b7123fa568767851297"
+}

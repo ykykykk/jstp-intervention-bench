@@ -1,0 +1,6 @@
+# Typesetting environment used for the released PDF: CPython 3.12.14.
+reportlab==4.4.9
+pillow==13.0.0
+numpy==2.3.5
+# Only needed to regenerate the bundled OFL font subsets:
+fonttools==4.68.0

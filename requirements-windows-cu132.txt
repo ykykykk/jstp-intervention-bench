@@ -1,0 +1,16 @@
+# Exact environment used for the independent RTX 3090 reproduction (CPython 3.13.5).
+--extra-index-url https://download.pytorch.org/whl/cu132
+einops==0.8.2
+filelock==4.2.12
+fsspec==2026.9.0
+jinja2==3.1.6
+markupsafe==3.0.4
+mpmath==1.3.0
+networkx==3.7
+numpy==2.5.5
+pillow==13.0.0
+pygame==2.6.1
+setuptools==84.2.1
+sympy==1.14.0
+torch==2.15.0+cu132
+typing-extensions==4.16.0

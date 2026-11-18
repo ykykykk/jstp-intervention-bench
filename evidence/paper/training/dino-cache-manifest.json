@@ -1,0 +1,14 @@
+{
+  "direct_train": {
+    "data": "f725c815b9544da23f6e695c416cb15683d62caa1883e09a798c0aef5071cd67",
+    "features": "4f0b6988d3778cc88b617bc55f1bdb4cca8255f04df58186c8d6948942743ab4"
+  },
+  "train": {
+    "data": "9e8ef528baed69ba6dc635c32a2617602d3e9613e15c60b10fe75bf5764d26e1",
+    "features": "b4a136938b7fb2e721575688a7f95bb1271b178b5c2d84452eec12f27029dc0c"
+  },
+  "val": {
+    "data": "1d44bcbb3e0d6be2c866db38808e2e20b262f3d8c0c8f4775eecfa8a0a4e8bc6",
+    "features": "632ee7b1cdd447592b05a28b841c9b1ec25eb6ffdd3155514583f5d83d9bab16"
+  }
+}

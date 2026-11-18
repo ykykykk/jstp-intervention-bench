@@ -1,0 +1,9 @@
+{
+  "n": 300,
+  "totals": {
+    "future": 87,
+    "direct": 70,
+    "wrong_future": 69
+  },
+  "mismatched_trials": []
+}

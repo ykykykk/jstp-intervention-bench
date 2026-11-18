@@ -1,0 +1,6 @@
+{
+  "sha256": "ec3e280d5c98b431cd0628b41c2356366f44a4dc7690f7b3fa7daba3e1a6d052",
+  "protocol": "0fc2b95eee4c8480d2eadf51c5f1ade419c80eb4be08b019cdaa9489ddf4ba7a",
+  "train_seconds": 24.56,
+  "parameter_count": 36939
+}

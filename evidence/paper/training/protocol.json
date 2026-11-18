@@ -1,0 +1,18 @@
+{
+  "schema": "jstp-paper-1",
+  "seeds": [1729,2718,31415],
+  "learned": ["jstp","transport_factual","rgb_paired","rgb_factual","history_policy","dino_wm"],
+  "rules": ["one_bit","visible_rule"],
+  "splits": {"direct_train":[11000000,2048],"train":[12000000,2048],"val":[13000000,96],"test_id":[15000000,128],"test_link":[17000000,128]},
+  "stage1_steps":300, "stage2_steps":1500, "validate_every":150,
+  "groups_per_batch":8, "direct_batch":32, "direct_rehearsal_every":5,
+  "lr_stage1":0.002, "lr_stage2":0.0012, "dino_lr":0.0005,
+  "choose":"highest single-goal validation task accuracy, latest on tie; no test selection",
+  "train_singleton_lanes":[0,2], "heldout_singleton_lanes":[1],
+  "train_goal":"one named lane moves or stays; unspecified lanes ignored",
+  "test_goal":"same layout with one- and two-lane goals; goals reachable with either hidden handle permutation",
+  "interventions":["factual","flat","exchange"],
+  "forecast_threshold_pixels":3,"bootstrap_draws":10000,"bootstrap_seed":91107,
+  "dino":{"encoder_commit":"7764ea0f912e53c92e82eb78a2a1631e92725fc8","predictor_commit":"0a9492fa12044b852ae9e001cc74604b79c8bb0c","checkpoint_name":"dinov2_vits14_pretrain.pth","encoder_sha256":"b938bf1bc15cd2ec0feacfe3a1bb553fe8ea9ca46a7e1d8d00217f29aef60cd9","resize":[84,126],"width":96,"depth":2,"heads":4,"dim_head":24},
+  "paper_scope":"independent training runs; frozen paired intervention; deterministic virtual actuator, not physical robot; VLA comparisons are literature unless named checkpoints were actually adapted"
+}

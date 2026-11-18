@@ -1,0 +1,17 @@
+[build-system]
+requires = ["setuptools>=72"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "jstp-intervention-bench"
+version = "1.0.0"
+description = "配对交互中的联合状态转移预测、功能性分组与目标选择"
+authors = [{name = "岳轲"}]
+requires-python = ">=3.10"
+dependencies = ["numpy>=1.26", "torch>=2.3", "pillow>=10", "einops>=0.8"]
+
+[project.optional-dependencies]
+legacy = ["pygame==2.6.1"]
+
+[tool.setuptools]
+packages = ["jstp","jstp.legacy6"]

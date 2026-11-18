@@ -1,0 +1,60 @@
+{
+  "layouts": 128,
+  "tasks": 512,
+  "task_correct": 512,
+  "quartets_correct": 128,
+  "history_comparisons": 256,
+  "history_both_correct": 253,
+  "history_correct_order": 256,
+  "four_physics_correct": 125,
+  "mean_paired_gap_px": 5.665297855400736,
+  "right_pred_follow_px": 5.752737635651453,
+  "right_actual_follow_px": 6.0,
+  "right_pred_still_px": 0.08743978025071714,
+  "right_actual_still_px": 0.0,
+  "right_signed_mae": 0.2839345069724572,
+  "left_signed_mae": 0.25091821487076427,
+  "motor_signed_mae": 0.031219473135841544,
+  "goal_comparisons": 256,
+  "goal_handle_switched": 256,
+  "fixed_action_goal_comparisons": 512,
+  "goal_swap_max_abs": 0.0,
+  "no_visual_evidence_correct": 256,
+  "exchanged_history_correct": 0,
+  "four_cells_success": [
+    [
+      128,
+      128
+    ],
+    [
+      128,
+      128
+    ]
+  ],
+  "direct": {
+    "stage1": {
+      "n": 192,
+      "moving_mae": 0.06962196664531588,
+      "stationary_mae": 0.35730519531826205,
+      "hit": 1.0,
+      "moving_mean": 5.986298382185358,
+      "stationary_mean": 0.3412370669606027,
+      "passed": true,
+      "hold_max_rgb_error": 0
+    },
+    "frozen": {
+      "n": 192,
+      "moving_mae": 0.08751330087329194,
+      "stationary_mae": 0.36008947610608816,
+      "hit": 0.9895833333333334,
+      "moving_mean": 5.977258248470954,
+      "stationary_mean": 0.32385239773410385,
+      "passed": true,
+      "hold_max_rgb_error": 0
+    }
+  },
+  "weights_before": "ec3e280d5c98b431cd0628b41c2356366f44a4dc7690f7b3fa7daba3e1a6d052",
+  "weights_after": "ec3e280d5c98b431cd0628b41c2356366f44a4dc7690f7b3fa7daba3e1a6d052",
+  "passed": true,
+  "elapsed_seconds": 36.49
+}

@@ -1,0 +1,54 @@
+{
+  "version": 7,
+  "architecture": "v7_joint_rgb_transport",
+  "seed": 718042,
+  "splits": {
+    "direct_train": [
+      1000000,
+      4096
+    ],
+    "direct_val": [
+      2000000,
+      192
+    ],
+    "pairs_train": [
+      3000000,
+      3072
+    ],
+    "pairs_val": [
+      4000000,
+      96
+    ],
+    "direct_test": [
+      5000000,
+      192
+    ],
+    "pairs_test": [
+      6000000,
+      128
+    ]
+  },
+  "rules": {
+    "direct_moving_mae_max": 1.0,
+    "direct_stationary_mae_max": 0.8,
+    "direct_hit_min": 0.95,
+    "task_min": 0.9,
+    "quartet_min": 0.8,
+    "history_both_classified_min": 0.85,
+    "goal_swap_max_abs": 1e-06
+  },
+  "drag_pixels": 6,
+  "paired_final_rule": "128 exact-image twins x two goals; commit predictions to disk before acting",
+  "frozen_demo_seeds": [
+    6000000,
+    6000007
+  ],
+  "training": {
+    "direct_min": 300,
+    "direct_max": 1500,
+    "pair_min": 750,
+    "pair_max": 3000,
+    "validation_every": 150,
+    "selection": "first validation meeting all phase rules after minimum; never select on sealed test"
+  }
+}

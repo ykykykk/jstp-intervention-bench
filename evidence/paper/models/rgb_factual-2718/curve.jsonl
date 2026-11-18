@@ -1,0 +1,12 @@
+{"phase": 1, "step": 150, "loss": 0.7435282282034557, "val_task": null, "seconds": 0.96}
+{"phase": 1, "step": 300, "loss": 0.42533988336722056, "val_task": null, "seconds": 1.9}
+{"phase": 2, "step": 150, "loss": 0.3599157903591792, "val_task": 0.5104166666666666, "seconds": 2.91}
+{"phase": 2, "step": 300, "loss": 0.2456369109948476, "val_task": 0.4921875, "seconds": 3.95}
+{"phase": 2, "step": 450, "loss": 0.2107680231332779, "val_task": 0.5078125, "seconds": 5.19}
+{"phase": 2, "step": 600, "loss": 0.1885288820664088, "val_task": 0.5104166666666666, "seconds": 6.27}
+{"phase": 2, "step": 750, "loss": 0.1698801886041959, "val_task": 0.5078125, "seconds": 7.35}
+{"phase": 2, "step": 900, "loss": 0.15736019959052402, "val_task": 0.5104166666666666, "seconds": 8.38}
+{"phase": 2, "step": 1050, "loss": 0.15525834148128828, "val_task": 0.4973958333333333, "seconds": 9.41}
+{"phase": 2, "step": 1200, "loss": 0.13273795808355013, "val_task": 0.5104166666666666, "seconds": 10.43}
+{"phase": 2, "step": 1350, "loss": 0.1352718637883663, "val_task": 0.5, "seconds": 11.46}
+{"phase": 2, "step": 1500, "loss": 0.12236279676357906, "val_task": 0.4869791666666667, "seconds": 12.48}

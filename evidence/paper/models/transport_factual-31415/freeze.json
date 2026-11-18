@@ -1,0 +1,15 @@
+{
+  "method": "transport_factual",
+  "seed": 31415,
+  "step": 150,
+  "val": 0.5182291666666666,
+  "trainable": 36939,
+  "protocol": "8486cfefe589b03c00a9dfbbcd6482060effc6ae716bffabc5218169c1d51082",
+  "sha256": "bdef81f64f8a57cd34fd230e33b6e70887aded79a723b010529e89a539cf1815",
+  "seconds": 11.41,
+  "torch": "2.15.0+cu132",
+  "numpy": "2.5.5",
+  "python": "3.13.5",
+  "device": "NVIDIA GeForce RTX 3090",
+  "train_manifest": "9c5b7232fcd64bc5dbf363c836d34b3fc413d5ae44d22b7123fa568767851297"
+}

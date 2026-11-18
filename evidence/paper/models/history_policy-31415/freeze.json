@@ -1,0 +1,15 @@
+{
+  "method": "history_policy",
+  "seed": 31415,
+  "step": 1500,
+  "val": 1.0,
+  "trainable": 46393,
+  "protocol": "8486cfefe589b03c00a9dfbbcd6482060effc6ae716bffabc5218169c1d51082",
+  "sha256": "030e68ed442c9b02a356b4ce4246701ab70531a77370493522cb21589fa79626",
+  "seconds": 7.82,
+  "torch": "2.15.0+cu132",
+  "numpy": "2.5.5",
+  "python": "3.13.5",
+  "device": "NVIDIA GeForce RTX 3090",
+  "train_manifest": "9c5b7232fcd64bc5dbf363c836d34b3fc413d5ae44d22b7123fa568767851297"
+}

@@ -1,0 +1,14 @@
+{
+  "test_id": {
+    "compared_decisions": 61440,
+    "changed_decisions": 0,
+    "changed_success": 0,
+    "max_pixel_dy_delta": 0.0
+  },
+  "test_link": {
+    "compared_decisions": 61440,
+    "changed_decisions": 0,
+    "changed_success": 0,
+    "max_pixel_dy_delta": 0.0
+  }
+}
