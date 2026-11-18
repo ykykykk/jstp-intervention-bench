@@ -51,5 +51,5 @@ def decisions(net,arm,c,goals,basis):
         u=sign(net.issue(hv,zv,goal,arm)).reshape(n,4,G);us.append(u.numpy().astype('int8'))
         sights.append(net.eye(v).numpy())
     norms=torch.stack(((physical-z).norm(dim=-1),(null-z).norm(dim=-1)),dim=-1).numpy()
-    return dict(u=np.stack(us,-1),eye=np.stack(sights,2),norm=norms,p=c["p"],peak=c["peak"],base=c["base"],
+    return dict(u=np.stack(us,-1),eye=np.stack(sights,2),norm=norms,probe=c["p"],peak=c["peak"],base=c["base"],
         prefix=np.asarray([[fingerprint(torch.cat((hi,zi)).numpy()) for hi,zi in zip(hr,zr)] for hr,zr in zip(h,z)]))

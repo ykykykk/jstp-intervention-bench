@@ -59,7 +59,7 @@ def execute(rel):
             r=Rig(int(num));part=[]
             if fingerprint(r.base)!=z["base"][i]:raise ValueError("实际初始画面不符")
             for state in range(4):
-                s,g=divmod(state,2);v,a,eye,hs=actual(r,s,g,z["p"][i],z["u"][i,state],z["peak"][i,s])
+                s,g=divmod(state,2);v,a,eye,hs=actual(r,s,g,z["probe"][i],z["u"][i,state],z["peak"][i,s])
                 part.append((goal_wins(v,goals[:,None]),a,eye,np.asarray(hs)))
             out.append(tuple(map(np.stack,zip(*part))))
         f=d/(name+".npz");save(f,**dict(zip(("wins","left","reference_eye","frame_sha"),map(np.stack,zip(*out)))));files.append(f)
