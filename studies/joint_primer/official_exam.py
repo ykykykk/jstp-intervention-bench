@@ -11,7 +11,7 @@ from studies.partial_futures.exam import prehistory
 from .train import ROOT,C
 from .exam import ensure,hashes,jread,quantile_sign
 from .analyze import counts,unpack,interval
-from .official_train import MAIN,DEFAULT,P,PLAN,runs,restore,visual,TokenPrefix,dino_eye
+from .official_train import MAIN,DEFAULT,P,PLAN,WORK,runs,restore,visual,TokenPrefix,dino_eye
 
 def frozen(out):
     lock=jread(out/'frozen.json')
@@ -51,6 +51,7 @@ def capture(out):
     dump(out/'prefix.json',dict(files={f.name:sha(f)},items=sha(MAIN/'sealed/items.npz'),numpy=np.__version__))
 def seal(out):
     frozen(out);items=check_items();rec=jread(out/'prefix.json');ensure(out,rec['files'])
+    ensure(WORK/'upstream-smol-processor',jread(out/'design.json')['processor'])
     pref=read(out/'public-prefix.npz')
     if rec['items']!=sha(MAIN/'sealed/items.npz') or not np.array_equal(pref['ids'],items['ids']) or not np.array_equal(pref['goals'],EXAM):
         raise ValueError('different official evaluation inputs')
