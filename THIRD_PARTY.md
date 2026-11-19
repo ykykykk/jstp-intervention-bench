@@ -17,4 +17,6 @@
 
 ## 理论导论与第五项研究
 
-新增同数据实验没有使用外部预训练权重。掩码轨迹对照是本地实现，相关方法与原论文见[导论文献](studies/joint_primer/paper/references.json)，不分发上游 MTM 代码或权重。导论另附 [Noto Serif SC 的 OFL 字体子集与许可证](studies/joint_primer/paper/fonts/)。
+最初六组和隔离梯度的补考均从零训练。掩码轨迹对照是本地实现，相关方法与原论文见[导论文献](studies/joint_primer/paper/references.json)，不分发上游 MTM 代码或权重。导论另附 [Noto Serif SC 的 OFL 字体子集与许可证](studies/joint_primer/paper/fonts/)。
+
+导论第 9 节单列[官方适配的三档训练](studies/joint_primer/official-plan.json)。沿用上一节列出的固定 SmolVLA、处理器、DINOv2 版本和 DINO-WM 作者预测器源码；仓库只保存本次训练更新的参数，不再分发官方基座或处理器。DINO-WM 是针对该装置重训的适配，不是作者在原基准的完整策略检查点。

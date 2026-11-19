@@ -1,7 +1,7 @@
 # 联合状态转移预测导论
 **岳轲｜从共同变化到对象、行动与语言**
 
-[**读中文论文 · 11 页 PDF**](paper/联合状态转移预测导论-岳轲.pdf)　·　[可编辑正文](paper/manuscript.md)　·　[英文摘要](paper/abstract-en.md)　·　[训练曲线与冻结考场（下载后本地打开）](paper/evidence-room.html)
+[**读中文论文 · 12 页 PDF**](paper/联合状态转移预测导论-岳轲.pdf)　·　[可编辑正文](paper/manuscript.md)　·　[英文摘要](paper/abstract-en.md)　·　[训练曲线与冻结考场（下载后本地打开）](paper/evidence-room.html)
 
 杯子滑下桌沿时，人可以只预测自己的手将伸出去，而不必预测整幅画面。导论从这个例子讲起：联合并不取消局部差别，分组可以是经验形成的计算，动作本身也可以是预测的全部。关于语言独占高级判断、心声和自我意识，论文写清了作者的主张，也写清了实验还没有触及哪里。[完整理论稿](../../theory/JSTP-详细理论稿-2026-11-19.md)
 
@@ -22,7 +22,21 @@
 
 - **不是只看通关。** 稀缺档中，JSTP 的线性读出在两个离合状态下同时给对四轨方向的比例为 **72.35%**，断回输为 **91.02%**。这是已给定轨道和传感器的功能性分组，不是无监督得到实例轮廓。
 - **不是只看读出。** 固定真实经历和目标，只换与物理后果相关的隐分量，在应换手题上 **11.75%** 原本正确且向供体换手；等幅无关扰动 **5.79%**。给错预期导致的错误是机制证据，不是提高任务成功率。
-- **没有挑弱对手就收手。** 主试验之后，另训九份完全相同、只隔离动作梯度的世界模型；把所有七条路线放到另一批 192 个未开启布局。128 档结果：JSTP **72.04%**、一步世界模型 **66.87%**、隔离梯度世界模型 **58.14%**。这个改动没有救回世界模型。在[此前的独立协议](../partial_futures/README.md)里，充分训练的一步世界模型和 JSTP-P 都达到过 100%；官方 SmolVLA 与 DINO-WM 适配同数据单遍的结果另表讨论，本次没有重训这两个官方模型。
+- **隔离梯度的世界模型补考。** 主试验之后，另训九份完全相同、只隔离动作梯度的世界模型；把七条路线放到另一批 192 个未开启布局。128 档结果：JSTP **72.04%**、一步世界模型 **66.87%**、隔离梯度世界模型 **58.14%**。这个改动没有救回世界模型。在[此前的另一份协议](../partial_futures/README.md)里，充分训练的一步世界模型和 JSTP-P 都达到过 100%。这些结果不与下述原考场官方适配混算。
+
+## 128 条示范：与官方适配同场，优势在不在？
+
+**在。** 复用原主考场的 192 个布局和原 JSTP 的逐题执行；两个适配模型每档从上游基座起训三个种子，共冻结 18 份新权重，随后在虚拟机构里实际执行 **442,368 次**正式动作。下表不是研究四的旧数字。
+
+| 成对成功率 | 128 条 | 1,024 条 | 16,384 条 |
+| --- | ---: | ---: | ---: |
+| JSTP 共享转移 | **71.69%** | **94.90%** | **99.67%** |
+| 官方 SmolVLA 局部微调 | 23.74% | 24.59% | 26.00% |
+| DINOv2 + DINO-WM 作者预测器的任务适配 | 50.58% | 50.39% | 50.13% |
+
+稀缺档 JSTP 分别领先 **47.95 点 [46.18, 49.69]**、**21.12 点 [18.79, 23.41]**；方括号是两项预定比较各自的 97.5% 布局配对区间。两项都在三个对应种子中领先。SmolVLA 面对相反目标有 56.23% 的题对仍拉同一只把手；DINO 只有 0.06% 不换，但换手方向只在约半数题对上正确。三组严格对齐下游示范与更新次数；SmolVLA 原生动作目标不使用无标注的光学后果，不把适配结果外推成整个模型家族的排名。
+
+[论文第 9 节（PDF 第 10 页）](paper/联合状态转移预测导论-岳轲.pdf#page=10) · [冻结后的每个种子](evidence/official/analysis/per-seed.json) · [同一道题切换模型](paper/evidence-room.html)。该追加方案在原主结果已知后、18 次新训练前由私有 Git 提交 `7249aca` 锁定。考试没有重选布局或权重。
 
 ## 从一句话追到一份相机记录
 
@@ -33,12 +47,13 @@
 | 先封存命令、再执行 | [考试程序](exam.py) · [封卷索引](evidence/before.json) · [相机执行索引](evidence/after.json) |
 | 统计与不确定性 | [逐方法汇总与配对差](evidence/analysis/summary.json) · [逐种子](evidence/analysis/per-seed.json) · [可重算的逐布局计数](evidence/analysis/layout-counts.npz) |
 | 主结果后追加的对手 | [补考协议](challenge-plan.json) · [九份追加权重](evidence/challenge/models/) · [七模型同场补考与逐种子成绩](evidence/challenge/results.json) |
+| 官方适配回到主考场 | [训练前锁定的方案](official-plan.json) · [18 份新适配权重与曲线](evidence/official/models/) · [封卷](evidence/official/before.json) · [实操](evidence/official/after.json) · [逐种子](evidence/official/analysis/per-seed.json) · [配对比较](evidence/official/analysis/summary.json) |
 
 主协议与训练代码于本地 Git 提交 `7081973` 锁定，考试与统计于 `6965e1c` 锁定。看到主结果后才提出隔离梯度的比较，`9dace38` 在补考训练前锁定。没有以测试分数调参或挑选最好权重；已有前四项研究的结果在设计时是已知的。文件和哈希用于复核先后关系，不代表公开预注册。
 
 ## 本地复现
 
-从仓库根目录依次执行；新结果写到尚不存在的 `work/primer-reproduction`，不会覆盖正式证据。不用获取新的训练材料或任何外部权重。一次训练使用一台 RTX 3090；不同方法的 FLOPs 不相等。独立虚拟机构不会操作系统鼠标。
+从仓库根目录依次执行；新结果写到尚不存在的 `work/primer-reproduction`，不会覆盖正式证据。下面六组从零模型和隔离梯度对照不需要外部权重；官方适配轨道另列。每次训练使用一台 RTX 3090，不假定不同方法的 FLOPs 相等。独立虚拟机构不会操作系统鼠标。
 
 ```powershell
 $py = ".\.venv\Scripts\python.exe"
@@ -50,3 +65,19 @@ $out = "work/primer-reproduction"
 ```
 
 训练与考试环境沿用[仓库锁定依赖](../../requirements-windows-cu132.txt)。论文排版依赖见[清单](../../paper/requirements.txt)；发布时的字体子集与许可随文保存。从根目录运行 `python studies/joint_primer/paper/build.py` 可以用现存的数值和插图重排导论，不会重新训练。训练曲线与逐题可视化由 `python -m studies.joint_primer.paper.exhibit` 从正式记录生成，图像按存档指纹核对。
+
+**只复现官方适配。** 使用研究四[锁定的 LeRobot / Transformers 环境](../partial_futures/requirements-transfer.txt)和原主试验封存的训练排程，不需要先重训 JSTP。`prepare_models` 从固定的官方版本下载基座和处理器；本机已有相同指纹的缓存就不用再下载。每一档、每一种子均从上游基座另起，不载入旧的下游权重。
+
+```powershell
+$native = ".\.venv\Scripts\python.exe"
+$official = ".\work\vla-env\Scripts\python.exe"
+$out = "work/primer-official-reproduction"
+& $official -m studies.partial_futures.prepare_models  # 首次获取官方基座
+& $official -m studies.joint_primer.official_train --out $out
+& $native -m studies.joint_primer.official_exam --out $out --stage capture
+& $official -m studies.joint_primer.official_exam --out $out --stage seal
+& $native -m studies.joint_primer.official_exam --out $out --stage execute
+& $native -m studies.joint_primer.official_exam --out $out --stage analyze
+```
+
+这里只把上游基座用于训练与模型推理；试探输入、实物推进、RGB 判分和配对统计都使用原主考场环境。原布局的初始、试探和最终相机指纹逐项核对，术语「实际执行」指独立模拟机构真实推进，并非现实机器人。

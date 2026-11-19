@@ -1,0 +1,42 @@
+{
+  "adapter": "354b00ce513025916d96fd7703a00c7c0aa446443faf2a84d9ed69b1b1b258a8",
+  "plan": "08edd143b31d60050edae39e7085c4c5384d6da62671047e2b6ffd1ef798f3f9",
+  "code": "fecbb3c58ecff5079d9bdc7d99d9b7fa792dd3a29fa4c3291fd29693ac4df09f",
+  "base": "7cd549ac2351fb069c0ddb3c34ad2d09cfc92b56a15dccdfc2e41467aaca01eb",
+  "arm": "smol",
+  "budget": 1024,
+  "seed": 9419,
+  "data": "cd92e565b6dbfe23cf809a5301bc7600854fc56ade7656bc9290b9e385c21ec1",
+  "schedule": "3907bfda031f17607f51821548260c3914e79e001ebaf7d885e87b8d16bbd5ba",
+  "processor": {
+    "added_tokens.json": "74135b8664b56088c0006f1c8e848d79a8eba003411f72ebf1dc2ee96227be3a",
+    "chat_template.json": "9bc4f36b8d064f824368648472a4a09268c4bbf9bf930f04fae47f1f596dae92",
+    "config.json": "ea6bc1237e96247f6258de3e202e2e62b93d6f386dc47e7b36b5588bf3a15e17",
+    "preprocessor_config.json": "149e315d9410368e5491455bb06e0f763426e9e56cca731c13b24404a29b6374",
+    "processor_config.json": "f3ad45028447b3562b4752be0d5916d6806c1ef589091a469608dcf0faa1737c",
+    "special_tokens_map.json": "2dfea2a426162316ff1567c82bc6d36d9690cd9f90455f075c77daca78b45c60",
+    "tokenizer.json": "5ece781dc8d2b2f3e2f289ca0ae50b17cfc27dd27bfe7971bb8241e0b964331a",
+    "tokenizer_config.json": "8b262ec2acb7773caac7b1e59edf921671cdb4c7c815a9c714242540d3fcb531",
+    "vocab.json": "82b84012e3add4d01d12ba14442026e49b8cbbaead1f79ecf3d919784f82dc79",
+    "merges.txt": "0b54e8aa4e53d5383e2e4bc635a56b43f9647f7b13832d5d9ecd8f82dac4f510"
+  },
+  "annotation_pool_sha256": "8dc619325999e8ebe540ee5e62957d386f0f09526154b0151041f32dce8122eb",
+  "annotation_draws": 98304,
+  "optical_training_draws": 0,
+  "updates": 768,
+  "effective_batch": 128,
+  "microbatch": 64,
+  "parameters": 450046250,
+  "adapted": 6067072,
+  "seconds": 241.89,
+  "utc_ns": 1795077816459351600,
+  "device": "NVIDIA GeForce RTX 3090",
+  "versions": {
+    "torch": "2.15.0+cu132",
+    "transformers": "5.22.2",
+    "lerobot": "0.7.0",
+    "numpy": "2.2.6",
+    "safetensors": "0.8.0",
+    "einops": "0.8.2"
+  }
+}

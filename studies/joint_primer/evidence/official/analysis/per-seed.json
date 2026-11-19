@@ -1,0 +1,326 @@
+[
+  {
+    "arm": "joint",
+    "budget": 128,
+    "seed": 9301,
+    "pairs_won": 8915,
+    "pairs": 12288,
+    "metrics": {
+      "pair": 0.7255045572916666,
+      "single": 0.7255045572916666,
+      "same_action": 0.0
+    }
+  },
+  {
+    "arm": "joint",
+    "budget": 128,
+    "seed": 9419,
+    "pairs_won": 8818,
+    "pairs": 12288,
+    "metrics": {
+      "pair": 0.7176106770833334,
+      "single": 0.7176106770833334,
+      "same_action": 0.0
+    }
+  },
+  {
+    "arm": "joint",
+    "budget": 128,
+    "seed": 9547,
+    "pairs_won": 8696,
+    "pairs": 12288,
+    "metrics": {
+      "pair": 0.7076822916666666,
+      "single": 0.7076822916666666,
+      "same_action": 0.0
+    }
+  },
+  {
+    "arm": "smol",
+    "budget": 128,
+    "seed": 9301,
+    "pairs_won": 3092,
+    "pairs": 12288,
+    "metrics": {
+      "pair": 0.2516276041666667,
+      "single": 0.5225016276041666,
+      "same_action": 0.541748046875
+    }
+  },
+  {
+    "arm": "smol",
+    "budget": 128,
+    "seed": 9419,
+    "pairs_won": 2522,
+    "pairs": 12288,
+    "metrics": {
+      "pair": 0.20524088541666666,
+      "single": 0.514892578125,
+      "same_action": 0.6193033854166666
+    }
+  },
+  {
+    "arm": "smol",
+    "budget": 128,
+    "seed": 9547,
+    "pairs_won": 3137,
+    "pairs": 12288,
+    "metrics": {
+      "pair": 0.2552897135416667,
+      "single": 0.5181884765625,
+      "same_action": 0.5257975260416666
+    }
+  },
+  {
+    "arm": "dino",
+    "budget": 128,
+    "seed": 9301,
+    "pairs_won": 6224,
+    "pairs": 12288,
+    "metrics": {
+      "pair": 0.5065104166666666,
+      "single": 0.5065104166666666,
+      "same_action": 0.0
+    }
+  },
+  {
+    "arm": "dino",
+    "budget": 128,
+    "seed": 9419,
+    "pairs_won": 6224,
+    "pairs": 12288,
+    "metrics": {
+      "pair": 0.5065104166666666,
+      "single": 0.5065104166666666,
+      "same_action": 0.0
+    }
+  },
+  {
+    "arm": "dino",
+    "budget": 128,
+    "seed": 9547,
+    "pairs_won": 6197,
+    "pairs": 12288,
+    "metrics": {
+      "pair": 0.5043131510416666,
+      "single": 0.5051676432291666,
+      "same_action": 0.001708984375
+    }
+  },
+  {
+    "arm": "joint",
+    "budget": 1024,
+    "seed": 9301,
+    "pairs_won": 11638,
+    "pairs": 12288,
+    "metrics": {
+      "pair": 0.9471028645833334,
+      "single": 0.9471028645833334,
+      "same_action": 0.0
+    }
+  },
+  {
+    "arm": "joint",
+    "budget": 1024,
+    "seed": 9419,
+    "pairs_won": 11797,
+    "pairs": 12288,
+    "metrics": {
+      "pair": 0.9600423177083334,
+      "single": 0.9600423177083334,
+      "same_action": 0.0
+    }
+  },
+  {
+    "arm": "joint",
+    "budget": 1024,
+    "seed": 9547,
+    "pairs_won": 11550,
+    "pairs": 12288,
+    "metrics": {
+      "pair": 0.93994140625,
+      "single": 0.93994140625,
+      "same_action": 0.0
+    }
+  },
+  {
+    "arm": "smol",
+    "budget": 1024,
+    "seed": 9301,
+    "pairs_won": 2875,
+    "pairs": 12288,
+    "metrics": {
+      "pair": 0.23396809895833334,
+      "single": 0.5355224609375,
+      "same_action": 0.6031087239583334
+    }
+  },
+  {
+    "arm": "smol",
+    "budget": 1024,
+    "seed": 9419,
+    "pairs_won": 3154,
+    "pairs": 12288,
+    "metrics": {
+      "pair": 0.2566731770833333,
+      "single": 0.5436197916666666,
+      "same_action": 0.5738932291666666
+    }
+  },
+  {
+    "arm": "smol",
+    "budget": 1024,
+    "seed": 9547,
+    "pairs_won": 3035,
+    "pairs": 12288,
+    "metrics": {
+      "pair": 0.24698893229166666,
+      "single": 0.5438639322916666,
+      "same_action": 0.59375
+    }
+  },
+  {
+    "arm": "dino",
+    "budget": 1024,
+    "seed": 9301,
+    "pairs_won": 6192,
+    "pairs": 12288,
+    "metrics": {
+      "pair": 0.50390625,
+      "single": 0.50390625,
+      "same_action": 0.0
+    }
+  },
+  {
+    "arm": "dino",
+    "budget": 1024,
+    "seed": 9419,
+    "pairs_won": 6192,
+    "pairs": 12288,
+    "metrics": {
+      "pair": 0.50390625,
+      "single": 0.50390625,
+      "same_action": 0.0
+    }
+  },
+  {
+    "arm": "dino",
+    "budget": 1024,
+    "seed": 9547,
+    "pairs_won": 6192,
+    "pairs": 12288,
+    "metrics": {
+      "pair": 0.50390625,
+      "single": 0.50390625,
+      "same_action": 0.0
+    }
+  },
+  {
+    "arm": "joint",
+    "budget": 16384,
+    "seed": 9301,
+    "pairs_won": 12275,
+    "pairs": 12288,
+    "metrics": {
+      "pair": 0.9989420572916666,
+      "single": 0.9989420572916666,
+      "same_action": 0.0
+    }
+  },
+  {
+    "arm": "joint",
+    "budget": 16384,
+    "seed": 9419,
+    "pairs_won": 12251,
+    "pairs": 12288,
+    "metrics": {
+      "pair": 0.9969889322916666,
+      "single": 0.9969889322916666,
+      "same_action": 0.0
+    }
+  },
+  {
+    "arm": "joint",
+    "budget": 16384,
+    "seed": 9547,
+    "pairs_won": 12218,
+    "pairs": 12288,
+    "metrics": {
+      "pair": 0.9943033854166666,
+      "single": 0.9943033854166666,
+      "same_action": 0.0
+    }
+  },
+  {
+    "arm": "smol",
+    "budget": 16384,
+    "seed": 9301,
+    "pairs_won": 2935,
+    "pairs": 12288,
+    "metrics": {
+      "pair": 0.23885091145833334,
+      "single": 0.5637613932291666,
+      "same_action": 0.6498209635416666
+    }
+  },
+  {
+    "arm": "smol",
+    "budget": 16384,
+    "seed": 9419,
+    "pairs_won": 3286,
+    "pairs": 12288,
+    "metrics": {
+      "pair": 0.2674153645833333,
+      "single": 0.5733235677083334,
+      "same_action": 0.61181640625
+    }
+  },
+  {
+    "arm": "smol",
+    "budget": 16384,
+    "seed": 9547,
+    "pairs_won": 3362,
+    "pairs": 12288,
+    "metrics": {
+      "pair": 0.2736002604166667,
+      "single": 0.5699869791666666,
+      "same_action": 0.5927734375
+    }
+  },
+  {
+    "arm": "dino",
+    "budget": 16384,
+    "seed": 9301,
+    "pairs_won": 6160,
+    "pairs": 12288,
+    "metrics": {
+      "pair": 0.5013020833333334,
+      "single": 0.5013020833333334,
+      "same_action": 0.0
+    }
+  },
+  {
+    "arm": "dino",
+    "budget": 16384,
+    "seed": 9419,
+    "pairs_won": 6160,
+    "pairs": 12288,
+    "metrics": {
+      "pair": 0.5013020833333334,
+      "single": 0.5013020833333334,
+      "same_action": 0.0
+    }
+  },
+  {
+    "arm": "dino",
+    "budget": 16384,
+    "seed": 9547,
+    "pairs_won": 6160,
+    "pairs": 12288,
+    "metrics": {
+      "pair": 0.5013020833333334,
+      "single": 0.5013020833333334,
+      "same_action": 0.0
+    }
+  }
+]

@@ -1,0 +1,28 @@
+{
+  "files": {
+    "before.json": "aeab21312156bcacbd8b3c543b3b9c40ef556328ab3cf1059fdb63a811837a48",
+    "observed/camera.npz": "589daca134ca58d1c4541bfd76494148815c893cdd86e4e34c99e39c5c8ae75e",
+    "observed/smol-128-9301.npz": "0e7829fd1bd3ed954cdfa58e9c9f59151fbf4125538fded713d232dde9f25d6b",
+    "observed/smol-128-9419.npz": "84d8591d03f6a4015e5237a42ea4fd993b914e40913ed79a7697b226c1768987",
+    "observed/smol-128-9547.npz": "99115d93dee1edf6956dc08cffcc6589d4517ac3b2cb710b0f9471aa14531aa7",
+    "observed/smol-1024-9301.npz": "7a30ac168855b508c471ce9411cc4582b2e06c0b6a74c12f4da4f9270f592124",
+    "observed/smol-1024-9419.npz": "e13d2fed0608eb3c9814b00189a74c9978265a8dbea7d714e392e62114676e8d",
+    "observed/smol-1024-9547.npz": "c7304bf08225117ca4b1e419422893e390e9e0b43f3d8d106b3c926767b9c07c",
+    "observed/smol-16384-9301.npz": "512938d60568a77a94d50da4d88f86b48008db10ec2ce242f6efcb5956484bca",
+    "observed/smol-16384-9419.npz": "ab81c8f127e6c0f833df922205acc7a930790dbb54cb461490180a1f72b6b87e",
+    "observed/smol-16384-9547.npz": "61398e573d7ba5048e1857b1c5987a0bcca2922b862f520875be3fa3ff5689fe",
+    "observed/dino-128-9301.npz": "dd4a226f0f8b939f173938eccb2d09c542e6c3d8b0362e4c6aa421b8c3e81a5d",
+    "observed/dino-128-9419.npz": "dd4a226f0f8b939f173938eccb2d09c542e6c3d8b0362e4c6aa421b8c3e81a5d",
+    "observed/dino-128-9547.npz": "a55befe66d4f3844522a4acffdb63c44c489749c81e7287ade7dd003f0d3d83f",
+    "observed/dino-1024-9301.npz": "ff1585427559a067b6a1b623cdce1e4d1250a6b3ccd2203455153c9104a493a5",
+    "observed/dino-1024-9419.npz": "ff1585427559a067b6a1b623cdce1e4d1250a6b3ccd2203455153c9104a493a5",
+    "observed/dino-1024-9547.npz": "ff1585427559a067b6a1b623cdce1e4d1250a6b3ccd2203455153c9104a493a5",
+    "observed/dino-16384-9301.npz": "35d0f4869960f5f9f185fa4dcbe74b38f25eef4d991faf9bee4437bfd85ab7d4",
+    "observed/dino-16384-9419.npz": "35d0f4869960f5f9f185fa4dcbe74b38f25eef4d991faf9bee4437bfd85ab7d4",
+    "observed/dino-16384-9547.npz": "35d0f4869960f5f9f185fa4dcbe74b38f25eef4d991faf9bee4437bfd85ab7d4"
+  },
+  "official_actions": 442368,
+  "layouts": 192,
+  "camera_matches_primary": true,
+  "executed_ns": 1795079495540679600
+}

@@ -20,6 +20,24 @@ def ci(m):return f"{100*m['value']:.2f} [{100*m['lo']:.2f}, {100*m['hi']:.2f}]"
 def table(header,body):
     row=lambda a:'| '+' | '.join(a)+' |'
     return '\n'.join([row(header),row(['---']*len(header)),*[row(v) for v in body]])
+def official_section():
+    report=j(E/'official/analysis/summary.json')
+    scores={(r['arm'],r['budget']):r['metrics'] for r in report['rows']}
+    diff={r['other']:r for r in report['paired'] if r['budget']==128}
+    arms={'joint':'JSTP 共享转移','smol':'官方 SmolVLA 局部微调','dino':'DINOv2 + DINO-WM 适配'}
+    get=lambda a,metric:pct(scores[a,128][metric])
+    passed=[arms[a] for a in ('smol','dino') if diff[a]['primary_pass']]
+    if len(passed)==2:verdict='按约定判据，稀缺示范下的优势对这两种适配都保留。'
+    elif passed:verdict='按约定判据，稀缺示范下仅对'+passed[0]+'保留了优势，不能说同时优于两者。'
+    else:verdict='按约定判据，稀缺示范下并未确立相对这两种适配的优势。'
+    wins=lambda a:sum(x>0 for x in diff[a]['seed_deltas'])
+    return {
+      'official_abstract':f"另以相同的三档示范重新训练两类预训练适配模型：128 条时，官方 SmolVLA 局部微调为 {get('smol','pair')}%，DINO-WM 任务适配为 {get('dino','pair')}%。{verdict}",
+      'official_table':table(['模型','128 条','1,024 条','16,384 条'],
+          [[title]+[pct(scores[a,k]['pair']) for k in K] for a,title in arms.items()]),
+      'official_inference':f"**128 条：优势是否仍在？** JSTP 减 SmolVLA 为 {ci(diff['smol']['family'])} 个百分点，减 DINO-WM 适配为 {ci(diff['dino']['family'])} 点。括号为两项比较各自的 97.5% 布局配对区间（Bonferroni 家族 95%）；三个对应初始化中，JSTP 分别有 {wins('smol')} 个和 {wins('dino')} 个占优。事前要求区间下界大于零，且至少两个种子方向一致。{verdict}",
+      'official_diagnostic':f"**两个对手错在不同地方。** 128 条时，SmolVLA 的单题成功率为 {get('smol','single')}%，却在 {get('smol','same_action')}% 的相反目标对中仍拉同一只把手，这些题必然一对一错。DINO 适配只有 {get('dino','same_action')}% 的成对题不换手：因为候选效用与目标做内积，相反目标本来就会使非零分数反号。但它只有 {get('dino','pair')}% 的题对选对方向。JSTP 的优势体现在把试探经历用于未见目标的行动上；不能把全部差距单独归因于后果回输，表 1 的同结构断回输组也达到了 66.75%。"
+    }
 def compile_text():
     main=j(E/'analysis/summary.json');supp=j(E/'challenge/results.json')
     M={(r['arm'],r['budget']):r['metrics'] for r in main['rows']}
@@ -37,6 +55,7 @@ def compile_text():
       'intervention':f"128 条示范时，在供体与真实最优动作相反的题中，原本正确且向供体换手的比例为 {pct(m['directed'])}%；等幅无关扰动为 {pct(m['null'])}%，两者净差 {ci(m['over_null'])} 个百分点（95% 布局区间）。在最优动作相同的题中，物理移植使原本正确的动作错换了 {pct(m['false'])}%。原预期更贴近真实物理且移植后更贴近供体的比例为 {pct(m['donor_match'])}%。随着示范增至 1,024 和 16,384 条，物理移植与等幅对照的定向换手净差分别为 {pct(M['joint',1024]['over_null'])} 和 {pct(M['joint',16384]['over_null'])} 点。各比率的分母是相应条件下全部题，不是事后只挑会换手的题。",
       'challenge_result':f"隔离梯度没有救回这个实现。128 条示范时，隔离版相对端到端世界模型的成对差为 {ci(supcmp['world-isolated','world',128])} 点；全部标注时亦未反超。相同光学读数上的均方根误差在全部标注时分别为 {S['world-isolated',16384]['optical_rmse']['value']:.3f} 与 {S['world',16384]['optical_rmse']['value']:.3f}（相机位移已除以四像素行程）。因而不能把原来的反常表现简单归咎于动作梯度破坏物理预测。这里没有诊断出唯一原因，也没有在补考后再调对手。"
     }
+    results.update(official_section())
     results['references']='\n\n'.join(f"[{i}] {a} ({v}). [{title}]({url})." for i,(a,title,v,url) in enumerate(j(D/'references.json'),1))
     text=(D/'source.md').read_text(encoding='utf8')
     for key,val in results.items():text=text.replace('[['+key+']]',val)
@@ -83,7 +102,7 @@ def pdf(raw):
     pdfmetrics.registerFontFamily('JR',normal='JR',bold='JB')
     can=Canvas(str(D/PDF),pagesize=A4,invariant=1,pageCompression=1)
     can.setTitle('联合状态转移预测导论：从共同变化到对象、行动与语言');can.setAuthor('岳轲')
-    pages=raw.split('<!-- page -->');names=['摘要','局部未来','对象、动作和语言','与已有研究的关系','网络与装置','同数据协议','任务与示范','分组与干预','世界模型补考','理论能被怎样否定','文献与复现']
+    pages=raw.split('<!-- page -->');names=['摘要','局部未来','对象、动作和语言','与已有研究的关系','网络与装置','同数据协议','任务与示范','分组与干预','世界模型补考','官方适配同场比较','理论能被怎样否定','文献与复现']
     if len(pages)!=len(names):raise ValueError('page names do not match manuscript')
     for i,(s,name) in enumerate(zip(pages,names)):
         W,H=A4;can.bookmarkPage(str(i));can.addOutlineEntry(name,str(i))

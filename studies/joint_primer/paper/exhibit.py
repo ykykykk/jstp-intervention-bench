@@ -8,6 +8,7 @@ from lategoal.rig import Rig
 from lategoal.control import fingerprint
 from studies.joint_primer.train import slots
 from studies.joint_primer.exam import jread
+from studies.joint_primer.official_train import runs as official_runs
 D=Path(__file__).resolve().parent;E=D.parent/'evidence'
 def img(v):return Image.fromarray(v)
 def b64(raw):return base64.b64encode(raw).decode('ascii')
@@ -46,10 +47,15 @@ def main():
                 band.paste(pic,(off,32))
             (D/'figures').mkdir(exist_ok=True);band.save(D/'figures/one-history.png')
     policies={}
-    for arm,k,seed,name in slots():
-        b=read(E/'sealed'/(name+'.npz'));win=read(E/'observed'/(name+'.npz'))['wins'][:n]
-        curve=[json.loads(line) for line in (E/'train/models'/name/'curve.jsonl').read_text(encoding='utf8').splitlines()]
-        p=dict(u=pack(b['u'][:n]>0),w=pack(win),variants=win.shape[-1],curve=curve)
+    from_official=E/'official'
+    if not jread(from_official/'after.json')['camera_matches_primary']:raise ValueError('actual view cannot be shared')
+    for arm,k,seed,name in slots()+official_runs():
+        official=arm in ('smol','dino');root=from_official if official else E
+        b=read(root/'sealed'/(name+'.npz'));u=b['u'][:n];win=read(root/'observed'/(name+'.npz'))['wins'][:n]
+        if official:u=u[...,None];win=win[...,None]
+        curves=(root if official else E/'train')/'models'/name/'curve.jsonl'
+        curve=[json.loads(line) for line in curves.read_text(encoding='utf8').splitlines()]
+        p=dict(u=pack(u>0),w=pack(win),variants=win.shape[-1],curve=curve)
         if 'eye' in b:p['eye']=compact(b['eye'][:n,...,0,:])
         if 'patched_eye' in b:p['patch']=compact(b['patched_eye'][:n])
         policies[name]=p
