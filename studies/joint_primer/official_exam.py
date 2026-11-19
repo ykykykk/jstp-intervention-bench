@@ -40,13 +40,22 @@ def scores(arm,m,x,v):
             z=replay.score(m,v[row],x[row],goals[j],j+len(TRAIN))
             rows.append(z.float().cpu().numpy())
     return np.concatenate(rows).reshape(N,G),None
-def seal(out):
-    frozen(out);items=check_items();rigs=[Rig(int(i)) for i in items['ids']]
+def capture(out):
+    """Materialize only the public pre-action input, using the original simulator environment."""
+    items=check_items();rigs=[Rig(int(i)) for i in items['ids']]
     _,states,pk=prehistory(rigs)
     if not np.array_equal(items['peak'],pk) or not np.array_equal(items['base'],[fingerprint(r.base) for r in rigs]):
         raise ValueError('different image history or probe')
-    x=torch.as_tensor(states.transpose(0,2,1,3).reshape(-1,states.shape[-1]),device='cuda')
-    shape=(len(rigs),2,2,2);d=out/'sealed';d.mkdir(exist_ok=False);paths=[out/'frozen.json'];v=None;prev=None
+    history=np.ascontiguousarray(states.transpose(0,2,1,3).reshape(len(rigs),2,2,2,-1))
+    f=out/'public-prefix.npz';save(f,hist=history,ids=items['ids'],goals=items['goals'])
+    dump(out/'prefix.json',dict(files={f.name:sha(f)},items=sha(MAIN/'sealed/items.npz'),numpy=np.__version__))
+def seal(out):
+    frozen(out);items=check_items();rec=jread(out/'prefix.json');ensure(out,rec['files'])
+    pref=read(out/'public-prefix.npz')
+    if rec['items']!=sha(MAIN/'sealed/items.npz') or not np.array_equal(pref['ids'],items['ids']) or not np.array_equal(pref['goals'],EXAM):
+        raise ValueError('different official evaluation inputs')
+    x=torch.as_tensor(pref['hist'].reshape(-1,pref['hist'].shape[-1]),device='cuda')
+    shape=(len(items['ids']),2,2,2);d=out/'sealed';d.mkdir(exist_ok=False);paths=[out/'frozen.json',out/'prefix.json'];v=None;prev=None
     for arm,k,s,name in runs():
         m=restore(out,arm,k,s)
         if arm!=prev:v=visual(m,arm,x);prev=arm
@@ -137,7 +146,7 @@ def analyze(out):
     for c in contrasts:print('JSTP minus',c['other'],c['budget'],c['delta95'],flush=True)
 if __name__=='__main__':
     p=argparse.ArgumentParser();p.add_argument('--out',type=Path,default=DEFAULT)
-    p.add_argument('--stage',choices=('all','seal','execute','analyze'),default='all');a=p.parse_args()
+    p.add_argument('--stage',choices=('all','capture','seal','execute','analyze'),default='all');a=p.parse_args()
     torch.set_num_threads(2)
-    for fn in (seal,execute,analyze):
+    for fn in (capture,seal,execute,analyze):
         if a.stage in ('all',fn.__name__):fn(a.out)
