@@ -1,0 +1,22 @@
+{
+  "status": "Supplement decided AFTER main results; not a replacement primary or publicly preregistered.",
+  "reason": "Under the rich annotation regime the end-to-end two-candidate comparator trained on the same records lost both physical accuracy and task performance. Test whether coupling motor gradients to measured dynamics is a damaging implementation choice, without altering the primary table.",
+  "baseline": "world-isolated = same World weights, initialization, widths, data schedule, four-sensor loss, number of updates, batch, optimizer and evaluation. Single change: detach the predicted optical values before the goal utility network for action supervision. Camera loss still trains the encoder, transition and eye. No numerical grid search or oracle.",
+  "seeds": [
+    9301,
+    9419,
+    9547
+  ],
+  "label_budgets": [
+    128,
+    1024,
+    16384
+  ],
+  "exam": [
+    128930000,
+    192
+  ],
+  "panels": "Evaluate these nine new frozen models and all 54 original frozen weights on a distinct, previously unopened 192 layouts. All seven methods see the exact same two probe sides, goals, physics and camera. Primary result remains on the first panel.",
+  "primary": "Task: paired opposite-goal success. Focal contrasts: joint minus isolated world and isolated minus end-to-end world, with paired layout 95% intervals at each budget (descriptive follow-up, not corrected confirmatory claims). Report optical RMSE for all native predictors and per-initialization pair results. If isolated world meets/beats joint, do not claim superiority to world models. No more tuning on either exam.",
+  "budget": "same train schedule.npz and exact training bank; no new training examples or labels."
+}
