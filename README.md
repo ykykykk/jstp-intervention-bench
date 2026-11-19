@@ -1,6 +1,6 @@
 # 联合状态转移预测　JSTP
 
-**岳轲 · 理论、论文和可复验的交互研究。** 这是原来的私有研究库。各次工作在同一库中分开保存，阴性结果和旧权重均保留。
+**岳轲 · 理论、论文和可复验的交互研究。** 本仓库收录 JSTP 理论稿、五项交互研究、冻结权重和逐题执行记录。各项研究保留独立的实验协议，阳性和阴性结果均可查阅。
 
 **第一次读 JSTP，从这里开始：** [《联合状态转移预测导论：从局部后果到少示范动作泛化》PDF](studies/joint_primer/paper/联合状态转移预测导论-岳轲.pdf) · [可编辑正文](studies/joint_primer/paper/manuscript.md) · [八种模型同场对照表（Excel）](studies/joint_primer/paper/tables/JSTP-八种模型同场对照.xlsx) · [逐题回放](studies/joint_primer/paper/evidence-room.html)
 
@@ -18,3 +18,5 @@
 | 导论与第五项：同一批经历，需要多少动作示范？ | [八种模型同场比较及世界模型补充实验](studies/joint_primer/README.md) |
 
 [全部研究目录](studies/README.md) · [导论引用](studies/joint_primer/CITATION.cff) · [研究软件引用](CITATION.cff) · [第三方来源](THIRD_PARTY.md) · [许可](LICENSE)。导论与第五项证据在 `studies/joint_primer/`，沿用第四项训练数据。各研究在同一库中保留各自的历史路径与证据。
+
+**使用与引用。** 原创代码和生成的实验记录按 [MIT 许可](LICENSE) 发布；理论稿、论文、摘要和 PDF 保留作者版权，不随代码按 MIT 授权。第三方组件沿用各自的许可。
