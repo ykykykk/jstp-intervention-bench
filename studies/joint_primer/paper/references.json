@@ -1,0 +1,44 @@
+[
+  [
+    "Littman, M. L., Sutton, R. S. & Singh, S.",
+    "Predictive Representations of State",
+    "NeurIPS, 2001",
+    "https://proceedings.neurips.cc/paper/2001/hash/1e4d36177d71bbb3558e43af9577d70e-Abstract.html"
+  ],
+  [
+    "Wu, P. et al.",
+    "Masked Trajectory Models for Prediction, Representation, and Control",
+    "ICML, 2023",
+    "https://arxiv.org/abs/2305.02968"
+  ],
+  [
+    "Reed, S. et al.",
+    "A Generalist Agent",
+    "TMLR, 2022",
+    "https://arxiv.org/abs/2205.06175"
+  ],
+  [
+    "Zhou, G. et al.",
+    "DINO-WM: World Models on Pre-trained Visual Features enable Zero-shot Planning",
+    "ICML, 2025",
+    "https://arxiv.org/abs/2411.04983"
+  ],
+  [
+    "Shukor, M. et al.",
+    "SmolVLA: A Vision-Language-Action Model for Affordable and Efficient Robotics",
+    "2025",
+    "https://arxiv.org/abs/2506.01844"
+  ],
+  [
+    "Ye, Z., Wessel, R. & Franken, T. P.",
+    "Brain-like border ownership signals support prediction of natural videos",
+    "iScience 28, 112199, 2025",
+    "https://doi.org/10.1016/j.isci.2025.112199"
+  ],
+  [
+    "Rao, R. P. N. & Ballard, D. H.",
+    "Predictive coding in the visual cortex: a functional interpretation of some extra-classical receptive-field effects",
+    "Nature Neuroscience 2, 79–87, 1999",
+    "https://www.nature.com/articles/nn0199_79"
+  ]
+]

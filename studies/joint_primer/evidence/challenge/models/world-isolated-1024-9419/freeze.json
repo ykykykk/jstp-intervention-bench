@@ -1,0 +1,12 @@
+{
+  "seed": 9419,
+  "budget": 1024,
+  "weights": "b38dcef8896d5aff0adc2e0955817e8d766982db9fdfabe1d3e1a347cb887d5b",
+  "schedule": "3907bfda031f17607f51821548260c3914e79e001ebaf7d885e87b8d16bbd5ba",
+  "plan": "3faa3f4db0647545e4600733a2a8ef02ae99be198a4c5a1a1f9f09ff4187f1e2",
+  "code": "184810fb225ee40db7a540563cd6a712c45e6eb79a3b662c8fc46c9b0130a2b3",
+  "architecture": "8d5abf275e1683967d0970165a770f17960600779e357d510ac9c9ca0a149cf4",
+  "updates": 768,
+  "seconds": 3.462,
+  "device": "NVIDIA GeForce RTX 3090"
+}

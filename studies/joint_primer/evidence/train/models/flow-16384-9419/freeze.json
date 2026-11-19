@@ -1,0 +1,22 @@
+{
+  "arm": "flow",
+  "budget": 16384,
+  "seed": 9419,
+  "weights": "368651b6db707fb5da9b8044e9310553e99cf4e9ab8b40d6614d2f4a7556100e",
+  "protocol": "0ae1fbcc37deb6900c4e5b050813121fa1287bb47ed9a0a3a74c6ff0bb72c779",
+  "schedule": "3907bfda031f17607f51821548260c3914e79e001ebaf7d885e87b8d16bbd5ba",
+  "sources": {
+    "studies/joint_primer/protocol.json": "0ae1fbcc37deb6900c4e5b050813121fa1287bb47ed9a0a3a74c6ff0bb72c779",
+    "studies/joint_primer/models.py": "8d5abf275e1683967d0970165a770f17960600779e357d510ac9c9ca0a149cf4",
+    "studies/joint_primer/train.py": "be57036b1df1a9a9069562a322eddcf0341962538542f7eaa019c9cf052d9ba9",
+    "lategoal/rig.py": "37126ee2883d00cc81ee2eb437f27f7d701fae0a29cab23b7550118a5b628b63",
+    "jstp/v7_world.py": "fbe794643697698b4586ed2b5f5d8d15fc11829985679f112136765a63772418"
+  },
+  "registered_parameters": 15361,
+  "final_gradient_parameters": 15361,
+  "updates": 768,
+  "seconds": 2.088,
+  "torch": "2.15.0+cu132",
+  "python": "3.13.5",
+  "device": "NVIDIA GeForce RTX 3090"
+}

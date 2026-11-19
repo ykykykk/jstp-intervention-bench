@@ -14,3 +14,7 @@
 - [SmolVLA 官方基座，5e8d12a](https://huggingface.co/lerobot/smolvla_base/tree/5e8d12a6e2975b0e5e5fce7c8caf47c371d257b6) 与 [LeRobot 0.7.0](https://github.com/huggingface/lerobot/tree/v0.7.0) 采用 Apache-2.0；[附许可证](studies/partial_futures/upstream/Apache-2.0.txt)。本库只分发本次微调后改变的层，不分发整个上游策略或处理器。SmolVLM2 处理器、基座及文件指纹固定在[迁移方案](studies/partial_futures/transfer-plan.json)。
 - [DINOv2-S/14 官方转换权重，ed25f3a](https://huggingface.co/facebook/dinov2-small/tree/ed25f3a31f01632728cabb09d1542f84ab7b0056) 不随库分发。不同于第一项研究的按需获取，本次将未修改的 [DINO-WM 作者预测器](studies/partial_futures/upstream/dino_wm/) 及 MIT 授权一起归档。
 - 新论文另附 [OFL 中文字体子集及许可证](studies/partial_futures/paper/fonts/)。
+
+## 理论导论与第五项研究
+
+新增同数据实验没有使用外部预训练权重。掩码轨迹对照是本地实现，相关方法与原论文见[导论文献](studies/joint_primer/paper/references.json)，不分发上游 MTM 代码或权重。导论另附 [Noto Serif SC 的 OFL 字体子集与许可证](studies/joint_primer/paper/fonts/)。

@@ -1,0 +1,6 @@
+{"update": 128, "loss": 2.8666553497314453, "validation_action": 0.6015625, "seconds": 0.565}
+{"update": 256, "loss": 1.8289934396743774, "validation_action": 0.734375, "seconds": 1.141}
+{"update": 384, "loss": 1.1254057884216309, "validation_action": 0.8059896230697632, "seconds": 1.717}
+{"update": 512, "loss": 0.7401162385940552, "validation_action": 0.8984375, "seconds": 2.286}
+{"update": 640, "loss": 0.19613288342952728, "validation_action": 0.9739583730697632, "seconds": 2.877}
+{"update": 768, "loss": 0.09847105294466019, "validation_action": 0.99609375, "seconds": 3.475}
