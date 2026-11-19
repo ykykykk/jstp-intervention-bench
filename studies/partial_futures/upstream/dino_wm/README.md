@@ -1,0 +1,1 @@
+`vit.py` is the authors' unchanged [DINO-WM predictor](https://github.com/gaoyuezhou/dino_wm/blob/0a9492fa12044b852ae9e001cc74604b79c8bb0c/models/vit.py), distributed with their original MIT license. Their implementation allocates its attention mask on CUDA. No upstream code was patched.
