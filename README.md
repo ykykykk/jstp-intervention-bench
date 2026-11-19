@@ -2,9 +2,16 @@
 
 **岳轲 · 理论、论文和可复验的交互研究。** 本仓库收录 JSTP 理论稿、五项交互研究、冻结权重和逐题执行记录。各项研究保留独立的实验协议，阳性和阴性结果均可查阅。
 
-**第一次读 JSTP，从这里开始：** [《联合状态转移预测导论：从局部后果到少示范动作泛化》PDF](studies/joint_primer/paper/联合状态转移预测导论-岳轲.pdf) · [可编辑正文](studies/joint_primer/paper/manuscript.md) · [八种模型同场对照表（Excel）](studies/joint_primer/paper/tables/JSTP-八种模型同场对照.xlsx) · [逐题回放](studies/joint_primer/paper/evidence-room.html)
+## 从这里开始 / Start here
 
-**English preprint:** Ke Yue, *Joint State Transition Prediction: Goal Generalization with Sparse Action Labels*. [Published on Zenodo · DOI: 10.5281/zenodo.24366436](https://doi.org/10.5281/zenodo.24366436) · [Download the PDF](https://zenodo.org/records/24366436/files/JSTP-Goal-Generalization-Ke-Yue.pdf?download=1) · [Read the full text](studies/joint_primer/paper/manuscript-en.md). This is a preprint, not a peer-reviewed publication.
+| 要读什么 / What to read | English | 中文 |
+| --- | --- | --- |
+| **完整理论 / Full JSTP theory** — Ke Yue's proposals about prediction, grouping, action, language, and the self. 18 sections, two appendices. | **[Read the full theory](theory/JSTP-Theory.en.md)** · [PDF, 34 pp.](theory/JSTP-Theory-Ke-Yue.en.pdf) | **[中文原稿](theory/JSTP-详细理论稿-2026-11-19.md)** · [PDF，30 页](theory/JSTP-Theory-Ke-Yue.zh.pdf) |
+| **实证论文 / Empirical preprint** — *Goal Generalization with Sparse Action Labels*. Tests one claim about using local consequences to act on new goals. | **[Zenodo v1.1](https://doi.org/10.5281/zenodo.24366742)** · [English PDF](studies/joint_primer/paper/JSTP-Goal-Generalization-Ke-Yue.pdf) · [Online text](studies/joint_primer/paper/manuscript-en.md) | **[中文论文 PDF](studies/joint_primer/paper/联合状态转移预测导论-岳轲.pdf)** · [在线正文](studies/joint_primer/paper/manuscript.md) |
+
+The theory manuscript states the hypotheses; the empirical paper reports the frozen-controller comparisons, not a test of the whole theory. [Cite this edition](https://doi.org/10.5281/zenodo.24366742) · [Latest edition / all versions](https://doi.org/10.5281/zenodo.24366435). The paper is a preprint and has not been peer reviewed.
+
+[八种模型同场对照表（Excel）](studies/joint_primer/paper/tables/JSTP-八种模型同场对照.xlsx) · [逐题回放](studies/joint_primer/paper/evidence-room.html)
 
 四轨装置先接受一次试探并复位，之后才公布目标。导论借此检验：固定物理经历、减少正确动作标注时，后果预期能否帮助同一网络选对动作？128 条示范时，JSTP、仅动作和一步世界模型的成对成功率为 **71.69%、49.79%、67.45%**。断开后果回输的匹配模型为 **66.75%**，在更大的两个示范预算上则略高。论文分开报告任务、功能性分组和隐状态干预。
 

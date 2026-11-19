@@ -27,6 +27,7 @@ def styles(english=False):
         'title':p('title','JB',22,32,3,color=INK,align=TA_LEFT,keepWithNext=True),
         'english':p('english','Helvetica',10.8,15,8,color=MUT,align=TA_LEFT,keepWithNext=True),
         'byline':p('byline','JR',10.1,15,11,color=MUT,align=TA_LEFT,keepWithNext=True),
+        'resource':p('resource','JR',10.1,14,3,color=INK,align=TA_LEFT,keepWithNext=True),
         'section':p('section','JB',15.3,21,5,10,align=TA_LEFT,keepWithNext=True),
         'sub':p('sub','JB',11.5,17,3,5,align=TA_LEFT,keepWithNext=True),
         'body':p('body'),
@@ -123,6 +124,8 @@ def typeset(paper,filename,text,equations,english=False):
             story.append(Paragraph(escape(block),S['english']))
         elif block.startswith(('岳轲　','Ke Yue ·')):
             story.append(Paragraph(escape(block),S['byline']))
+        elif english and block.startswith(('**Project repository:', '**Full JSTP theory:', '**Preprint DOI:')):
+            story.append(Paragraph(inline(block,paper),S['resource']))
         elif block.startswith('## '):
             sec=block[3:];nsec+=1
             p=Paragraph(inline(sec,paper),S['section']);p.outline_name=(sec,'sec'+str(nsec))

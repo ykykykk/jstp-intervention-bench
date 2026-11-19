@@ -1,8 +1,12 @@
 # Joint State Transition Prediction: Goal Generalization with Sparse Action Labels
 
-Ke Yue · Independent Researcher · 19 November 2026
+Ke Yue · Independent Researcher · 19 November 2026 · Version 1.1
 
-**Preprint DOI:** [10.5281/zenodo.24366436](https://doi.org/10.5281/zenodo.24366436)
+**Project repository:** [https://github.com/ykykykk/jstp-intervention-bench](https://github.com/ykykykk/jstp-intervention-bench)
+
+**Full JSTP theory:** [English translation](https://zenodo.org/records/24366742/files/JSTP-Theory-Ke-Yue.en.pdf) · [Chinese original](https://zenodo.org/records/24366742/files/JSTP-Theory-Ke-Yue.zh.pdf)
+
+**Preprint DOI:** [10.5281/zenodo.24366742](https://doi.org/10.5281/zenodo.24366742)
 
 ## Abstract
 

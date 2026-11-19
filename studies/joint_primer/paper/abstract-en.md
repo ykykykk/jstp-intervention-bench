@@ -8,4 +8,6 @@ A controller can learn what an action does without being told when to take it. D
 
 **Keywords:** joint state transition prediction; goal-conditioned control; action supervision; functional grouping; latent intervention.
 
-[Published preprint](https://doi.org/10.5281/zenodo.24366436) · [English PDF](JSTP-Goal-Generalization-Ke-Yue.pdf) · [Full English text](manuscript-en.md) · [Chinese edition](manuscript.md)
+[Published preprint](https://doi.org/10.5281/zenodo.24366742) · [English PDF](JSTP-Goal-Generalization-Ke-Yue.pdf) · [Full English text](manuscript-en.md) · [Chinese edition](manuscript.md)
+
+Full theory: [English](../../../theory/JSTP-Theory.en.md) · [Chinese original](../../../theory/JSTP-详细理论稿-2026-11-19.md)

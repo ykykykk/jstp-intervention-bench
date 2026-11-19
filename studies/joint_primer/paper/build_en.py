@@ -7,7 +7,8 @@ import tarfile
 from build import D, EQUATIONS, NAMES, fill_template, study_fields
 
 PDF = 'JSTP-Goal-Generalization-Ke-Yue.pdf'
-DOI = '10.5281/zenodo.24366436'
+DOI = '10.5281/zenodo.24366742'
+RECORD = DOI.rsplit('.', 1)[1]
 NAMES_EN = {
     'joint': 'JSTP (shared transition)', 'world': 'One-step world model',
     'aux': 'No consequence feedback', 'masked': 'Masked trajectory model',
@@ -25,6 +26,7 @@ HEADERS = {
 
 def english_text():
     fields = study_fields()
+    fields.update(version_doi=DOI, record=RECORD)
     translations = {NAMES[k]: v for k, v in NAMES_EN.items()}
     translations['未测'] = 'n.m.'
     for key, header in HEADERS.items():
@@ -81,7 +83,7 @@ PREAMBLE = r"""% English manuscript of Ke Yue. Compile with pdflatex main.tex tw
 \setcounter{topnumber}{3}\renewcommand{\topfraction}{.9}\renewcommand{\textfraction}{.08}
 \title{Joint State Transition Prediction:\\Goal Generalization with Sparse Action Labels}
 \author{Ke Yue\\\small Independent Researcher}
-\date{19 November 2026}
+\date{19 November 2026 \quad | \quad Version 1.1}
 \begin{document}
 \maketitle
 """
@@ -108,8 +110,8 @@ def tex_document(text):
     abstract = False
     cap = None
     for b in blocks[2:]:  # title and author are typeset by \maketitle
-        if b.startswith('**Preprint DOI:'):
-            out.append(r'\begin{center}\small ' + tex_inline(b) + r'\end{center}')
+        if b.startswith(('**Project repository:', '**Full JSTP theory:', '**Preprint DOI:')):
+            out.append(r'\noindent{\small ' + tex_inline(b) + r'}\par')
         elif b == '## Abstract':
             out.append(r'\begin{abstract}')
             abstract = True
@@ -170,7 +172,9 @@ def submission_files(text):
     short = (f'# {title}\n\nKe Yue · Independent Researcher · 19 November 2026\n\n'
              f'## Abstract\n\n{abstract}\n\n{keywords}\n\n'
              f'[Published preprint](https://doi.org/{DOI}) · [English PDF]({PDF}) · '
-             '[Full English text](manuscript-en.md) · [Chinese edition](manuscript.md)\n')
+             '[Full English text](manuscript-en.md) · [Chinese edition](manuscript.md)\n\n'
+             'Full theory: [English](../../../theory/JSTP-Theory.en.md) · '
+             '[Chinese original](../../../theory/JSTP-详细理论稿-2026-11-19.md)\n')
     (D / 'abstract-en.md').write_text(short, encoding='utf8', newline='\n')
     meta = (f'Title: {title}\nAuthors: Ke Yue\nPrimary category: cs.LG (Machine Learning)\n'
             'Comments: 1 figure, 4 tables. Code, frozen checkpoints, and executed trials are available in the study archive.\n'
