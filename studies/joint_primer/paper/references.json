@@ -2,43 +2,79 @@
   [
     "Littman, M. L., Sutton, R. S. & Singh, S.",
     "Predictive Representations of State",
-    "NeurIPS, 2001",
+    "Advances in Neural Information Processing Systems 14, 2001",
     "https://proceedings.neurips.cc/paper/2001/hash/1e4d36177d71bbb3558e43af9577d70e-Abstract.html"
-  ],
-  [
-    "Wu, P. et al.",
-    "Masked Trajectory Models for Prediction, Representation, and Control",
-    "ICML, 2023",
-    "https://arxiv.org/abs/2305.02968"
-  ],
-  [
-    "Reed, S. et al.",
-    "A Generalist Agent",
-    "TMLR, 2022",
-    "https://arxiv.org/abs/2205.06175"
-  ],
-  [
-    "Zhou, G. et al.",
-    "DINO-WM: World Models on Pre-trained Visual Features enable Zero-shot Planning",
-    "ICML, 2025",
-    "https://arxiv.org/abs/2411.04983"
-  ],
-  [
-    "Shukor, M. et al.",
-    "SmolVLA: A Vision-Language-Action Model for Affordable and Efficient Robotics",
-    "2025",
-    "https://arxiv.org/abs/2506.01844"
-  ],
-  [
-    "Ye, Z., Wessel, R. & Franken, T. P.",
-    "Brain-like border ownership signals support prediction of natural videos",
-    "iScience 28, 112199, 2025",
-    "https://doi.org/10.1016/j.isci.2025.112199"
   ],
   [
     "Rao, R. P. N. & Ballard, D. H.",
     "Predictive coding in the visual cortex: a functional interpretation of some extra-classical receptive-field effects",
-    "Nature Neuroscience 2, 79–87, 1999",
+    "Nature Neuroscience 2:79–87, 1999",
     "https://www.nature.com/articles/nn0199_79"
+  ],
+  [
+    "Wu, P., Majumdar, A., Stone, K., Lin, Y., Mordatch, I., Abbeel, P. & Rajeswaran, A.",
+    "Masked Trajectory Models for Prediction, Representation, and Control",
+    "ICML, PMLR 202:37607–37623, 2023",
+    "https://proceedings.mlr.press/v202/wu23o.html"
+  ],
+  [
+    "Lynch, C., Khansari, M., Xiao, T., Kumar, V., Tompson, J., Levine, S. & Sermanet, P.",
+    "Learning Latent Plans from Play",
+    "Conference on Robot Learning, PMLR 100:1113–1132, 2020",
+    "https://proceedings.mlr.press/v100/lynch20a.html"
+  ],
+  [
+    "Reed, S. et al.",
+    "A Generalist Agent",
+    "Transactions on Machine Learning Research, 2022",
+    "https://arxiv.org/abs/2205.06175"
+  ],
+  [
+    "Zhou, G., Pan, H., LeCun, Y. & Pinto, L.",
+    "DINO-WM: World Models on Pre-trained Visual Features enable Zero-shot Planning",
+    "ICML, PMLR 267:79115–79135, 2025",
+    "https://proceedings.mlr.press/v267/zhou25t.html"
+  ],
+  [
+    "Oquab, M. et al.",
+    "DINOv2: Learning Robust Visual Features without Supervision",
+    "Transactions on Machine Learning Research, 2024",
+    "https://arxiv.org/abs/2304.07193"
+  ],
+  [
+    "Hafner, D., Pasukonis, J., Ba, J. & Lillicrap, T.",
+    "Mastering diverse control tasks through world models",
+    "Nature 640:647–653, 2025",
+    "https://doi.org/10.1038/s41586-025-08744-2"
+  ],
+  [
+    "Shukor, M. et al.",
+    "SmolVLA: A Vision-Language-Action Model for Affordable and Efficient Robotics",
+    "arXiv:2506.01844, 2025",
+    "https://arxiv.org/abs/2506.01844"
+  ],
+  [
+    "Locatello, F. et al.",
+    "Object-Centric Learning with Slot Attention",
+    "Advances in Neural Information Processing Systems 33, 2020",
+    "https://proceedings.neurips.cc/paper_files/paper/2020/hash/8511df98c02ab60aea1b2356c013bc0f-Abstract.html"
+  ],
+  [
+    "Ye, Z., Wessel, R. & Franken, T. P.",
+    "Brain-like border ownership signals support prediction of natural videos",
+    "iScience 28:112199, 2025",
+    "https://doi.org/10.1016/j.isci.2025.112199"
+  ],
+  [
+    "Geiger, A., Lu, H., Icard, T. & Potts, C.",
+    "Causal Abstractions of Neural Networks",
+    "Advances in Neural Information Processing Systems 34, 2021",
+    "https://proceedings.neurips.cc/paper_files/paper/2021/hash/4f5c422f4d49a5a807eda27434231040-Abstract.html"
+  ],
+  [
+    "Varley, R. & Siegal, M.",
+    "Evidence for cognition without grammar from causal reasoning and 'theory of mind' in an agrammatic aphasic patient",
+    "Current Biology 10:723–726, 2000",
+    "https://pubmed.ncbi.nlm.nih.gov/10873809/"
   ]
 ]

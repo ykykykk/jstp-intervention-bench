@@ -1,6 +1,6 @@
 cff-version: 1.2.0
 message: "引用此研究手稿时请注明岳轲、题名、日期与对应 Git 提交；手稿未经同行评审。"
-title: "联合状态转移预测导论：从共同变化到对象、行动与语言"
+title: "联合状态转移预测导论：从局部后果到少示范动作泛化"
 type: software
 authors:
   - family-names: "岳"
@@ -8,10 +8,10 @@ authors:
 repository-code: "https://github.com/ykykykk/jstp-intervention-bench"
 preferred-citation:
   type: unpublished
-  title: "联合状态转移预测导论：从共同变化到对象、行动与语言"
+  title: "联合状态转移预测导论：从局部后果到少示范动作泛化"
   authors:
     - family-names: "岳"
       given-names: "轲"
   year: 2026
   month: 11
-  notes: "研究手稿；附同数据训练代码、冻结权重与双考场执行记录。"
+  notes: "研究手稿；附八种方法的同场比较、逐种子对照表、冻结权重及补充考场执行记录。"

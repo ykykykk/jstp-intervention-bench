@@ -4,6 +4,7 @@
 *.pdf binary
 *.png binary
 *.zip binary
+*.xlsx binary
 *.gif binary
 *.ttf binary
 evidence/** -text

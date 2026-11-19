@@ -1,123 +1,103 @@
-"""Typeset the programme paper from archived estimates, without running a controller."""
-import json,re,os
+"""Generate the paper's Markdown tables and PDF from archived observations, without training or scoring."""
+import json
 from pathlib import Path
-from xml.sax.saxutils import escape,quoteattr
-from reportlab.lib import colors
-from reportlab.lib.pagesizes import A4
-from reportlab.lib.styles import ParagraphStyle
-from reportlab.pdfbase import pdfmetrics
-from reportlab.pdfbase.ttfonts import TTFont
-from reportlab.pdfgen.canvas import Canvas
-from reportlab.platypus import Paragraph,Table,TableStyle,Image,Spacer,Frame
 
-D=Path(__file__).resolve().parent;E=D.parent/'evidence'
+D=Path(__file__).resolve().parent
+E=D.parent/'evidence'
 PDF='联合状态转移预测导论-岳轲.pdf'
-NAMES={'joint':'JSTP 共享转移','aux':'同结构断回输','direct':'仅直接动作','world':'一步世界模型','masked':'掩码轨迹 Transformer','flow':'条件流动作','world-isolated':'隔离梯度世界模型'}
-K=[128,1024,16384]
-def j(p):return json.loads(p.read_text(encoding='utf8'))
-def pct(m):return f"{100*m['value']:.2f}"
-def ci(m):return f"{100*m['value']:.2f} [{100*m['lo']:.2f}, {100*m['hi']:.2f}]"
-def table(header,body):
-    row=lambda a:'| '+' | '.join(a)+' |'
-    return '\n'.join([row(header),row(['---']*len(header)),*[row(v) for v in body]])
-def official_section():
-    report=j(E/'official/analysis/summary.json')
-    scores={(r['arm'],r['budget']):r['metrics'] for r in report['rows']}
-    diff={r['other']:r for r in report['paired'] if r['budget']==128}
-    arms={'joint':'JSTP 共享转移','smol':'官方 SmolVLA 局部微调','dino':'DINOv2 + DINO-WM 适配'}
-    get=lambda a,metric:pct(scores[a,128][metric])
-    passed=[arms[a] for a in ('smol','dino') if diff[a]['primary_pass']]
-    if len(passed)==2:verdict='按约定判据，稀缺示范下的优势对这两种适配都保留。'
-    elif passed:verdict='按约定判据，稀缺示范下仅对'+passed[0]+'保留了优势，不能说同时优于两者。'
-    else:verdict='按约定判据，稀缺示范下并未确立相对这两种适配的优势。'
-    wins=lambda a:sum(x>0 for x in diff[a]['seed_deltas'])
-    return {
-      'official_abstract':f"另以相同的三档示范重新训练两类预训练适配模型：128 条时，官方 SmolVLA 局部微调为 {get('smol','pair')}%，DINO-WM 任务适配为 {get('dino','pair')}%。{verdict}",
-      'official_table':table(['模型','128 条','1,024 条','16,384 条'],
-          [[title]+[pct(scores[a,k]['pair']) for k in K] for a,title in arms.items()]),
-      'official_inference':f"**128 条：优势是否仍在？** JSTP 减 SmolVLA 为 {ci(diff['smol']['family'])} 个百分点，减 DINO-WM 适配为 {ci(diff['dino']['family'])} 点。括号为两项比较各自的 97.5% 布局配对区间（Bonferroni 家族 95%）；三个对应初始化中，JSTP 分别有 {wins('smol')} 个和 {wins('dino')} 个占优。事前要求区间下界大于零，且至少两个种子方向一致。{verdict}",
-      'official_diagnostic':f"**两个对手错在不同地方。** 128 条时，SmolVLA 的单题成功率为 {get('smol','single')}%，却在 {get('smol','same_action')}% 的相反目标对中仍拉同一只把手，这些题必然一对一错。DINO 适配只有 {get('dino','same_action')}% 的成对题不换手：因为候选效用与目标做内积，相反目标本来就会使非零分数反号。但它只有 {get('dino','pair')}% 的题对选对方向。JSTP 的优势体现在把试探经历用于未见目标的行动上；不能把全部差距单独归因于后果回输，表 1 的同结构断回输组也达到了 66.75%。"
-    }
+K=(128,1024,16384)
+SEEDS=(9301,9419,9547)
+ARMS=('joint','world','aux','masked','dino','direct','flow','smol')
+NAMES={'joint':'JSTP 共享转移','world':'一步世界模型','aux':'同结构，断开后果回输','masked':'掩码轨迹 Transformer',
+       'dino':'DINO-WM 任务适配','direct':'仅直接动作','flow':'条件流动作','smol':'官方 SmolVLA 局部微调',
+       'world-isolated':'世界模型，隔离动作梯度'}
+
+# Each pair expresses the same equation in portable Markdown math and PDF typesetting.
+EQUATIONS={
+    'eq_partial':(r'y^Q_{t+1}=\pi_Q(S_{t+1}),\qquad \hat y^Q_{t+1}=F_\theta(H_t,c,Q).',
+        'y<super>Q</super><sub>t+1</sub> = π<sub>Q</sub>(S<sub>t+1</sub>),　　　 ŷ<super>Q</super><sub>t+1</sub> = F<sub>θ</sub>(H<sub>t</sub>, c, Q)'),
+    'eq_transition':(r'h=E(x),\qquad T(h,e)=h+f(h+e),\qquad z_a=T(h,e_a).',
+        'h = E(x),　　　 T(h, e) = h + f(h + e),　　　 z<sub>a</sub> = T(h, e<sub>a</sub>)'),
+    'eq_motor':(r's(h,g)=g^\top \big[ W T(h+Rz_A,e_m)+b \big].',
+        's(h, g) = g<super>T</super> [W T(h + Rz<sub>A</sub>, e<sub>m</sub>) + b]'),
+    'eq_loss':(r'\mathcal L=\mathbb E_{\mathrm{label}}\!\left[\log(1+e^{-ys})\right]+3\,\mathbb E_{\mathrm{phys}}\!\left[\tfrac14\sum_{j\in M}(\hat d_j-d_j)^2\right].',
+        'L = E<sub>label</sub> [log(1 + exp(−ys))] + 3 E<sub>phys</sub> [(1/4) Σ<sub>j ∈ M</sub> (d<super>pred</super><sub>j</sub> − d<sub>j</sub>)<super>2</super>]')
+}
+
+def j(p):
+    return json.loads(p.read_text(encoding='utf8'))
+
+def pc(x):
+    return f'{100*x:.2f}'
+
+def table(head, rows):
+    line=lambda r: '| '+' | '.join(r)+' |'
+    return '\n'.join([line(head),line(['---']+['---:']*(len(head)-1)),*[line(r) for r in rows]])
+
 def compile_text():
-    main=j(E/'analysis/summary.json');supp=j(E/'challenge/results.json')
-    M={(r['arm'],r['budget']):r['metrics'] for r in main['rows']}
-    S={(r['arm'],r['budget']):r for r in supp['rows']}
-    cmp={(r['other'],r['budget']):r for r in main['paired']}
-    supcmp={(r['a'],r['b'],r['budget']):r['delta'] for r in supp['contrasts']}
-    def t(source,metric,arms):
-        return table(['模型','128 条','1,024 条','16,384 条'],
-             [[NAMES[a]]+[pct(source[a,k][metric]) for k in K] for a in arms])
-    names=list(NAMES);m=M['joint',128]
+    primary=j(E/'analysis/summary.json')
+    official=j(E/'official/analysis/summary.json')
+    second=j(E/'challenge/results.json')
+    p={(r['arm'],r['budget']):r['metrics'] for r in primary['rows']}
+    o={(r['arm'],r['budget']):r['metrics'] for r in official['rows']}
+    mainseeds={(r['arm'],r['budget'],r['seed']):r['metrics'] for r in j(E/'analysis/per-seed.json')}
+    offseeds={(r['arm'],r['budget'],r['seed']):r['metrics'] for r in j(E/'official/analysis/per-seed.json')}
+    # JSTP's original execution is the sole reference. The official tables only add metrics or new adapters.
+    allscores={**o,**p}
+    sdata={**offseeds,**mainseeds}
+    dif={r['other']:r['family'] for r in primary['paired']+official['paired'] if r['budget']==128}
+    s={(r['arm'],r['budget']):r for r in second['rows']}
+    supcmp={(r['a'],r['b'],r['budget']):r['delta'] for r in second['contrasts']}
+    def get(arm,key,k=128):
+        return allscores[arm,k][key]['value']
+    def pp(arm,key,k=128):
+        return pc(get(arm,key,k))
+    def intr(m):
+        return f"[{pc(m['lo'])}, {pc(m['hi'])}]"
+    best={k:max(get(a,'pair',k) for a in ARMS) for k in K}
+    ranking=[];detail=[]
+    for a in ARMS:
+        row=[NAMES[a]]
+        for k in K:
+            v=get(a,'pair',k)
+            row.append(f'**{pc(v)}**' if v==best[k] else pc(v))
+        if a=='joint':
+            row.extend(['—']*3)
+        else:
+            d=dif[a]
+            n=sum(sdata['joint',128,seed]['pair']>sdata[a,128,seed]['pair'] for seed in SEEDS)
+            row.extend(['+'+pc(d['value']),intr(d),f'{n}/3'])
+        ranking.append(row)
+        same=o[a,128]['same_action']['value'] if (a,128) in o else 2*(get(a,'single')-get(a,'pair'))
+        detail.append([NAMES[a],*[pc(sdata[a,128,seed]['pair']) for seed in SEEDS],pp(a,'single'),pc(same),
+                       *([pp(a,'group'),pp(a,'blind_group')] if (a,128) in p else ['未测','未测'])])
+    base=[a for a in ARMS if (a,128) in p]
+    groups=[[NAMES[a]]+[pp(a,'group',k) for k in K] for a in base]
+    challenge=[[NAMES[a]]+[pc(s[a,k]['pair']['value']) for k in K] for a in [*base,'world-isolated']]
+    m=p['joint',128]; sd=supcmp['world-isolated','world',128]
+    jgroup=[sdata['joint',128,seed]['group'] for seed in SEEDS]
+    references='\n\n'.join(f"[{i}] {a.rstrip('.')}. [{title}]({url}). {venue}." for i,(a,title,venue,url) in enumerate(j(D/'references.json'),1))
     results={
-      'abstract_result':f"在 192 个新布局上，只给 128 条动作示范时，JSTP 在同一次试探后把相反目标两题均做对的比例为 {pct(m['pair'])}%，仅动作策略为 {pct(M['direct',128]['pair'])}%，一步世界模型为 {pct(M['world',128]['pair'])}%。保留物理学习、只断开预期通往动作的路径，成绩为 {pct(M['aux',128]['pair'])}%；示范充足时，这个对照反而略高。保持现实和目标不变，仅替换与物理后果相关的隐分量，一部分动作会按照供体世界的方向改变。这支持的是特定装置上复用物理经验的优势，不是各类智能都需要这种动作通路。",
-      'action_table':t(M,'pair',names[:-1]),'group_table':t(M,'group',names[:-1]),'challenge_table':t(S,'pair',names),
-      'primary':f"稀缺档里，JSTP 相对仅动作高 {ci(cmp['direct',128]['family'])} 个百分点，相对一步世界模型高 {ci(cmp['world',128]['family'])} 点，相对同结构断回输高 {ci(cmp['aux',128]['family'])} 点。方括号是五项事先比较各用 99% 的布局配对区间，作 Bonferroni 家族校正。三个初始化平均后 JSTP 在这个预算下领先五组；其中一个初始化的一步世界模型仍以 74.4% 高于对应 JSTP 的 72.6%。这些区间不含重新抽取示范或换一批模型初始化的方差。",
-      'intervention':f"128 条示范时，在供体与真实最优动作相反的题中，原本正确且向供体换手的比例为 {pct(m['directed'])}%；等幅无关扰动为 {pct(m['null'])}%，两者净差 {ci(m['over_null'])} 个百分点（95% 布局区间）。在最优动作相同的题中，物理移植使原本正确的动作错换了 {pct(m['false'])}%。原预期更贴近真实物理且移植后更贴近供体的比例为 {pct(m['donor_match'])}%。随着示范增至 1,024 和 16,384 条，物理移植与等幅对照的定向换手净差分别为 {pct(M['joint',1024]['over_null'])} 和 {pct(M['joint',16384]['over_null'])} 点。各比率的分母是相应条件下全部题，不是事后只挑会换手的题。",
-      'challenge_result':f"隔离梯度没有救回这个实现。128 条示范时，隔离版相对端到端世界模型的成对差为 {ci(supcmp['world-isolated','world',128])} 点；全部标注时亦未反超。相同光学读数上的均方根误差在全部标注时分别为 {S['world-isolated',16384]['optical_rmse']['value']:.3f} 与 {S['world',16384]['optical_rmse']['value']:.3f}（相机位移已除以四像素行程）。因而不能把原来的反常表现简单归咎于动作梯度破坏物理预测。这里没有诊断出唯一原因，也没有在补考后再调对手。"
+        'abstract_findings':f"在 128 条标注下，JSTP 的成对成功率为 {pp('joint','pair')}%，一步世界模型为 {pp('world','pair')}%，仅动作策略为 {pp('direct','pair')}%。同结构模型只断开后果至动作的通路后为 {pp('aux','pair')}%（差 {pc(dif['aux']['value'])} 个百分点，99% 布局配对区间 {intr(dif['aux'])}）；该对照在两个较大预算下反而略高。",
+        'main_table':table(['方法','128 条','1,024 条','16,384 条','Δ128','校正区间','胜/3'],ranking),
+        'main_findings':f"128 条标注时，JSTP 在八组中平均最高。相对仅动作策略、一步世界模型和同结构断回输模型，优势分别为 {pc(dif['direct']['value'])}、{pc(dif['world']['value'])} 和 {pc(dif['aux']['value'])} 个百分点。两种预训练适配中，SmolVLA 和 DINO-WM 分别为 {pp('smol','pair')}% 和 {pp('dino','pair')}%；对应差值为 {pc(dif['smol']['value'])} 和 {pc(dif['dino']['value'])} 个百分点，两项比较的校正区间均不跨零。增至 1,024 或 16,384 条后，同结构断回输在这两档均略高于 JSTP。",
+        'detail_table':table(['方法','9301','9419','9547','单题','同手','共动','遮试探'],detail),
+        'error_analysis':f"种子 9301 的一步世界模型为 {pc(sdata['world',128,9301]['pair'])}%，超过同种子的 JSTP（{pc(sdata['joint',128,9301]['pair'])}%）；对两种官方适配则三个种子均领先。SmolVLA 单题成功率为 {pp('smol','single')}%，但在 {pc(o['smol',128]['same_action']['value'])}% 的相反目标对中仍选同一把手，这些题对必然一对一错。DINO-WM 的同手率仅 {pc(o['dino',128]['same_action']['value'])}%，而成对成功率为 {pp('dino','pair')}%。其候选效用与目标作内积，目标反号通常足以触发换手；换手本身不能证明模型预期了正确的物理方向。对 JSTP 的加性目标读出也适用同一限制。",
+        'group_findings':f"128 条标注时，共动关系最容易从断回输模型读出（{pp('aux','group')}%），其次为掩码轨迹模型（{pp('masked','group')}%），而动作成绩最高的 JSTP 为 {pp('joint','group')}%。同一模型的三个分组成绩从 {pc(min(jgroup))}% 到 {pc(max(jgroup))}%；遮掉试探引起的亮度变化和横向位移后，平均读出降至 {pp('joint','blind_group')}%。这些差异说明可线性读出的关系对历史敏感，同时不能替代成对任务成绩。三档完整结果见表 A1；两种官方适配没有对应的探针测量。",
+        'intervention':f"128 条时，在供体与原情境的最优动作相反的题中，原先正确且向供体动作切换的比例为 {pc(m['directed']['value'])}%，等范数对照为 {pc(m['null']['value'])}%，净差 {pc(m['over_null']['value'])} 个百分点（95% 布局配对区间 {intr(m['over_null'])}）。当最优动作本不应改变时，物理移植造成的原本正确后错换比例为 {pc(m['false']['value'])}%。原预期更接近真实读数且干预后更接近供体读数的比例为 {pc(m['donor_match']['value'])}%。1,024 和 16,384 条时，物理移植相对等范数对照的定向换手净差分别为 {pp('joint','over_null',1024)} 和 {pp('joint','over_null',16384)} 个百分点。",
+        'challenge_table':table(['方法','128 条','1,024 条','16,384 条'],challenge),
+        'challenge_result':f"128 条时，隔离梯度的一步世界模型为 {pc(s['world-isolated',128]['pair']['value'])}%，原世界模型为 {pc(s['world',128]['pair']['value'])}%，相差 {pc(sd['value'])} 个百分点（95% 布局配对区间 {intr(sd)}）。全量标注时，两者的光学均方根误差分别为 {s['world-isolated',16384]['optical_rmse']['value']:.3f} 和 {s['world',16384]['optical_rmse']['value']:.3f}（以四像素行程归一化）。单独阻断梯度未恢复任务成绩；该对照不足以确定原性能下降的唯一原因。",
+        'group_table':table(['方法','128 条','1,024 条','16,384 条'],groups),'references':references
     }
-    results.update(official_section())
-    results['references']='\n\n'.join(f"[{i}] {a} ({v}). [{title}]({url})." for i,(a,title,v,url) in enumerate(j(D/'references.json'),1))
+    results.update({k:'$$\n'+latex+r'\tag{'+str(n)+'}\n$$' for n,(k,(latex,_)) in enumerate(EQUATIONS.items(),1)})
     text=(D/'source.md').read_text(encoding='utf8')
-    for key,val in results.items():text=text.replace('[['+key+']]',val)
-    if '[[' in text:raise ValueError('unfilled research field')
+    for key,val in results.items():
+        text=text.replace('[['+key+']]',val)
+    if '[[' in text:
+        raise ValueError('unfilled manuscript field')
     (D/'manuscript.md').write_text(text,encoding='utf8',newline='\n')
     return text
 
-INK='#182E32';ACC='#096B60';MUT='#526966';GOLD='#AE7139';SW=A4[0]-100
-def inline(s):
-    s=escape(s);s=re.sub(r'\*\*(.*?)\*\*',r'<b>\1</b>',s)
-    def anchor(m):
-        if m[2].startswith('https://'):return '<a color="'+ACC+'" href='+quoteattr(m[2])+'>'+m[1]+'</a>'
-        return '<font color="'+ACC+'">'+m[1]+'</font>'
-    return re.sub(r'\[([^\]]+)\]\(([^)]+)\)',anchor,s)
-def style(font,size,line,tail,color):
-    return ParagraphStyle('j',fontName=font,fontSize=size,leading=line,spaceAfter=tail,
-        textColor=colors.HexColor(color),wordWrap='CJK',splitLongWords=1,allowWidows=0,allowOrphans=0)
-def pageflows(text,f):
-    P=lambda s,font,sz,lh,sp=0,col=INK:Paragraph(inline(s),style(font,sz*f,lh*f,sp*f,col))
-    out=[]
-    for s in re.split(r'\n\s*\n',text.strip()):
-        if s.startswith('|'):
-            rows=[[cell.strip() for cell in line.strip('|').split('|')] for line in s.splitlines() if not re.fullmatch(r'[| :\-]+',line)]
-            n=len(rows[0]);widths=([.43,.19,.19,.19] if n==4 else [.26,.32,.42])
-            cells=[[P(cell,'JB' if i==0 else 'JR',9.1,13,0,'#FFFFFF' if i==0 else INK) for cell in row] for i,row in enumerate(rows)]
-            tbl=Table(cells,colWidths=[SW*x for x in widths],hAlign='LEFT')
-            tbl.setStyle(TableStyle([('BACKGROUND',(0,0),(-1,0),colors.HexColor(ACC)),('ROWBACKGROUNDS',(0,1),(-1,-1),[colors.HexColor('#EDF4F1'),colors.white]),('VALIGN',(0,0),(-1,-1),'MIDDLE'),('LEFTPADDING',(0,0),(-1,-1),7),('RIGHTPADDING',(0,0),(-1,-1),6),('BOTTOMPADDING',(0,0),(-1,-1),4*f),('TOPPADDING',(0,0),(-1,-1),4*f)]))
-            out.extend([tbl,Spacer(1,9*f)]);continue
-        if s.startswith('!['):
-            m=re.fullmatch(r'!\[(.*?)\]\((.*?)\)',s);im=Image(str(D/m[2]));ratio=im.imageHeight/im.imageWidth
-            im.drawWidth=SW;im.drawHeight=SW*ratio
-            out.extend([im,Spacer(1,6*f),P(m[1],'JR',8.7,13,9,MUT)]);continue
-        s=s.replace('\n',' ')
-        if s.startswith('# '):out.append(P(s[2:],'JB',26,36,10))
-        elif s.startswith('## '):out.append(P(s[3:],'JB',18,27,12,ACC))
-        elif s.startswith('### '):out.append(P(s[4:],'JB',12.8,19,6,ACC))
-        elif re.match(r'^\[\d+\]',s):out.append(P(s,'JR',9.1,13.8,5,MUT))
-        elif s.startswith('Joint State Transition Prediction:'):out.append(P(s,'Helvetica-Oblique',11,16,12,MUT))
-        else:out.append(P(s,'JR',11.2,18.6,11))
-    return out
-def pdf(raw):
-    for nm,sty in [('JR','Regular'),('JB','Bold')]:
-        pdfmetrics.registerFont(TTFont(nm,str(D/'fonts'/('JSTPSerif-'+sty+'.ttf'))))
-    pdfmetrics.registerFontFamily('JR',normal='JR',bold='JB')
-    can=Canvas(str(D/PDF),pagesize=A4,invariant=1,pageCompression=1)
-    can.setTitle('联合状态转移预测导论：从共同变化到对象、行动与语言');can.setAuthor('岳轲')
-    pages=raw.split('<!-- page -->');names=['摘要','局部未来','对象、动作和语言','与已有研究的关系','网络与装置','同数据协议','任务与示范','分组与干预','世界模型补考','官方适配同场比较','理论能被怎样否定','文献与复现']
-    if len(pages)!=len(names):raise ValueError('page names do not match manuscript')
-    for i,(s,name) in enumerate(zip(pages,names)):
-        W,H=A4;can.bookmarkPage(str(i));can.addOutlineEntry(name,str(i))
-        can.setFillColor(colors.HexColor(ACC));can.setFont('Helvetica-Bold',8);can.drawString(50,H-34,'JSTP     /     FOUNDATIONS')
-        can.setFont('JR',8.5);can.drawRightString(W-50,H-34,name)
-        can.setStrokeColor(colors.HexColor('#B9CAC4'));can.line(50,H-43,W-50,H-43);can.line(50,38,W-50,38)
-        can.setFillColor(colors.HexColor(MUT));can.setFont('JR',8);can.drawString(50,24,'岳轲   /   联合状态转移预测导论')
-        can.setFont('Helvetica',8);can.drawRightString(W-50,24,f'{i+1:02d}  /  {len(pages):02d}')
-        avail=H-115
-        for fac in [1,.98,.96,.94,.92,.90,.88,.86,.84,.82,.80,.78]:
-            flow=pageflows(s,fac)
-            if sum(v.wrap(SW,avail)[1]+v.getSpaceAfter()+v.getSpaceBefore() for v in flow)<avail-3:break
-        else:raise ValueError('page too long: '+name)
-        Frame(50,53,SW,avail,leftPadding=0,bottomPadding=0,topPadding=0,rightPadding=0).addFromList(flow,can)
-        if flow:raise ValueError('missing page content: '+name)
-        can.showPage()
-    can.save();print(PDF,len(pages),'pages')
-if __name__=='__main__':pdf(compile_text())
+if __name__=='__main__':
+    from layout import typeset
+    typeset(D,PDF,compile_text(),EQUATIONS)
