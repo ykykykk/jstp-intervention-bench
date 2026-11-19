@@ -4,6 +4,8 @@
 
 [中文论文（7 页 PDF）](paper/联合状态转移预测导论-岳轲.pdf) · [可编辑正文](paper/manuscript.md) · [英文摘要](paper/abstract-en.md) · [逐种子 Excel 对照表](paper/tables/JSTP-八种模型同场对照.xlsx) · [训练曲线与逐题回放](paper/evidence-room.html)
 
+**English edition.** Ke Yue (2026), *Joint State Transition Prediction: Goal Generalization with Sparse Action Labels*. [Zenodo preprint, version 1.0](https://doi.org/10.5281/zenodo.24366436) · [English PDF, 9 pages](paper/JSTP-Goal-Generalization-Ke-Yue.pdf) · [Full text](paper/manuscript-en.md) · [LaTeX sources and figure](paper/JSTP-arXiv-source.tar.gz). The four result tables use the same archived observations as the Chinese edition; no models were retrained for translation. To regenerate the English outputs with the paper dependencies, run `python studies/joint_primer/paper/build_en.py`.
+
 本文以同一份物理经历检验 JSTP 的一个主张：动作本身可以直接预测，但在动作标注稀缺时，局部后果是否有助于网络为未见目标选择动作？论文将联合状态、功能性分组与语言层的理论命题，与本装置上可验证的结果分开。见[完整理论稿](../../theory/JSTP-详细理论稿-2026-11-19.md)。
 
 ## 主考场：八种模型，三档示范

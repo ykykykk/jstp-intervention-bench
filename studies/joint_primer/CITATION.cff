@@ -1,5 +1,5 @@
 cff-version: 1.2.0
-message: "引用此研究手稿时请注明岳轲、题名、日期与对应 Git 提交；手稿未经同行评审。"
+message: "Cite the English preprint with the paper DOI below. To reference an experiment or a specific checkpoint, also report the repository commit. The preprint has not been peer reviewed."
 title: "联合状态转移预测导论：从局部后果到少示范动作泛化"
 type: software
 authors:
@@ -8,10 +8,12 @@ authors:
 repository-code: "https://github.com/ykykykk/jstp-intervention-bench"
 preferred-citation:
   type: unpublished
-  title: "联合状态转移预测导论：从局部后果到少示范动作泛化"
+  title: "Joint State Transition Prediction: Goal Generalization with Sparse Action Labels"
   authors:
-    - family-names: "岳"
-      given-names: "轲"
+    - family-names: "Yue"
+      given-names: "Ke"
   year: 2026
   month: 11
-  notes: "研究手稿；附八种方法的同场比较、逐种子对照表、冻结权重及补充考场执行记录。"
+  doi: "10.5281/zenodo.24366436"
+  url: "https://zenodo.org/records/24366436"
+  notes: "Zenodo preprint, version 1.0. English edition of the Chinese manuscript; reports the same experiment, not an independent replication."

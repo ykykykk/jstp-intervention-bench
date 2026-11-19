@@ -4,6 +4,8 @@
 
 **第一次读 JSTP，从这里开始：** [《联合状态转移预测导论：从局部后果到少示范动作泛化》PDF](studies/joint_primer/paper/联合状态转移预测导论-岳轲.pdf) · [可编辑正文](studies/joint_primer/paper/manuscript.md) · [八种模型同场对照表（Excel）](studies/joint_primer/paper/tables/JSTP-八种模型同场对照.xlsx) · [逐题回放](studies/joint_primer/paper/evidence-room.html)
 
+**English preprint:** Ke Yue, *Joint State Transition Prediction: Goal Generalization with Sparse Action Labels*. [Published on Zenodo · DOI: 10.5281/zenodo.24366436](https://doi.org/10.5281/zenodo.24366436) · [Download the PDF](https://zenodo.org/records/24366436/files/JSTP-Goal-Generalization-Ke-Yue.pdf?download=1) · [Read the full text](studies/joint_primer/paper/manuscript-en.md). This is a preprint, not a peer-reviewed publication.
+
 四轨装置先接受一次试探并复位，之后才公布目标。导论借此检验：固定物理经历、减少正确动作标注时，后果预期能否帮助同一网络选对动作？128 条示范时，JSTP、仅动作和一步世界模型的成对成功率为 **71.69%、49.79%、67.45%**。断开后果回输的匹配模型为 **66.75%**，在更大的两个示范预算上则略高。论文分开报告任务、功能性分组和隐状态干预。
 
 两套官方适配模型在相同下游示范上重训，并在同一批 192 个布局上执行。128 条时，SmolVLA 局部微调为 **23.74%**，DINO-WM 任务适配为 **50.58%**。三档结果及配对区间见[论文表 1](studies/joint_primer/paper/联合状态转移预测导论-岳轲.pdf#page=4)；逐种子成绩与行为诊断见[论文表 2](studies/joint_primer/paper/联合状态转移预测导论-岳轲.pdf#page=5)。

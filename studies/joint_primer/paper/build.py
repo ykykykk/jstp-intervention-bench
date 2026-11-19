@@ -34,7 +34,7 @@ def table(head, rows):
     line=lambda r: '| '+' | '.join(r)+' |'
     return '\n'.join([line(head),line(['---']+['---:']*(len(head)-1)),*[line(r) for r in rows]])
 
-def compile_text():
+def study_fields():
     primary=j(E/'analysis/summary.json')
     official=j(E/'official/analysis/summary.json')
     second=j(E/'challenge/results.json')
@@ -90,11 +90,18 @@ def compile_text():
         'group_table':table(['方法','128 条','1,024 条','16,384 条'],groups),'references':references
     }
     results.update({k:'$$\n'+latex+r'\tag{'+str(n)+'}\n$$' for n,(k,(latex,_)) in enumerate(EQUATIONS.items(),1)})
-    text=(D/'source.md').read_text(encoding='utf8')
+    return results
+
+def fill_template(source,results):
+    text=source.read_text(encoding='utf8')
     for key,val in results.items():
         text=text.replace('[['+key+']]',val)
     if '[[' in text:
         raise ValueError('unfilled manuscript field')
+    return text
+
+def compile_text():
+    text=fill_template(D/'source.md',study_fields())
     (D/'manuscript.md').write_text(text,encoding='utf8',newline='\n')
     return text
 
