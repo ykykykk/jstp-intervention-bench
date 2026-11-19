@@ -1,0 +1,46 @@
+{
+  "study": "partial-futures-v4",
+  "date": "2026-11-19",
+  "source": "v3.0.0, lategoal rig/cards and unmodified late-experience bytes",
+  "train_sha256": "cd92e565b6dbfe23cf809a5301bc7600854fc56ade7656bc9290b9e385c21ec1",
+  "validation_sha256": "b29398669f10ac1da183700247b65647095b6389e94f1d81f13bfbaf42e7334e",
+  "seeds": [
+    6043,
+    6221,
+    6553
+  ],
+  "arms": [
+    "partial",
+    "detached",
+    "direct",
+    "world",
+    "token",
+    "flow"
+  ],
+  "updates": 4096,
+  "batch": 160,
+  "width": 64,
+  "lr": 0.0016,
+  "sampler": "lategoal.train.batch; reset numpy(seed+813) for each arm. Exactly the same ordered examples, cards, candidate optics and action labels from v3. Fixed final checkpoint. All scratch arms learn a probe. Only prediction-supervised arms use the optical target; action-only methods may ignore it. No external pretraining in this table.",
+  "task": "Same physical rig, 24 train cards; 16 held-out goal cards. Paired success means both opposite goals solved after exactly the same observed probe. Spatial goal addresses, motor primitives, majority rule and observation frontend given, not learned segmentation.",
+  "panels": {
+    "v3": [
+      74000000,
+      192
+    ],
+    "fresh": [
+      86141000,
+      192
+    ]
+  },
+  "calibration": [
+    73000000,
+    192
+  ],
+  "analysis": "Report original panel for comparability and new locked layout panel for replication, without new training data. 3000 paired layout bootstrap draws (seed 44178) keeping seeds and sibling conditions together. Primary: fresh paired task success and partial-minus-direct, partial-minus-world paired differences. No arm choice or tuning on either test. Estimate across fixed three seeds; not a CI over model population.",
+  "grouping": "Secondary operational endpoint for every arm, same frozen ridge probe, independent calibration-only. Predict sign of four true camera lanes for the probed action; strict success requires all four correct and correct four-lane pattern in the other clutch of same wiring (8 signs). Compare history ablated to common unprobed view (zero optical change and image delta; keep real action/mark/gear). This measures intervention-dependent local co-motion, not masks, identity, or object permanence.",
+  "causal": "Partial/detached: keep real history, direct route, goal and weights fixed. Independent calibration fits physics axes from reference actual optics and frozen optical decoder, legacy rank-4 rowspace and equal-length full-decoder-null control. Donor same wiring, other clutch; count native-correct and switch-to-donor on all changed-optimum goals D; null D0; native-correct and wrong on unchanged goals F. Partial mediation criterion: lower layout-CI for D-D0 and D-F >0, physical match >=0.80. Other unrelated architectures not forced into this adapter and reported NA, not zero.",
+  "transfer": "Separate resource track: attempt official public pretrained SmolVLA (lerobot/smolvla_base, 5e8d12a6e2975b0e5e5fce7c8caf47c371d257b6) on the same stored observations/goals. Any use of outside weights, different adapter, sample/update/compute budget must be disclosed; never pool with scratch. No claim to rank unrun foundation models.",
+  "baseline": "world: train action-conditioned future features, compare two candidate predicted outcomes with learned goal readout (one-step exhaustive MPC; not original V-JEPA/DINO-WM). token: goal-conditioned transformer predicts discrete action token (not OpenVLA weights). flow: conditional flow matching for signed action, deterministic zero initial noise in evaluation, not pi model weights. direct/detached are matched JSTP controls; archived v3 is historical only.",
+  "freeze": "Commit protocol before training; store SHA-256s of exact dataset, weights and code. Seal signed choices before independent simulator calls; adjudicate actual camera outcomes. Completed, stopped or failed external track reported separately."
+}
