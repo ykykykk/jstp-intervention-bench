@@ -1,0 +1,38 @@
+{
+  "study": "JSTP introduction / official transfer adapters / same primary arena",
+  "timing": "Added after the original main and challenge results were known. Commit before training and before running either new method on the primary exam. Not a new blind panel or public preregistration.",
+  "upstream": "Reuse research 04 official adapter definitions and exact pinned official checkpoints. No old downstream weights, no inherited measured answers. All nine fits per model restart from the pinned backbone and original initialization policy.",
+  "source_locks": {
+    "studies/partial_futures/transfer.py": "77799138d7f8b7a311f2c3539495f8352b4e67ba4854220c27fccfdb74d2a6b0",
+    "studies/partial_futures/upstream/dino_wm/vit.py": "60c77bdb03f3b2d565bfdb1695c9c193a802236763d33a03e79ed382b51f0670",
+    "studies/partial_futures/transfer-plan.json": "bda59d8f4135bf4e101fe91b880225b64ea464a6eee5950e0dbf12e1adcd87b9",
+    "studies/joint_primer/protocol.json": "0ae1fbcc37deb6900c4e5b050813121fa1287bb47ed9a0a3a74c6ff0bb72c779",
+    "studies/joint_primer/evidence/after.json": "6cc981e88a5082b14f7f4548c1d72be7a0bd4fa87ffd50889e8fa49cdfdbfe99",
+    "studies/joint_primer/evidence/analysis/summary.json": "9f85fc70b3595973e2e6f61970f78c5370a8c58d8b80b8e1d319477cb5a46a19"
+  },
+  "schedule_sha256": "3907bfda031f17607f51821548260c3914e79e001ebaf7d885e87b8d16bbd5ba",
+  "train_sha256": "cd92e565b6dbfe23cf809a5301bc7600854fc56ade7656bc9290b9e385c21ec1",
+  "exam_items_sha256": "da84bb1708752b12c0ac75edf253b27cc31f25fe318dc5f7db63545848dfd4e9",
+  "models": [
+    "smol",
+    "dino"
+  ],
+  "budgets": [
+    128,
+    1024,
+    16384
+  ],
+  "seeds": [
+    9301,
+    9419,
+    9547
+  ],
+  "updates": 768,
+  "batch": 128,
+  "optimizer": "AdamW betas .9,.999, weight decay 1e-4, global clip 3, final weights only. Smol 1e-4 / DINO 1e-3 from research 04; BF16 autocast. Effective B128; Smol may split into equal microbatches before one update. No early stop, model selection, retuning or choice thresholds on either panel.",
+  "supervision": "Use the immutable main schedule in full. Label allocations perm[:k], cards per exact physical row and label draws perm[label % k] as in JSTP. Random physical stream/side/sensor columns are identical; DINO gets the identical four measured optical coordinates for the one scheduled action only and the same 3x MSE weighting. Native SmolVLA is an action policy: the same bank is available but no optical loss or hidden action/goal label is added. Probe side is crossed by the experimenter, not trained from an extra home label.",
+  "smol": "Strict official SmolVLA 450M vision/language trunk and flow action expert, update only state_proj, action_out_proj and last expert layer. Same public 128x128 encoded brightness image, instruments and equivalent English card instruction, one signed action coordinate, one step chunk; evaluation zero noise/four native Euler steps. Frozen image tokens may be cached, no change in task labels or forward model.",
+  "dino": "Frozen official DINOv2-S/14 image features (56x56), actual unmodified DINO-WM authors' ViTPredictor, task-trained transition/optical/head. Predict 12 observable displacements; value two candidate signed actions. Not a released task-trained DINO-WM system. Frozen vision features may be cached.",
+  "execution": "Use exactly main 113670000..113670191 and sealed item IDs, images, probes (A/B), 2 wirings and 2 clutches, all 16 held-out goals; 12,288 opposite pairs per checkpoint. Check observation prefix fingerprints. Freeze all 18; seal every signed command before actuating. Re-execute simulator strokes for new policies and judge from RGB displacements. Reuse already sealed JSTP native trial scores instead of unnecessary retraining; check matching item/frame hashes, no new training or test layouts.",
+  "analysis": "Primary k128: paired JSTP minus each adapter; 3000 paired whole-layout bootstrap draws as main, average same 3 seeds; per contrast 97.5% intervals (Bonferroni family 95% over two tests). Evidence for advantage over both only if both lower bounds >0 and difference positive in at least 2/3 matched seeds for each, otherwise say which comparison survived. Report all per-seed rates, paired goals, single-card success and frequency of identical commands for opposite goals. Other budgets descriptive 95% paired layout intervals. No general ranking of world models or VLAs; fixed annotation split/seeds, no compute/pretraining parity."
+}
