@@ -1,0 +1,16 @@
+{
+  "panel": "v3",
+  "layouts": 192,
+  "observed": "117b6b4b63b17c2fef7b299292722aa9fba5e572cdf56ae3bf8ae11ff4efbe2b",
+  "before": "5feaab9591c9da87ee92ea23ff5f34535ba95e07c249ac67ba04be4a1a389a03",
+  "task": {
+    "value": 0.8624674479166666,
+    "lo": 0.8451334635416666,
+    "hi": 0.879888916015625
+  },
+  "pair": {
+    "value": 0.8623046875,
+    "lo": 0.8448893229166666,
+    "hi": 0.8798828125
+  }
+}

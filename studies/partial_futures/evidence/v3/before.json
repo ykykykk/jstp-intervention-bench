@@ -1,0 +1,25 @@
+{
+  "protocol": "6b630a5e50c02006c1b734d469103d9219e886e8a6a619e7de1060b05a57df25",
+  "files": {
+    "v3/sealed/items.npz": "6996fdc5595176d77df62e68addfd55d529d777d0c05aa4f97a6b5eee4382154",
+    "v3/sealed/partial-6043.npz": "02b3617acb60f76b8d36618afc77960c4b5e98886c477c483505bef4623fd643",
+    "v3/sealed/partial-6221.npz": "73c66f745f8a9cc37b6af3d329b53ba807758b5fa98c1cc186a826a718eaee80",
+    "v3/sealed/partial-6553.npz": "bbfdb21ef98996a58ce76a25376c7f411201838f08d79130b648c7b377d5ecc2",
+    "v3/sealed/detached-6043.npz": "b31e151d05ade232ce6b5a7f351f6ac89e6b440cf22d36ed4b2d75a1e211e474",
+    "v3/sealed/detached-6221.npz": "90d30149d0b59e279dd3eff1d961a56c93fbf0abd16e9fb15a932f9fcb63029a",
+    "v3/sealed/detached-6553.npz": "def9d9e2113ee509d484b9bf05097677378abf69db5c266f389ce19ab93ed676",
+    "v3/sealed/direct-6043.npz": "f65a01c94b2a631a27de4d4abd6e568defcc9d80e480ed8cfd15ecf4472df258",
+    "v3/sealed/direct-6221.npz": "6dcb60de8ed6e6d4c1fb30e58f730ec6e089ae009c9bcccdff213f0d68d046d6",
+    "v3/sealed/direct-6553.npz": "544a85442033ba502431706280699295b9736b413c1380d3030e3cae2972be57",
+    "v3/sealed/world-6043.npz": "0cb4c9d20b48832371d27f4bfdbf81134158f6d9b083f1d084adb14c045a0647",
+    "v3/sealed/world-6221.npz": "a6c1e02db7f8244d587b17010c7fdb8d9a2d92306ded0594e9e88d579952702c",
+    "v3/sealed/world-6553.npz": "adc9743b9675882144b258c7accf9d242ed6189972dd3504f45b6580996618e2",
+    "v3/sealed/token-6043.npz": "3819dff2d104e7006f4528804cbb73ac17c48d322e8adef43ed67e89600ed706",
+    "v3/sealed/token-6221.npz": "d394b1b3170ee01c7ff9ee75b6b0d4c31a4564f9af6536881fb863bcb3880fb6",
+    "v3/sealed/token-6553.npz": "96ab347743d511cb49dfd78e540b0fc6da89412f742f4532d635c116e8158b0e",
+    "v3/sealed/flow-6043.npz": "f61b113a53f7fed50fb898a8a9eefcbf1e38e1530e92b3f97cd16c79b8813cc8",
+    "v3/sealed/flow-6221.npz": "02c9ffc86acb4fa5bdaf73bb979ff9664202fc8dae17f01965e74cbe71ba3124",
+    "v3/sealed/flow-6553.npz": "ab8272ba583b5fae514bdfc547076b4074a6c9561e4c9b873fba6dba23ea25ed",
+    "calibrated.json": "8084bb708dea9f35b968684e99402407eb224cf4b56a932a6e60079424ab12d8"
+  }
+}

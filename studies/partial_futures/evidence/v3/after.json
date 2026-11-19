@@ -1,0 +1,25 @@
+{
+  "protocol": "6b630a5e50c02006c1b734d469103d9219e886e8a6a619e7de1060b05a57df25",
+  "files": {
+    "v3/observed/camera.npz": "fa3da51b79c83c86eff5d3f00ed5bf034b136fee15030564a8054a28acba4d57",
+    "v3/before.json": "32d01707c1c02dfb76e88a874af4fcf02f90748cf00ab723b40a6c4d785789ec",
+    "v3/observed/partial-6043.npz": "12e342e1396d9683a95c1dcdd89edd84518ae3cfbbcba85a9673d5114843b38b",
+    "v3/observed/partial-6221.npz": "fe0b4115c6695c6ce7c580fd57fe8b3ea7a021ec6be23f4d93f9d28004b07fd1",
+    "v3/observed/partial-6553.npz": "2a93f59c6b3fea24083114c154831422644b031593b02d19a7b1a904aa46d8a4",
+    "v3/observed/detached-6043.npz": "d6bc43d6a5c53bf6f54cb8a074dc6844975c64f1a1900677d8b741f0f08387c7",
+    "v3/observed/detached-6221.npz": "2240dbcc2e017910fd298ba18b35a0e54887c0cc44d879928735dbcc75cd700d",
+    "v3/observed/detached-6553.npz": "d6bc43d6a5c53bf6f54cb8a074dc6844975c64f1a1900677d8b741f0f08387c7",
+    "v3/observed/direct-6043.npz": "a797eccb9392a70f6e68dccf43e6f5bd91f4f0f399832165c7f9a41b4dac44e4",
+    "v3/observed/direct-6221.npz": "a797eccb9392a70f6e68dccf43e6f5bd91f4f0f399832165c7f9a41b4dac44e4",
+    "v3/observed/direct-6553.npz": "a797eccb9392a70f6e68dccf43e6f5bd91f4f0f399832165c7f9a41b4dac44e4",
+    "v3/observed/world-6043.npz": "a797eccb9392a70f6e68dccf43e6f5bd91f4f0f399832165c7f9a41b4dac44e4",
+    "v3/observed/world-6221.npz": "a797eccb9392a70f6e68dccf43e6f5bd91f4f0f399832165c7f9a41b4dac44e4",
+    "v3/observed/world-6553.npz": "a797eccb9392a70f6e68dccf43e6f5bd91f4f0f399832165c7f9a41b4dac44e4",
+    "v3/observed/token-6043.npz": "2bd274ee92367b8464b4e41088a174ef8e188f220214822afe0855e1e7470684",
+    "v3/observed/token-6221.npz": "7f9364b868e71239eae8c728462fbe1029c1aa0c3805563f662643d67f630e26",
+    "v3/observed/token-6553.npz": "b39ca82020dd1fa7f4afd02d129f03db63bb0e412e0413aaacf7a39ef67044aa",
+    "v3/observed/flow-6043.npz": "bd9068902f5fe2647bd6a35af9b2aea55bb8eb406459d51a2bcf148681dc0e6c",
+    "v3/observed/flow-6221.npz": "bf97fc13a0fbc9e68edf73fabeb77dbccce0d395848d66cfbc525a79a962f653",
+    "v3/observed/flow-6553.npz": "df4fee513f62ca1558e7b740241493bba9603b4374c9464fff06ebdc9b86ed25"
+  }
+}

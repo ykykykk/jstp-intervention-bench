@@ -1,0 +1,24 @@
+{
+  "protocol": "6b630a5e50c02006c1b734d469103d9219e886e8a6a619e7de1060b05a57df25",
+  "files": {
+    "frozen.json": "2084b786d341c2615d74784a6e83360222a5dd380de762156e582ef79a63972b",
+    "calibration/partial-6043.npz": "19266a41f366bcceb7cf3498f2b7ad002e516c0b0b71fcc5b31fa2130c3b8116",
+    "calibration/partial-6221.npz": "ffe133fc399c8e1a1dae757b77fa2119ab351edeb7a3b09160ed1707d10685b5",
+    "calibration/partial-6553.npz": "7f3a5e5649e142c912d9f43ba2d3b7f3087bce587dd08c204ac4c2da1152efb8",
+    "calibration/detached-6043.npz": "75c191fee5e5b7b345de44ef669c42a58fd4ead390b4d9f16d71ff3677d90122",
+    "calibration/detached-6221.npz": "9304cf84e651e161ff4d0a950f0a67645ab7a5a1047446be667364bcdc97f988",
+    "calibration/detached-6553.npz": "40d8729589e576fbbd37172bfef1530bc83f240f4eebc17503ed8d8841cb1986",
+    "calibration/direct-6043.npz": "54ebfd87ec78fa0f17eeb48d2e2b595cdb8d61de2b2a82703fc8bf535fe0cb3b",
+    "calibration/direct-6221.npz": "e28c59b93fd5bfb798fc71bd7e1a123196ca398e172d842bb4e5ba9cc855a88a",
+    "calibration/direct-6553.npz": "9b841be0d1cc425462843c4f8fef9984ecc8bc1ae26ea02f75a4c8aa233d68b4",
+    "calibration/world-6043.npz": "51d36468bf71e470a465f45605488e46360501b17a110c2e4e49f8d208793bd4",
+    "calibration/world-6221.npz": "48661fe67df5d1b17ca88224e9b4870e7ba37bb425bf1275424d78ade62ce7d5",
+    "calibration/world-6553.npz": "0c533008fa619cb2b7213e4eb561e24c327fbdef42f88788f81524552ab6e5e6",
+    "calibration/token-6043.npz": "8f4ac8a8a592675a8d7cea546526ae3e51aefa417dfc7ac1929a52a4c0c8ba4e",
+    "calibration/token-6221.npz": "0b788764f0af3a625c27c525f1bf058ca493b865a4e6999b7472374ea09e0dcf",
+    "calibration/token-6553.npz": "09501bd7d66cb512cd377a128a61b5f031b378576623e466fa9968b1ea0408aa",
+    "calibration/flow-6043.npz": "5141315cdbe82772c2c5254461974e34b35b84f460ce55baafe2352178252b8e",
+    "calibration/flow-6221.npz": "c5ae2d6cc96f89c2862ce4b31df3c47ee20faef6cf01a7484d75ba8a6aa62c8d",
+    "calibration/flow-6553.npz": "1faed7cf08abbe8cabbf313e35e9a2a91038072b5eaeb1a229db3cc23d592c24"
+  }
+}

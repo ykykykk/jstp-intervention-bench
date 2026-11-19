@@ -1,0 +1,22 @@
+{
+  "adapter": "4e122f1e3acc3c2cafe6305e35e9d794dd739cd664369151dc88ca1bf4e3bab2",
+  "code": "77799138d7f8b7a311f2c3539495f8352b4e67ba4854220c27fccfdb74d2a6b0",
+  "external": "7cd549ac2351fb069c0ddb3c34ad2d09cfc92b56a15dccdfc2e41467aaca01eb",
+  "data": "cd92e565b6dbfe23cf809a5301bc7600854fc56ade7656bc9290b9e385c21ec1",
+  "plan": "bda59d8f4135bf4e101fe91b880225b64ea464a6eee5950e0dbf12e1adcd87b9",
+  "updates": 512,
+  "examples": 16384,
+  "seed": 6043,
+  "parameters": 450046250,
+  "adapted": 6067146,
+  "seconds": 87.56,
+  "device": "NVIDIA GeForce RTX 3090",
+  "versions": {
+    "torch": "2.15.0+cu132",
+    "transformers": "5.22.2",
+    "lerobot": "0.7.0",
+    "numpy": "2.2.6",
+    "safetensors": "0.8.0",
+    "einops": "0.8.2"
+  }
+}

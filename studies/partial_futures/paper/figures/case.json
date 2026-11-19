@@ -1,0 +1,18 @@
+{
+  "layout": 86141001,
+  "state": 0,
+  "goal": [
+    1,
+    -1,
+    0,
+    -1
+  ],
+  "probe": -1,
+  "native": -1,
+  "physical": 1,
+  "null": -1,
+  "actual_success": [
+    true,
+    false
+  ]
+}

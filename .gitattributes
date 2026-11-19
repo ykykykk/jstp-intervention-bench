@@ -7,3 +7,5 @@
 *.gif binary
 *.ttf binary
 evidence/** -text
+studies/partial_futures/evidence/** -text
+studies/partial_futures/data/** -text

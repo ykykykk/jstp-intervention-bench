@@ -1,0 +1,25 @@
+{
+  "protocol": "6b630a5e50c02006c1b734d469103d9219e886e8a6a619e7de1060b05a57df25",
+  "files": {
+    "fresh/observed/camera.npz": "e5e6cf162568ee22abe1658aee9e4df3cc719a828cab20770899962bd8ff397f",
+    "fresh/before.json": "dd1485853128684168922e34b222122bcff1eaf6bc8b646bc312e7fff32c99d4",
+    "fresh/observed/partial-6043.npz": "6185e6bfaae8c16e3787ad38f727e8f22e5980ecb6d0c9248fa6923746b24ee5",
+    "fresh/observed/partial-6221.npz": "ee0261a932bb5bd5075814a374859b9cf5e7006c7812fbb60f01dbde4c0f5e9a",
+    "fresh/observed/partial-6553.npz": "fb1e122cdebf93729004a3d80d320ca5f43ab787e76474a8a5b187eb4e8b2287",
+    "fresh/observed/detached-6043.npz": "d6bc43d6a5c53bf6f54cb8a074dc6844975c64f1a1900677d8b741f0f08387c7",
+    "fresh/observed/detached-6221.npz": "6f8fdeb3406bde904b801349dc56e4044c2d141a3403cbbad6d56fe31435b8f4",
+    "fresh/observed/detached-6553.npz": "d6bc43d6a5c53bf6f54cb8a074dc6844975c64f1a1900677d8b741f0f08387c7",
+    "fresh/observed/direct-6043.npz": "a797eccb9392a70f6e68dccf43e6f5bd91f4f0f399832165c7f9a41b4dac44e4",
+    "fresh/observed/direct-6221.npz": "a797eccb9392a70f6e68dccf43e6f5bd91f4f0f399832165c7f9a41b4dac44e4",
+    "fresh/observed/direct-6553.npz": "a797eccb9392a70f6e68dccf43e6f5bd91f4f0f399832165c7f9a41b4dac44e4",
+    "fresh/observed/world-6043.npz": "a797eccb9392a70f6e68dccf43e6f5bd91f4f0f399832165c7f9a41b4dac44e4",
+    "fresh/observed/world-6221.npz": "a797eccb9392a70f6e68dccf43e6f5bd91f4f0f399832165c7f9a41b4dac44e4",
+    "fresh/observed/world-6553.npz": "a797eccb9392a70f6e68dccf43e6f5bd91f4f0f399832165c7f9a41b4dac44e4",
+    "fresh/observed/token-6043.npz": "af9b2fc0a6cfa56c4b74155f3aecf6b775373e46b32403cef89d913a89b51ed9",
+    "fresh/observed/token-6221.npz": "3333577991709ab79ec68b615bd53aac42ebe218164df8ebbb3dad1648898227",
+    "fresh/observed/token-6553.npz": "641ad005bc65ea0983232af8be893eb214ad232ad1f15a9ca17d0eb38f8060a2",
+    "fresh/observed/flow-6043.npz": "51b76c2e0c42f1cc36c4522ffb18de765ee55fd767f259ffdf9e0750136783a9",
+    "fresh/observed/flow-6221.npz": "ad3fabfac63a820fe6a05bd06fad82dc4f65b3d6559dba15d7f1703c307abb73",
+    "fresh/observed/flow-6553.npz": "6f2b4777321cfae5ad27cc6f71d974d0101caec986b2cf2681ed5482efa44bf2"
+  }
+}

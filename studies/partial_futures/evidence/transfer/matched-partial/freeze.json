@@ -1,0 +1,13 @@
+{
+  "arm": "partial",
+  "adapter": "ec3da9f042562810c5adb75b45f78d84338ccf3c385e9836711f70d3fabae760",
+  "data": "cd92e565b6dbfe23cf809a5301bc7600854fc56ade7656bc9290b9e385c21ec1",
+  "schedule": "0bb0b0b84ae818506855ddbea96739ffee89434a771ccf0a006cf666a94c9fab",
+  "protocol": "d5d36082989390d2336817305d2f552b508314889a41bdb899a96f87e79daeb9",
+  "code": "e4dc07e834cce94c1de87785cce40d6126b19454bf8602796e35d4c22310cf44",
+  "params": 33490,
+  "seed": 6043,
+  "updates": 512,
+  "examples": 16384,
+  "seconds": 4.18
+}

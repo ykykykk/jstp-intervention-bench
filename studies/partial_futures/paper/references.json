@@ -1,0 +1,50 @@
+[
+  [
+    "岳轲",
+    "晚到目标：试探经历、潜在后果与实际动作",
+    "2026",
+    "https://github.com/ykykykk/jstp-intervention-bench/tree/v3.0.0"
+  ],
+  [
+    "Zhou 等",
+    "DINO-WM: World Models on Pre-trained Visual Features Enable Zero-shot Planning",
+    "2025",
+    "https://dino-wm.github.io/"
+  ],
+  [
+    "Kim 等",
+    "OpenVLA: An Open-Source Vision-Language-Action Model",
+    "2024",
+    "https://openvla.github.io/"
+  ],
+  [
+    "Black 等",
+    "π₀: A Vision-Language-Action Flow Model for General Robot Control",
+    "2024",
+    "https://www.pi.website/blog/pi0"
+  ],
+  [
+    "Hugging Face LeRobot 团队",
+    "SmolVLA：官方模型、输入说明与权重",
+    "2025",
+    "https://huggingface.co/lerobot/smolvla_base"
+  ],
+  [
+    "Meta FAIR",
+    "V-JEPA 2: Understanding, Prediction and Planning for Physical Interaction",
+    "2025",
+    "https://ai.meta.com/blog/v-jepa-2-world-model-benchmarks/"
+  ],
+  [
+    "Physical Intelligence",
+    "π₀.₇: a Steerable Model with Emergent Capabilities",
+    "2026",
+    "https://www.pi.website/blog/pi07"
+  ],
+  [
+    "Oquab 等",
+    "DINOv2: Learning Robust Visual Features without Supervision",
+    "2023",
+    "https://github.com/facebookresearch/dinov2"
+  ]
+]

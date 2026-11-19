@@ -1,0 +1,18 @@
+{
+  "arm": "world",
+  "seed": 6043,
+  "weights": "83ef1cd5adb360423b13de6e8f842bce2b7f623042231d42675bd1c356709150",
+  "protocol": "6b630a5e50c02006c1b734d469103d9219e886e8a6a619e7de1060b05a57df25",
+  "data_sha": "cd92e565b6dbfe23cf809a5301bc7600854fc56ade7656bc9290b9e385c21ec1",
+  "code": {
+    "models.py": "8f91f96612986e2be1fde128da1e0445262e601f7d96beee6e377cfe1d16fe98",
+    "train.py": "9af82e108aeb9e0553d6a00122fd8b26c00460e89150c0cbc46cd118fa8bdbd4"
+  },
+  "parameters": 30161,
+  "updates": 4096,
+  "examples": 655360,
+  "seconds": 25.5,
+  "torch": "2.15.0+cu132",
+  "device": "NVIDIA GeForce RTX 3090",
+  "python": "3.13.5"
+}

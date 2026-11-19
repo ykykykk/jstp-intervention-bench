@@ -1,0 +1,464 @@
+[
+  {
+    "panel": "v3",
+    "arm": "partial",
+    "seed": 6043,
+    "metrics": {
+      "task": 1.0,
+      "pair": 1.0,
+      "group": 1.0,
+      "blind": 0.0,
+      "optical_mse": 0.005149095344273115,
+      "directed": 0.08854166666666667,
+      "null": 0.0185546875,
+      "false": 0.00016276041666666666,
+      "physical_fit": 1.0
+    }
+  },
+  {
+    "panel": "v3",
+    "arm": "partial",
+    "seed": 6221,
+    "metrics": {
+      "task": 1.0,
+      "pair": 1.0,
+      "group": 1.0,
+      "blind": 0.0078125,
+      "optical_mse": 0.0027823228406810407,
+      "directed": 0.17578125,
+      "null": 0.0008138020833333334,
+      "false": 0.0,
+      "physical_fit": 1.0
+    }
+  },
+  {
+    "panel": "v3",
+    "arm": "partial",
+    "seed": 6553,
+    "metrics": {
+      "task": 1.0,
+      "pair": 1.0,
+      "group": 1.0,
+      "blind": 0.0078125,
+      "optical_mse": 0.002520197787816869,
+      "directed": 0.27734375,
+      "null": 0.0006510416666666666,
+      "false": 0.0009765625,
+      "physical_fit": 1.0
+    }
+  },
+  {
+    "panel": "v3",
+    "arm": "detached",
+    "seed": 6043,
+    "metrics": {
+      "task": 1.0,
+      "pair": 1.0,
+      "group": 1.0,
+      "blind": 0.0026041666666666665,
+      "optical_mse": 0.0035814179476195327,
+      "directed": 0.0,
+      "null": 0.0,
+      "false": 0.0,
+      "physical_fit": 1.0
+    }
+  },
+  {
+    "panel": "v3",
+    "arm": "detached",
+    "seed": 6221,
+    "metrics": {
+      "task": 0.9718424479166666,
+      "pair": 0.96484375,
+      "group": 1.0,
+      "blind": 0.013020833333333334,
+      "optical_mse": 0.03403667678746084,
+      "directed": 0.0,
+      "null": 0.0,
+      "false": 0.0,
+      "physical_fit": 1.0
+    }
+  },
+  {
+    "panel": "v3",
+    "arm": "detached",
+    "seed": 6553,
+    "metrics": {
+      "task": 1.0,
+      "pair": 1.0,
+      "group": 1.0,
+      "blind": 0.0,
+      "optical_mse": 0.001077519778846181,
+      "directed": 0.0,
+      "null": 0.0,
+      "false": 0.0,
+      "physical_fit": 1.0
+    }
+  },
+  {
+    "panel": "v3",
+    "arm": "direct",
+    "seed": 6043,
+    "metrics": {
+      "task": 1.0,
+      "pair": 1.0,
+      "group": 0.4375,
+      "blind": 0.0
+    }
+  },
+  {
+    "panel": "v3",
+    "arm": "direct",
+    "seed": 6221,
+    "metrics": {
+      "task": 1.0,
+      "pair": 1.0,
+      "group": 0.2708333333333333,
+      "blind": 0.0
+    }
+  },
+  {
+    "panel": "v3",
+    "arm": "direct",
+    "seed": 6553,
+    "metrics": {
+      "task": 1.0,
+      "pair": 1.0,
+      "group": 0.4609375,
+      "blind": 0.0
+    }
+  },
+  {
+    "panel": "v3",
+    "arm": "world",
+    "seed": 6043,
+    "metrics": {
+      "task": 1.0,
+      "pair": 1.0,
+      "group": 1.0,
+      "blind": 0.0078125,
+      "optical_mse": 0.0011116716137217332
+    }
+  },
+  {
+    "panel": "v3",
+    "arm": "world",
+    "seed": 6221,
+    "metrics": {
+      "task": 1.0,
+      "pair": 1.0,
+      "group": 1.0,
+      "blind": 0.0026041666666666665,
+      "optical_mse": 0.0011460188530286865
+    }
+  },
+  {
+    "panel": "v3",
+    "arm": "world",
+    "seed": 6553,
+    "metrics": {
+      "task": 1.0,
+      "pair": 1.0,
+      "group": 1.0,
+      "blind": 0.005208333333333333,
+      "optical_mse": 0.0022020483732679472
+    }
+  },
+  {
+    "panel": "v3",
+    "arm": "token",
+    "seed": 6043,
+    "metrics": {
+      "task": 0.5877278645833334,
+      "pair": 0.3141276041666667,
+      "group": 0.059895833333333336,
+      "blind": 0.010416666666666666
+    }
+  },
+  {
+    "panel": "v3",
+    "arm": "token",
+    "seed": 6221,
+    "metrics": {
+      "task": 0.5638020833333334,
+      "pair": 0.3683268229166667,
+      "group": 0.06770833333333333,
+      "blind": 0.0026041666666666665
+    }
+  },
+  {
+    "panel": "v3",
+    "arm": "token",
+    "seed": 6553,
+    "metrics": {
+      "task": 0.7267252604166666,
+      "pair": 0.6490885416666666,
+      "group": 1.0,
+      "blind": 0.0078125
+    }
+  },
+  {
+    "panel": "v3",
+    "arm": "flow",
+    "seed": 6043,
+    "metrics": {
+      "task": 0.9867350260416666,
+      "pair": 0.9860026041666666,
+      "group": 0.609375,
+      "blind": 0.0
+    }
+  },
+  {
+    "panel": "v3",
+    "arm": "flow",
+    "seed": 6221,
+    "metrics": {
+      "task": 0.878173828125,
+      "pair": 0.8694661458333334,
+      "group": 0.2526041666666667,
+      "blind": 0.0
+    }
+  },
+  {
+    "panel": "v3",
+    "arm": "flow",
+    "seed": 6553,
+    "metrics": {
+      "task": 0.9977213541666666,
+      "pair": 0.9977213541666666,
+      "group": 0.9375,
+      "blind": 0.0
+    }
+  },
+  {
+    "panel": "fresh",
+    "arm": "partial",
+    "seed": 6043,
+    "metrics": {
+      "task": 1.0,
+      "pair": 1.0,
+      "group": 1.0,
+      "blind": 0.0,
+      "optical_mse": 0.004952685304387059,
+      "directed": 0.08626302083333333,
+      "null": 0.026041666666666668,
+      "false": 0.0,
+      "physical_fit": 1.0
+    }
+  },
+  {
+    "panel": "fresh",
+    "arm": "partial",
+    "seed": 6221,
+    "metrics": {
+      "task": 1.0,
+      "pair": 1.0,
+      "group": 1.0,
+      "blind": 0.013020833333333334,
+      "optical_mse": 0.0028434814379983842,
+      "directed": 0.16080729166666666,
+      "null": 0.0009765625,
+      "false": 0.0,
+      "physical_fit": 1.0
+    }
+  },
+  {
+    "panel": "fresh",
+    "arm": "partial",
+    "seed": 6553,
+    "metrics": {
+      "task": 1.0,
+      "pair": 1.0,
+      "group": 1.0,
+      "blind": 0.015625,
+      "optical_mse": 0.0024090124475656515,
+      "directed": 0.2853190104166667,
+      "null": 0.0006510416666666666,
+      "false": 0.0,
+      "physical_fit": 1.0
+    }
+  },
+  {
+    "panel": "fresh",
+    "arm": "detached",
+    "seed": 6043,
+    "metrics": {
+      "task": 1.0,
+      "pair": 1.0,
+      "group": 1.0,
+      "blind": 0.0026041666666666665,
+      "optical_mse": 0.003610430574149682,
+      "directed": 0.0,
+      "null": 0.0,
+      "false": 0.0,
+      "physical_fit": 1.0
+    }
+  },
+  {
+    "panel": "fresh",
+    "arm": "detached",
+    "seed": 6221,
+    "metrics": {
+      "task": 0.9676920572916666,
+      "pair": 0.9602864583333334,
+      "group": 1.0,
+      "blind": 0.013020833333333334,
+      "optical_mse": 0.035461914573615,
+      "directed": 0.0,
+      "null": 0.0,
+      "false": 0.0,
+      "physical_fit": 1.0
+    }
+  },
+  {
+    "panel": "fresh",
+    "arm": "detached",
+    "seed": 6553,
+    "metrics": {
+      "task": 1.0,
+      "pair": 1.0,
+      "group": 1.0,
+      "blind": 0.0,
+      "optical_mse": 0.0011101751230550387,
+      "directed": 0.0,
+      "null": 0.0,
+      "false": 0.0,
+      "physical_fit": 1.0
+    }
+  },
+  {
+    "panel": "fresh",
+    "arm": "direct",
+    "seed": 6043,
+    "metrics": {
+      "task": 1.0,
+      "pair": 1.0,
+      "group": 0.4244791666666667,
+      "blind": 0.0
+    }
+  },
+  {
+    "panel": "fresh",
+    "arm": "direct",
+    "seed": 6221,
+    "metrics": {
+      "task": 1.0,
+      "pair": 1.0,
+      "group": 0.3255208333333333,
+      "blind": 0.0
+    }
+  },
+  {
+    "panel": "fresh",
+    "arm": "direct",
+    "seed": 6553,
+    "metrics": {
+      "task": 1.0,
+      "pair": 1.0,
+      "group": 0.3932291666666667,
+      "blind": 0.0
+    }
+  },
+  {
+    "panel": "fresh",
+    "arm": "world",
+    "seed": 6043,
+    "metrics": {
+      "task": 1.0,
+      "pair": 1.0,
+      "group": 1.0,
+      "blind": 0.005208333333333333,
+      "optical_mse": 0.0011617300291012118
+    }
+  },
+  {
+    "panel": "fresh",
+    "arm": "world",
+    "seed": 6221,
+    "metrics": {
+      "task": 1.0,
+      "pair": 1.0,
+      "group": 1.0,
+      "blind": 0.005208333333333333,
+      "optical_mse": 0.0012010312362286237
+    }
+  },
+  {
+    "panel": "fresh",
+    "arm": "world",
+    "seed": 6553,
+    "metrics": {
+      "task": 1.0,
+      "pair": 1.0,
+      "group": 1.0,
+      "blind": 0.005208333333333333,
+      "optical_mse": 0.0022920067899071406
+    }
+  },
+  {
+    "panel": "fresh",
+    "arm": "token",
+    "seed": 6043,
+    "metrics": {
+      "task": 0.5922037760416666,
+      "pair": 0.3155924479166667,
+      "group": 0.059895833333333336,
+      "blind": 0.0078125
+    }
+  },
+  {
+    "panel": "fresh",
+    "arm": "token",
+    "seed": 6221,
+    "metrics": {
+      "task": 0.5626627604166666,
+      "pair": 0.3606770833333333,
+      "group": 0.08854166666666667,
+      "blind": 0.0078125
+    }
+  },
+  {
+    "panel": "fresh",
+    "arm": "token",
+    "seed": 6553,
+    "metrics": {
+      "task": 0.7234700520833334,
+      "pair": 0.64599609375,
+      "group": 1.0,
+      "blind": 0.0078125
+    }
+  },
+  {
+    "panel": "fresh",
+    "arm": "flow",
+    "seed": 6043,
+    "metrics": {
+      "task": 0.990478515625,
+      "pair": 0.9894205729166666,
+      "group": 0.6276041666666666,
+      "blind": 0.0
+    }
+  },
+  {
+    "panel": "fresh",
+    "arm": "flow",
+    "seed": 6221,
+    "metrics": {
+      "task": 0.8816731770833334,
+      "pair": 0.8748372395833334,
+      "group": 0.2708333333333333,
+      "blind": 0.0
+    }
+  },
+  {
+    "panel": "fresh",
+    "arm": "flow",
+    "seed": 6553,
+    "metrics": {
+      "task": 0.9957682291666666,
+      "pair": 0.9957682291666666,
+      "group": 0.8958333333333334,
+      "blind": 0.0
+    }
+  }
+]

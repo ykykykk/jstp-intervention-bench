@@ -8,3 +8,9 @@
 | 排版字体 | [Google Fonts / Noto Serif SC，8b0a1d0](https://github.com/google/fonts/tree/8b0a1d0f5983c89bc2b93f1b5fb55f9e252744b5/ofl/notoserifsc) | 两项研究各附两个静态字重子集，改名 JSTP Study Serif；[研究二的字体许可](paper/mechanism_study/fonts/OFL.txt)，原许可证见 [SIL Open Font License 1.1](paper/fonts/OFL.txt)。可由 `scripts/prepare_fonts.py` 重建。 |
 
 模拟器、主实验源码、早期模型推理代码和实验记录来自本 JSTP 项目；所有主实验画面由代码生成，不需要桌面截图、遥测或用户文件。文献的作品、商标和署名仍属各自作者；没有上游作者为本次适配评测背书的含义。
+
+## 第四项研究：真实权重适配
+
+- [SmolVLA 官方基座，5e8d12a](https://huggingface.co/lerobot/smolvla_base/tree/5e8d12a6e2975b0e5e5fce7c8caf47c371d257b6) 与 [LeRobot 0.7.0](https://github.com/huggingface/lerobot/tree/v0.7.0) 采用 Apache-2.0；[附许可证](studies/partial_futures/upstream/Apache-2.0.txt)。本库只分发本次微调后改变的层，不分发整个上游策略或处理器。SmolVLM2 处理器、基座及文件指纹固定在[迁移方案](studies/partial_futures/transfer-plan.json)。
+- [DINOv2-S/14 官方转换权重，ed25f3a](https://huggingface.co/facebook/dinov2-small/tree/ed25f3a31f01632728cabb09d1542f84ab7b0056) 不随库分发。不同于第一项研究的按需获取，本次将未修改的 [DINO-WM 作者预测器](studies/partial_futures/upstream/dino_wm/) 及 MIT 授权一起归档。
+- 新论文另附 [OFL 中文字体子集及许可证](studies/partial_futures/paper/fonts/)。

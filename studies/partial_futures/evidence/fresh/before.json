@@ -1,0 +1,25 @@
+{
+  "protocol": "6b630a5e50c02006c1b734d469103d9219e886e8a6a619e7de1060b05a57df25",
+  "files": {
+    "fresh/sealed/items.npz": "fcaeaa42431878b9f2617ecdec0715ae638882787fc45905e7011555e1d1033c",
+    "fresh/sealed/partial-6043.npz": "c222719be1b326b802116e0c0d40743fa8b0be36120a4ec487a48eed29d707b4",
+    "fresh/sealed/partial-6221.npz": "0970c15ee2afdce644570a0a3aab0b4f629d54bb72cea75ae56465288744530c",
+    "fresh/sealed/partial-6553.npz": "cfd0156ca237fe155a2a5fd1a20d6a1e9cf5702765473644277378221690c16a",
+    "fresh/sealed/detached-6043.npz": "f9ec16d452e888d84b8daa1cd744e78b2cd1be90411a4d527af7e5394dcc0463",
+    "fresh/sealed/detached-6221.npz": "e80c75c13dd01ccd4663db9aa95192a7a7a9ce840ee4ed278d9b3b4127c6b5bb",
+    "fresh/sealed/detached-6553.npz": "b4843964811497e3859dd56eca3a54d7553638cb7cbc6e34ea7d612a61641ba7",
+    "fresh/sealed/direct-6043.npz": "96dbfa6dd022f21e1252b3fb1e1ceeba6e768297c60048f87d0ffbc4209472f0",
+    "fresh/sealed/direct-6221.npz": "b998d90d3be1ba2c1808d289d2713bca1550a13b463a02bfe4cb5f4bc86043d4",
+    "fresh/sealed/direct-6553.npz": "a8a4026fa4174e6c98b9078de2ddead3f3a420c5d52069dddadc88458cff71dd",
+    "fresh/sealed/world-6043.npz": "9910b07eedae3199c488a6e1890d89801bb943aa63c76c76f2d190aeecae9a62",
+    "fresh/sealed/world-6221.npz": "73375da5d4280999034abd29bf2d6e91ef19e9cb63c6f18cff41ccfc0f89233d",
+    "fresh/sealed/world-6553.npz": "16e4307a04d1a1ae1529a734edb111070f44fd695f3e841a1844e2e43db6c203",
+    "fresh/sealed/token-6043.npz": "27975d73728e7e04b4a42671e11a5a2dcb778d40e9058d8901c6f766da54f5c2",
+    "fresh/sealed/token-6221.npz": "0d85db4b757529110f0548538f00dafc04fa3d2fe6413f10aca6b8f1b6d207de",
+    "fresh/sealed/token-6553.npz": "7a1adc59b9e25765d30fff11ba9229e0fa0e6e47f6f259064f88af954c22a306",
+    "fresh/sealed/flow-6043.npz": "10f9d795795cf85d5efdf98bb3e16f3a51de11a824959e8b0e5048328dde5b87",
+    "fresh/sealed/flow-6221.npz": "cd3dc061c9beefbaec50b837087c8fab7d4902553635a501f4eb52dcaa472b0e",
+    "fresh/sealed/flow-6553.npz": "bde69e8872e8e40e53d2605f955842ec9c56ff4449153526a39431d627e3ed6c",
+    "calibrated.json": "8084bb708dea9f35b968684e99402407eb224cf4b56a932a6e60079424ab12d8"
+  }
+}
