@@ -1,0 +1,46 @@
+{
+  "study": "JSTP / Opening study / 05",
+  "version": 1,
+  "design": "Before new training or opening the new exam; local, not public preregistration. Historical results are already known.",
+  "source": "studies/partial_futures/data",
+  "train_sha256": "cd92e565b6dbfe23cf809a5301bc7600854fc56ade7656bc9290b9e385c21ec1",
+  "validation_sha256": "b29398669f10ac1da183700247b65647095b6389e94f1d81f13bfbaf42e7334e",
+  "arms": [
+    "joint",
+    "aux",
+    "direct",
+    "world",
+    "masked",
+    "flow"
+  ],
+  "label_budgets": [
+    128,
+    1024,
+    16384
+  ],
+  "seeds": [
+    9301,
+    9419,
+    9547
+  ],
+  "plan_seed": 517903,
+  "updates": 768,
+  "batch": 128,
+  "width": 48,
+  "lr": 0.0018,
+  "optical_weight": 3,
+  "exam": [
+    113670000,
+    192
+  ],
+  "bootstrap": [
+    57019,
+    3000
+  ],
+  "primary": "Both opposite goal cards succeed on the same observed history. Primary contrasts at 128 annotations: joint-direct, joint-aux and joint-world; also joint-masked and joint-flow. Family of five simultaneous Bonferroni 99% layout bootstrap intervals (5 x 0.01); 95% descriptive intervals elsewhere. Do not call a general advantage without beating the strongest comparator. Report all arms, budgets, seeds; rich regime guards against a rigged claim.",
+  "secondary": "With a single ridge fit on the separate stored validation layouts, linear recovery of 4 lane directions of a fixed A stroke, both clutches must be exactly right (8 signs); compare a blinded probe history. Do not equate with contour/identity segregation. Also RMSE of native prospective optics where trained (not applicable for direct or flow). At 128 and other budgets intervene on pre-goal joint latent: alternate-clutch donor projected onto rank-4 physical rowspace; equal-length full-decoder-null control and unchanged-optimum trials. Report fraction native correct AND switch to donor on changed goals, against both controls, plus whether physical reading moved toward donor; evidence of directionality only if both paired 95% lower bounds exceed zero and physical match >=.80. Do not treat the disabled route of aux as empirical inferiority.",
+  "sampling": "one fixed training card and camera-derived target per one of 16384 recorded histories (24 training goals balanced in a shuffled nested list). Three nested annotation pools. Every optimizer update gets 128 labelled draws + 128 unscripted-outcome draws. Both streams cycle matched permutations; six exposures per history across 768 updates. Label pool sampled uniformly with replacement across cycles, exactly equal aggregate frequency. No goal, successful action, or eval-direction label fed from an unannotated outcome. Four out of twelve optical sensors per physical example. Both real strokes taken from equal reset worlds for independent pairing of probe & formal handle. Identical schedule bytes across arms and initializations; random weights only; no validation tuning or early stop.",
+  "systems": "joint: direct history + goal-free signed action-conditioned latent through the same residual cell to signed own action (only A reference needed for default policy). aux: matching weights and both losses, disable return. direct: disable return and optics. world: recurrent feature dynamics for each candidate then learned goal value comparison. masked: one-layer design inspired by masked trajectory modelling; shared token block and two event queries, not official MTM. flow: conditional flow matching motor policy, zero start/eight steps, not a VLA foundation model. Share additive goal readout between joint/aux/direct/world/masked; flow uses a goal-conditioned field. No object slots, masks, hardcoded optimal action or upstream pretrained data in any new arm.",
+  "evaluation": "Both horizontal probe handles balanced by experimenter across all models; no claim of voluntary exploration. For each held-out layout cross both wirings, both clutches, both probes, 16 held-out signed triple cards; 8 opposite-goal pairs. Seal all choices and counterfactual reports before camera adjudication. Real simulator no desktop actions. Bootstrap independent layouts jointly over sibling probes, goals, seeds and systems; estimates conditional on seeds, schedule and apparatus. Global action-annotation scarcity, not scarcity of physical observations, FLOPs or training updates.",
+  "paper": "Theory introduction across ontology, partial prediction, action, learnable grouping and recurrent symbols. Prior studies and official pretrained comparisons are secondary/historical evidence, not new arms or pooled results. Strong language and consciousness claims explicitly untested."
+}
