@@ -1,0 +1,35 @@
+<!doctype html>
+<html lang="en">
+<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="color-scheme" content="dark">
+<title>Four-Track Harbor · JSTP recordings</title>
+<style>
+*{box-sizing:border-box}body{margin:0;background:#0b1822;color:#edf5ef;font:16px/1.5 system-ui,"Microsoft YaHei",sans-serif}main{max-width:1110px;margin:auto;padding:30px 24px 48px}a{color:#87e7cf}header,nav,footer{display:flex;align-items:center;gap:14px;flex-wrap:wrap}header{justify-content:space-between}header strong,.kicker{font-size:12px;letter-spacing:.15em;color:#8be1c9}h1{font-size:clamp(30px,5vw,54px);line-height:1.1;margin:20px 0 7px}p{margin:8px 0 16px}.muted,small{color:#afc2c8}nav{margin:20px 0 11px;gap:8px}nav a{display:inline-block;text-decoration:none;padding:7px 14px;border:1px solid #3a5663;border-radius:22px;color:#eef5f0;font-weight:650}nav a[aria-current=true]{background:#82e2c8;border-color:#82e2c8;color:#0a2027}video{width:100%;aspect-ratio:16/9;background:#112430;display:block;border:1px solid #34515f;border-radius:12px}.under{display:flex;justify-content:space-between;align-items:center;gap:12px;flex-wrap:wrap;margin:7px 0 25px}.boundary{padding:15px 19px;background:#152a38;border-left:3px solid #82e2c8}.boundary p{margin:4px 0}footer{border-top:1px solid #314852;margin-top:24px;padding-top:15px;font-size:14px}details{margin:17px 0}summary{cursor:pointer;color:#ffcf7c}code{font-size:.9em} @media(max-width:600px){main{padding:16px 12px 32px}nav{gap:5px}nav a{padding:6px 11px}}
+</style>
+<main>
+ <header><strong>JSTP  /  FIELD RECORDINGS</strong><a href="https://github.com/ykykykk/jstp-intervention-bench">GitHub ↗</a></header>
+ <h1>Four-Track Harbor</h1>
+ <p>Six frozen controllers, the same probe, two pairs of opposite orders.<br><span class="muted" lang="zh-CN">六种冻结模型，同一布局、同一试探、两对相反目标。点数字切换动作示范量。</span></p>
+ <nav aria-label="Number of training action labels"><span class="kicker">ACTION LABELS</span>
+ <a href="#128" data-k="128" aria-current="true">128</a><a href="#1024" data-k="1024">1,024</a><a href="#16384" data-k="16384">16,384</a></nav>
+ <video id="film" controls preload="metadata" playsinline poster="poster-128.jpg" src="four-track-128.mp4">Use the MP4 downloads below if your browser cannot play the film.</video>
+ <div class="under"><small id="caption">128 action labels · 32 s · bilingual / silent</small><a id="download" download href="four-track-128.mp4">Download MP4 / 下载</a></div>
+ <section class="boundary"><div class="kicker">WHAT THE CONTROLLER ACTUALLY SEES AND DOES</div>
+ <p>Camera-derived features, public instrument readings and a goal card go in; a choice of handle A or B comes out. The simulator executes the pull. The controller is not given hidden wiring, ground-truth object coordinates or the correct handle at test time.</p>
+ <p lang="zh-CN">不是纯像素到鼠标。模型读相机特征、公开仪表和目标卡，选 A 或 B；由模拟器执行。只有人工模式拖动鼠标。训练有动作示范，测试不提供答案。</p></section>
+ <details open><summary>Reading the films / 怎么看</summary>
+ <p>The teal outlines are the requested berths. Either handle moves all four cabins; only three are scored. Two hits pass a card. The two choices are locked before either stroke is executed; both cards must pass for a pair to count.</p>
+ <p lang="zh-CN">青框是目标，不是预测。第一次试拉后复位；两张卡都选号才执行，都从同一起点出发。每张卡三轨中对两轨即过；整对计分须两张都过。</p></details>
+ <p class="muted">Layout 113670000 · training seed 9301 · 16,384 physical training histories per setting. Both consecutive examples in paper §5.1 are shown, including misses. Each film uses fresh frozen-weight inference. Animations are synchronized, not a speed comparison. The published benchmark covers 192 layouts and three training seeds.</p>
+ <footer><a href="https://github.com/ykykykk/jstp-intervention-bench">Repository / 仓库</a><a href="https://doi.org/10.5281/zenodo.24392467">Paper / 论文</a><a href="runs.json">Decisions + scores</a><a href="camera.npz">Original camera frames</a><a href="https://github.com/ykykykk/jstp-intervention-bench/blob/main/docs/FOUR-TRACK-GAME.md">Play the game</a></footer>
+ <noscript><p>MP4: <a href="four-track-128.mp4">128</a> · <a href="four-track-1024.mp4">1,024</a> · <a href="four-track-16384.mp4">16,384</a></p></noscript>
+</main>
+<script>
+const links=[...document.querySelectorAll('nav a')], player=document.getElementById('film');
+function select(){const k=links.some(a=>a.hash===location.hash)?location.hash.slice(1):'128';
+const file='four-track-'+k+'.mp4';if(player.getAttribute('src')!==file){player.pause();player.poster='poster-'+k+'.jpg';player.src=file;player.load();}
+links.forEach(a=>a.setAttribute('aria-current',String(a.dataset.k===k)));document.getElementById('download').href=file;
+document.getElementById('caption').textContent=Number(k).toLocaleString('en-US')+' action labels · 32 s · bilingual / silent';}
+addEventListener('hashchange',select);select();
+</script>
+</html>

@@ -1,0 +1,2243 @@
+{
+  "protocol": "paper: one assigned probe; two late opposite goals sealed before execution",
+  "models": {
+    "joint": "JSTP",
+    "act": "ACT",
+    "diffusion": "Diffusion Policy",
+    "vjepa21": "V-JEPA 2.1",
+    "dino": "DINO-WM",
+    "smol": "SmolVLA"
+  },
+  "budgets": [
+    128,
+    1024,
+    16384
+  ],
+  "seed": 9301,
+  "first_card_ids": [
+    0,
+    2
+  ],
+  "frame_order": [
+    "home",
+    "probe_peak",
+    "outbound_end",
+    "return_end"
+  ],
+  "runs": [
+    {
+      "arm": "joint",
+      "budget": 128,
+      "training_seed": 9301,
+      "weights": {
+        "file": "studies/joint_primer/evidence/train/models/joint-128-9301/last.pt",
+        "sha256": "7bfdb75124b81de123c499c80a64e2de2b22495a76bb516f28a1282fa6414a0f"
+      },
+      "pairs": [
+        {
+          "pair": 1,
+          "deal": {
+            "layout": 113670000,
+            "wiring": 0,
+            "gear": 0,
+            "probe": -1,
+            "card": 0
+          },
+          "actions": [
+            {
+              "card": 0,
+              "goal": [
+                1,
+                -1,
+                0,
+                -1
+              ],
+              "side": -1,
+              "motion": [
+                1,
+                1,
+                -1,
+                -1
+              ],
+              "hits": 2,
+              "passed": true
+            },
+            {
+              "card": 1,
+              "goal": [
+                -1,
+                1,
+                0,
+                1
+              ],
+              "side": 1,
+              "motion": [
+                -1,
+                -1,
+                1,
+                1
+              ],
+              "hits": 2,
+              "passed": true
+            }
+          ],
+          "paired_pass": true,
+          "camera_sha256": [
+            "f73916bbb8e28f424918970065185ae8d006ebc00999d5c2e201e84316398373",
+            "17e0e5816747f09eda283581c4d06f0777ac01de74f94bd1c1fca607d214d611",
+            "1aab418a49525e3b186fbb35f65adf007067635e60317718376f8da455f49c5f",
+            "d5720df12467fcf6d684b97b7b04aff605ff6718b278a2e659cc3f4eb56af9b0"
+          ],
+          "history_sha256": "49db2eac4199df9dcca950a1876fd4d6b859111eb9c4997f461fffa5cdcb6880"
+        },
+        {
+          "pair": 2,
+          "deal": {
+            "layout": 113670000,
+            "wiring": 0,
+            "gear": 0,
+            "probe": -1,
+            "card": 2
+          },
+          "actions": [
+            {
+              "card": 2,
+              "goal": [
+                1,
+                -1,
+                0,
+                1
+              ],
+              "side": -1,
+              "motion": [
+                1,
+                1,
+                -1,
+                -1
+              ],
+              "hits": 1,
+              "passed": false
+            },
+            {
+              "card": 3,
+              "goal": [
+                -1,
+                1,
+                0,
+                -1
+              ],
+              "side": 1,
+              "motion": [
+                -1,
+                -1,
+                1,
+                1
+              ],
+              "hits": 1,
+              "passed": false
+            }
+          ],
+          "paired_pass": false,
+          "camera_sha256": [
+            "f73916bbb8e28f424918970065185ae8d006ebc00999d5c2e201e84316398373",
+            "17e0e5816747f09eda283581c4d06f0777ac01de74f94bd1c1fca607d214d611",
+            "1aab418a49525e3b186fbb35f65adf007067635e60317718376f8da455f49c5f",
+            "d5720df12467fcf6d684b97b7b04aff605ff6718b278a2e659cc3f4eb56af9b0"
+          ],
+          "history_sha256": "49db2eac4199df9dcca950a1876fd4d6b859111eb9c4997f461fffa5cdcb6880"
+        }
+      ]
+    },
+    {
+      "arm": "act",
+      "budget": 128,
+      "training_seed": 9301,
+      "weights": {
+        "file": "studies/fourtrack_foundations/evidence/act/models/act-128-9301/adapter.pt",
+        "sha256": "2a314fd3b469f251ddff58349c959e4f4192876cf50df11ba8bc3f648a5e9081"
+      },
+      "pairs": [
+        {
+          "pair": 1,
+          "deal": {
+            "layout": 113670000,
+            "wiring": 0,
+            "gear": 0,
+            "probe": -1,
+            "card": 0
+          },
+          "actions": [
+            {
+              "card": 0,
+              "goal": [
+                1,
+                -1,
+                0,
+                -1
+              ],
+              "side": -1,
+              "motion": [
+                1,
+                1,
+                -1,
+                -1
+              ],
+              "hits": 2,
+              "passed": true
+            },
+            {
+              "card": 1,
+              "goal": [
+                -1,
+                1,
+                0,
+                1
+              ],
+              "side": 1,
+              "motion": [
+                -1,
+                -1,
+                1,
+                1
+              ],
+              "hits": 2,
+              "passed": true
+            }
+          ],
+          "paired_pass": true,
+          "camera_sha256": [
+            "f73916bbb8e28f424918970065185ae8d006ebc00999d5c2e201e84316398373",
+            "17e0e5816747f09eda283581c4d06f0777ac01de74f94bd1c1fca607d214d611",
+            "1aab418a49525e3b186fbb35f65adf007067635e60317718376f8da455f49c5f",
+            "d5720df12467fcf6d684b97b7b04aff605ff6718b278a2e659cc3f4eb56af9b0"
+          ],
+          "history_sha256": "49db2eac4199df9dcca950a1876fd4d6b859111eb9c4997f461fffa5cdcb6880"
+        },
+        {
+          "pair": 2,
+          "deal": {
+            "layout": 113670000,
+            "wiring": 0,
+            "gear": 0,
+            "probe": -1,
+            "card": 2
+          },
+          "actions": [
+            {
+              "card": 2,
+              "goal": [
+                1,
+                -1,
+                0,
+                1
+              ],
+              "side": 1,
+              "motion": [
+                -1,
+                -1,
+                1,
+                1
+              ],
+              "hits": 2,
+              "passed": true
+            },
+            {
+              "card": 3,
+              "goal": [
+                -1,
+                1,
+                0,
+                -1
+              ],
+              "side": -1,
+              "motion": [
+                1,
+                1,
+                -1,
+                -1
+              ],
+              "hits": 2,
+              "passed": true
+            }
+          ],
+          "paired_pass": true,
+          "camera_sha256": [
+            "f73916bbb8e28f424918970065185ae8d006ebc00999d5c2e201e84316398373",
+            "17e0e5816747f09eda283581c4d06f0777ac01de74f94bd1c1fca607d214d611",
+            "d5720df12467fcf6d684b97b7b04aff605ff6718b278a2e659cc3f4eb56af9b0",
+            "1aab418a49525e3b186fbb35f65adf007067635e60317718376f8da455f49c5f"
+          ],
+          "history_sha256": "49db2eac4199df9dcca950a1876fd4d6b859111eb9c4997f461fffa5cdcb6880"
+        }
+      ]
+    },
+    {
+      "arm": "diffusion",
+      "budget": 128,
+      "training_seed": 9301,
+      "weights": {
+        "file": "studies/fourtrack_foundations/evidence/diffusion/models/diffusion-128-9301/adapter.pt",
+        "sha256": "7b9a40163c82f4a96ec55fc1789acf279fd6e16b8a62f1b12b44734db7d12371"
+      },
+      "pairs": [
+        {
+          "pair": 1,
+          "deal": {
+            "layout": 113670000,
+            "wiring": 0,
+            "gear": 0,
+            "probe": -1,
+            "card": 0
+          },
+          "actions": [
+            {
+              "card": 0,
+              "goal": [
+                1,
+                -1,
+                0,
+                -1
+              ],
+              "side": -1,
+              "motion": [
+                1,
+                1,
+                -1,
+                -1
+              ],
+              "hits": 2,
+              "passed": true
+            },
+            {
+              "card": 1,
+              "goal": [
+                -1,
+                1,
+                0,
+                1
+              ],
+              "side": 1,
+              "motion": [
+                -1,
+                -1,
+                1,
+                1
+              ],
+              "hits": 2,
+              "passed": true
+            }
+          ],
+          "paired_pass": true,
+          "camera_sha256": [
+            "f73916bbb8e28f424918970065185ae8d006ebc00999d5c2e201e84316398373",
+            "17e0e5816747f09eda283581c4d06f0777ac01de74f94bd1c1fca607d214d611",
+            "1aab418a49525e3b186fbb35f65adf007067635e60317718376f8da455f49c5f",
+            "d5720df12467fcf6d684b97b7b04aff605ff6718b278a2e659cc3f4eb56af9b0"
+          ],
+          "history_sha256": "49db2eac4199df9dcca950a1876fd4d6b859111eb9c4997f461fffa5cdcb6880"
+        },
+        {
+          "pair": 2,
+          "deal": {
+            "layout": 113670000,
+            "wiring": 0,
+            "gear": 0,
+            "probe": -1,
+            "card": 2
+          },
+          "actions": [
+            {
+              "card": 2,
+              "goal": [
+                1,
+                -1,
+                0,
+                1
+              ],
+              "side": -1,
+              "motion": [
+                1,
+                1,
+                -1,
+                -1
+              ],
+              "hits": 1,
+              "passed": false
+            },
+            {
+              "card": 3,
+              "goal": [
+                -1,
+                1,
+                0,
+                -1
+              ],
+              "side": 1,
+              "motion": [
+                -1,
+                -1,
+                1,
+                1
+              ],
+              "hits": 1,
+              "passed": false
+            }
+          ],
+          "paired_pass": false,
+          "camera_sha256": [
+            "f73916bbb8e28f424918970065185ae8d006ebc00999d5c2e201e84316398373",
+            "17e0e5816747f09eda283581c4d06f0777ac01de74f94bd1c1fca607d214d611",
+            "1aab418a49525e3b186fbb35f65adf007067635e60317718376f8da455f49c5f",
+            "d5720df12467fcf6d684b97b7b04aff605ff6718b278a2e659cc3f4eb56af9b0"
+          ],
+          "history_sha256": "49db2eac4199df9dcca950a1876fd4d6b859111eb9c4997f461fffa5cdcb6880"
+        }
+      ]
+    },
+    {
+      "arm": "vjepa21",
+      "budget": 128,
+      "training_seed": 9301,
+      "weights": {
+        "file": "studies/fourtrack_foundations/evidence/vjepa21/models/vjepa21-128-9301/adapter.pt",
+        "sha256": "e635d46ad00a0320f13e1d374bdab82fbf9ceb7df653ee6a8e48cd82e382e2a0"
+      },
+      "pairs": [
+        {
+          "pair": 1,
+          "deal": {
+            "layout": 113670000,
+            "wiring": 0,
+            "gear": 0,
+            "probe": -1,
+            "card": 0
+          },
+          "actions": [
+            {
+              "card": 0,
+              "goal": [
+                1,
+                -1,
+                0,
+                -1
+              ],
+              "side": -1,
+              "motion": [
+                1,
+                1,
+                -1,
+                -1
+              ],
+              "hits": 2,
+              "passed": true
+            },
+            {
+              "card": 1,
+              "goal": [
+                -1,
+                1,
+                0,
+                1
+              ],
+              "side": 1,
+              "motion": [
+                -1,
+                -1,
+                1,
+                1
+              ],
+              "hits": 2,
+              "passed": true
+            }
+          ],
+          "paired_pass": true,
+          "camera_sha256": [
+            "f73916bbb8e28f424918970065185ae8d006ebc00999d5c2e201e84316398373",
+            "17e0e5816747f09eda283581c4d06f0777ac01de74f94bd1c1fca607d214d611",
+            "1aab418a49525e3b186fbb35f65adf007067635e60317718376f8da455f49c5f",
+            "d5720df12467fcf6d684b97b7b04aff605ff6718b278a2e659cc3f4eb56af9b0"
+          ],
+          "history_sha256": "49db2eac4199df9dcca950a1876fd4d6b859111eb9c4997f461fffa5cdcb6880"
+        },
+        {
+          "pair": 2,
+          "deal": {
+            "layout": 113670000,
+            "wiring": 0,
+            "gear": 0,
+            "probe": -1,
+            "card": 2
+          },
+          "actions": [
+            {
+              "card": 2,
+              "goal": [
+                1,
+                -1,
+                0,
+                1
+              ],
+              "side": 1,
+              "motion": [
+                -1,
+                -1,
+                1,
+                1
+              ],
+              "hits": 2,
+              "passed": true
+            },
+            {
+              "card": 3,
+              "goal": [
+                -1,
+                1,
+                0,
+                -1
+              ],
+              "side": -1,
+              "motion": [
+                1,
+                1,
+                -1,
+                -1
+              ],
+              "hits": 2,
+              "passed": true
+            }
+          ],
+          "paired_pass": true,
+          "camera_sha256": [
+            "f73916bbb8e28f424918970065185ae8d006ebc00999d5c2e201e84316398373",
+            "17e0e5816747f09eda283581c4d06f0777ac01de74f94bd1c1fca607d214d611",
+            "d5720df12467fcf6d684b97b7b04aff605ff6718b278a2e659cc3f4eb56af9b0",
+            "1aab418a49525e3b186fbb35f65adf007067635e60317718376f8da455f49c5f"
+          ],
+          "history_sha256": "49db2eac4199df9dcca950a1876fd4d6b859111eb9c4997f461fffa5cdcb6880"
+        }
+      ]
+    },
+    {
+      "arm": "dino",
+      "budget": 128,
+      "training_seed": 9301,
+      "weights": {
+        "file": "studies/joint_primer/evidence/official/models/dino-128-9301/adapter.pt",
+        "sha256": "fe0afbdc95e41bc0c1627508a82c78a0f3d83b931755a441d0615a7ee5b0e17e"
+      },
+      "pairs": [
+        {
+          "pair": 1,
+          "deal": {
+            "layout": 113670000,
+            "wiring": 0,
+            "gear": 0,
+            "probe": -1,
+            "card": 0
+          },
+          "actions": [
+            {
+              "card": 0,
+              "goal": [
+                1,
+                -1,
+                0,
+                -1
+              ],
+              "side": 1,
+              "motion": [
+                -1,
+                -1,
+                1,
+                1
+              ],
+              "hits": 1,
+              "passed": false
+            },
+            {
+              "card": 1,
+              "goal": [
+                -1,
+                1,
+                0,
+                1
+              ],
+              "side": -1,
+              "motion": [
+                1,
+                1,
+                -1,
+                -1
+              ],
+              "hits": 1,
+              "passed": false
+            }
+          ],
+          "paired_pass": false,
+          "camera_sha256": [
+            "f73916bbb8e28f424918970065185ae8d006ebc00999d5c2e201e84316398373",
+            "17e0e5816747f09eda283581c4d06f0777ac01de74f94bd1c1fca607d214d611",
+            "d5720df12467fcf6d684b97b7b04aff605ff6718b278a2e659cc3f4eb56af9b0",
+            "1aab418a49525e3b186fbb35f65adf007067635e60317718376f8da455f49c5f"
+          ],
+          "history_sha256": "49db2eac4199df9dcca950a1876fd4d6b859111eb9c4997f461fffa5cdcb6880"
+        },
+        {
+          "pair": 2,
+          "deal": {
+            "layout": 113670000,
+            "wiring": 0,
+            "gear": 0,
+            "probe": -1,
+            "card": 2
+          },
+          "actions": [
+            {
+              "card": 2,
+              "goal": [
+                1,
+                -1,
+                0,
+                1
+              ],
+              "side": 1,
+              "motion": [
+                -1,
+                -1,
+                1,
+                1
+              ],
+              "hits": 2,
+              "passed": true
+            },
+            {
+              "card": 3,
+              "goal": [
+                -1,
+                1,
+                0,
+                -1
+              ],
+              "side": -1,
+              "motion": [
+                1,
+                1,
+                -1,
+                -1
+              ],
+              "hits": 2,
+              "passed": true
+            }
+          ],
+          "paired_pass": true,
+          "camera_sha256": [
+            "f73916bbb8e28f424918970065185ae8d006ebc00999d5c2e201e84316398373",
+            "17e0e5816747f09eda283581c4d06f0777ac01de74f94bd1c1fca607d214d611",
+            "d5720df12467fcf6d684b97b7b04aff605ff6718b278a2e659cc3f4eb56af9b0",
+            "1aab418a49525e3b186fbb35f65adf007067635e60317718376f8da455f49c5f"
+          ],
+          "history_sha256": "49db2eac4199df9dcca950a1876fd4d6b859111eb9c4997f461fffa5cdcb6880"
+        }
+      ]
+    },
+    {
+      "arm": "smol",
+      "budget": 128,
+      "training_seed": 9301,
+      "weights": {
+        "file": "studies/joint_primer/evidence/official/models/smol-128-9301/adapter.pt",
+        "sha256": "b2afce910c2f5d3d938b42db63ff887538f407ee0a6558b658e4adef7ea019b0"
+      },
+      "pairs": [
+        {
+          "pair": 1,
+          "deal": {
+            "layout": 113670000,
+            "wiring": 0,
+            "gear": 0,
+            "probe": -1,
+            "card": 0
+          },
+          "actions": [
+            {
+              "card": 0,
+              "goal": [
+                1,
+                -1,
+                0,
+                -1
+              ],
+              "side": -1,
+              "motion": [
+                1,
+                1,
+                -1,
+                -1
+              ],
+              "hits": 2,
+              "passed": true
+            },
+            {
+              "card": 1,
+              "goal": [
+                -1,
+                1,
+                0,
+                1
+              ],
+              "side": 1,
+              "motion": [
+                -1,
+                -1,
+                1,
+                1
+              ],
+              "hits": 2,
+              "passed": true
+            }
+          ],
+          "paired_pass": true,
+          "camera_sha256": [
+            "f73916bbb8e28f424918970065185ae8d006ebc00999d5c2e201e84316398373",
+            "17e0e5816747f09eda283581c4d06f0777ac01de74f94bd1c1fca607d214d611",
+            "1aab418a49525e3b186fbb35f65adf007067635e60317718376f8da455f49c5f",
+            "d5720df12467fcf6d684b97b7b04aff605ff6718b278a2e659cc3f4eb56af9b0"
+          ],
+          "history_sha256": "49db2eac4199df9dcca950a1876fd4d6b859111eb9c4997f461fffa5cdcb6880"
+        },
+        {
+          "pair": 2,
+          "deal": {
+            "layout": 113670000,
+            "wiring": 0,
+            "gear": 0,
+            "probe": -1,
+            "card": 2
+          },
+          "actions": [
+            {
+              "card": 2,
+              "goal": [
+                1,
+                -1,
+                0,
+                1
+              ],
+              "side": -1,
+              "motion": [
+                1,
+                1,
+                -1,
+                -1
+              ],
+              "hits": 1,
+              "passed": false
+            },
+            {
+              "card": 3,
+              "goal": [
+                -1,
+                1,
+                0,
+                -1
+              ],
+              "side": -1,
+              "motion": [
+                1,
+                1,
+                -1,
+                -1
+              ],
+              "hits": 2,
+              "passed": true
+            }
+          ],
+          "paired_pass": false,
+          "camera_sha256": [
+            "f73916bbb8e28f424918970065185ae8d006ebc00999d5c2e201e84316398373",
+            "17e0e5816747f09eda283581c4d06f0777ac01de74f94bd1c1fca607d214d611",
+            "1aab418a49525e3b186fbb35f65adf007067635e60317718376f8da455f49c5f",
+            "1aab418a49525e3b186fbb35f65adf007067635e60317718376f8da455f49c5f"
+          ],
+          "history_sha256": "49db2eac4199df9dcca950a1876fd4d6b859111eb9c4997f461fffa5cdcb6880"
+        }
+      ]
+    },
+    {
+      "arm": "joint",
+      "budget": 1024,
+      "training_seed": 9301,
+      "weights": {
+        "file": "studies/joint_primer/evidence/train/models/joint-1024-9301/last.pt",
+        "sha256": "b829de8ef8d9a7ed31d9d8191628a27d363c0934951fd87b91b3519cf5121463"
+      },
+      "pairs": [
+        {
+          "pair": 1,
+          "deal": {
+            "layout": 113670000,
+            "wiring": 0,
+            "gear": 0,
+            "probe": -1,
+            "card": 0
+          },
+          "actions": [
+            {
+              "card": 0,
+              "goal": [
+                1,
+                -1,
+                0,
+                -1
+              ],
+              "side": -1,
+              "motion": [
+                1,
+                1,
+                -1,
+                -1
+              ],
+              "hits": 2,
+              "passed": true
+            },
+            {
+              "card": 1,
+              "goal": [
+                -1,
+                1,
+                0,
+                1
+              ],
+              "side": 1,
+              "motion": [
+                -1,
+                -1,
+                1,
+                1
+              ],
+              "hits": 2,
+              "passed": true
+            }
+          ],
+          "paired_pass": true,
+          "camera_sha256": [
+            "f73916bbb8e28f424918970065185ae8d006ebc00999d5c2e201e84316398373",
+            "17e0e5816747f09eda283581c4d06f0777ac01de74f94bd1c1fca607d214d611",
+            "1aab418a49525e3b186fbb35f65adf007067635e60317718376f8da455f49c5f",
+            "d5720df12467fcf6d684b97b7b04aff605ff6718b278a2e659cc3f4eb56af9b0"
+          ],
+          "history_sha256": "49db2eac4199df9dcca950a1876fd4d6b859111eb9c4997f461fffa5cdcb6880"
+        },
+        {
+          "pair": 2,
+          "deal": {
+            "layout": 113670000,
+            "wiring": 0,
+            "gear": 0,
+            "probe": -1,
+            "card": 2
+          },
+          "actions": [
+            {
+              "card": 2,
+              "goal": [
+                1,
+                -1,
+                0,
+                1
+              ],
+              "side": 1,
+              "motion": [
+                -1,
+                -1,
+                1,
+                1
+              ],
+              "hits": 2,
+              "passed": true
+            },
+            {
+              "card": 3,
+              "goal": [
+                -1,
+                1,
+                0,
+                -1
+              ],
+              "side": -1,
+              "motion": [
+                1,
+                1,
+                -1,
+                -1
+              ],
+              "hits": 2,
+              "passed": true
+            }
+          ],
+          "paired_pass": true,
+          "camera_sha256": [
+            "f73916bbb8e28f424918970065185ae8d006ebc00999d5c2e201e84316398373",
+            "17e0e5816747f09eda283581c4d06f0777ac01de74f94bd1c1fca607d214d611",
+            "d5720df12467fcf6d684b97b7b04aff605ff6718b278a2e659cc3f4eb56af9b0",
+            "1aab418a49525e3b186fbb35f65adf007067635e60317718376f8da455f49c5f"
+          ],
+          "history_sha256": "49db2eac4199df9dcca950a1876fd4d6b859111eb9c4997f461fffa5cdcb6880"
+        }
+      ]
+    },
+    {
+      "arm": "act",
+      "budget": 1024,
+      "training_seed": 9301,
+      "weights": {
+        "file": "studies/fourtrack_foundations/evidence/act/models/act-1024-9301/adapter.pt",
+        "sha256": "2b23cbc678cae81015196bfdf54054d4d5b612b4918ddeff138d1c694ba9e571"
+      },
+      "pairs": [
+        {
+          "pair": 1,
+          "deal": {
+            "layout": 113670000,
+            "wiring": 0,
+            "gear": 0,
+            "probe": -1,
+            "card": 0
+          },
+          "actions": [
+            {
+              "card": 0,
+              "goal": [
+                1,
+                -1,
+                0,
+                -1
+              ],
+              "side": -1,
+              "motion": [
+                1,
+                1,
+                -1,
+                -1
+              ],
+              "hits": 2,
+              "passed": true
+            },
+            {
+              "card": 1,
+              "goal": [
+                -1,
+                1,
+                0,
+                1
+              ],
+              "side": 1,
+              "motion": [
+                -1,
+                -1,
+                1,
+                1
+              ],
+              "hits": 2,
+              "passed": true
+            }
+          ],
+          "paired_pass": true,
+          "camera_sha256": [
+            "f73916bbb8e28f424918970065185ae8d006ebc00999d5c2e201e84316398373",
+            "17e0e5816747f09eda283581c4d06f0777ac01de74f94bd1c1fca607d214d611",
+            "1aab418a49525e3b186fbb35f65adf007067635e60317718376f8da455f49c5f",
+            "d5720df12467fcf6d684b97b7b04aff605ff6718b278a2e659cc3f4eb56af9b0"
+          ],
+          "history_sha256": "49db2eac4199df9dcca950a1876fd4d6b859111eb9c4997f461fffa5cdcb6880"
+        },
+        {
+          "pair": 2,
+          "deal": {
+            "layout": 113670000,
+            "wiring": 0,
+            "gear": 0,
+            "probe": -1,
+            "card": 2
+          },
+          "actions": [
+            {
+              "card": 2,
+              "goal": [
+                1,
+                -1,
+                0,
+                1
+              ],
+              "side": 1,
+              "motion": [
+                -1,
+                -1,
+                1,
+                1
+              ],
+              "hits": 2,
+              "passed": true
+            },
+            {
+              "card": 3,
+              "goal": [
+                -1,
+                1,
+                0,
+                -1
+              ],
+              "side": -1,
+              "motion": [
+                1,
+                1,
+                -1,
+                -1
+              ],
+              "hits": 2,
+              "passed": true
+            }
+          ],
+          "paired_pass": true,
+          "camera_sha256": [
+            "f73916bbb8e28f424918970065185ae8d006ebc00999d5c2e201e84316398373",
+            "17e0e5816747f09eda283581c4d06f0777ac01de74f94bd1c1fca607d214d611",
+            "d5720df12467fcf6d684b97b7b04aff605ff6718b278a2e659cc3f4eb56af9b0",
+            "1aab418a49525e3b186fbb35f65adf007067635e60317718376f8da455f49c5f"
+          ],
+          "history_sha256": "49db2eac4199df9dcca950a1876fd4d6b859111eb9c4997f461fffa5cdcb6880"
+        }
+      ]
+    },
+    {
+      "arm": "diffusion",
+      "budget": 1024,
+      "training_seed": 9301,
+      "weights": {
+        "file": "studies/fourtrack_foundations/evidence/diffusion/models/diffusion-1024-9301/adapter.pt",
+        "sha256": "45885b0a3e6d34be91ad4ec1078c77dff534d44fcb0949711db09036d5852683"
+      },
+      "pairs": [
+        {
+          "pair": 1,
+          "deal": {
+            "layout": 113670000,
+            "wiring": 0,
+            "gear": 0,
+            "probe": -1,
+            "card": 0
+          },
+          "actions": [
+            {
+              "card": 0,
+              "goal": [
+                1,
+                -1,
+                0,
+                -1
+              ],
+              "side": -1,
+              "motion": [
+                1,
+                1,
+                -1,
+                -1
+              ],
+              "hits": 2,
+              "passed": true
+            },
+            {
+              "card": 1,
+              "goal": [
+                -1,
+                1,
+                0,
+                1
+              ],
+              "side": 1,
+              "motion": [
+                -1,
+                -1,
+                1,
+                1
+              ],
+              "hits": 2,
+              "passed": true
+            }
+          ],
+          "paired_pass": true,
+          "camera_sha256": [
+            "f73916bbb8e28f424918970065185ae8d006ebc00999d5c2e201e84316398373",
+            "17e0e5816747f09eda283581c4d06f0777ac01de74f94bd1c1fca607d214d611",
+            "1aab418a49525e3b186fbb35f65adf007067635e60317718376f8da455f49c5f",
+            "d5720df12467fcf6d684b97b7b04aff605ff6718b278a2e659cc3f4eb56af9b0"
+          ],
+          "history_sha256": "49db2eac4199df9dcca950a1876fd4d6b859111eb9c4997f461fffa5cdcb6880"
+        },
+        {
+          "pair": 2,
+          "deal": {
+            "layout": 113670000,
+            "wiring": 0,
+            "gear": 0,
+            "probe": -1,
+            "card": 2
+          },
+          "actions": [
+            {
+              "card": 2,
+              "goal": [
+                1,
+                -1,
+                0,
+                1
+              ],
+              "side": 1,
+              "motion": [
+                -1,
+                -1,
+                1,
+                1
+              ],
+              "hits": 2,
+              "passed": true
+            },
+            {
+              "card": 3,
+              "goal": [
+                -1,
+                1,
+                0,
+                -1
+              ],
+              "side": -1,
+              "motion": [
+                1,
+                1,
+                -1,
+                -1
+              ],
+              "hits": 2,
+              "passed": true
+            }
+          ],
+          "paired_pass": true,
+          "camera_sha256": [
+            "f73916bbb8e28f424918970065185ae8d006ebc00999d5c2e201e84316398373",
+            "17e0e5816747f09eda283581c4d06f0777ac01de74f94bd1c1fca607d214d611",
+            "d5720df12467fcf6d684b97b7b04aff605ff6718b278a2e659cc3f4eb56af9b0",
+            "1aab418a49525e3b186fbb35f65adf007067635e60317718376f8da455f49c5f"
+          ],
+          "history_sha256": "49db2eac4199df9dcca950a1876fd4d6b859111eb9c4997f461fffa5cdcb6880"
+        }
+      ]
+    },
+    {
+      "arm": "vjepa21",
+      "budget": 1024,
+      "training_seed": 9301,
+      "weights": {
+        "file": "studies/fourtrack_foundations/evidence/vjepa21/models/vjepa21-1024-9301/adapter.pt",
+        "sha256": "3eecb436f77a2a522785b7bd50450e29708fbfd4f5c58c65e0ac9f415e6b2d94"
+      },
+      "pairs": [
+        {
+          "pair": 1,
+          "deal": {
+            "layout": 113670000,
+            "wiring": 0,
+            "gear": 0,
+            "probe": -1,
+            "card": 0
+          },
+          "actions": [
+            {
+              "card": 0,
+              "goal": [
+                1,
+                -1,
+                0,
+                -1
+              ],
+              "side": 1,
+              "motion": [
+                -1,
+                -1,
+                1,
+                1
+              ],
+              "hits": 1,
+              "passed": false
+            },
+            {
+              "card": 1,
+              "goal": [
+                -1,
+                1,
+                0,
+                1
+              ],
+              "side": -1,
+              "motion": [
+                1,
+                1,
+                -1,
+                -1
+              ],
+              "hits": 1,
+              "passed": false
+            }
+          ],
+          "paired_pass": false,
+          "camera_sha256": [
+            "f73916bbb8e28f424918970065185ae8d006ebc00999d5c2e201e84316398373",
+            "17e0e5816747f09eda283581c4d06f0777ac01de74f94bd1c1fca607d214d611",
+            "d5720df12467fcf6d684b97b7b04aff605ff6718b278a2e659cc3f4eb56af9b0",
+            "1aab418a49525e3b186fbb35f65adf007067635e60317718376f8da455f49c5f"
+          ],
+          "history_sha256": "49db2eac4199df9dcca950a1876fd4d6b859111eb9c4997f461fffa5cdcb6880"
+        },
+        {
+          "pair": 2,
+          "deal": {
+            "layout": 113670000,
+            "wiring": 0,
+            "gear": 0,
+            "probe": -1,
+            "card": 2
+          },
+          "actions": [
+            {
+              "card": 2,
+              "goal": [
+                1,
+                -1,
+                0,
+                1
+              ],
+              "side": 1,
+              "motion": [
+                -1,
+                -1,
+                1,
+                1
+              ],
+              "hits": 2,
+              "passed": true
+            },
+            {
+              "card": 3,
+              "goal": [
+                -1,
+                1,
+                0,
+                -1
+              ],
+              "side": -1,
+              "motion": [
+                1,
+                1,
+                -1,
+                -1
+              ],
+              "hits": 2,
+              "passed": true
+            }
+          ],
+          "paired_pass": true,
+          "camera_sha256": [
+            "f73916bbb8e28f424918970065185ae8d006ebc00999d5c2e201e84316398373",
+            "17e0e5816747f09eda283581c4d06f0777ac01de74f94bd1c1fca607d214d611",
+            "d5720df12467fcf6d684b97b7b04aff605ff6718b278a2e659cc3f4eb56af9b0",
+            "1aab418a49525e3b186fbb35f65adf007067635e60317718376f8da455f49c5f"
+          ],
+          "history_sha256": "49db2eac4199df9dcca950a1876fd4d6b859111eb9c4997f461fffa5cdcb6880"
+        }
+      ]
+    },
+    {
+      "arm": "dino",
+      "budget": 1024,
+      "training_seed": 9301,
+      "weights": {
+        "file": "studies/joint_primer/evidence/official/models/dino-1024-9301/adapter.pt",
+        "sha256": "01d99abbd77fd06ebfc9fa0b06411add47576ce8da584aa88bfee90c784fa32f"
+      },
+      "pairs": [
+        {
+          "pair": 1,
+          "deal": {
+            "layout": 113670000,
+            "wiring": 0,
+            "gear": 0,
+            "probe": -1,
+            "card": 0
+          },
+          "actions": [
+            {
+              "card": 0,
+              "goal": [
+                1,
+                -1,
+                0,
+                -1
+              ],
+              "side": 1,
+              "motion": [
+                -1,
+                -1,
+                1,
+                1
+              ],
+              "hits": 1,
+              "passed": false
+            },
+            {
+              "card": 1,
+              "goal": [
+                -1,
+                1,
+                0,
+                1
+              ],
+              "side": -1,
+              "motion": [
+                1,
+                1,
+                -1,
+                -1
+              ],
+              "hits": 1,
+              "passed": false
+            }
+          ],
+          "paired_pass": false,
+          "camera_sha256": [
+            "f73916bbb8e28f424918970065185ae8d006ebc00999d5c2e201e84316398373",
+            "17e0e5816747f09eda283581c4d06f0777ac01de74f94bd1c1fca607d214d611",
+            "d5720df12467fcf6d684b97b7b04aff605ff6718b278a2e659cc3f4eb56af9b0",
+            "1aab418a49525e3b186fbb35f65adf007067635e60317718376f8da455f49c5f"
+          ],
+          "history_sha256": "49db2eac4199df9dcca950a1876fd4d6b859111eb9c4997f461fffa5cdcb6880"
+        },
+        {
+          "pair": 2,
+          "deal": {
+            "layout": 113670000,
+            "wiring": 0,
+            "gear": 0,
+            "probe": -1,
+            "card": 2
+          },
+          "actions": [
+            {
+              "card": 2,
+              "goal": [
+                1,
+                -1,
+                0,
+                1
+              ],
+              "side": 1,
+              "motion": [
+                -1,
+                -1,
+                1,
+                1
+              ],
+              "hits": 2,
+              "passed": true
+            },
+            {
+              "card": 3,
+              "goal": [
+                -1,
+                1,
+                0,
+                -1
+              ],
+              "side": -1,
+              "motion": [
+                1,
+                1,
+                -1,
+                -1
+              ],
+              "hits": 2,
+              "passed": true
+            }
+          ],
+          "paired_pass": true,
+          "camera_sha256": [
+            "f73916bbb8e28f424918970065185ae8d006ebc00999d5c2e201e84316398373",
+            "17e0e5816747f09eda283581c4d06f0777ac01de74f94bd1c1fca607d214d611",
+            "d5720df12467fcf6d684b97b7b04aff605ff6718b278a2e659cc3f4eb56af9b0",
+            "1aab418a49525e3b186fbb35f65adf007067635e60317718376f8da455f49c5f"
+          ],
+          "history_sha256": "49db2eac4199df9dcca950a1876fd4d6b859111eb9c4997f461fffa5cdcb6880"
+        }
+      ]
+    },
+    {
+      "arm": "smol",
+      "budget": 1024,
+      "training_seed": 9301,
+      "weights": {
+        "file": "studies/joint_primer/evidence/official/models/smol-1024-9301/adapter.pt",
+        "sha256": "650f05b69a432efcdb761b99dc8d51106ff0bf04e7d56f3b89878fa870ef8963"
+      },
+      "pairs": [
+        {
+          "pair": 1,
+          "deal": {
+            "layout": 113670000,
+            "wiring": 0,
+            "gear": 0,
+            "probe": -1,
+            "card": 0
+          },
+          "actions": [
+            {
+              "card": 0,
+              "goal": [
+                1,
+                -1,
+                0,
+                -1
+              ],
+              "side": 1,
+              "motion": [
+                -1,
+                -1,
+                1,
+                1
+              ],
+              "hits": 1,
+              "passed": false
+            },
+            {
+              "card": 1,
+              "goal": [
+                -1,
+                1,
+                0,
+                1
+              ],
+              "side": 1,
+              "motion": [
+                -1,
+                -1,
+                1,
+                1
+              ],
+              "hits": 2,
+              "passed": true
+            }
+          ],
+          "paired_pass": false,
+          "camera_sha256": [
+            "f73916bbb8e28f424918970065185ae8d006ebc00999d5c2e201e84316398373",
+            "17e0e5816747f09eda283581c4d06f0777ac01de74f94bd1c1fca607d214d611",
+            "d5720df12467fcf6d684b97b7b04aff605ff6718b278a2e659cc3f4eb56af9b0",
+            "d5720df12467fcf6d684b97b7b04aff605ff6718b278a2e659cc3f4eb56af9b0"
+          ],
+          "history_sha256": "49db2eac4199df9dcca950a1876fd4d6b859111eb9c4997f461fffa5cdcb6880"
+        },
+        {
+          "pair": 2,
+          "deal": {
+            "layout": 113670000,
+            "wiring": 0,
+            "gear": 0,
+            "probe": -1,
+            "card": 2
+          },
+          "actions": [
+            {
+              "card": 2,
+              "goal": [
+                1,
+                -1,
+                0,
+                1
+              ],
+              "side": 1,
+              "motion": [
+                -1,
+                -1,
+                1,
+                1
+              ],
+              "hits": 2,
+              "passed": true
+            },
+            {
+              "card": 3,
+              "goal": [
+                -1,
+                1,
+                0,
+                -1
+              ],
+              "side": -1,
+              "motion": [
+                1,
+                1,
+                -1,
+                -1
+              ],
+              "hits": 2,
+              "passed": true
+            }
+          ],
+          "paired_pass": true,
+          "camera_sha256": [
+            "f73916bbb8e28f424918970065185ae8d006ebc00999d5c2e201e84316398373",
+            "17e0e5816747f09eda283581c4d06f0777ac01de74f94bd1c1fca607d214d611",
+            "d5720df12467fcf6d684b97b7b04aff605ff6718b278a2e659cc3f4eb56af9b0",
+            "1aab418a49525e3b186fbb35f65adf007067635e60317718376f8da455f49c5f"
+          ],
+          "history_sha256": "49db2eac4199df9dcca950a1876fd4d6b859111eb9c4997f461fffa5cdcb6880"
+        }
+      ]
+    },
+    {
+      "arm": "joint",
+      "budget": 16384,
+      "training_seed": 9301,
+      "weights": {
+        "file": "studies/joint_primer/evidence/train/models/joint-16384-9301/last.pt",
+        "sha256": "81b201c4803560339b3c558c4f66005d91158bf024ef2593bc63645efdc8756e"
+      },
+      "pairs": [
+        {
+          "pair": 1,
+          "deal": {
+            "layout": 113670000,
+            "wiring": 0,
+            "gear": 0,
+            "probe": -1,
+            "card": 0
+          },
+          "actions": [
+            {
+              "card": 0,
+              "goal": [
+                1,
+                -1,
+                0,
+                -1
+              ],
+              "side": -1,
+              "motion": [
+                1,
+                1,
+                -1,
+                -1
+              ],
+              "hits": 2,
+              "passed": true
+            },
+            {
+              "card": 1,
+              "goal": [
+                -1,
+                1,
+                0,
+                1
+              ],
+              "side": 1,
+              "motion": [
+                -1,
+                -1,
+                1,
+                1
+              ],
+              "hits": 2,
+              "passed": true
+            }
+          ],
+          "paired_pass": true,
+          "camera_sha256": [
+            "f73916bbb8e28f424918970065185ae8d006ebc00999d5c2e201e84316398373",
+            "17e0e5816747f09eda283581c4d06f0777ac01de74f94bd1c1fca607d214d611",
+            "1aab418a49525e3b186fbb35f65adf007067635e60317718376f8da455f49c5f",
+            "d5720df12467fcf6d684b97b7b04aff605ff6718b278a2e659cc3f4eb56af9b0"
+          ],
+          "history_sha256": "49db2eac4199df9dcca950a1876fd4d6b859111eb9c4997f461fffa5cdcb6880"
+        },
+        {
+          "pair": 2,
+          "deal": {
+            "layout": 113670000,
+            "wiring": 0,
+            "gear": 0,
+            "probe": -1,
+            "card": 2
+          },
+          "actions": [
+            {
+              "card": 2,
+              "goal": [
+                1,
+                -1,
+                0,
+                1
+              ],
+              "side": 1,
+              "motion": [
+                -1,
+                -1,
+                1,
+                1
+              ],
+              "hits": 2,
+              "passed": true
+            },
+            {
+              "card": 3,
+              "goal": [
+                -1,
+                1,
+                0,
+                -1
+              ],
+              "side": -1,
+              "motion": [
+                1,
+                1,
+                -1,
+                -1
+              ],
+              "hits": 2,
+              "passed": true
+            }
+          ],
+          "paired_pass": true,
+          "camera_sha256": [
+            "f73916bbb8e28f424918970065185ae8d006ebc00999d5c2e201e84316398373",
+            "17e0e5816747f09eda283581c4d06f0777ac01de74f94bd1c1fca607d214d611",
+            "d5720df12467fcf6d684b97b7b04aff605ff6718b278a2e659cc3f4eb56af9b0",
+            "1aab418a49525e3b186fbb35f65adf007067635e60317718376f8da455f49c5f"
+          ],
+          "history_sha256": "49db2eac4199df9dcca950a1876fd4d6b859111eb9c4997f461fffa5cdcb6880"
+        }
+      ]
+    },
+    {
+      "arm": "act",
+      "budget": 16384,
+      "training_seed": 9301,
+      "weights": {
+        "file": "studies/fourtrack_foundations/evidence/act/models/act-16384-9301/adapter.pt",
+        "sha256": "fa11f86d81c2a969d6239189ed2efea080361c4ec8699d0fdd6d8a5e95c02a09"
+      },
+      "pairs": [
+        {
+          "pair": 1,
+          "deal": {
+            "layout": 113670000,
+            "wiring": 0,
+            "gear": 0,
+            "probe": -1,
+            "card": 0
+          },
+          "actions": [
+            {
+              "card": 0,
+              "goal": [
+                1,
+                -1,
+                0,
+                -1
+              ],
+              "side": -1,
+              "motion": [
+                1,
+                1,
+                -1,
+                -1
+              ],
+              "hits": 2,
+              "passed": true
+            },
+            {
+              "card": 1,
+              "goal": [
+                -1,
+                1,
+                0,
+                1
+              ],
+              "side": 1,
+              "motion": [
+                -1,
+                -1,
+                1,
+                1
+              ],
+              "hits": 2,
+              "passed": true
+            }
+          ],
+          "paired_pass": true,
+          "camera_sha256": [
+            "f73916bbb8e28f424918970065185ae8d006ebc00999d5c2e201e84316398373",
+            "17e0e5816747f09eda283581c4d06f0777ac01de74f94bd1c1fca607d214d611",
+            "1aab418a49525e3b186fbb35f65adf007067635e60317718376f8da455f49c5f",
+            "d5720df12467fcf6d684b97b7b04aff605ff6718b278a2e659cc3f4eb56af9b0"
+          ],
+          "history_sha256": "49db2eac4199df9dcca950a1876fd4d6b859111eb9c4997f461fffa5cdcb6880"
+        },
+        {
+          "pair": 2,
+          "deal": {
+            "layout": 113670000,
+            "wiring": 0,
+            "gear": 0,
+            "probe": -1,
+            "card": 2
+          },
+          "actions": [
+            {
+              "card": 2,
+              "goal": [
+                1,
+                -1,
+                0,
+                1
+              ],
+              "side": 1,
+              "motion": [
+                -1,
+                -1,
+                1,
+                1
+              ],
+              "hits": 2,
+              "passed": true
+            },
+            {
+              "card": 3,
+              "goal": [
+                -1,
+                1,
+                0,
+                -1
+              ],
+              "side": -1,
+              "motion": [
+                1,
+                1,
+                -1,
+                -1
+              ],
+              "hits": 2,
+              "passed": true
+            }
+          ],
+          "paired_pass": true,
+          "camera_sha256": [
+            "f73916bbb8e28f424918970065185ae8d006ebc00999d5c2e201e84316398373",
+            "17e0e5816747f09eda283581c4d06f0777ac01de74f94bd1c1fca607d214d611",
+            "d5720df12467fcf6d684b97b7b04aff605ff6718b278a2e659cc3f4eb56af9b0",
+            "1aab418a49525e3b186fbb35f65adf007067635e60317718376f8da455f49c5f"
+          ],
+          "history_sha256": "49db2eac4199df9dcca950a1876fd4d6b859111eb9c4997f461fffa5cdcb6880"
+        }
+      ]
+    },
+    {
+      "arm": "diffusion",
+      "budget": 16384,
+      "training_seed": 9301,
+      "weights": {
+        "file": "studies/fourtrack_foundations/evidence/diffusion/models/diffusion-16384-9301/adapter.pt",
+        "sha256": "bb2b20a3929d694e3afa9b101e6fe53ab8195f52d2e8351b1aec2d7a8a0b7114"
+      },
+      "pairs": [
+        {
+          "pair": 1,
+          "deal": {
+            "layout": 113670000,
+            "wiring": 0,
+            "gear": 0,
+            "probe": -1,
+            "card": 0
+          },
+          "actions": [
+            {
+              "card": 0,
+              "goal": [
+                1,
+                -1,
+                0,
+                -1
+              ],
+              "side": -1,
+              "motion": [
+                1,
+                1,
+                -1,
+                -1
+              ],
+              "hits": 2,
+              "passed": true
+            },
+            {
+              "card": 1,
+              "goal": [
+                -1,
+                1,
+                0,
+                1
+              ],
+              "side": 1,
+              "motion": [
+                -1,
+                -1,
+                1,
+                1
+              ],
+              "hits": 2,
+              "passed": true
+            }
+          ],
+          "paired_pass": true,
+          "camera_sha256": [
+            "f73916bbb8e28f424918970065185ae8d006ebc00999d5c2e201e84316398373",
+            "17e0e5816747f09eda283581c4d06f0777ac01de74f94bd1c1fca607d214d611",
+            "1aab418a49525e3b186fbb35f65adf007067635e60317718376f8da455f49c5f",
+            "d5720df12467fcf6d684b97b7b04aff605ff6718b278a2e659cc3f4eb56af9b0"
+          ],
+          "history_sha256": "49db2eac4199df9dcca950a1876fd4d6b859111eb9c4997f461fffa5cdcb6880"
+        },
+        {
+          "pair": 2,
+          "deal": {
+            "layout": 113670000,
+            "wiring": 0,
+            "gear": 0,
+            "probe": -1,
+            "card": 2
+          },
+          "actions": [
+            {
+              "card": 2,
+              "goal": [
+                1,
+                -1,
+                0,
+                1
+              ],
+              "side": 1,
+              "motion": [
+                -1,
+                -1,
+                1,
+                1
+              ],
+              "hits": 2,
+              "passed": true
+            },
+            {
+              "card": 3,
+              "goal": [
+                -1,
+                1,
+                0,
+                -1
+              ],
+              "side": -1,
+              "motion": [
+                1,
+                1,
+                -1,
+                -1
+              ],
+              "hits": 2,
+              "passed": true
+            }
+          ],
+          "paired_pass": true,
+          "camera_sha256": [
+            "f73916bbb8e28f424918970065185ae8d006ebc00999d5c2e201e84316398373",
+            "17e0e5816747f09eda283581c4d06f0777ac01de74f94bd1c1fca607d214d611",
+            "d5720df12467fcf6d684b97b7b04aff605ff6718b278a2e659cc3f4eb56af9b0",
+            "1aab418a49525e3b186fbb35f65adf007067635e60317718376f8da455f49c5f"
+          ],
+          "history_sha256": "49db2eac4199df9dcca950a1876fd4d6b859111eb9c4997f461fffa5cdcb6880"
+        }
+      ]
+    },
+    {
+      "arm": "vjepa21",
+      "budget": 16384,
+      "training_seed": 9301,
+      "weights": {
+        "file": "studies/fourtrack_foundations/evidence/vjepa21/models/vjepa21-16384-9301/adapter.pt",
+        "sha256": "a2f98e3511f317d5bca8dfdf7ecf83a883da37902e9d04d92b0dbc3ae1c9af37"
+      },
+      "pairs": [
+        {
+          "pair": 1,
+          "deal": {
+            "layout": 113670000,
+            "wiring": 0,
+            "gear": 0,
+            "probe": -1,
+            "card": 0
+          },
+          "actions": [
+            {
+              "card": 0,
+              "goal": [
+                1,
+                -1,
+                0,
+                -1
+              ],
+              "side": 1,
+              "motion": [
+                -1,
+                -1,
+                1,
+                1
+              ],
+              "hits": 1,
+              "passed": false
+            },
+            {
+              "card": 1,
+              "goal": [
+                -1,
+                1,
+                0,
+                1
+              ],
+              "side": -1,
+              "motion": [
+                1,
+                1,
+                -1,
+                -1
+              ],
+              "hits": 1,
+              "passed": false
+            }
+          ],
+          "paired_pass": false,
+          "camera_sha256": [
+            "f73916bbb8e28f424918970065185ae8d006ebc00999d5c2e201e84316398373",
+            "17e0e5816747f09eda283581c4d06f0777ac01de74f94bd1c1fca607d214d611",
+            "d5720df12467fcf6d684b97b7b04aff605ff6718b278a2e659cc3f4eb56af9b0",
+            "1aab418a49525e3b186fbb35f65adf007067635e60317718376f8da455f49c5f"
+          ],
+          "history_sha256": "49db2eac4199df9dcca950a1876fd4d6b859111eb9c4997f461fffa5cdcb6880"
+        },
+        {
+          "pair": 2,
+          "deal": {
+            "layout": 113670000,
+            "wiring": 0,
+            "gear": 0,
+            "probe": -1,
+            "card": 2
+          },
+          "actions": [
+            {
+              "card": 2,
+              "goal": [
+                1,
+                -1,
+                0,
+                1
+              ],
+              "side": 1,
+              "motion": [
+                -1,
+                -1,
+                1,
+                1
+              ],
+              "hits": 2,
+              "passed": true
+            },
+            {
+              "card": 3,
+              "goal": [
+                -1,
+                1,
+                0,
+                -1
+              ],
+              "side": -1,
+              "motion": [
+                1,
+                1,
+                -1,
+                -1
+              ],
+              "hits": 2,
+              "passed": true
+            }
+          ],
+          "paired_pass": true,
+          "camera_sha256": [
+            "f73916bbb8e28f424918970065185ae8d006ebc00999d5c2e201e84316398373",
+            "17e0e5816747f09eda283581c4d06f0777ac01de74f94bd1c1fca607d214d611",
+            "d5720df12467fcf6d684b97b7b04aff605ff6718b278a2e659cc3f4eb56af9b0",
+            "1aab418a49525e3b186fbb35f65adf007067635e60317718376f8da455f49c5f"
+          ],
+          "history_sha256": "49db2eac4199df9dcca950a1876fd4d6b859111eb9c4997f461fffa5cdcb6880"
+        }
+      ]
+    },
+    {
+      "arm": "dino",
+      "budget": 16384,
+      "training_seed": 9301,
+      "weights": {
+        "file": "studies/joint_primer/evidence/official/models/dino-16384-9301/adapter.pt",
+        "sha256": "64e83027edd4166c8aa7f62653da48149744359295f378a0192de3c1c2e8ff22"
+      },
+      "pairs": [
+        {
+          "pair": 1,
+          "deal": {
+            "layout": 113670000,
+            "wiring": 0,
+            "gear": 0,
+            "probe": -1,
+            "card": 0
+          },
+          "actions": [
+            {
+              "card": 0,
+              "goal": [
+                1,
+                -1,
+                0,
+                -1
+              ],
+              "side": -1,
+              "motion": [
+                1,
+                1,
+                -1,
+                -1
+              ],
+              "hits": 2,
+              "passed": true
+            },
+            {
+              "card": 1,
+              "goal": [
+                -1,
+                1,
+                0,
+                1
+              ],
+              "side": 1,
+              "motion": [
+                -1,
+                -1,
+                1,
+                1
+              ],
+              "hits": 2,
+              "passed": true
+            }
+          ],
+          "paired_pass": true,
+          "camera_sha256": [
+            "f73916bbb8e28f424918970065185ae8d006ebc00999d5c2e201e84316398373",
+            "17e0e5816747f09eda283581c4d06f0777ac01de74f94bd1c1fca607d214d611",
+            "1aab418a49525e3b186fbb35f65adf007067635e60317718376f8da455f49c5f",
+            "d5720df12467fcf6d684b97b7b04aff605ff6718b278a2e659cc3f4eb56af9b0"
+          ],
+          "history_sha256": "49db2eac4199df9dcca950a1876fd4d6b859111eb9c4997f461fffa5cdcb6880"
+        },
+        {
+          "pair": 2,
+          "deal": {
+            "layout": 113670000,
+            "wiring": 0,
+            "gear": 0,
+            "probe": -1,
+            "card": 2
+          },
+          "actions": [
+            {
+              "card": 2,
+              "goal": [
+                1,
+                -1,
+                0,
+                1
+              ],
+              "side": 1,
+              "motion": [
+                -1,
+                -1,
+                1,
+                1
+              ],
+              "hits": 2,
+              "passed": true
+            },
+            {
+              "card": 3,
+              "goal": [
+                -1,
+                1,
+                0,
+                -1
+              ],
+              "side": -1,
+              "motion": [
+                1,
+                1,
+                -1,
+                -1
+              ],
+              "hits": 2,
+              "passed": true
+            }
+          ],
+          "paired_pass": true,
+          "camera_sha256": [
+            "f73916bbb8e28f424918970065185ae8d006ebc00999d5c2e201e84316398373",
+            "17e0e5816747f09eda283581c4d06f0777ac01de74f94bd1c1fca607d214d611",
+            "d5720df12467fcf6d684b97b7b04aff605ff6718b278a2e659cc3f4eb56af9b0",
+            "1aab418a49525e3b186fbb35f65adf007067635e60317718376f8da455f49c5f"
+          ],
+          "history_sha256": "49db2eac4199df9dcca950a1876fd4d6b859111eb9c4997f461fffa5cdcb6880"
+        }
+      ]
+    },
+    {
+      "arm": "smol",
+      "budget": 16384,
+      "training_seed": 9301,
+      "weights": {
+        "file": "studies/joint_primer/evidence/official/models/smol-16384-9301/adapter.pt",
+        "sha256": "0fe011336df291879a7bd5c1358bcf064f4bc853fd317faa325d08c2d6e6e395"
+      },
+      "pairs": [
+        {
+          "pair": 1,
+          "deal": {
+            "layout": 113670000,
+            "wiring": 0,
+            "gear": 0,
+            "probe": -1,
+            "card": 0
+          },
+          "actions": [
+            {
+              "card": 0,
+              "goal": [
+                1,
+                -1,
+                0,
+                -1
+              ],
+              "side": -1,
+              "motion": [
+                1,
+                1,
+                -1,
+                -1
+              ],
+              "hits": 2,
+              "passed": true
+            },
+            {
+              "card": 1,
+              "goal": [
+                -1,
+                1,
+                0,
+                1
+              ],
+              "side": -1,
+              "motion": [
+                1,
+                1,
+                -1,
+                -1
+              ],
+              "hits": 1,
+              "passed": false
+            }
+          ],
+          "paired_pass": false,
+          "camera_sha256": [
+            "f73916bbb8e28f424918970065185ae8d006ebc00999d5c2e201e84316398373",
+            "17e0e5816747f09eda283581c4d06f0777ac01de74f94bd1c1fca607d214d611",
+            "1aab418a49525e3b186fbb35f65adf007067635e60317718376f8da455f49c5f",
+            "1aab418a49525e3b186fbb35f65adf007067635e60317718376f8da455f49c5f"
+          ],
+          "history_sha256": "49db2eac4199df9dcca950a1876fd4d6b859111eb9c4997f461fffa5cdcb6880"
+        },
+        {
+          "pair": 2,
+          "deal": {
+            "layout": 113670000,
+            "wiring": 0,
+            "gear": 0,
+            "probe": -1,
+            "card": 2
+          },
+          "actions": [
+            {
+              "card": 2,
+              "goal": [
+                1,
+                -1,
+                0,
+                1
+              ],
+              "side": -1,
+              "motion": [
+                1,
+                1,
+                -1,
+                -1
+              ],
+              "hits": 1,
+              "passed": false
+            },
+            {
+              "card": 3,
+              "goal": [
+                -1,
+                1,
+                0,
+                -1
+              ],
+              "side": -1,
+              "motion": [
+                1,
+                1,
+                -1,
+                -1
+              ],
+              "hits": 2,
+              "passed": true
+            }
+          ],
+          "paired_pass": false,
+          "camera_sha256": [
+            "f73916bbb8e28f424918970065185ae8d006ebc00999d5c2e201e84316398373",
+            "17e0e5816747f09eda283581c4d06f0777ac01de74f94bd1c1fca607d214d611",
+            "1aab418a49525e3b186fbb35f65adf007067635e60317718376f8da455f49c5f",
+            "1aab418a49525e3b186fbb35f65adf007067635e60317718376f8da455f49c5f"
+          ],
+          "history_sha256": "49db2eac4199df9dcca950a1876fd4d6b859111eb9c4997f461fffa5cdcb6880"
+        }
+      ]
+    }
+  ]
+}
