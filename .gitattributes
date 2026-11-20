@@ -7,6 +7,7 @@
 *.zip binary
 *.xlsx binary
 *.gif binary
+*.mp4 binary
 *.ttf binary
 evidence/** -text
 studies/partial_futures/evidence/** -text

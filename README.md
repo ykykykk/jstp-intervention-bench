@@ -13,7 +13,11 @@ The theory manuscript states the hypotheses; the empirical paper tests one claim
 
 [完整 JSTP 与五种外部方法（结果与区间）](studies/fourtrack_foundations/outputs/fourtrack-20261120/四轨模型对比.md) · [下载这张表（Excel）](studies/fourtrack_foundations/outputs/fourtrack-20261120/完整JSTP与主流模型-四轨对照.xlsx) · [原八组对照表](studies/joint_primer/paper/tables/JSTP-八种模型同场对照.xlsx) · [原考场逐题回放](studies/joint_primer/paper/evidence-room.html)
 
-**想先玩一局？** 在本地双击 [玩双舱救援.cmd](玩双舱救援.cmd)。按住甲板上的一根绞盘横拖，看电池跟不跟；再握住选好的绞盘，沿竖轨亲手把乘员送进青框，到线松手。也可以切到 JSTP 代驾，看它怎样选。[玩法与模型说明](docs/RESCUE-GAME.md)。这是 V7 双舱现场游戏，不是导论的四轨考场或论文录像。
+**想先玩一局？** 本地双击 **[潮汐港 · 四轨货运](玩四轨调度站.cmd)**。先把一艘小艇送进青框，再同时调度四种舱。自由港的 A、B 绞盘都能反复试，也能让冻结模型玩同一关。要玩论文 §5.1 的原题，选「☰ → 论文例题」；只有论文赛道限制试探次数并延迟揭晓结果。[交互与两种计分规则](docs/FOUR-TRACK-GAME.md)
+
+**[直接看六个模型同场操作 / Watch the films](https://ykykykk.github.io/jstp-intervention-bench/)**：[128](https://ykykykk.github.io/jstp-intervention-bench/#128) · [1,024](https://ykykykk.github.io/jstp-intervention-bench/#1024) · [16,384](https://ykykykk.github.io/jstp-intervention-bench/#16384) 条动作示范，每段 32 秒。[实操日志、相机与下载](docs/harbor-films/README.md)。**接口不是纯视觉到鼠标：**模型读相机特征、公开仪表和目标卡，选 A/B，模拟器执行；测试不提供隐藏接线、物体真值坐标或正确动作。Human players use a mouse; the frozen controllers do not.
+
+另一个游戏是 V7 的 **[双舱救援](玩双舱救援.cmd)**：横拖绞盘看电池跟不跟，再竖拖把乘员送进青框。它和导论四轨是两个不同的实验。[双舱玩法](docs/RESCUE-GAME.md)
 
 四轨装置先横拉一个把手试探，四个滑块复位后才公布目标。正式竖拉 A 或 B 会让四轨都动；换把手，每轨方向都相反。一张考卡要求三轨各向上或向下，至少两轨符合即过关。两张相反的考卡从同一复位状态分别执行，两张都过才得一分。[论文 §5.1：一局四张卡怎样得分](studies/joint_primer/paper/联合状态转移预测导论-岳轲.pdf#page=4)。128 条动作标注时，完整 JSTP 为 **71.69%**；保留两个训练损失、只断开后果回输后为 **66.75%**。这 4.94 个百分点衡量的是回输在同一架构里的作用，不是相对其他架构的普遍优势。
 
