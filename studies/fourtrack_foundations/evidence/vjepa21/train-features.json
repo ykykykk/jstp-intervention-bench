@@ -1,0 +1,18 @@
+{
+  "base_sha256": "848a77c33cc9e6649ed2119c9bea1e2c569bcdab9539ff3e7c02ccc2959ddf4d",
+  "upstream_commit": "204698b45b3712590f06245fbfba32d3be539812",
+  "frozen_used_parameters": 86833152,
+  "upstream": "Meta official EMA encoder; native video tokens before/peak, no AC planner",
+  "source": "cd92e565b6dbfe23cf809a5301bc7600854fc56ade7656bc9290b9e385c21ec1",
+  "plan": "9a2359c8f601fd72092d9a38ee7b7ebdf3d47c2ade6c8ba1688b15a504c06473",
+  "code": "624d2b7092ceb480a2addeac69c97ffca7d3eaf9ae990bcaa8d9fd719c114142",
+  "file": "83a7ca0ac136cc97e077e6afca0e92fd2c1f9e2340267484bd710cc1fd07fdbe",
+  "rows": 16384,
+  "distinct_forward_rows": 8192,
+  "seconds": 14.76,
+  "versions": {
+    "torch": "2.15.0+cu132",
+    "transformers": "5.22.2",
+    "timm": "1.0.31"
+  }
+}

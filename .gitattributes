@@ -12,3 +12,5 @@ evidence/** -text
 studies/partial_futures/evidence/** -text
 studies/partial_futures/data/** -text
 studies/joint_primer/evidence/** -text
+# The four-track locks hash the original bytes of the plans, Python sources and records.
+studies/fourtrack_foundations/** -text

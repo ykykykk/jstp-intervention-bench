@@ -1,0 +1,30 @@
+{
+  "base_sha256": "995d14d35db57d95c35ad9704c3d79c8612b7bc45f3877e5c46c2cdc516856a8",
+  "upstream_commit": "84a7c23178445c6bbf7e1a884ff497017910f653",
+  "original_policy_parameters": 262709026,
+  "native_output_dimensions": 2,
+  "normalizer_buffers_excluded": [
+    "normalize_inputs.buffer_observation_image.mean",
+    "normalize_inputs.buffer_observation_image.std",
+    "normalize_inputs.buffer_observation_state.max",
+    "normalize_inputs.buffer_observation_state.min",
+    "normalize_targets.buffer_action.max",
+    "normalize_targets.buffer_action.min",
+    "unnormalize_outputs.buffer_action.max",
+    "unnormalize_outputs.buffer_action.min"
+  ],
+  "upstream": "lerobot/diffusion_pusht",
+  "sampler": "native LeRobot DDIM 4, fixed zero noise, horizon 16",
+  "source": "cd92e565b6dbfe23cf809a5301bc7600854fc56ade7656bc9290b9e385c21ec1",
+  "plan": "9a2359c8f601fd72092d9a38ee7b7ebdf3d47c2ade6c8ba1688b15a504c06473",
+  "code": "56c1ffea94221416a542ad1a124f6a2dbe3f3ddf85d0c25cf8432be40eff7eb3",
+  "file": "82321719b4af6ae7505cec57094cd063cff2f76eb08ab21f23f9fc8eb81d682f",
+  "rows": 16384,
+  "distinct_forward_rows": 16384,
+  "seconds": 26.93,
+  "versions": {
+    "torch": "2.15.0+cu132",
+    "lerobot": "0.7.0",
+    "diffusers": "0.39.0"
+  }
+}

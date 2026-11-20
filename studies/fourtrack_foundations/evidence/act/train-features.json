@@ -1,0 +1,29 @@
+{
+  "base_sha256": "42772891cb6eba1e7bc36ad8e12c0fa0723c61f036fa235c725ce6026e6e81df",
+  "upstream_commit": "ba73b2766f1371cdc133ca4efb97eb090d744625",
+  "original_policy_parameters": 51613582,
+  "native_output_dimensions": 14,
+  "normalizer_buffers_excluded": [
+    "normalize_inputs.buffer_observation_images_top.mean",
+    "normalize_inputs.buffer_observation_images_top.std",
+    "normalize_inputs.buffer_observation_state.mean",
+    "normalize_inputs.buffer_observation_state.std",
+    "normalize_targets.buffer_action.mean",
+    "normalize_targets.buffer_action.std",
+    "unnormalize_outputs.buffer_action.mean",
+    "unnormalize_outputs.buffer_action.std"
+  ],
+  "upstream": "lerobot/act_aloha_sim_transfer_cube_human",
+  "sampler": "native ACT all 100 queries",
+  "source": "cd92e565b6dbfe23cf809a5301bc7600854fc56ade7656bc9290b9e385c21ec1",
+  "plan": "9a2359c8f601fd72092d9a38ee7b7ebdf3d47c2ade6c8ba1688b15a504c06473",
+  "code": "56c1ffea94221416a542ad1a124f6a2dbe3f3ddf85d0c25cf8432be40eff7eb3",
+  "file": "b35808363fc5c8f503e9a27b58e0d6a3c4c8c803873331f9e0aa76d51aa82fa8",
+  "rows": 16384,
+  "distinct_forward_rows": 8192,
+  "seconds": 4.43,
+  "versions": {
+    "torch": "2.15.0+cu132",
+    "lerobot": "0.7.0"
+  }
+}

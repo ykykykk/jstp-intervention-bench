@@ -1,0 +1,26 @@
+{
+  "lock": {
+    "plan": "9a2359c8f601fd72092d9a38ee7b7ebdf3d47c2ade6c8ba1688b15a504c06473",
+    "train": "cd92e565b6dbfe23cf809a5301bc7600854fc56ade7656bc9290b9e385c21ec1",
+    "schedule": "3907bfda031f17607f51821548260c3914e79e001ebaf7d885e87b8d16bbd5ba",
+    "sources": {
+      "studies/joint_primer/protocol.json": "0ae1fbcc37deb6900c4e5b050813121fa1287bb47ed9a0a3a74c6ff0bb72c779",
+      "studies/joint_primer/models.py": "8d5abf275e1683967d0970165a770f17960600779e357d510ac9c9ca0a149cf4",
+      "studies/joint_primer/train.py": "be57036b1df1a9a9069562a322eddcf0341962538542f7eaa019c9cf052d9ba9",
+      "lategoal/rig.py": "37126ee2883d00cc81ee2eb437f27f7d701fae0a29cab23b7550118a5b628b63",
+      "jstp/v7_world.py": "fbe794643697698b4586ed2b5f5d8d15fc11829985679f112136765a63772418"
+    },
+    "fit_code": "70d2574f30f55aad6759c05e87fceb296800191be5fca71fb11f6bf6bd7fd4b7",
+    "feature_record": "ad617e9769130ec44d1de16653be3b04753c8cea969f61052e4ad1c09b7f5d1e"
+  },
+  "weights": "7b9a40163c82f4a96ec55fc1789acf279fd6e16b8a62f1b12b44734db7d12371",
+  "seed": 9301,
+  "budget": 128,
+  "updates": 768,
+  "batch": 128,
+  "annotation_pool_sha256": "4ff3e1e9cb6041457af5388b6035eb602808b9ad1b1d9564ff96913cf3d09417",
+  "annotation_draws": 98304,
+  "physical_draws": 98304,
+  "trainable": 46142,
+  "seconds": 3.01
+}

@@ -1,0 +1,66 @@
+{
+  "amendments": "At the author's request cancel the large proposed checkpoint before its download completed. Lock the replacement methods before extracting their exam inputs or executing the new comparison. The nine original complete JSTP fits had already finished under initial-plan.json (SHA256 07410ba64a97e5e7a85694be53a8bc9a6f65795b9e83f3f0cb24bb86ddd0b842). Neither their training nor the arena changed.",
+  "arena": "Unchanged published four-track apparatus; historical 192 layouts, not a newly blind test or public preregistration.",
+  "budgets": [
+    128,
+    1024,
+    16384
+  ],
+  "seeds": [
+    9301,
+    9419,
+    9547
+  ],
+  "arms": [
+    "joint",
+    "act",
+    "diffusion",
+    "vjepa21",
+    "smol",
+    "dino"
+  ],
+  "fresh_external": [
+    "act",
+    "diffusion",
+    "vjepa21"
+  ],
+  "archived": [
+    "smol",
+    "dino"
+  ],
+  "selection": "Only complete Joint('joint',48) and identifiable external methods. No paper ablations or in-house one-step world / action-only controls.",
+  "training": "16,384 identical public histories; three nested pools of action labels, unchanged annotations, seeds and schedule: 768 updates x 128. JSTP reruns original trainer unchanged. New adapters receive identical auxiliary physical rows/side/four of twelve optical readings per update; optical MSE weight 3. Old SmolVLA trained with its native action loss only. Equal downstream histories and demonstrations, not equal prior data, compute or parameter update scope.",
+  "new_heads": "New adapters learn a four-coordinate score combined linearly with the late goal and 24 partial optics outputs, access to all 18 public instrument values, AdamW lr=.001 wd=.0001, grad norm 3, no test selection or performance-dependent restarts. Files cache label-independent frozen computations only.",
+  "act": {
+    "model": "lerobot/act_aloha_sim_transfer_cube_human",
+    "revision": "ba73b2766f1371cdc133ca4efb97eb090d744625",
+    "sha256": "42772891cb6eba1e7bc36ad8e12c0fa0723c61f036fa235c725ce6026e6e81df",
+    "source": "https://huggingface.co/lerobot/act_aloha_sim_transfer_cube_human",
+    "method": "Use official pretrained ACT, eval latent zero, all 100 native trajectory queries, ResNet18 camera+state and native encoder/decoder. Use first executed token. Train the native terminal action projection and a four-track residual readout on its decoder activation and exact gauges. One temporally coded camera field at 192x256."
+  },
+  "diffusion": {
+    "model": "lerobot/diffusion_pusht",
+    "revision": "84a7c23178445c6bbf7e1a884ff497017910f653",
+    "sha256": "995d14d35db57d95c35ad9704c3d79c8612b7bc45f3877e5c46c2cdc516856a8",
+    "source": "https://huggingface.co/lerobot/diffusion_pusht",
+    "method": "Official pretrained Push-T vision policy. Both observed views at native resolution, 16-slot native U-Net trajectory, four deterministic DDIM updates with fixed zero initial noise, no goal or private outcomes during extraction. Learn a native terminal epsilon projection (equivalently the 1x1 conv at selected slot) and a four-track task readout on the last hidden and the decoded first executed action. This is not 100-step DDPM or full-parameter retraining."
+  },
+  "vjepa21": {
+    "model": "Meta V-JEPA 2.1 distilled ViT-B/16",
+    "revision": "204698b45b3712590f06245fbfba32d3be539812",
+    "source": "https://github.com/facebookresearch/vjepa2",
+    "checkpoint": "https://dl.fbaipublicfiles.com/vjepa2/vjepa2_1_vitb_dist_vitG_384.pt",
+    "method": "Official EMA video encoder, effective 96x192. Two observed views duplicated into four frames for tubelets; train structured readout of temporal/spatial features and public instruments. Not V-JEPA-AC or an off-the-shelf planner."
+  },
+  "smol": {
+    "model": "lerobot/smolvla_base",
+    "source": "https://huggingface.co/lerobot/smolvla_base",
+    "method": "Re-execute original nine upstream SmolVLA transfer fits on identical downstream schedule. Native vision/language prefix and flow action expert. No optical auxiliary objective."
+  },
+  "dino": {
+    "model": "DINO-WM author predictor with pretrained facebook/dinov2-small",
+    "source": "https://github.com/gaoyuezhou/dino_wm",
+    "method": "Re-execute the nine archived DINO-WM transfers. Frozen pretrained DINOv2-S/14 and original-author predictor architecture; local downstream goal readout and partial optical targets rather than official future embedding/planner. Not the excluded in-house one-step baseline."
+  },
+  "execution": "Freeze all new fits before reading the held-out prefix. Seal commands before actual camera-verified execution. Primary: success on both opposite goals. Whole-layout paired bootstrap (3000 draws), 95% descriptive intervals, 99% Bonferroni intervals across 5 contrasts at 128. New fits use final updates only."
+}
