@@ -5,7 +5,7 @@
 <section><div class="target" id="goal"></div><div class="duo"><article><h2>实际机构</h2><div class="film" id="film"></div><div id="result"></div></article><article><h2>动作前的局部预期</h2><div id="expect"></div><p class="sub">正负颜色表示十二个重叠光学位置的向下或向上位移；不是物体标签，也不是另一台机构的实际相机。</p></article></div></section>
 <section><h2>只换目标，两次能不能都做对？</h2><div id="paired"></div><p class="sub">同一考号、同一真实经历、同一初始化编号和示范量。这里比较不改隐状态的原始动作；上方的预期干预不改变这组成对记录。</p></section>
 <section><h2>这份权重的训练过程</h2><div class="chart" id="chart"></div><p class="sub" id="chart-note"></p></section>
-<div class="foot">本页完全离线。正式动作先封卷，再由独立模拟机构执行。相同的物理姿态共用同一实际相机图像。补考的隔离梯度世界模型在论文表 3，不混入本页主试验。</div></main>
+<div class="foot">本页完全离线。正式动作先封卷，再由独立模拟机构执行。相同的物理姿态共用同一实际相机图像。本页保留原试验的回放；<a href="联合状态转移预测导论-岳轲.pdf">修订稿</a>表 2 比较完整 JSTP 与五种外部方法，表 4 单列隔离梯度的独立布局补考。</div></main>
 <script>
 const DB=/*__RECORDS__*/null;const Q=id=>document.getElementById(id);
 const names={joint:'JSTP 共享转移',smol:'官方 SmolVLA 局部微调',dino:'DINOv2 + DINO-WM 适配',aux:'同结构断回输',direct:'仅直接动作',world:'一步世界模型',masked:'掩码轨迹 Transformer',flow:'条件流动作'};

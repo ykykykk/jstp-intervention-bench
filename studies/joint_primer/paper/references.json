@@ -54,6 +54,24 @@
     "https://arxiv.org/abs/2506.01844"
   ],
   [
+    "Zhao, T. Z., Kumar, V., Levine, S. & Finn, C.",
+    "Learning Fine-Grained Bimanual Manipulation with Low-Cost Hardware",
+    "Robotics: Science and Systems XIX, 2023",
+    "https://roboticsproceedings.org/rss19/p016.html"
+  ],
+  [
+    "Chi, C., Feng, S., Du, Y., Xu, Z., Cousineau, E., Burchfiel, B. & Song, S.",
+    "Diffusion Policy: Visuomotor Policy Learning via Action Diffusion",
+    "Robotics: Science and Systems XIX, 2023",
+    "https://diffusion-policy.cs.columbia.edu/"
+  ],
+  [
+    "Mur-Labadia, L. et al.",
+    "V-JEPA 2.1: Unlocking Dense Features in Video Self-Supervised Learning",
+    "arXiv:2603.14482, 2026",
+    "https://arxiv.org/abs/2603.14482"
+  ],
+  [
     "Locatello, F. et al.",
     "Object-Centric Learning with Slot Attention",
     "Advances in Neural Information Processing Systems 33, 2020",

@@ -1,16 +1,16 @@
 # Joint State Transition Prediction: Goal Generalization with Sparse Action Labels
 
-Ke Yue · Independent Researcher · 19 November 2026 · Version 1.1
+Ke Yue · Independent Researcher · 20 November 2026 · Revised manuscript, v1.2
 
 **Project repository:** [https://github.com/ykykykk/jstp-intervention-bench](https://github.com/ykykykk/jstp-intervention-bench)
 
-**Full JSTP theory:** [English translation](https://zenodo.org/records/24366742/files/JSTP-Theory-Ke-Yue.en.pdf) · [Chinese original](https://zenodo.org/records/24366742/files/JSTP-Theory-Ke-Yue.zh.pdf)
+**Full JSTP theory:** [English translation](https://zenodo.org/records/24392467/files/JSTP-Theory-Ke-Yue.en.pdf) · [Chinese original](https://zenodo.org/records/24392467/files/JSTP-Theory-Ke-Yue.zh.pdf)
 
-**Preprint DOI:** [10.5281/zenodo.24366742](https://doi.org/10.5281/zenodo.24366742)
+**Preprint DOI (v1.2):** [10.5281/zenodo.24392467](https://doi.org/10.5281/zenodo.24392467)
 
 ## Abstract
 
-A controller can learn what an action does without being told when to take it. Does that knowledge help once a new goal is specified? Joint State Transition Prediction (JSTP) treats an agent's action and changes in its environment as components of the same transition. We test a network that can predict its action directly or use a latent prediction of a local consequence. Eight methods were trained at three action-label budgets on a fixed bank of 16,384 interactions. Frozen policies operated a four-track simulator on 192 held-out layouts. Each trial pair required the policy to achieve two opposite, previously unseen goals from the same probe history. With 128 labels, JSTP achieved 71.69% paired success, versus 67.45% for a one-step world model and 49.79% for an action-only policy. Disconnecting the consequence-to-action path while retaining both training losses reduced paired success to 66.75% (difference: 4.94 percentage points; 99% paired layout-bootstrap interval: 3.97 to 5.85). The disconnected network scored slightly higher at both larger budgets and had more readily decoded co-motion at 128 labels. The results isolate a benefit of using predicted consequences under sparse action supervision in this apparatus. They do not establish that better control requires more readily decoded object representations.
+A controller can learn what an action does without being told when to take it. Does that knowledge help when a new goal arrives? Joint State Transition Prediction (JSTP) treats action and environmental change as components of the same transition; it does not require a full reconstruction of the future. We varied the number of action labels in a fixed bank of 16,384 interactions. Frozen controllers operated a four-track simulator on 192 held-out layouts. A pair counted as successful only if the controller achieved two opposite, unseen goals after the same probe. At 128 labels, JSTP achieved 71.69% paired success. Disconnecting its consequence-to-action path while retaining both training losses reduced success to 66.75% (difference: 4.94 percentage points; 99% paired layout-bootstrap interval [3.97, 5.85]). In an expanded comparison, a pretrained ACT adaptation did better at 128 labels (73.78%); at 1,024 labels ACT and JSTP reached 94.58% and 94.90%, respectively. JSTP thus approached ACT on this apparatus with 18,304 parameters trained from scratch, but was not the best sparse-label method. The matched comparison supports a contribution from consequence feedback; task success alone does not establish emergent object segmentation.
 
 **Keywords:** joint state transition prediction; goal-conditioned control; action supervision; functional grouping; latent intervention.
 
@@ -20,7 +20,7 @@ Suppose a controller can pull either of two handles. A brief horizontal pull rev
 
 Joint State Transition Prediction (JSTP) regards the agent's own next action as one possible component of a future shared with its environment. A network need not reconstruct that future in full before acting: it can predict its action directly. Conversely, predicting even a small part of what would happen under an action may supply information useful for goals not yet specified. These possibilities motivate a more discriminating comparison than simply adding a prediction loss. Two networks can learn from the same outcomes and predict the same kinds of measurements while differing in whether their motor decision can use a particular predicted consequence.
 
-We make three contributions. First, we give an operational definition of partial joint prediction and specify a network in which the route from history to action remains intact when consequence feedback is removed. Second, we compare eight controllers on identical downstream annotation budgets and new layouts, recording the actions each frozen controller actually executes. Third, we distinguish three findings that might otherwise be mistaken for one: selecting a successful action, encoding which parts move together, and changing an action in response to an intervention on an expected consequence. The strongest contrast is with the same network trained with both objectives but without the consequence-to-action connection.
+The matched and external comparisons answer different questions. The first asks whether a particular consequence prediction helps a network that can already act directly; the second asks whether another controller can do as well. We define partial joint prediction and test both questions on the same histories and nested action labels. The original eight-method comparison identified a sparse-label benefit from the feedback path. Adding ACT, Diffusion Policy, and V-JEPA 2.1 changed the ordering at that budget, not the matched-path estimate. Finally, we distinguish selecting the right action, encoding which parts move together, and changing an action when an expected consequence is altered. These are separate measurements, not three names for task success.
 
 ## 2. What counts as a joint prediction?
 
@@ -42,7 +42,9 @@ Q may refer to the agent's own motion, a local sensory consequence, a latent qua
 
 **World models and action policies.** DINO-WM predicts future DINOv2 patch features and plans toward a goal observation without synthesizing future pixels [6, 7]. DreamerV3 learns a policy and a value function from trajectories imagined with a world model [8]; using a direct policy and learning a world model are not mutually exclusive. SmolVLA conditions a flow-matching action expert on visual, language, and state inputs [9]. Our comparisons use two specific adaptations: partial fine-tuning of the official SmolVLA policy, and a DINO-WM predictor with a task-specific optical target instead of future image patches. Neither is a reproduction of its upstream robotics benchmark.
 
-**Grouping and intervention.** Slot Attention provides exchangeable slots and a competitive assignment mechanism for object-centric learning [10]. We provide neither object slots nor instance supervision. In a predictive network trained on natural video, Ye et al. found border-ownership selectivity and used ablations to examine its contribution to prediction [11]. This demonstrates the possibility of a grouping-related computation, not that all predictive systems acquire full object representations. Geiger et al. use interchange interventions to test proposed causal abstractions of networks [12]. Our intervention makes a narrower claim: a displacement-aligned component of a network's expectation can affect the direction of its choice.
+Three further methods provide different starting points for transfer. Action Chunking with Transformers (ACT) predicts a sequence of actions jointly [10]. Diffusion Policy generates actions by conditional denoising [11]. Both bring a pretrained observation-to-action mapping. V-JEPA 2.1 instead learns dense image and video representations [12]; a readout must learn how to turn those features into a four-track decision. We evaluate these task interfaces, not the methods on their original benchmarks.
+
+**Grouping and intervention.** Slot Attention provides exchangeable slots and a competitive assignment mechanism for object-centric learning [13]. We provide neither object slots nor instance supervision. In a predictive network trained on natural video, Ye et al. found border-ownership selectivity and used ablations to examine its contribution to prediction [14]. This demonstrates the possibility of a grouping-related computation, not that all predictive systems acquire full object representations. Geiger et al. use interchange interventions to test proposed causal abstractions of networks [15]. Our intervention makes a narrower claim: a displacement-aligned component of a network's expectation can affect the direction of its choice.
 
 ## 4. Model and objectives
 
@@ -90,15 +92,19 @@ The training bank crosses 2,048 layouts with two wirings, two clutch settings, a
 
 We trained three seeds (9301, 9419, 9547) per method and budget, for 72 checkpoints. Each fit ran 768 updates with batches of 128 labelled draws and used its final weights. The downstream record indices, labels, and update counts were matched, not pretraining, objectives, or FLOPs. The six scratch-trained arms were evaluated first. The adapters' protocol was locked after those results were known but before the 18 new fits began. The adapters were evaluated on the original layouts and paired with the original sealed JSTP choices.
 
+**Expanded external comparison.** We retrained the intact 18,304-parameter JSTP with its original trainer. The ALOHA-pretrained ACT adapter encodes the before and probe-peak views in one observation and uses the first of 100 action queries. The Push-T Diffusion Policy uses both observed frames, runs four deterministic DDIM updates over a 16-position trajectory, and reads the first executable position. Both freeze the backbone and train the terminal projection and a four-track readout (54,602 and 46,142 parameters, respectively). For V-JEPA 2.1 we freeze the distilled ViT-B/16, repeat each of the two observed frames twice, and fit 80,028 readout parameters to spatiotemporal features; we do not run an action-conditioned planner.
+
+These three adapters and JSTP receive the same 18 public instrument readings, labelled actions, and physical examples with the same handle and four sampled optical measurements. Each scores a late goal by taking its dot product with four learned coordinates. We fitted nine checkpoints per method (36 new fits). The 18 existing SmolVLA and DINO-WM checkpoints were not refitted: their choices were recomputed from frozen weights and executed again. The six methods issued 1,327,104 formal strokes in this comparison. It adds comparators to the original 192 layouts, whose historical results were already known; it does not add independent layouts or replace the original trials.
+
 ### 5.3 Estimands and uncertainty
 
-The primary metric is **paired success**: from one history the controller is given g and its opposite in separate branches; both actions must satisfy their respective goals. Secondary metrics are single-goal success, how often the controller selects the same handle for opposite goals, and the co-motion readout defined below. We made 3,000 paired bootstrap draws of whole layouts, preserving the dependent histories, goals, and seed results within each of the 192 layouts. At 128 labels the five scratch-trained contrasts and the two adapter contrasts form two separate families. Bonferroni correction gives 99% intervals per scratch contrast and 97.5% per adapter contrast; these are not joint 95% coverage across all seven comparisons. Uncertainty is conditional on one label split and the three fixed seeds.
+The primary metric is **paired success**: from one history the controller is given g and its opposite in separate branches; both actions must satisfy their respective goals. Secondary metrics are single-goal success, how often the controller selects the same handle for opposite goals, and the co-motion readout in Section 6.4. We made 3,000 paired bootstrap draws of whole layouts, keeping the dependent histories, goals, and all seed results within each of the 192 layouts. At 128 labels, Table 1 retains two Bonferroni families (five scratch contrasts at 99% each and two earlier adapters at 97.5% each). Table 2 treats the five external contrasts as one family, using 99% intervals at 128 labels; its other budgets use descriptive 95% intervals. These are not simultaneous intervals across tables. Inference is conditional on one label split and three fixed seeds.
 
 ## 6. Results
 
 ### 6.1 When does the consequence path improve action selection?
 
-**Table 1. Paired success on the primary panel (%).** Differences at 128 labels are JSTP minus comparator in percentage points, computed before rounding. The interval is layout-paired and adjusted within the relevant comparison family. Wins count matching seeds for which JSTP scores higher. Best means in each budget are bold.
+**Table 1. Paired success for the original eight methods on the primary panel (%).** Differences at 128 labels are JSTP minus comparator in percentage points, computed before rounding. Intervals are layout-paired and adjusted within family. Wins count matching seeds for which JSTP scores higher. Bold denotes the highest mean within this table.
 
 | Method | 128 | 1,024 | 16,384 | Δ128 | Adjusted interval | Wins |
 | --- | ---: | ---: | ---: | ---: | ---: | ---: |
@@ -111,15 +117,32 @@ The primary metric is **paired success**: from one history the controller is giv
 | Conditional flow policy | 39.04 | 60.90 | 78.14 | +32.65 | [31.27, 34.00] | 3/3 |
 | SmolVLA fine-tuning | 23.74 | 24.59 | 26.00 | +47.95 | [46.18, 49.69] | 3/3 |
 
-At 128 labels JSTP has the highest mean paired success of the eight methods. Its margin over the direct policy is 21.90 percentage points, but this is not a clean estimate of the contribution of the consequence-to-action connection. The direct policy also lacks the optical objective. Retaining that objective and removing just the connection gives a smaller difference: **4.94 points** (99% interval 3.97 to 5.85). The one-step world model is closer still in mean performance, at 67.45%, and beats JSTP on one of the three seeds. In the 1,024- and 16,384-label regimes, the disconnected network scores slightly higher than JSTP. Thus the advantage of this connection depends on how many successful actions are labelled.
+At 128 labels JSTP leads the original eight methods in Table 1, but not ACT in Table 2. Its margin over the direct policy is 21.90 percentage points, not a clean estimate of the feedback path's contribution: the direct policy also lacks the optical objective. Retaining that objective and removing just the connection gives a smaller difference: **4.94 points** (99% interval 3.97 to 5.85). The one-step world model reaches 67.45% and beats JSTP on one of the three seeds. At 1,024 and 16,384 labels the disconnected network scores slightly higher than JSTP. The advantage of the connection depends on how many successful actions are labelled.
 
 The pretrained adapters were compared against sealed JSTP trials on the same layouts, with 442,368 additional formal strokes across the two adapters. The sparse-budget differences favor JSTP by 21.12 points over the DINO-WM adaptation and 47.95 over SmolVLA. For each comparison the adjusted interval excludes zero and all three matched seed differences have the same sign, meeting the stated adapter criterion. The latter comparison gives the two methods equal downstream action labels, not equal physical prediction losses.
 
 JSTP with 1,024 labels also outperforms the action-only model with 16,384. This is a comparison between two observed points, not an estimate of a universal sixteenfold reduction in labelling. We did not measure the intermediate crossover or reduce the amount of physical experience.
 
-### 6.2 What changes when the goal is reversed?
+### 6.2 External comparison: ACT changes the sparse-label ranking
 
-**Table 2. Seed-level paired success and behavioral diagnostics with 128 labels (%).** Single = single-goal success; same = same handle for opposite goals; group = strict co-motion readout; blind = that readout with probe changes concealed. The last four columns aggregate three seeds. “n.m.” means not measured, not zero.
+**Table 2. Intact JSTP and five external task adaptations: paired success (%).** The same histories and layouts were used throughout; columns vary the number of distinct action labels. Each cell pools 36,864 goal pairs over three training seeds. Δ128 is JSTP minus comparator in percentage points. The layout-paired interval adjusts for five contrasts; wins count seeds on which JSTP leads.
+
+| Method | 128 | 1,024 | 16,384 | Δ128 | 99% interval | Wins |
+| --- | ---: | ---: | ---: | ---: | ---: | ---: |
+| ACT adaptation | **73.78** | 94.58 | **99.96** | −2.08 | [−3.28, −0.93] | 0/3 |
+| JSTP (shared transition) | 71.69 | **94.90** | 99.67 | — | — | — |
+| Diffusion Policy adaptation | 61.83 | 86.83 | 87.35 | +9.86 | [+8.49, +11.16] | 3/3 |
+| V-JEPA 2.1 readout | 55.38 | 61.38 | 49.66 | +16.32 | [+15.01, +17.74] | 3/3 |
+| DINO-WM adaptation | 50.58 | 50.39 | 50.13 | +21.12 | [+18.41, +23.71] | 3/3 |
+| SmolVLA fine-tuning | 23.74 | 24.59 | 26.00 | +47.95 | [+45.94, +49.95] | 3/3 |
+
+At 128 labels ACT beat JSTP on all three seeds, by 2.08 percentage points on average (adjusted 99% interval [0.93, 3.28], ACT minus JSTP). JSTP in turn exceeded Diffusion Policy by 9.86 points and outscored the V-JEPA 2.1, DINO-WM and SmolVLA adaptations. At 1,024 labels JSTP reached 94.90% and ACT 94.58% (JSTP minus ACT: +0.33 points, descriptive 95% interval [−0.12, +0.79]). These data establish neither a lead nor equivalence at that budget. With all labels the two approached ceiling, at 99.67% and 99.96%, respectively.
+
+The paired score has two useful chance references. An independent fair guess for each goal gets both right 25% of the time. Guessing on the first goal and always reversing that handle for the second gets both right 50% of the time. Except at ties, goal reversal already reverses the scores for JSTP and the three new adapters. The informative question is whether the first handle has the correct physical direction. ACT and JSTP share that symmetry and receive the same optical supervision; ACT nevertheless gets more directions right with 128 labels. This comparison does not isolate the effect of chunking, pretraining, or parameter count.
+
+### 6.3 What changes when the goal is reversed?
+
+**Table 3. Seed-level paired success and behavioral diagnostics for the original eight methods with 128 labels (%).** Single = single-goal success; same = same handle for opposite goals; group = strict co-motion readout; blind = that readout with probe changes concealed. The last four columns aggregate three seeds. “n.m.” means not measured, not zero.
 
 | Method | 9301 | 9419 | 9547 | Single | Same | Group | Blind |
 | --- | ---: | ---: | ---: | ---: | ---: | ---: | ---: |
@@ -134,11 +157,11 @@ JSTP with 1,024 labels also outperforms the action-only model with 16,384. This 
 
 The one-step world model reaches 74.37% on seed 9301, above JSTP's 72.55% for the same seed. The adapter results expose different ways to miss a pair. SmolVLA succeeds on 51.85% of single goals yet chooses the same handle for 56.23% of opposite-goal pairs. Exactly one member of each such pair must fail. DINO-WM repeats the handle in only 0.06% of pairs, but achieves just 50.58% paired success. Its utility is a dot product with the goal: reversing the goal ordinarily changes the choice even if the predicted direction is wrong. The same warning applies to JSTP's goal readout. Switching is not the criterion; switching in the right direction is.
 
-### 6.3 What is represented, and what is used?
+### 6.4 What is represented, and what is used?
 
 We froze each scratch-trained controller and fitted a linear direction readout using labelled camera observations from 96 separate validation layouts. For a fixed A stroke in a new layout, all four track directions must be recovered under **both** clutch settings: eight signs, with no partial credit. Only this post-training diagnostic uses the direction labels to fit a readout; no grouping labels train the controller. The result measures the availability of a functional relation in a representation, not a segmentation mask.
 
-At 128 labels co-motion is most readily decoded from the disconnected model (91.02%), followed by the masked trajectory model (85.81%). JSTP, which leads in task success, yields 72.35%. Across its three seeds the grouping result ranges from 34.77% to 100.00%. Concealing the brightness changes and horizontal displacements produced by the probe drops its mean to 0.09%. These results implicate the interaction history in the readout. They also show why the readout cannot stand in for successful control. Appendix A reports all budgets; neither pretrained adapter received this diagnostic.
+At 128 labels co-motion is most readily decoded from the disconnected model (91.02%), followed by the masked trajectory model (85.81%); JSTP yields 72.35%. Across its three seeds the grouping result ranges from 34.77% to 100.00%. Concealing the brightness changes and horizontal displacements produced by the probe drops its mean to 0.09%. These results implicate the interaction history in the readout. They also show why the readout cannot stand in for successful control. Appendix A reports all budgets; none of the five external adaptations received this diagnostic.
 
 To test whether a consequence state affects the actual decision, we kept the real wiring, history, goal, and direct motor path fixed. A donor expectation came from the alternate clutch setting under the same wiring. We transplanted only the four latent directions most aligned with the optical readout. A matched control placed a perturbation of the same norm in the readout's null space; a second control used cases where the donor and real situation had the same optimal handle. No donor action label was transplanted. Rates below are fractions of **all** trials in the indicated stratum, not post hoc percentages restricted to trials initially answered correctly.
 
@@ -150,7 +173,7 @@ This manipulation changes a frozen controller, not the physics. Its tendency to 
 
 On the primary panel, increasing the one-step world model's labels from 1,024 to 16,384 reduces paired success from 74.10% to 60.28%. One possible explanation is that gradients from the action objective interfere with learning dynamics. After the main result, we locked a supplementary protocol that holds initialization, records, optical supervision, and update budget fixed and stops the action gradient at the dynamics pathway. The forward decision still evaluates predicted outcomes. Nine new checkpoints and the six original scratch-trained arms were executed on a separate unopened panel of 192 layouts from the same apparatus family. The pretrained adapters were not evaluated on this panel.
 
-**Table 3. Paired success on a second panel of layouts (%).** Compare rows within this table. Gradient isolation changes the backward path, not the availability of predicted consequences at decision time.
+**Table 4. Paired success on a second panel of layouts (%).** Compare rows within this table. Gradient isolation changes the backward path, not the availability of predicted consequences at decision time.
 
 | Method | 128 | 1,024 | 16,384 |
 | --- | ---: | ---: | ---: |
@@ -168,13 +191,15 @@ At 128 labels the isolated world model reaches 58.14%, versus 66.87% for the ori
 
 **What the evidence supports.** At a fixed amount of physical experience, with few labels for successful actions, feeding a local consequence prediction back into a controller that can still act directly improves its use of new goals. The matched-path ablation, not the wide gap to a particular pretrained model, is the strongest evidence for that statement. More labels reverse the ordering of the two matched networks even though the intervention continues to move choices. Relying on a consequence is a different property from benefiting from that reliance.
 
+The ACT result limits a different claim. A positive return-path effect within JSTP does not imply that competing architectures need this particular route. ACT did better with 128 labels. Conversely, the small JSTP trained from scratch reached roughly 95% alongside the strongest pretrained comparator at 1,024 labels. That is a result about this task, not about compute efficiency: the pretrained backbones and the number of parameters updated were different. Table 2 contains no co-motion probes or latent interventions on the external methods. Their task scores tell us neither that ACT dispenses with expectations nor that JSTP segments objects better.
+
 The device supplies discrete handles, a fixed stroke, track addresses, and reproducible reset conditions. New layouts and held-out goal combinations do not constitute a new physical family. Indeed, in an earlier, separate three-load study that changed both wiring and goals, JSTP scored 45.8% versus 68.3% for a direct policy. Under another protocol with sufficient training a one-step world model, JSTP-P, and an action-only model all reached 100%. These results are not pooled with Table 1. If the sparse-label contrast fails on new annotation splits or a different mechanism, the empirical claim must stay with this apparatus.
 
 **What would constitute stronger evidence for objects?** A controller could read track-specific motion correctly without representing a persisting object. A stronger test would hold the final image fixed while changing the occlusion history. Two visible regions might be parts of one rigid body in one history and independent pieces in the other. Pushing one region would then reveal whether the model predicted the correct response of the other. This distinguishes persistence from re-identification by appearance; it is a proposed experiment, not a reported success.
 
-**What would narrow the linguistic claim?** Varley and Siegal describe an individual with severe agrammatic aphasia who retained some nonverbal causal reasoning [13]. Loss of grammar is not proof of the absence of all internal symbols, but impaired verbal expression cannot by itself establish impaired reasoning. If an equally resourced nonlinguistic system reliably revises a judgment in response to counterexamples and transfers the reason for the revision to new tasks, the necessity claim should be restricted. Relabelling any successful latent state as language after the fact would defeat the test.
+**What would narrow the linguistic claim?** Varley and Siegal describe an individual with severe agrammatic aphasia who retained some nonverbal causal reasoning [16]. Loss of grammar is not proof of the absence of all internal symbols, but impaired verbal expression cannot by itself establish impaired reasoning. If an equally resourced nonlinguistic system reliably revises a judgment in response to counterexamples and transfers the reason for the revision to new tasks, the necessity claim should be restricted. Relabelling any successful latent state as language after the fact would defeat the test.
 
-**Conclusion.** A partial prediction of an external consequence and a direct prediction of the agent's action can coexist in a single network. In this experiment, coupling them helps chiefly when successful actions are sparsely labelled. Co-motion decodability, task success, and the behavioral effect of changing an expectation give different answers about the same controller. Keeping these questions separate makes the proposed mechanism testable without treating a four-track result as a general theory of cognition.
+**Conclusion.** On sparse labels in this apparatus, a controller that can act directly benefits from feeding a local consequence prediction back to its motor pathway. ACT can still perform better. A discriminating next test would retain ACT and the matched disconnected controller on a new physical mechanism and new label splits: one comparison tests competitive performance, the other tests whether the return-path benefit replicates.
 
 ## Appendix A. Co-motion and reproducibility
 
@@ -193,7 +218,9 @@ A separate finite-symbol experiment trained on sequences of at most four steps a
 
 **Data and code.** The [study archive](https://github.com/ykykykk/jstp-intervention-bench/tree/9dd500171a8a59b3716ae3802c5b24c40c7d0f1a/studies/joint_primer) contains protocol snapshots, immutable training schedules, final weights, per-seed outcomes, paired layout counts, camera observations, and reproduction commands. Separate records cover the [primary panel](https://github.com/ykykykk/jstp-intervention-bench/blob/9dd500171a8a59b3716ae3802c5b24c40c7d0f1a/studies/joint_primer/evidence/analysis/summary.json), [pretrained adapters](https://github.com/ykykykk/jstp-intervention-bench/blob/9dd500171a8a59b3716ae3802c5b24c40c7d0f1a/studies/joint_primer/evidence/official/analysis/summary.json), and [gradient-isolation panel](https://github.com/ykykykk/jstp-intervention-bench/blob/9dd500171a8a59b3716ae3802c5b24c40c7d0f1a/studies/joint_primer/evidence/challenge/results.json). The [companion studies](https://github.com/ykykykk/jstp-intervention-bench/tree/9dd500171a8a59b3716ae3802c5b24c40c7d0f1a/studies) document the negative transfer and finite-symbol results discussed above. Protocols were fixed in private Git commits; this was not public preregistration. All task executions were performed in the dedicated simulator, not on a real desktop or robot.
 
-**AI assistance.** OpenAI Codex assisted with experimental implementation, table preparation, and drafting the English manuscript. The reported measurements come from the archived training and execution records. No new experimental runs were conducted for this English edition.
+Table 2 has a separate [fixed archive of the extended comparison](https://github.com/ykykykk/jstp-intervention-bench/tree/5514eb4c851ec6670a17d8420184b1fc7a98ac2b/studies/fourtrack_foundations), including the training schedules, weights, frozen commands and executed outcomes. The source package includes per-layout paired counts (anc/fourtrack-layout-counts.csv), per-seed results, and the contrast summary. These permit reconstruction without pretrained weights. To reproduce the intervals, sum successes and denominators over the three seeds within each layout before resampling the same layout indices for every method (NumPy default_rng, seed 57019, 3,000 draws). The [v1.1 preprint](https://doi.org/10.5281/zenodo.24366742) predates this comparison.
+
+**AI assistance.** OpenAI Codex assisted with experimental implementation, table preparation, and drafting the manuscript. Both language editions report the same frozen executions. Preparing this revision did not involve selecting new checkpoints or rerunning the experiment.
 
 ## References
 
@@ -215,10 +242,16 @@ A separate finite-symbol experiment trained on sequences of at most four steps a
 
 [9] Shukor, M. et al. [SmolVLA: A Vision-Language-Action Model for Affordable and Efficient Robotics](https://arxiv.org/abs/2506.01844). arXiv:2506.01844, 2025.
 
-[10] Locatello, F. et al. [Object-Centric Learning with Slot Attention](https://proceedings.neurips.cc/paper_files/paper/2020/hash/8511df98c02ab60aea1b2356c013bc0f-Abstract.html). Advances in Neural Information Processing Systems 33, 2020.
+[10] Zhao, T. Z., Kumar, V., Levine, S. & Finn, C. [Learning Fine-Grained Bimanual Manipulation with Low-Cost Hardware](https://roboticsproceedings.org/rss19/p016.html). Robotics: Science and Systems XIX, 2023.
 
-[11] Ye, Z., Wessel, R. & Franken, T. P. [Brain-like border ownership signals support prediction of natural videos](https://doi.org/10.1016/j.isci.2025.112199). iScience 28:112199, 2025.
+[11] Chi, C., Feng, S., Du, Y., Xu, Z., Cousineau, E., Burchfiel, B. & Song, S. [Diffusion Policy: Visuomotor Policy Learning via Action Diffusion](https://diffusion-policy.cs.columbia.edu/). Robotics: Science and Systems XIX, 2023.
 
-[12] Geiger, A., Lu, H., Icard, T. & Potts, C. [Causal Abstractions of Neural Networks](https://proceedings.neurips.cc/paper_files/paper/2021/hash/4f5c422f4d49a5a807eda27434231040-Abstract.html). Advances in Neural Information Processing Systems 34, 2021.
+[12] Mur-Labadia, L. et al. [V-JEPA 2.1: Unlocking Dense Features in Video Self-Supervised Learning](https://arxiv.org/abs/2603.14482). arXiv:2603.14482, 2026.
 
-[13] Varley, R. & Siegal, M. [Evidence for cognition without grammar from causal reasoning and 'theory of mind' in an agrammatic aphasic patient](https://pubmed.ncbi.nlm.nih.gov/10873809/). Current Biology 10:723–726, 2000.
+[13] Locatello, F. et al. [Object-Centric Learning with Slot Attention](https://proceedings.neurips.cc/paper_files/paper/2020/hash/8511df98c02ab60aea1b2356c013bc0f-Abstract.html). Advances in Neural Information Processing Systems 33, 2020.
+
+[14] Ye, Z., Wessel, R. & Franken, T. P. [Brain-like border ownership signals support prediction of natural videos](https://doi.org/10.1016/j.isci.2025.112199). iScience 28:112199, 2025.
+
+[15] Geiger, A., Lu, H., Icard, T. & Potts, C. [Causal Abstractions of Neural Networks](https://proceedings.neurips.cc/paper_files/paper/2021/hash/4f5c422f4d49a5a807eda27434231040-Abstract.html). Advances in Neural Information Processing Systems 34, 2021.
+
+[16] Varley, R. & Siegal, M. [Evidence for cognition without grammar from causal reasoning and 'theory of mind' in an agrammatic aphasic patient](https://pubmed.ncbi.nlm.nih.gov/10873809/). Current Biology 10:723–726, 2000.

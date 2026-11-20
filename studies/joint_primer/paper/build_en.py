@@ -1,23 +1,28 @@
 """Build the English edition and its self-contained pdfLaTeX submission from archived results."""
+import csv
 import gzip
 import io
 import re
 import tarfile
+import numpy as np
 
-from build import D, EQUATIONS, NAMES, fill_template, study_fields
+from build import D, E, EXTERNAL, EQUATIONS, NAMES, fill_template, j, study_fields
 
 PDF = 'JSTP-Goal-Generalization-Ke-Yue.pdf'
-DOI = '10.5281/zenodo.24366742'
-RECORD = DOI.rsplit('.', 1)[1]
+VERSION_DOI = '10.5281/zenodo.24392467'
+ARCHIVED_DOI = '10.5281/zenodo.24366742'
+RECORD = VERSION_DOI.rsplit('.', 1)[1]
 NAMES_EN = {
     'joint': 'JSTP (shared transition)', 'world': 'One-step world model',
     'aux': 'No consequence feedback', 'masked': 'Masked trajectory model',
     'dino': 'DINO-WM adaptation', 'direct': 'Action-only policy',
     'flow': 'Conditional flow policy', 'smol': 'SmolVLA fine-tuning',
-    'world-isolated': 'Gradient-isolated world model',
+    'world-isolated': 'Gradient-isolated world model', 'act': 'ACT adaptation',
+    'diffusion': 'Diffusion Policy adaptation', 'vjepa21': 'V-JEPA 2.1 readout',
 }
 HEADERS = {
     'main_table': ['Method', '128', '1,024', '16,384', 'Δ128', 'Adjusted interval', 'Wins'],
+    'external_table': ['Method', '128', '1,024', '16,384', 'Δ128', '99% interval', 'Wins'],
     'detail_table': ['Method', '9301', '9419', '9547', 'Single', 'Same', 'Group', 'Blind'],
     'challenge_table': ['Method', '128', '1,024', '16,384'],
     'group_table': ['Method', '128', '1,024', '16,384'],
@@ -26,7 +31,7 @@ HEADERS = {
 
 def english_text():
     fields = study_fields()
-    fields.update(version_doi=DOI, record=RECORD)
+    fields.update(version_doi=VERSION_DOI, archived_doi=ARCHIVED_DOI, record=RECORD)
     translations = {NAMES[k]: v for k, v in NAMES_EN.items()}
     translations['未测'] = 'n.m.'
     for key, header in HEADERS.items():
@@ -83,7 +88,7 @@ PREAMBLE = r"""% English manuscript of Ke Yue. Compile with pdflatex main.tex tw
 \setcounter{topnumber}{3}\renewcommand{\topfraction}{.9}\renewcommand{\textfraction}{.08}
 \title{Joint State Transition Prediction:\\Goal Generalization with Sparse Action Labels}
 \author{Ke Yue\\\small Independent Researcher}
-\date{19 November 2026 \quad | \quad Version 1.1}
+\date{20 November 2026 \quad | \quad Revised manuscript, v1.2}
 \begin{document}
 \maketitle
 """
@@ -110,7 +115,7 @@ def tex_document(text):
     abstract = False
     cap = None
     for b in blocks[2:]:  # title and author are typeset by \maketitle
-        if b.startswith(('**Project repository:', '**Full JSTP theory:', '**Preprint DOI:')):
+        if b.startswith(('**Project repository:', '**Full JSTP theory:', '**Preprint DOI (v1.2):')):
             out.append(r'\noindent{\small ' + tex_inline(b) + r'}\par')
         elif b == '## Abstract':
             out.append(r'\begin{abstract}')
@@ -151,14 +156,33 @@ def tex_document(text):
     return '\n\n'.join(out)
 
 
+def extension_files():
+    """Package recorded layout counts so Table 2 can be reconstructed without a GPU or a future repository link."""
+    with np.load(E/'sealed/items.npz',allow_pickle=False) as items:
+        ids=items['ids']
+    counts=io.StringIO(newline='');writer=csv.writer(counts,lineterminator='\n')
+    writer.writerow(('method','labels','seed','layout_id','pairs_won','pairs'))
+    for r in j(EXTERNAL/'per-seed.json'):
+        a,k,s=r['arm'],r['budget'],r['seed']
+        with np.load(EXTERNAL/'observed'/f'{a}-{k}-{s}.npz',allow_pickle=False) as rec:
+            w=rec['wins'];pairs=(w[...,::2]&w[...,1::2]).reshape(len(ids),-1)
+        if int(pairs.sum())!=r['won'] or pairs.size!=r['pairs']:
+            raise ValueError(f'Published pair counts disagree with executed outcomes: {a}-{k}-{s}')
+        writer.writerows((a,k,s,int(i),int(n),pairs.shape[1]) for i,n in zip(ids,pairs.sum(1),strict=True))
+    return {'anc/fourtrack-layout-counts.csv':counts.getvalue().encode('utf8'),
+            'anc/fourtrack-summary.json':(EXTERNAL/'summary.json').read_bytes(),
+            'anc/fourtrack-per-seed.json':(EXTERNAL/'per-seed.json').read_bytes()}
+
+
 def submission_files(text):
     name = 'JSTP-arXiv-source.tar.gz'
     manuscript = tex_document(text)
     src = D / 'arxiv'
     src.mkdir(exist_ok=True)
     (src / 'main.tex').write_text(manuscript, encoding='utf8', newline='\n')
-    # A flat archive with one TeX root and only the figure that it references.
-    files = {'main.tex': manuscript.encode('utf8'), 'one-history.png': (D / 'figures/one-history.png').read_bytes()}
+    # One TeX root and its figure. Ancillary data are not required to compile it.
+    files = {'main.tex': manuscript.encode('utf8'), 'one-history.png': (D / 'figures/one-history.png').read_bytes(),
+             **extension_files()}
     with (D / name).open('wb') as stream, gzip.GzipFile(filename='', mode='wb', fileobj=stream, mtime=0) as gz:
         with tarfile.open(fileobj=gz, mode='w', format=tarfile.USTAR_FORMAT) as tar:
             for key, value in files.items():
@@ -169,16 +193,18 @@ def submission_files(text):
     title = text.splitlines()[0][2:]
     abstract = text.split('## Abstract\n\n', 1)[1].split('\n\n', 1)[0]
     keywords = next(line for line in text.splitlines() if line.startswith('**Keywords:'))
-    short = (f'# {title}\n\nKe Yue · Independent Researcher · 19 November 2026\n\n'
+    short = (f'# {title}\n\nKe Yue · Independent Researcher · 20 November 2026 · Revised manuscript, v1.2\n\n'
              f'## Abstract\n\n{abstract}\n\n{keywords}\n\n'
-             f'[Published preprint](https://doi.org/{DOI}) · [English PDF]({PDF}) · '
+             f'[Preprint DOI (v1.2)](https://doi.org/{VERSION_DOI}) · [Revised English PDF]({PDF}) · '
              '[Full English text](manuscript-en.md) · [Chinese edition](manuscript.md)\n\n'
              'Full theory: [English](../../../theory/JSTP-Theory.en.md) · '
              '[Chinese original](../../../theory/JSTP-详细理论稿-2026-11-19.md)\n')
     (D / 'abstract-en.md').write_text(short, encoding='utf8', newline='\n')
+    ntables=len(re.findall(r'^\*\*Table ',text,re.M))
     meta = (f'Title: {title}\nAuthors: Ke Yue\nPrimary category: cs.LG (Machine Learning)\n'
-            'Comments: 1 figure, 4 tables. Code, frozen checkpoints, and executed trials are available in the study archive.\n'
-            f'English preprint record: https://doi.org/{DOI}\n\nAbstract:\n{abstract}\n')
+            f'Comments: Revised manuscript v1.2; 1 figure, {ntables} tables. Expanded four-track study; per-layout counts supplied as ancillary data.\n'
+            f'Preprint DOI (v1.2): https://doi.org/{VERSION_DOI}\n'
+            f'Previous English preprint (v1.1 only): https://doi.org/{ARCHIVED_DOI}\n\nAbstract:\n{abstract}\n')
     (src / 'metadata.txt').write_text(meta, encoding='utf8', newline='\n')
 
 

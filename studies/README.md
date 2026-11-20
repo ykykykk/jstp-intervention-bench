@@ -8,6 +8,6 @@
 | [02 · 自身运动与符号回输](02-motor-symbol/README.md) | 能预测后果，是否就会因后果不同而换手？ | [第二篇论文](../paper/mechanism_study/manuscript.md) · [证据](../evidence/mechanism/) |
 | [03 · 晚到目标](03-late-goals/README.md) | 保留直接动作通路，只改物理预期会怎样？ | [方法与复现](../docs/LATE-GOALS.md) · [证据](../evidence/late-goals/) |
 | [04 · 局部未来的同数据比较](partial_futures/README.md) | 当几种方法都能通关，怎样分清它们利用了什么？ | [新论文](partial_futures/paper/manuscript.md) · [逐题记录](partial_futures/evidence/) |
-| [05 · 导论与示范稀缺](joint_primer/README.md) | 一套仍可直接行动的网络，能否用已见过的物理后果节省正确动作示范？ | [导论正文](joint_primer/paper/manuscript.md) · [八种模型同场对照表](joint_primer/paper/tables/JSTP-八种模型同场对照.xlsx) · [独立布局补充实验](joint_primer/evidence/challenge/results.json) |
+| [05 · 导论与示范稀缺](joint_primer/README.md) | 同一网络能否从局部后果中获益？比起已有的动作策略，这项收益有多大？ | [导论修订稿](joint_primer/paper/manuscript.md) · [完整 JSTP 与五种外部适配](fourtrack_foundations/outputs/fourtrack-20261120/四轨模型对比.md) · [原八组对照](joint_primer/paper/tables/JSTP-八种模型同场对照.xlsx) · [独立布局补考](joint_primer/evidence/challenge/results.json) |
 
 01–03 保留原代码包、数据和论文的位置，以免破坏老实验的导入、校验与引用。新研究在自己的目录里放协议、代码、数据、证据和论文。原来的两个根目录历史入口仍可跳转。

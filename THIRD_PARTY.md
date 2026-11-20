@@ -19,6 +19,8 @@
 
 最初六组和隔离梯度的补考均从零训练。掩码轨迹对照是本地实现，相关方法与原论文见[导论文献](studies/joint_primer/paper/references.json)，不分发上游 MTM 代码或权重。导论另附 [Noto Serif SC 的 OFL 字体子集与许可证](studies/joint_primer/paper/fonts/)。
 
-导论第 5.2 节说明[官方适配的三档训练](studies/joint_primer/official-plan.json)，表 1 和表 2 与六种从零模型同表报告。沿用上一节列出的固定 SmolVLA、处理器、DINOv2 版本和 DINO-WM 作者预测器源码；仓库只保存本次训练更新的参数，不再分发官方基座或处理器。DINO-WM 是针对该装置重训的适配，不是作者在原基准的完整策略检查点。
+导论第 5.2 节说明[最初两项官方适配的三档训练](studies/joint_primer/official-plan.json)，修订稿的表 1、表 3 与六种从零模型同表报告。沿用上一节列出的固定 SmolVLA、处理器、DINOv2 版本和 DINO-WM 作者预测器源码；仓库只保存本次训练更新的参数，不再分发官方基座或处理器。DINO-WM 是针对该装置重训的适配，不是作者在原基准的完整策略检查点。
+
+修订稿表 2 增列 [LeRobot ACT / ALOHA](https://huggingface.co/lerobot/act_aloha_sim_transfer_cube_human/tree/ba73b2766f1371cdc133ca4efb97eb090d744625)、[LeRobot Diffusion Policy / Push-T](https://huggingface.co/lerobot/diffusion_pusht/tree/84a7c23178445c6bbf7e1a884ff497017910f653) 和 [Meta V-JEPA 2.1](https://github.com/facebookresearch/vjepa2/tree/204698b45b3712590f06245fbfba32d3be539812)。固定检查点、输入变换和哪些参数更新见[扩展比较](studies/fourtrack_foundations/plan.json)。论文源码包附本项目的计数与统计，不附上游模型权重。
 
 中英文完整理论稿使用上述相同上游版本的 Noto Serif SC，另附涵盖两种全文的 [JSTP Study Serif 字体子集与 OFL 许可证](theory/fonts/)。字体许可不改变理论稿的版权。

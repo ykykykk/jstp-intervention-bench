@@ -52,6 +52,9 @@ def inline(s, paper):
             out.append('<link color="'+LINK+'" href='+quoteattr(url)+'>'+escape(label)+'</link>')
         else:
             part=re.sub(r'\*\*(.*?)\*\*',r'<b>\1</b>',escape(part))
+            # English Base-14 faces delegate these to an unembedded Symbol font.
+            # A missing minus reverses the apparent result in the ACT comparison.
+            part=re.sub('[Δπ−]',lambda m:'<font name="JR">'+m[0]+'</font>',part)
             def ref(m):
                 return '['+', '.join('<link color="'+LINK+'" href="#ref-'+x+'">'+x+'</link>' for x in m[1].split(', '))+']'
             out.append(re.sub(r'\[(\d+(?:, \d+)*)\]',ref,part))
@@ -124,7 +127,7 @@ def typeset(paper,filename,text,equations,english=False):
             story.append(Paragraph(escape(block),S['english']))
         elif block.startswith(('岳轲　','Ke Yue ·')):
             story.append(Paragraph(escape(block),S['byline']))
-        elif english and block.startswith(('**Project repository:', '**Full JSTP theory:', '**Preprint DOI:')):
+        elif block.startswith(('**Project repository:', '**Full JSTP theory:', '**Preprint DOI (v1.2):', '**项目仓库：')):
             story.append(Paragraph(inline(block,paper),S['resource']))
         elif block.startswith('## '):
             sec=block[3:];nsec+=1
@@ -137,7 +140,12 @@ def typeset(paper,filename,text,equations,english=False):
         elif block.startswith('|'):
             if not cap:raise ValueError('a table needs a caption')
             p=Paragraph(inline(cap,paper),S['cap']);p.table_label=re.split('[　.]',cap,1)[0].strip('*')
-            story.extend([KeepTogether([p,numeric_table(block,paper,english)]),Spacer(1,6)])
+            group=[p,numeric_table(block,paper,english)]
+            # A section beginning with a table travels with it, rather than leaving a heading on the preceding page.
+            while story and isinstance(story[-1],Paragraph) and story[-1].style.name in ('section','sub'):
+                group.insert(0,story.pop())
+                if story and isinstance(story[-1],CondPageBreak):story.pop()
+            story.extend([KeepTogether(group),Spacer(1,6)])
             cap=None
         elif block.startswith('!['):
             m=re.fullmatch(r'!\[(.*?)\]\((.*?)\)',block)

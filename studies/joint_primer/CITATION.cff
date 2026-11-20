@@ -1,5 +1,5 @@
 cff-version: 1.2.0
-message: "Cite the English preprint with the paper DOI below. To reference an experiment or a specific checkpoint, also report the repository commit. The preprint has not been peer reviewed."
+message: "Cite the v1.2 Zenodo preprint below for the five-comparator four-track study. If reusing the software or records, also identify the Git commit used."
 title: "联合状态转移预测导论：从局部后果到少示范动作泛化"
 type: software
 authors:
@@ -14,6 +14,7 @@ preferred-citation:
       given-names: "Ke"
   year: 2026
   month: 11
-  doi: "10.5281/zenodo.24366742"
-  url: "https://zenodo.org/records/24366742"
-  notes: "Zenodo preprint, version 1.1. Repository and bilingual theory links on the title page; the experimental record is unchanged. The two full-theory files are companion manuscripts."
+  version: "1.2"
+  doi: "10.5281/zenodo.24392467"
+  url: "https://zenodo.org/records/24392467"
+  notes: "Version 1.2 contains the expanded four-track comparison (Table 2). The two full-theory files are separate companion manuscripts."
