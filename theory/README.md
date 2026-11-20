@@ -4,7 +4,7 @@
 
 The two editions cover the same 18 sections, register of 13 core claims, and two appendices. Read **§§3–4** for why a joint state need not imply an exhaustive prediction, **§§8–11** for the author's stronger claims about language, action, and the self, and **§15.8** for the frozen-model observations and their limits.
 
-**配套实证论文 / Companion empirical paper:** [Revised manuscript v1.2](../studies/joint_primer/paper/manuscript-en.md) · [中文修订稿](../studies/joint_primer/paper/manuscript.md) · [Cite the v1.2 preprint](https://doi.org/10.5281/zenodo.24392467) · [Archived v1.1](https://doi.org/10.5281/zenodo.24366742). Its external comparison tests action selection after a probe, not the full theory or the emergence of object segmentation.
+**配套实证论文 / Companion empirical paper:** [Revised manuscript v1.2](../studies/joint_primer/paper/manuscript-en.md) · [中文修订稿](../studies/joint_primer/paper/manuscript.md) · [Cite the v1.2 preprint](https://doi.org/10.5281/zenodo.24392467). Its external comparison tests action selection after a probe, not the full theory or the emergence of object segmentation.
 
 ## 稿本与来源
 

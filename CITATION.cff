@@ -1,13 +1,23 @@
 cff-version: 1.2.0
-message: "引用本工程或论文时，请注明岳轲和使用的 Git 提交；以下标识为研究软件，不代表期刊录用。"
+message: "引用四轨论文请使用下方的预印本 DOI；若复用实验代码或记录，请同时注明所用 Git 提交。"
 title: "联合状态转移预测干预实验：功能性分组、晚到目标与局部未来的同数据比较"
 type: software
 authors:
   - family-names: "岳"
     given-names: "轲"
-version: 4.0.0
-date-released: 2026-11-19
+version: 5.2.0
+date-released: 2026-11-21
 repository-code: "https://github.com/ykykykk/jstp-intervention-bench"
+preferred-citation:
+  type: unpublished
+  title: "Joint State Transition Prediction: Goal Generalization with Sparse Action Labels"
+  authors:
+    - family-names: "Yue"
+      given-names: "Ke"
+  year: 2026
+  month: 11
+  version: "1.2"
+  doi: "10.5281/zenodo.24392467"
 keywords:
   - world models
   - intervention

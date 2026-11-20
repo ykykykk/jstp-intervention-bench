@@ -18,8 +18,8 @@ from reportlab.platypus.tableofcontents import TableOfContents
 D = Path(__file__).resolve().parent
 ROOT = D.parent
 REPO = 'https://github.com/ykykykk/jstp-intervention-bench'
-TAG = 'v5.1.0'
-DOI = 'https://doi.org/10.5281/zenodo.24366742'
+TAG = 'v5.2.0'
+DOI = 'https://doi.org/10.5281/zenodo.24366435'
 EN = 'JSTP-Theory.en.md'
 ZH = 'JSTP-详细理论稿-2026-11-19.md'
 W, H = A4

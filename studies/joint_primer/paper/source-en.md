@@ -1,6 +1,6 @@
 # Joint State Transition Prediction: Goal Generalization with Sparse Action Labels
 
-Ke Yue · Independent Researcher · 20 November 2026 · Revised manuscript, v1.2
+Ke Yue · Independent Researcher · v1.2 · Protocol clarified 21 November 2026
 
 **Project repository:** [https://github.com/ykykykk/jstp-intervention-bench](https://github.com/ykykykk/jstp-intervention-bench)
 
@@ -68,13 +68,26 @@ The first expectation is over goal–action labels, the second over physical out
 
 ## 5. Experimental protocol
 
-### 5.1 Histories, goals, and execution
+### 5.1 Four-track rules: one probe, two goal cards
 
-The experimenter chooses a horizontal probe with A or B. The loads briefly move and then return to their original positions. The controller receives this history before it sees a goal card, such as “track 1 up, track 2 down, track 4 up.” It then makes one vertical stroke. The judge compares camera images before and after the stroke; success requires at least two of the three requested directions. In Figure 1 the two vertical strokes are separate simulator executions starting from the same reset state. The protocol tests neither autonomous probe selection nor real-robot control.
+**Apparatus and probe.** Four sliders are numbered 1 to 4 from left to right. A vertical pull on either handle, A or B, moves all four sliders. At a fixed setting, switching handles reverses every slider's direction. The hidden linkage varies across layouts, so a still image does not establish which sliders will move up under A. The experimenter first specifies a horizontal pull on A or B. The sliders move sideways and return exactly to their starting positions. The controller sees that motion, the probe handle, and the subsequently disclosed clutch setting and markings on the two tracks affected by the clutch. It does not see the linkage. No goal has been issued and no vertical pull has been made.
+
+**Goal and scoring.** Only after the reset does the controller receive a card specifying up or down for three named tracks. The fourth track does not count. The controller chooses one handle for a single vertical pull. An independent judge measures motion from the before-and-after camera images; two or three matches win the card. A second card reverses all three requested directions. The two cards branch from the same post-probe state; they are not consecutive moves. Both choices are sealed before execution, so the controller cannot use the first result to answer the second. The pair earns one point only if both cards are won. Neither autonomous probe selection nor real-robot control is tested.
 
 ![Figure 1. The four-track apparatus. From left: initial view, peak of a horizontal probe, reset, and the measured outcomes of vertical strokes A and B. The last two panels are separately executed branches, not imagined frames.](figures/one-history.png)
 
-The training bank crosses 2,048 layouts with two wirings, two clutch settings, and two probe sides, giving 16,384 interaction records. Each record is assigned one of 24 training goal cards. The three action-label budgets are nested prefixes of one shuffled order: 128, 1,024, or 16,384 distinct goal–action labels. All physical outcomes remain available at every budget. Testing uses 192 new layouts and 16 signed three-track goals whose two track-address combinations were excluded from the training cards. Each checkpoint faces 12,288 pairs of opposite goals. All choices were sealed before execution. No checkpoint was selected on the basis of its test outcome.
+**Worked example.** In the first archived layout (113670000; original wiring and clutch), a horizontal probe on A moved sliders 1 and 2 right, and 3 and 4 left. After reset, a vertical pull on A moved tracks 1 to 4 down, down, up, up; B produced up, up, down, down. The table gives the frozen JSTP controller's recorded choices (128 labels, seed 9301). All four cards score only tracks 1, 2, and 4.
+
+| Card: target on tracks 1, 2, 4 | Handle chosen | Tracks matched | Card result |
+| --- | ---: | ---: | ---: |
+| 1: down, up, up | A | 1, 4 | 2/3, win |
+| 2: up, down, down | B | 1, 4 | 2/3, win |
+| 3: down, up, down | A | 1 | 1/3, loss |
+| 4: up, down, up | B | 1 | 1/3, loss |
+
+Cards 1 and 2 earned one paired point; cards 3 and 4 earned none. The controller switched handles in both pairs but chose the wrong assignment in the second. Switching is therefore not evidence of choosing correctly.
+
+**What was held out.** The training bank crosses 2,048 layouts with two wirings, two clutch settings and two probe handles, yielding 16,384 physical records. Each record is assigned one of 24 training cards: a single track, or the triple (1, 2, 3) or (2, 3, 4). All physical records remain available at every budget. What varies is how often the successful handle is labelled: the first 128, 1,024, or all 16,384 records in the same shuffled order. Frozen controllers are tested on 192 new layouts. The 16 test cards use only the two withheld triples, (1, 2, 4) and (1, 3, 4); they are not training cards presented on a new layout. Each checkpoint faces 12,288 opposite-goal pairs. No checkpoint was selected on the basis of its test outcome.
 
 ### 5.2 Comparators and information budgets
 
@@ -170,7 +183,7 @@ A separate finite-symbol experiment trained on sequences of at most four steps a
 
 **Data and code.** The [study archive](https://github.com/ykykykk/jstp-intervention-bench/tree/9dd500171a8a59b3716ae3802c5b24c40c7d0f1a/studies/joint_primer) contains protocol snapshots, immutable training schedules, final weights, per-seed outcomes, paired layout counts, camera observations, and reproduction commands. Separate records cover the [primary panel](https://github.com/ykykykk/jstp-intervention-bench/blob/9dd500171a8a59b3716ae3802c5b24c40c7d0f1a/studies/joint_primer/evidence/analysis/summary.json), [pretrained adapters](https://github.com/ykykykk/jstp-intervention-bench/blob/9dd500171a8a59b3716ae3802c5b24c40c7d0f1a/studies/joint_primer/evidence/official/analysis/summary.json), and [gradient-isolation panel](https://github.com/ykykykk/jstp-intervention-bench/blob/9dd500171a8a59b3716ae3802c5b24c40c7d0f1a/studies/joint_primer/evidence/challenge/results.json). The [companion studies](https://github.com/ykykykk/jstp-intervention-bench/tree/9dd500171a8a59b3716ae3802c5b24c40c7d0f1a/studies) document the negative transfer and finite-symbol results discussed above. Protocols were fixed in private Git commits; this was not public preregistration. All task executions were performed in the dedicated simulator, not on a real desktop or robot.
 
-Table 2 has a separate [fixed archive of the extended comparison](https://github.com/ykykykk/jstp-intervention-bench/tree/5514eb4c851ec6670a17d8420184b1fc7a98ac2b/studies/fourtrack_foundations), including the training schedules, weights, frozen commands and executed outcomes. The source package includes per-layout paired counts (anc/fourtrack-layout-counts.csv), per-seed results, and the contrast summary. These permit reconstruction without pretrained weights. To reproduce the intervals, sum successes and denominators over the three seeds within each layout before resampling the same layout indices for every method (NumPy default_rng, seed 57019, 3,000 draws). The [v1.1 preprint](https://doi.org/[[archived_doi]]) predates this comparison.
+Table 2 has a separate [fixed archive of the extended comparison](https://github.com/ykykykk/jstp-intervention-bench/tree/5514eb4c851ec6670a17d8420184b1fc7a98ac2b/studies/fourtrack_foundations), including the training schedules, weights, frozen commands and executed outcomes. The source package includes per-layout paired counts (anc/fourtrack-layout-counts.csv), per-seed results, and the contrast summary. These permit reconstruction without pretrained weights. To reproduce the intervals, sum successes and denominators over the three seeds within each layout before resampling the same layout indices for every method (NumPy default_rng, seed 57019, 3,000 draws).
 
 **AI assistance.** OpenAI Codex assisted with experimental implementation, table preparation, and drafting the manuscript. Both language editions report the same frozen executions. Preparing this revision did not involve selecting new checkpoints or rerunning the experiment.
 

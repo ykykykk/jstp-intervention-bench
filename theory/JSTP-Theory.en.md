@@ -6,7 +6,7 @@
 **Document:** Full theoretical manuscript and draft formalization  
 **First draft:** 16 November 2026 · **Chinese text revised:** 19 November 2026
 
-[Chinese original](JSTP-详细理论稿-2026-11-19.md) · [English PDF](JSTP-Theory-Ke-Yue.en.pdf) · [Companion empirical paper](https://doi.org/10.5281/zenodo.24366742)
+[Chinese original](JSTP-详细理论稿-2026-11-19.md) · [English PDF](JSTP-Theory-Ke-Yue.en.pdf) · [Companion empirical paper](https://doi.org/10.5281/zenodo.24366435)
 
 > **Central thesis.** The basic function of intelligence is prediction. The system is itself part of the world. From a situation constituted jointly by itself and its surroundings, it predicts what will change next. The prediction may be no more than “my hand will reach out,” or it may extend to the details of how the hand and an object will move together. “Joint” means that the agent and its surroundings already participate in the same process of change. It does not mean that every prediction must cover the futures of both. The theory further proposes that segmentation can be learned within this same network, and that higher intelligence exists only at the level of language: it arises when the same predictive process continues with language as its content.
 

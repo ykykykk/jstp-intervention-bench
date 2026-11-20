@@ -10,7 +10,6 @@ from build import D, E, EXTERNAL, EQUATIONS, NAMES, fill_template, j, study_fiel
 
 PDF = 'JSTP-Goal-Generalization-Ke-Yue.pdf'
 VERSION_DOI = '10.5281/zenodo.24392467'
-ARCHIVED_DOI = '10.5281/zenodo.24366742'
 RECORD = VERSION_DOI.rsplit('.', 1)[1]
 NAMES_EN = {
     'joint': 'JSTP (shared transition)', 'world': 'One-step world model',
@@ -31,7 +30,7 @@ HEADERS = {
 
 def english_text():
     fields = study_fields()
-    fields.update(version_doi=VERSION_DOI, archived_doi=ARCHIVED_DOI, record=RECORD)
+    fields.update(version_doi=VERSION_DOI, record=RECORD)
     translations = {NAMES[k]: v for k, v in NAMES_EN.items()}
     translations['未测'] = 'n.m.'
     for key, header in HEADERS.items():
@@ -88,7 +87,7 @@ PREAMBLE = r"""% English manuscript of Ke Yue. Compile with pdflatex main.tex tw
 \setcounter{topnumber}{3}\renewcommand{\topfraction}{.9}\renewcommand{\textfraction}{.08}
 \title{Joint State Transition Prediction:\\Goal Generalization with Sparse Action Labels}
 \author{Ke Yue\\\small Independent Researcher}
-\date{20 November 2026 \quad | \quad Revised manuscript, v1.2}
+\date{v1.2 \quad | \quad Protocol clarified 21 November 2026}
 \begin{document}
 \maketitle
 """
@@ -100,12 +99,18 @@ def tex_table(caption, text):
     header = parts(header)
     cols = r'@{}>{\raggedright\arraybackslash}X' + 'r' * (len(header) - 1) + '@{}'
     label = re.fullmatch(r'\*\*Table (A?\d+)\. (.*?)\*\*(.*)', caption)
-    out = [r'\begin{table}[htbp]', r'\centering\small\setlength{\tabcolsep}{3.5pt}',
-           r'\caption{' + tex_inline(label[2] + label[3]) + '}', r'\label{tab:' + label[1] + '}',
-           r'\begin{tabularx}{\linewidth}{' + cols + '}', r'\toprule',
+    if caption.startswith('**Worked example.'):
+        out = [r'\par\medskip\noindent\begin{minipage}{\linewidth}\small',
+               tex_inline(caption) + r'\par\smallskip']
+        end = r'\end{minipage}\par\medskip'
+    else:
+        out = [r'\begin{table}[htbp]', r'\centering\small\setlength{\tabcolsep}{3.5pt}',
+               r'\caption{' + tex_inline(label[2] + label[3]) + '}', r'\label{tab:' + label[1] + '}']
+        end = r'\end{table}'
+    out += [r'\begin{tabularx}{\linewidth}{' + cols + '}', r'\toprule',
            ' & '.join(r'\textbf{' + v + '}' for v in header) + r' \\', r'\midrule']
     out += [' & '.join(parts(row)) + r' \\' for row in body]
-    out += [r'\bottomrule', r'\end{tabularx}', r'\end{table}']
+    out += [r'\bottomrule', r'\end{tabularx}', end]
     return '\n'.join(out)
 
 
@@ -132,7 +137,7 @@ def tex_document(text):
             s = b.startswith('### ')
             title = re.sub(r'^#{2,3} \d+(?:\.\d+)?\.? ', '', b)
             out.append((r'\subsection{' if s else r'\FloatBarrier\section{') + tex_inline(title) + '}')
-        elif b.startswith('**Table '):
+        elif b.startswith(('**Table ', '**Worked example.')):
             cap = b
         elif b.startswith('|'):
             if not cap:
@@ -193,7 +198,8 @@ def submission_files(text):
     title = text.splitlines()[0][2:]
     abstract = text.split('## Abstract\n\n', 1)[1].split('\n\n', 1)[0]
     keywords = next(line for line in text.splitlines() if line.startswith('**Keywords:'))
-    short = (f'# {title}\n\nKe Yue · Independent Researcher · 20 November 2026 · Revised manuscript, v1.2\n\n'
+    byline = text.split('\n\n', 2)[1]
+    short = (f'# {title}\n\n{byline}\n\n'
              f'## Abstract\n\n{abstract}\n\n{keywords}\n\n'
              f'[Preprint DOI (v1.2)](https://doi.org/{VERSION_DOI}) · [Revised English PDF]({PDF}) · '
              '[Full English text](manuscript-en.md) · [Chinese edition](manuscript.md)\n\n'
@@ -202,9 +208,8 @@ def submission_files(text):
     (D / 'abstract-en.md').write_text(short, encoding='utf8', newline='\n')
     ntables=len(re.findall(r'^\*\*Table ',text,re.M))
     meta = (f'Title: {title}\nAuthors: Ke Yue\nPrimary category: cs.LG (Machine Learning)\n'
-            f'Comments: Revised manuscript v1.2; 1 figure, {ntables} tables. Expanded four-track study; per-layout counts supplied as ancillary data.\n'
-            f'Preprint DOI (v1.2): https://doi.org/{VERSION_DOI}\n'
-            f'Previous English preprint (v1.1 only): https://doi.org/{ARCHIVED_DOI}\n\nAbstract:\n{abstract}\n')
+            f'Comments: Revised manuscript v1.2; 1 figure, {ntables} numbered tables and a worked scoring example. Per-layout counts supplied as ancillary data.\n'
+            f'Preprint DOI (v1.2): https://doi.org/{VERSION_DOI}\n\nAbstract:\n{abstract}\n')
     (src / 'metadata.txt').write_text(meta, encoding='utf8', newline='\n')
 
 

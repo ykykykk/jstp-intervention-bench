@@ -6,13 +6,13 @@
 
 **Full theoretical manuscript:** [Read in English](../../theory/JSTP-Theory.en.md) · [中文原稿](../../theory/JSTP-详细理论稿-2026-11-19.md) · [Bilingual PDF downloads](../../theory/README.md). This companion states the full hypothesis; the empirical paper below tests a specific prediction about action supervision.
 
-**English empirical paper.** Ke Yue (2026), *Joint State Transition Prediction: Goal Generalization with Sparse Action Labels*. [Revised English PDF · v1.2](paper/JSTP-Goal-Generalization-Ke-Yue.pdf) · [Full text](paper/manuscript-en.md) · [LaTeX source, figure and per-layout data](paper/JSTP-arXiv-source.tar.gz). [Archived v1.1](https://doi.org/10.5281/zenodo.24366742) and [v1.0](https://doi.org/10.5281/zenodo.24366436) predate the expanded comparison. Appendix A links the original study and the [fixed archive of the extended comparison](https://github.com/ykykykk/jstp-intervention-bench/tree/5514eb4c851ec6670a17d8420184b1fc7a98ac2b/studies/fourtrack_foundations) separately. To regenerate the English outputs from stored results, run `python studies/joint_primer/paper/build_en.py`.
+**English empirical paper.** Ke Yue (2026), *Joint State Transition Prediction: Goal Generalization with Sparse Action Labels*. [Revised English PDF · v1.2](paper/JSTP-Goal-Generalization-Ke-Yue.pdf) · [Full text](paper/manuscript-en.md) · [LaTeX source, figure and per-layout data](paper/JSTP-arXiv-source.tar.gz). Section 5.1 explains the probe, reset, late goal, majority rule and paired score using archived layout 113670000, including a pair in which the model switched handles and lost both cards. Appendix A links the original study and the [fixed archive of the extended comparison](https://github.com/ykykykk/jstp-intervention-bench/tree/5514eb4c851ec6670a17d8420184b1fc7a98ac2b/studies/fourtrack_foundations) separately. To regenerate the English outputs from stored results, run `python studies/joint_primer/paper/build_en.py`.
 
 本文以同一份物理经历检验 JSTP 的一个主张：动作本身可以直接预测，但在动作标注稀缺时，局部后果是否有助于网络为未见目标选择动作？论文将联合状态、功能性分组与语言层的理论命题，与本装置上可验证的结果分开。见[完整理论稿](../../theory/JSTP-详细理论稿-2026-11-19.md)。
 
 ## 修订稿新增：完整 JSTP 与五种外部方法（表 2）
 
-直接翻到表 2：[中文 PDF 第 5 页](paper/联合状态转移预测导论-岳轲.pdf#page=5) · [English PDF, p. 6](paper/JSTP-Goal-Generalization-Ke-Yue.pdf#page=6)。
+直接翻到四轨计分实例：[中文，第 4 页](paper/联合状态转移预测导论-岳轲.pdf#page=4) · [English, p. 4](paper/JSTP-Goal-Generalization-Ke-Yue.pdf#page=4)。模型对照见表 2：[中文，第 6 页](paper/联合状态转移预测导论-岳轲.pdf#page=6) · [English, p. 7](paper/JSTP-Goal-Generalization-Ke-Yue.pdf#page=7)。
 
 所有模型都考原来的 192 个留出布局。128 条动作标注下，ACT 在三个种子上都超过 JSTP：**73.78% 对 71.69%**，差 2.08 个百分点（校正后 99% 区间 [0.93, 3.28]）。1,024 条时 JSTP 为 **94.90%**、ACT 为 **94.58%**，差值区间跨零。全量标注时两者分别为 **99.67%** 和 **99.96%**。这限定了「少示范领先」的范围，不推翻与同结构断回输的机制比较。
 

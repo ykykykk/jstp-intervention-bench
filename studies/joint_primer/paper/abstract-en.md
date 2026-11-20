@@ -1,6 +1,6 @@
 # Joint State Transition Prediction: Goal Generalization with Sparse Action Labels
 
-Ke Yue · Independent Researcher · 20 November 2026 · Revised manuscript, v1.2
+Ke Yue · Independent Researcher · v1.2 · Protocol clarified 21 November 2026
 
 ## Abstract
 

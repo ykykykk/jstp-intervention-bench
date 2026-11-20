@@ -135,11 +135,13 @@ def typeset(paper,filename,text,equations,english=False):
             story.extend([CondPageBreak(55),p])
         elif block.startswith('### '):
             story.extend([CondPageBreak(46),Paragraph(inline(block[4:],paper),S['sub'])])
-        elif block.startswith(('**表 ','**Table ')):
+        elif block.startswith(('**表 ','**Table ','**计分例：','**Worked example.')):
             cap=block
         elif block.startswith('|'):
             if not cap:raise ValueError('a table needs a caption')
-            p=Paragraph(inline(cap,paper),S['cap']);p.table_label=re.split('[　.]',cap,1)[0].strip('*')
+            p=Paragraph(inline(cap,paper),S['cap'])
+            if cap.startswith(('**表 ','**Table ')):
+                p.table_label=re.split('[　.]',cap,1)[0].strip('*')
             group=[p,numeric_table(block,paper,english)]
             # A section beginning with a table travels with it, rather than leaving a heading on the preceding page.
             while story and isinstance(story[-1],Paragraph) and story[-1].style.name in ('section','sub'):

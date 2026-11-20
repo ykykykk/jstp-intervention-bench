@@ -1,9 +1,8 @@
 Title: Joint State Transition Prediction: Goal Generalization with Sparse Action Labels
 Authors: Ke Yue
 Primary category: cs.LG (Machine Learning)
-Comments: Revised manuscript v1.2; 1 figure, 5 tables. Expanded four-track study; per-layout counts supplied as ancillary data.
+Comments: Revised manuscript v1.2; 1 figure, 5 numbered tables and a worked scoring example. Per-layout counts supplied as ancillary data.
 Preprint DOI (v1.2): https://doi.org/10.5281/zenodo.24392467
-Previous English preprint (v1.1 only): https://doi.org/10.5281/zenodo.24366742
 
 Abstract:
 A controller can learn what an action does without being told when to take it. Does that knowledge help when a new goal arrives? Joint State Transition Prediction (JSTP) treats action and environmental change as components of the same transition; it does not require a full reconstruction of the future. We varied the number of action labels in a fixed bank of 16,384 interactions. Frozen controllers operated a four-track simulator on 192 held-out layouts. A pair counted as successful only if the controller achieved two opposite, unseen goals after the same probe. At 128 labels, JSTP achieved 71.69% paired success. Disconnecting its consequence-to-action path while retaining both training losses reduced success to 66.75% (difference: 4.94 percentage points; 99% paired layout-bootstrap interval [3.97, 5.85]). In an expanded comparison, a pretrained ACT adaptation did better at 128 labels (73.78%); at 1,024 labels ACT and JSTP reached 94.58% and 94.90%, respectively. JSTP thus approached ACT on this apparatus with 18,304 parameters trained from scratch, but was not the best sparse-label method. The matched comparison supports a contribution from consequence feedback; task success alone does not establish emergent object segmentation.
